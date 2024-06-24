@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+{% block extrahead %}
+    {% load static %}
+    {{ block.super }}
+    <script src="{% static 'tinymce/plugins/chart_plugin/plugin.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'chart_plugin',
+            toolbar: 'chart_plugin',
+        });
+    </script>
+{% endblock %}
