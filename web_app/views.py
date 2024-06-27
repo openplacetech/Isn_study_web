@@ -40,7 +40,7 @@ def isn_insights(request):
     return render(request,'insights.html',{"latest_items":latest_items,'total_pages':total_pages,'insights':page_obj})
 
 def isn_platform(request):
-    """isn platform"""
+    return render(request,'isn_platform.html')
 
 
 def isn_market_entry(request):

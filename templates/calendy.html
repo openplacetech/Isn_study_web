@@ -1,0 +1,36 @@
+
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Calendly on Button Click</title>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- Add any necessary CSS styles for your template -->
+    <style>
+        /* Add custom styles for your template */
+    </style>
+</head>
+<body>
+    <h1>Book an Appointment</h1>
+
+    <!-- Button to open Calendly popup -->
+    <button id="openCalendly">Book Appointment</button>
+
+    <!-- Include Calendly widget script -->
+    <!-- Calendly badge widget begin -->
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly badge widget end -->
+
+    <!-- Script to open Calendly popup -->
+    <script>
+        document.getElementById('openCalendly').addEventListener('click', function() {
+            Calendly.initPopupWidget({ url: 'https://calendly.com/karkipramish18/15min',
+                text: 'Schedule time with ISN', color: '#ffffff', textColor: '#d24347', branding: undefined
+            });
+            return false;
+        });
+    </script>
+</body>
+</html>
