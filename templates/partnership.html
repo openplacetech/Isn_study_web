@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/partnership.css' %}" />
+<section class="section__container__3xl">
+      <main class="partnership__container">
+        <aside class="parntership__left">
+          <div class="content__title">
+            Start
+            <span
+              >Your Partnership <br />
+              With ISN</span
+            >
+          </div>
+          <p class="secondary_title">Lorem ipsum dolor sit.</p>
+          <form class="partnership__form flex-row-aligned">
+            <input
+              class="partnership__input"
+              placeholder="Name of Institution"
+            />
+            <input
+              class="partnership__input"
+              placeholder="Address"
+            />
+            <input
+              class="partnership__input"
+              placeholder="Contact Person"
+            />
+            <div style="width: 100%" class="flex-row-aligned grid-flex">
+              <input
+                class="partnership__input"
+                placeholder="Email address"
+              />
+              <input
+                class="partnership__input"
+                placeholder="Phone number"
+              />
+            </div>
+            <div class="services-container flex-row-aligned">
+              <p>Which services are you interested in?</p>
+
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="service1"
+                  name="service"
+                  value="service1"
+                />
+                <label for="service1">Hiring as Agent</label>
+              </div>
+
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="service2"
+                  name="service"
+                  value="service2"
+                />
+                <label for="service2">Market Entry</label>
+              </div>
+
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="service3"
+                  name="service"
+                  value="service3"
+                />
+                <label for="service3">Other Specify</label>
+              </div>
+
+            </div>
+            <textarea placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area"></textarea>
+            <div  style="flex-direction:row; align-items: center !important;" class="services-container flex-row-aligned">
+              <input type="checkbox"/>
+              <span>I agree to the Terms and Privacy Policy.</span>
+            </div>
+
+
+            <button  class="suscribe__button btn-submit">Submit</button>
+          </form>
+        </aside>
+
+        <section class="partnership__right">
+          <img src="{% static 'assets/images/partnershipbg.png' %}"/>
+        </section>
+      </main>
+    </section>
+{% endblock %}

@@ -1,0 +1,28 @@
+
+
+.our-contact-section{
+    display: flex;
+   
+}
+.right{
+    position: relative;
+    top: -200px;
+    left: -8%;
+   max-width: 100%;
+  
+    min-height: 400px;
+    transform: rotate(180deg);
+   
+
+}
+.contact-form{
+    padding: 5rem 0;
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image__container{
+    position: relative;
+}

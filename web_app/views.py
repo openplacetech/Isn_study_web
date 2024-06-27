@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 def home(request):
     return  render(request,"index.html")
 
-def partnership_request(request):
+def partnership_request(request,contact_type):
     if request.method == 'POST':
         form = PartnershipRequest(request.POST)
         if form.is_valid():
@@ -20,10 +20,15 @@ def partnership_request(request):
             #     from_email=contact.email,
             #     recipient_list=[settings.CONTACT_EMAIL],
             # )
-            return redirect('contact')
+            return redirect('partnership_request')
     else:
         form = PartnershipRequest()
-    return render(request, 'contact.html', {'form': form})
+    if contact_type == "us":
+        return render(request, 'contact.html', {'form': form})
+    elif contact_type == "partnership":
+        return render(request, 'partnership.html', {'form': form})
+    else:
+        return render(request, 'error.html')
 
 def isn_insights(request):
     page_number = request.GET.get('page')

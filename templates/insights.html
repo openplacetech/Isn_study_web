@@ -22,7 +22,7 @@
                 <div class="suscribe__box">
                     <div class="box__left">
                         <input placeholder="hello@youremai.com" />
-                        <p>We care about your data in our <span>privacy policy</span></p>
+                        <p>We care about your data in our <a style="cursor: pointer" href="/privacy-policy"><span>privacy policy</span></a></p>
                     </div>
 
                     <button>Subscribe</button>
@@ -100,6 +100,7 @@
             </div>
             {% endfor %}
         </div>
+    {% if total_pages > 1 %}
         <div class="pagination__container">
             <hr class="pagination__vertical__line" />
             <div class="pagination">
@@ -128,6 +129,7 @@
                 </div>
             </div>
         </div>
+    {% endif %}
     </section>
     <section class="our__engagement__container">
         <main class="section__container">

@@ -12,6 +12,21 @@ GENDER_TYPE = (
     ("Female","Female"),
 )
 
+JOB_TYPE=(
+    ("FULL_TIME","Full time"),
+    ("PART_TIME","Part time"),
+)
+
+JOB_MODE = (
+    ("REMOTE","Remote"),
+    ("ON_SITE","On Site"),
+    ("HYBRID","Hybrid")
+)
+
+JOB_CATEGORY = (
+    ("ENGINEERING","Engineering"),
+    ("DESIGN","Design"),
+)
 STATUS_TYPE = (
     ("DRAFT","DRAFT"),
     ("PUBLISHED","PUBLISHED"),

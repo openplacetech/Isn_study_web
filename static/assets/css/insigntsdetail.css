@@ -12,7 +12,6 @@
 .content__conatiner {
   position: absolute;
   bottom: 2rem;
-
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -22,8 +21,18 @@
 .font {
   font-size: 14px !important;
 }
+.primary-color{
+  color: var(--primary-color-red);
+}
+.font-normal{
+  font-size: 16px;
+  line-height: 27px;
+}
 .font-weight{
     font-weight: 600;
+}
+.margin{
+  margin: 0.8rem 0;
 }
 .stats__insights {
   text-overflow: clip;
@@ -31,7 +40,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-
+  color: white !important;
   justify-content: center;
 }
 
@@ -39,23 +48,10 @@
   padding: 2rem 0;
   display: flex;
   gap: 1.4rem;
+ 
 }
-.content__left {
-  width: 60px;
 
-  background-color: white !important;
-  border: 1px soild red;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
 
-  list-style: none;
-}
-.content__left p {
-  inset: 0;
-  margin-bottom: 0.2rem !important;
-}
 .seprate__container {
   text-align: center;
 }
@@ -74,20 +70,23 @@
   object-fit: cover;
   width: 18px;
 }
-.content__middle {
+.content__left {
   flex-grow: 1;
 }
 
-.content__middle > p {
+.content__left > p {
   font-size: 18px;
   line-height: 33px;
 }
 
-.content__right {
-  min-width: 300px;
-  background-color: red;
 
-  border-radius: 1px solid red;
+
+.content__right {
+
+  width: 100%;
+  max-width:340px ;
+
+  
 }
 .saying {
   line-height: 72px;
@@ -163,3 +162,51 @@
     color: #655F5F;
 }
 
+.social-stats{
+  justify-content: space-between;
+  margin: 2rem 0;
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.suscrible__input {
+  padding: 12px 20px;
+  width: 100%;
+  min-width: 80px;
+  outline: none;
+  min-height: 48px;
+  border: 1px solid #e5efff;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #808080;
+ 
+}
+
+.latest__blog{
+  flex-direction: column;
+  align-items: start !important;
+}
+.in-insights-detail{
+  margin: 0.8rem 0;
+
+
+}
+.in-insights-detail h6{
+  margin: 0.6rem 0;
+ 
+
+}
+
+.all__blogs__container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-item img{
+  width: 100%;
+  max-height: 280px;
+  /* min-height: 280px; */
+  object-fit: cover;
+  min-width: auto;
+}

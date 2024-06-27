@@ -3,7 +3,7 @@ from ckeditor.fields import RichTextField
 from tinymce.models import HTMLField
 from base.models import BaseModel
 from django.utils.text import slugify
-from web_app.constrants import COUNTRY_CHOICES,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
+from web_app.constrants import COUNTRY_CHOICES,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
 from django.contrib.auth.models import User
 
 class PartnershipRequest(BaseModel):
@@ -41,30 +41,6 @@ class PrivacyPolicy(BaseModel):
     class Meta:
         db_table = 'privacy_policy'
         verbose_name_plural = "privacy policy"
-#
-# class ApplyForCurrier(BaseModel):
-#     first_name = models.CharField(max_length=200)
-#     last_name = models.CharField(max_length=200)
-#     email = models.EmailField()
-#     phone_number = models.CharField(max_length=40)
-#     contact_phone_type = models.CharField(max_length=200,choices=CONTACT_PHONE_TYPE)
-#     country = models.CharField(max_length=100,choices=COUNTRY_CHOICES)
-#     profile_link = models.URLField()
-#     profile_link_type = models.CharField(max_length=100)
-#     expected_salary = models.CharField(max_length=200)
-#     resume = models.FileField(upload_to="resume")
-#     gender = models.CharField(max_length=100,choices=GENDER_TYPE)
-#     veteran_status = models.CharField(max_length=100)
-#     race_ethnicity = models.CharField(max_length=100)
-#     disability = models.CharField(max_length=100)
-#     legal_name = models.CharField(max_length=100)
-#     required_immigration_sponsorship = models.BooleanField(default=False,help_text='Will you now or in the future require immigration sponsorship for employment with ISN?')
-#     is_previously_employed= models.BooleanField(default=False,help_text='Have you previously been employed by ISN?')
-#     is_former_current_intern_or_contractor = models.BooleanField(default=False,help_text='Are you a former/current intern or contractor?')
-#     receive_text_message = models.BooleanField(default=False,help_text='Do you consent to receiving text messages throughout your application process including but not limited to interview details, pre-employment screening notifications and reminders?')
-#     class Meta:
-#         db_table = 'isn_job_application'
-#         verbose_name_plural = "Job Applications"
 
 
 # class NumberOfStudentStudyInUS(BaseModel):
@@ -116,12 +92,63 @@ class InsightComments(BaseModel):
     class Meta:
         db_table = 'InsightComments'
         verbose_name_plural = "Insight Comments"
-#
-# class CurrierOpportunities(BaseModel):
-#     job_title = models.TextField()
-#     job_description = HTMLField()
-#     keyword = models.TextField(help_text="only for SEO write a keyword seperated by comma(,) eg: python,django,hr")
-#
-#     class Meta:
-#         db_table = 'CurrierOpportunities'
-#         verbose_name_plural = "Currier Opportunities"
+
+class CurrierOpportunities(BaseModel):
+    job_title = models.TextField()
+    job_description = HTMLField()
+    category = models.CharField(choices=JOB_CATEGORY,max_length=100)
+    keyword = models.TextField(help_text="only for SEO write a keyword seperated by comma(,) eg: python,django,hr")
+    job_mode = models.CharField(choices=JOB_MODE,max_length=50)
+    job_type = models.CharField(choices=JOB_TYPE,max_length=50)
+    job_status = models.CharField(choices=STATUS_TYPE,max_length=50)
+    slug = models.SlugField(unique=True, blank=True)
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # Generate a unique slug based on the title
+            self.slug = slugify(self.job_title)
+            # Ensure the slug is unique
+            original_slug = self.slug
+            queryset = Insights.objects.filter(slug=original_slug)
+            counter = 1
+            while queryset.exists():
+                self.slug = f'{original_slug}-{counter}'
+                queryset = Insights.objects.filter(slug=self.slug)
+                counter += 1
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.job_title
+    class Meta:
+        db_table = 'CurrierOpportunities'
+        verbose_name_plural = "Currier Opportunities"
+
+
+
+
+
+class ApplyForCurrier(BaseModel):
+    job = models.ForeignKey(CurrierOpportunities,on_delete=models.DO_NOTHING)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone_number = models.CharField(max_length=40)
+    contact_phone_type = models.CharField(max_length=200,choices=CONTACT_PHONE_TYPE)
+    country = models.CharField(max_length=100,choices=COUNTRY_CHOICES)
+    profile_link = models.URLField()
+    profile_link_type = models.CharField(max_length=100)
+    expected_salary = models.CharField(max_length=200)
+    resume = models.FileField(upload_to="resume")
+    gender = models.CharField(max_length=100,choices=GENDER_TYPE)
+    veteran_status = models.CharField(max_length=100)
+    race_ethnicity = models.CharField(max_length=100)
+    disability = models.CharField(max_length=100)
+    legal_name = models.CharField(max_length=100)
+    required_immigration_sponsorship = models.BooleanField(default=False,help_text='Will you now or in the future require immigration sponsorship for employment with ISN?')
+    is_previously_employed= models.BooleanField(default=False,help_text='Have you previously been employed by ISN?')
+    is_former_current_intern_or_contractor = models.BooleanField(default=False,help_text='Are you a former/current intern or contractor?')
+    receive_text_message = models.BooleanField(default=False,help_text='Do you consent to receiving text messages throughout your application process including but not limited to interview details, pre-employment screening notifications and reminders?')
+    class Meta:
+        db_table = 'isn_job_application'
+        verbose_name_plural = "Job Applications"
