@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
+<style>
+    #world-map {
+        width: 600px;
+        height: 400px;
+    }
+    .jqvmap-zoomin{
+        display: none;
+    }
+    .jqvmap-zoomout{
+        display: none;
+    }
+</style>
+<div id="world-map"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#world-map').vectorMap({
+            map: 'world_en',
+            zoomButtons : false,
+            backgroundColor: ' radial-gradient(34.92% 51.68% at 58.4% 52.8%, #FFFFFF 0%, #F9F9F9 100%) ',
+            borderColor: '#818181',
+            borderOpacity: 0.25,
+            borderWidth: 1,
+            color: '#C1C2E9',
+            enableZoom: true,
+            hoverColor: '#2D2F82',
+            hoverOpacity: null,
+            normalizeFunction: 'linear',
+            selectedColor: '#C1C2E9',
+            selectedRegions: null,
+            showTooltip: true,
+            colors: {
+                'us': '#D24347'
+            },
+        });
+    });
+</script>
+

@@ -1,0 +1,30 @@
+{% load static %}
+<header>
+    <div class="section__container">
+      <nav class="navbar">
+        <div class="logo-container">
+          <img src="{% static 'assets/images/isnlogo.svg' %}" alt="international study network logo" class="logo" />
+        </div>
+
+        <ul class="navlink_container">
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">ISN Platforms</a></li>
+          <li><a href="#">Market Entry</a></li>
+          <li><a href="insights">Insights</a></li>
+          <li style="display: inline-flex; align-items: center">
+            <option value="">More</option>
+            <svg class="arrow-down" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+            </svg>
+          </li>
+          <button class="btn__secondary__blueborder">University Login</button>
+          <button class="btn__primary">Start Patnership</button>
+        </ul>
+        <div class="navbar__menu__icon">
+          <img src="{% static 'assets/images/menuicon.svg' %}" />
+        </div>
+      </nav>
+
+
+    </div>
+  </header>

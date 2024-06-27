@@ -1,10 +1,603 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+<section class="homepage__container">
+    <main class="section__container">
+      <div class="hero__container">
+        <div class="hero__left">
+          <div class="hero__container__slogan">
+            <p>INTERNATIONAL STUDY NETWORK</p>
+            <h1>
+              Diversify Your <br />
+              University: Partner <br />
+              with Today.
+            </h1>
+            <p>
+              Partner with ISN to unlock your university's potential,
+              connecting with top international students for a diverse,
+              excellent, and culturally rich academic community.
+            </p>
+          </div>
+          <div style="margin: 1rem 0" class="hero_btn_container">
+            <button class="btn__primary__home">Know more about ISN</button>
+          </div>
 
-</body>
-</html>
+          <div class="hero__container__question">
+            <p>What are you looking for?</p>
+            <p class="faqs">
+              I want to diversify my international student population at my
+              academic institution.
+            </p>
+            <p style="font-size: 14px">
+              I am recruitment partner who wants to leverage US applications,
+              I am a student who wants to study in the US.
+            </p>
+          </div>
+        </div>
+        <div class="hero__right">
+          <div class="hero__right__card__container">
+            <div class="card__red">
+              <div class="card__ratedby">80k<span>+</span></div>
+              <div style="font-size: 14px">Students Helped</div>
+            </div>
+            <div class="card__lightgreen">
+              <div class="card__ratedby">65k</div>
+              <div style="font-size: 14px">Recruitment Partners</div>
+            </div>
+            <div class="card__green">
+              <div class="card__ratedby">12k<span>+</span></div>
+              <div style="font-size: 14px; text-align: center">
+                Patner Institutions
+              </div>
+            </div>
+            <div class="card__secondaryblue">
+              <div class="card__ratedby">150<span>+</span></div>
+              <div style="font-size: 14px">
+                Countries<span style="visibility: hidden"> dd</span>
+              </div>
+            </div>
+          </div>
+          <div class="dd">
+            <img src="{% static 'assets/images/banner.png' %}" />
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+  <section id="partners" class="section__container">
+    <main class="ourpartner__container">
+      <div class="title">Our<span> Partners.</span></div>
+
+      <ul class="ourpartner__container__lists">
+        <li>
+          <img src="{% static 'assets/images/TSU.svg' %} " class="partner__logo" />
+
+        </li>
+        <li>
+          <img src="{% static 'assets/images/UNT.svg' %}" class="partner__logo" />
+
+        </li>
+        <li>
+          <img src="{% static 'assets/images/WSU.svg' %}" class="partner__logo" />
+
+        </li>
+        <li>
+          <img src="{% static 'assets/images/MSU.svg' %}" class="partner__logo" />
+
+        </li>
+        <li>
+          <img src="{% static 'assets/images/WESU.svg' %} " class="partner__logo" />
+
+        </li>
+        <li>
+          <img src="{% static 'assets/images/TUNM.svg' %}" class="partner__logo" />
+
+        </li>
+      </ul>
+      <div class="ourpartner__chart__container">
+        <img src="{% static 'assets/images/chart.svg' %}" />
+
+        <div class="chart__container__right">
+          <p class="secondary_title">ABOUT US</p>
+          <div class="content__title">
+            Connecting Global Minds: <br /><span>About ISN</span>
+          </div>
+          <p class="content__description">
+            At ISN, we bridge the gap between international students and
+            educational institutions in United States.. Our innovative
+            platform facilitates seamless partnerships and engagements,
+            enabling universities and colleges to connect with a diverse pool
+            of talented students from across the globe.
+          </p>
+          <div class="characteristics__container">
+            <div onclick="toggleDetails(this)" class="characterstic__card">
+              <div class="start__icon__container">
+                <img src="{% static 'assets/images/star.svg' %}" alt="star__icon" />
+              </div>
+              <div id="card" class="card__with__description">
+                <h4 class="card__title">Comprehensive Data Visualization</h4>
+                <p> Our system allows institutions to easily update their data,
+                  ensuring the most accurate and current information is always
+                  available.</p>
+              </div>
+            </div>
+          </div>
+          <div onclick="toggleDetails(this)" class="characterstic__card">
+            <div class="start__icon__container">
+              <img src="{% static 'assets/images/star.svg' %}" alt="star__icon" />
+            </div>
+            <div id="card" class="card__with__description">
+              <h4 class="card__title">Global Reach</h4>
+              <p> Our system allows institutions to easily update their data,
+                ensuring the most accurate and current information is always
+                available.</p>
+            </div>
+
+
+          </div>
+          <div onclick="toggleDetails(this)" class="characterstic__card">
+            <div class="start__icon__container">
+              <img src="{% static 'assets/images/star.svg' %}" alt="star__icon" />
+            </div>
+            <div class="card__with__description">
+              <h4 class="card__title">Seamless Updates</h4>
+              <p>
+                Our system allows institutions to easily update their data,
+                ensuring the most accurate and current information is always
+                available.
+              </p>
+            </div>
+          </div>
+          <div onclick="toggleDetails(this)" class="characterstic__card">
+            <div class="start__icon__container">
+              <img src="{% static 'assets/images/star.svg' %}" alt="star__icon" />
+            </div>
+            <div id="card" class="card__with__description">
+              <h4>Outstanding Performance</h4>
+              <p> Our system allows institutions to easily update their data,
+                ensuring the most accurate and current information is always
+                available.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </section>
+  <section class="section__platform__wrapper">
+    <main class="section__container">
+      <div class="ourplatform__container">
+        <div class="ourplatform___left">
+          <div class="content__title">
+            A
+            <span>Comprehensive<br />
+              Platform</span>
+            for All Your<br />
+            Needs
+          </div>
+          <p class="secondary_title">
+            Our platform offers comprehensive support for educational
+            institutions, streamlining the entire process from initial
+            engagement to ongoing collaboration.
+          </p>
+          <button class="btn__primary__home">Learn More</button>
+        </div>
+        <div class="ourplatform___right">
+          <div class="ourplatform___card">
+            <div class="medal__icon__container">
+              <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+            </div>
+            <div class="platform__description">
+              <h4>Students</h4>
+              <p>
+                Impress employers by being vetted for your communication and
+                domain expertise.
+              </p>
+            </div>
+          </div>
+          <div class="ourplatform___card">
+            <div class="medal__icon__container">
+              <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+            </div>
+            <div class="platform__description">
+              <h4>Recruitment Partners</h4>
+              <p>
+                Impress employers by being vetted for your communication and
+                domain expertise.
+              </p>
+            </div>
+          </div>
+          <div class="ourplatform___card">
+            <div class="medal__icon__container">
+              <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+            </div>
+            <div class="platform__description">
+              <h4>Partner Institutes</h4>
+              <p>
+                Impress employers by being vetted for your communication and
+                domain expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="section__container">
+    <div class="container">
+      <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'assets/images/students.svg' %}" class="d-block w-100" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'assets/images/bannerstudents.svg' %}" class="d-block w-100" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'assets/images/students.svg' %}" class="d-block w-100" alt="Image 3">
+          </div>
+        </div>
+
+        <!-- Controls and Indicators below content -->
+        <div class="carousel-control-wrapper">
+          <span style="visibility: hidden; margin-top: 2rem;"></span>
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#imageCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#imageCarousel" data-bs-slide-to="2"></li>
+          </ol>
+
+          <!-- <span style="visibility: hidden;"></span> -->
+
+        </div>
+      </div>
+    </div>
+    <div class="empower__container__bottom">
+      <p class="secondary_title">HOW CAN HELP</p>
+      <div class="content__title">
+        Empower Your Institution: <span>How We Can Help</span>
+      </div>
+      <p class="secondary_title">
+        At ISN, we provide a range of services designed to enhance your
+        institution’s international outreach and engagement. Here’s how we can
+        help
+      </p>
+    </div>
+    <div class="empower__card__container">
+      <div class="empower__card">
+        <div class="empower__icon__container">
+          <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+        </div>
+        <div class="empower__description">
+          <h4>Data-Driven Insights</h4>
+          <p>
+            Leverage our robust data visualization tools to gain insights into
+            global student trends. Our platform transforms complex research
+            data into easy-to-understand graphics, charts, and maps.
+          </p>
+        </div>
+      </div>
+      <div class="empower__card">
+        <div class="empower__icon__container">
+          <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+        </div>
+        <div class="empower__description">
+          <h4>Market Fit</h4>
+          <p>
+            Discover your ideal student demographic with Market Fit.
+            Strategically grow and retain enrollments for sustainable success.
+          </p>
+        </div>
+      </div>
+      <div class="empower__card">
+        <div class="empower__icon__container">
+          <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+        </div>
+        <div class="empower__description">
+          <h4>Global Outreach</h4>
+          <p>
+            Expand your reach with our active presence in multiple countries.
+            Showcase your institution to a diverse and global audience,
+            increasing your visibility and appeal to international students.
+          </p>
+        </div>
+      </div>
+      <div class="empower__card">
+        <div class="empower__icon__container">
+          <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
+        </div>
+        <div class="empower__description">
+          <h4>Strategic Marketing</h4>
+          <p>
+            Boost your institution’s profile with our targeted marketing
+            strategies. From digital campaigns to social media engagement, we
+            help you stand out in a competitive market.
+          </p>
+        </div>
+      </div>
+
+      <div></div>
+    </div>
+    <div class="btn__container">
+      <button class="btn__primary__home">Partner with us</button>
+    </div>
+    <hr class="horizontal__line" />
+    <div class="partner__us__content">
+      <p>
+        Partner with ISN and unlock the potential of international education.
+        Let us help you connect, engage, and thrive globally.
+      </p>
+    </div>
+  </section>
+  <section class="our__avalability__container">
+    <main class="section__container">
+      <div class="availability__content">
+        <div style="width: 100%; max-width: 100%; box-sizing: border-box" class="content__title">
+          We unite
+          <span>US institution with students <br />
+            and recruiting partners</span>
+          from around <br />
+          the globe.
+        </div>
+        <p class="content__description">
+          We bring together schools, students, and recruiting partners
+          worldwide, fostering a global network for seamless collaboration and
+          opportunities.
+        </p>
+        <div class="availability__zone__map">
+{#          <img src="{% static 'assets/images/map.svg' %}" />#}
+            {% include 'vector-map.html' %}
+        </div>
+      </div>
+    </main>
+  </section>
+  <section class="saying__container">
+    <main class="section__container">
+
+      <div class="saying__content">
+
+        <div class="saying__title">
+          <p>TESTIMONIALS</p>
+          <h4>What Our Partners Are <br /> Saying</h4>
+          <p class="detail">Hear directly from our partners about their experiences and the impact of working with ISN.
+          </p>
+        </div>
+
+        <div class="slider__saying">
+          <div class="arrow__left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
+              <path
+                d="M14.71 18.29a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42L10.12 12l5.3-5.29a1 1 0 1 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.42l6 6z" />
+            </svg>
+
+
+          </div>
+          <div class="arrow__right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
+              <path
+                d="M9.71 18.29a1 1 0 0 1-1.42 0 1 1 0 0 1 0-1.42l4.58-4.58-4.58-4.59a1 1 0 0 1 1.42-1.42l6 6a1 1 0 0 1 0 1.42l-6 6z" />
+            </svg>
+
+          </div>
+          <div class="slider__card">
+            <img class="img" src="{% static 'assets/images/video.svg' %}" />
+            <img class="user" src="{% static 'assets/images/user.png' %}" />
+            <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
+              exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
+              I highly recommend their services!"</p>
+            <div class="user__detail">
+              <h4>Ed Colyer</h4>
+              <p>Co founder / company name</p>
+
+
+            </div>
+          </div>
+          <div class="slider__card">
+            <img class="img" src="{% static 'assets/images/video.svg' %}" />
+            <img class="user" src="{% static 'assets/images/user.png' %}" />
+            <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
+              exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
+              I highly recommend their services!"</p>
+            <div class="user__detail">
+              <h4>Ed Colyer</h4>
+              <p>Co founder / company name</p>
+            </div>
+          </div>
+          <div class="slider__card">
+            <img class="img" src="{% static 'assets/images/video.svg' %}" />
+            <img class="user" src="{% static 'assets/images/user.png' %}" />
+            <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
+              exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
+              I highly recommend their services!"</p>
+            <div class="user__detail">
+              <h4>Ed Colyer</h4>
+              <p>Co founder / company name</p>
+            </div>
+          </div>
+
+
+        </div>
+    </main>
+  </section>
+  <section class="our__diversity__container">
+    <main class="section__container">
+      <div class="diversity__content">
+        <div class="title">Embrace <br /><span>Diversity with ISN</span></div>
+        <p style="text-align: center; margin-top: 0.8rem" class="secondary_title">
+          At ISN, we celebrate diversity in all its forms, bringing together
+          students from a wide array of demographic and geographical
+          backgrounds. Our extensive data highlights the richness of our
+          network and the opportunities it presents.
+        </p>
+      </div>
+      <div class="diversity__card__container">
+        <div class="diversity__grid">
+          <div class="diversity__card">
+            <img src="{% static 'assets/images/stem.svg' %}" />
+            <div class="diversity__card__stems">
+              <div>STEM Majors</div>
+              <div>Non-STEM Majors</div>
+            </div>
+          </div>
+          <div class="diversity__card">
+            <img src="{% static 'assets/images/bargraph.svg' %}" />
+            <div class="diversity__card__transfer__detail">
+              <p>Our application pool is well versed among <br /> <span>Undergraduate, Graduate and Transfer.</span>
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="diversity__center">
+          <div class="content">
+            The market is <span>FRAGMENTED</span> with several players occupying the market share
+          </div>
+          <span class="horizontal__box">
+            <p style="visibility: hidden;">line</p>
+          </span>
+          <div class="content">
+            One of the <span> key drivers</span> of the market will be the <span> rising demand for customized
+              learning.</span>
+
+          </div>
+        </div>
+        <div class="diversity__map__container">
+          <img src="{% static 'assets/images/map2.svg' %}">
+          <div class="description">We are active in Asia, <span><br /> Africa, North America <br /> and south
+              America.</span></div>
+        </div>
+      </div>
+    </main>
+  </section>
+  <section class="our__trust__container">
+    <main class="section__container">
+      <div class="our__trust__container">
+        <div class="our__trust__content__description">
+          <div class="title">
+            Reliability
+            <span>You Can <br />
+              Trust</span>
+          </div>
+          <p style="text-align: center; margin-top: 0.8rem" class="secondary_title">
+            At ISN, we prioritize accuracy and reliability in every aspect of
+            our platform. Here’s why you can trust the data we provide:
+          </p>
+        </div>
+        <div class="card__container__trust">
+          <div class="card__trust">
+            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <div class="card__trust__content">
+              <h4>Comprehensive Research</h4>
+              <p>
+                Our data is meticulously gathered through extensive research and
+                verified surveys, ensuring that every piece of information is
+                both accurate and up-to-date.
+              </p>
+            </div>
+          </div>
+          <div class="card__trust">
+            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <div class="card__trust__content">
+              <h4>Comprehensive Research</h4>
+              <p>
+                Our data is meticulously gathered through extensive research and
+                verified surveys, ensuring that every piece of information is
+                both accurate and up-to-date.
+              </p>
+            </div>
+          </div>
+          <div class="card__trust">
+            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <div class="card__trust__content">
+              <h4>Comprehensive Research</h4>
+              <p>
+                Our data is meticulously gathered through extensive research and
+                verified surveys, ensuring that every piece of information is
+                both accurate and up-to-date.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <hr class="horizontal__line" />
+          <div class="partner__us__content">
+            <p>
+              Partner with ISN and unlock the potential of international
+              education. Let us help you connect, engage, and thrive globally.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+  <section class="our__engagement__container">
+    <main class="section__container">
+      <div class="our__engagement__container">
+        <div class="our__engagement__content">
+          <div class="title__lg">
+            Ready to Transform Your <br />
+            <span>International Engagement? </span>
+          </div>
+          <p class="our__engagement__content__description">
+            Join the growing network of educational institutions and recruiting
+            partners benefiting from ISN’s comprehensive platform. Our tools and
+            data insights are designed to simplify your international outreach,
+            enhance your recruitment strategies, and foster global partnerships.
+          </p>
+
+          <div class="meetus__conatiner">
+            <div class="meetus__btn__container">
+              <button>Schedule a Meet </button>
+              <button>Contact Us</button>
+            </div>
+          </div>
+          <p class="our__engagement__content__description">Unlock the potential of international education with ISN.
+            Connect, engage, and thrive globally.</p>
+        </div>
+    </main>
+  </section>
+  <section>
+    <main class="section__container">
+      <div class="our__blogs__content">
+        <div class="our__blogs__content__container">
+          <div class="content__title">Gain an Edge: <span>Insights</span></div>
+          <p>Stay ahead with the latest trends and data in international education. Our Insights section provides
+            valuable information to help you make informed decisions and enhance your strategies.</p>
+        </div>
+        <div class="blogs__insights__container">
+          <div class="main__blog__container">
+            <div class="container__left">
+              <div class="img__container">
+                <img src="{% static 'assets/images/blog.png' %}" />
+              </div>
+              <div class="insights__content__container">
+                <p>Trends</p>
+                <h4>The Future of International Education Post-Pandemic</h4>
+                <p>Explore how global education is evolving in the aftermath of the COVID-19 pandemic. Discover the
+                  emerging trends and strategies that institutions are adopting to adapt to the new normal.</p>
+              </div>
+            </div>
+            <div class="container__right">
+              <div class="latest__blog__title">Latest Insights</div>
+              <div class="blog__container">
+                <h6>Top 10 Countries for International Student Recruitment in 2024</h6>
+                <p>A comprehensive analysis of the most popular destinations for international students in 2024. Learn
+                  about the factors driving these trends and how your institution can leverage this data.</p>
+              </div>
+              <div class="blog__container">
+                <h6>Effective Marketing Strategies for Attracting International Students</h6>
+                <p>Uncover the best practices and innovative marketing strategies to boost your institution’s appeal to
+                  international students. From digital campaigns to personalized outreach, find out what works best.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
+{% endblock %}
