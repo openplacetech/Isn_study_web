@@ -2,5 +2,6 @@ main_template
 .env
 venv
 media
-isn_template
-blog_cover
+main_template
+main_template/isn_template
+media/blog_cover
