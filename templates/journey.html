@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/journey.css' %}" />
+    <div>
+    <section class="section__container">
+    <main class="journey__content__container">
+      <article class="journey__landing__page">
+        <aside class="journey__content__left">
+          <div class="content__title line-height-title">Our Journey: <br /> From <span> Vision to <br /> Global
+              Impact.</span></div>
+          <p class="secondary_title description">Welcome to the story of ISN. Our journey is one of passion, dedication,
+            and
+            relentless pursuit of excellence in international education. Here, we share our origins, significant
+            milestones, remarkable growth, and ambitious future goals.</p>
+        </aside>
+        <aside class="journey__content__right">
+          <img src="{% static 'assets/images/frame-journey.svg' %}" />
+          <!-- <img class="ellipse" src="/assets/images/Ellipse.svg"/> -->
+        </aside>
+
+
+      </article>
+
+    </main>
+  </section>
+
+  <section class="section__mission">
+    <section class="section__container">
+      <!-- <div class="journey__banner"><img src="/assets/images/journey-people.png"/></div> -->
+      <main class="journey__content__container">
+        <article class="journey__landing__page  ">
+          <aside class="journey__content__left">
+            <div class="our__dream">
+              <div style="margin-top: 3rem; color: white;" class="content__title line-height-title ">Our Mission: DREAM
+              </div>
+
+              <div class="our__dream__list__container">
+
+                <h6 style="color: white;" class="secondary_title">At ISN, our mission is to help students DREAM big and
+                  achieve their goal of studying at some of the
+                  world's best institutions.</h6>
+
+                <ul class="our-dream-list">
+                  <li>Dedication: We are dedicated to guiding students toward their educational dreams.
+                  </li>
+                  <li>Resources: Providing comprehensive information and resources to help students make
+                    informed decisions.</li>
+                  <li>Empowerment: Empowering students to make smart choices that will not only shape their
+                    futures but also positively impact their families, communities, and the world.</li>
+                  <li>Accountability: Ensuring transparency and adherence to ethical practices in all our
+                    services.</li>
+                  <li>Motivation: Motivating students to strive for excellence and realize their full
+                    potential.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="our__dream">
+              <div style="margin-top: 3rem; color: white;" class="content__title line-height-title ">Our Values: CARE
+              </div>
+
+              <div class="our__dream__list__container">
+
+                <h6 style="color: white;">Our core values define who we are and guide everything we do at ISN. We believe in CARE:</h6>
+
+                <ul>
+                  <li>Commitment: We are committed to putting students first, ensuring their needs and aspirations are at the center of our work.</li>
+                  <li>Accountability: We hold ourselves accountable to the highest ethical standards, ensuring fairness and integrity in all our actions.</li>
+                  <li>Respect: We treat all students, partners, and team members with respect and dignity, fostering a supportive and inclusive environment.</li>
+                  <li>Empathy: We empathize with the challenges faced by international students and strive to provide compassionate and understanding support.</li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+          <aside class="our__dream__right">
+            <img src="{% static 'assets/images/our__dream.svg' %}" />
+            <!-- <img class="ellipse" src="/assets/images/Ellipse.svg"/> -->
+          </aside>
+
+
+        </article>
+
+      </main>
+    </section>
+  </section>
+    </div>
+{% endblock %}

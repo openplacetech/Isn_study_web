@@ -1,5 +1,5 @@
 from django.contrib import admin
-from web_app.models import PartnershipRequest,PrivacyPolicy,Insights
+from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -13,5 +13,11 @@ class InsightsAdmin(admin.ModelAdmin):
     list_display = ('title','slug','category','created_at', 'updated_at')
     search_fields = ('title', 'slug', 'category')
     list_filter = ('created_at', 'updated_at')
+
+@admin.register(ISNTeam)
+class ISNTeamAdmin(admin.ModelAdmin):
+    list_display = ('full_name','designation','created_at', 'updated_at')
+    search_fields = ('full_name','designation')
+    list_filter = ('created_at','updated_at')
 
 admin.site.register(PrivacyPolicy)

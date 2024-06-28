@@ -7,7 +7,9 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def home(request):
-    return  render(request,"index.html")
+    insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
+    latest_items = insight_list[:3]
+    return  render(request,"index.html",{"insights":latest_items})
 
 def partnership_request(request,contact_type):
     if request.method == 'POST':
@@ -57,3 +59,6 @@ def currier_opportunity(request):
 def privacy_policy(request):
     privacy = PrivacyPolicy.objects.get(status="PUBLISHED")
     return render(request,'privacy-policy.html',{"privacy":privacy})
+
+def our_journey(request):
+    return render(request,'journey.html')

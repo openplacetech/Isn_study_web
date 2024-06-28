@@ -2,7 +2,6 @@
 {% load static %}
 {% block base %}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/isnplatform.css' %}" />
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <section class="homepage__container">
     <main class="section__container">
       <div class="isn__platform__home">
@@ -131,7 +130,7 @@
           <div class="triangle trangel-top"></div>
           <div class="counter counter-top">01</div>
 
-          <img src="{% static 'assets/images/hand.svg.svg' %}" />
+          <img src="{% static 'assets/images/hand.svg' %}" />
           <h6>Easy-to-Use</h6>
           <p>Easily manage partnerships with international recruiting agents and partners.</p>
         </div>
@@ -176,25 +175,11 @@
             enhance your recruitment strategies, and foster global partnerships.
           </p>
 
-          <div class="meetus__conatiner">
-            <div class="meetus__btn__container">
-              <button id="openCalendly">Schedule a Meet </button>
-              <button>Contact Us</button>
-            </div>
-          </div>
+          {% include 'meet_us.html' %}
           <p class="our__engagement__content__description">Unlock the potential of international education with ISN.
             Connect, engage, and thrive globally.</p>
         </div>
 
     </main>
   </section>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script>
-        document.getElementById('openCalendly').addEventListener('click', function() {
-            Calendly.initPopupWidget({ url: 'https://calendly.com/karkipramish18/15min',
-                text: 'Schedule time with ISN', color: '#ffffff', textColor: '#d24347', branding: undefined
-            });
-            return false;
-        });
-    </script>
 {% endblock %}

@@ -188,3 +188,9 @@ EMAIL_HOST_PASSWORD = 'your-email-password'
 
 # Contact email address
 CONTACT_EMAIL = 'your-email@example.com'
+
+
+SOCIAL_MEDIA_FACEBOOK_URL = ""
+SOCIAL_MEDIA_INSTAGRAM_URL = ""
+SOCIAL_MEDIA_LINKEDIN_URL = ""
+SOCIAL_MEDIA_TWITTER_URL = ""

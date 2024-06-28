@@ -1,0 +1,16 @@
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<div class="meetus__conatiner">
+    <div class="meetus__btn__container">
+        <button id="openCalendly">Schedule a Meet </button>
+        <button><a href="/contact/us" style="text-decoration: none ; color: var(--secondary-blue)">Contact Us</a></button>
+    </div>
+</div>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        document.getElementById('openCalendly').addEventListener('click', function() {
+            Calendly.initPopupWidget({ url: 'https://calendly.com/karkipramish18/15min',
+                text: 'Schedule time with ISN', color: '#ffffff', textColor: '#d24347', branding: undefined
+            });
+            return false;
+        });
+    </script>

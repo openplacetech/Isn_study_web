@@ -15,7 +15,7 @@ class PartnershipRequest(BaseModel):
     phone_no = models.CharField(max_length=200)
     interested_service = models.CharField(choices=INTERESTED_SERVICE,max_length=100)
     message = models.TextField()
-
+    is_accept_privacy_policy = models.BooleanField(default=False)
     def __str__(self):
         return self.institute_name
 
@@ -36,8 +36,12 @@ class Subscriber(BaseModel):
 
 
 class PrivacyPolicy(BaseModel):
+    name = models.CharField(max_length=200,default="Privacy and Policy")
     content = HTMLField()
     status = models.CharField(choices=STATUS_TYPE,max_length=200,blank=True)
+
+    def __str__(self):
+        return self.name
     class Meta:
         db_table = 'privacy_policy'
         verbose_name_plural = "privacy policy"
@@ -125,30 +129,39 @@ class CurrierOpportunities(BaseModel):
         verbose_name_plural = "Currier Opportunities"
 
 
+class ISNTeam(BaseModel):
+    full_name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=300)
+    profile_image = models.ImageField(upload_to="team_profile")
+    def __str__(self):
+        return self.full_name
 
-
-
-class ApplyForCurrier(BaseModel):
-    job = models.ForeignKey(CurrierOpportunities,on_delete=models.DO_NOTHING)
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=40)
-    contact_phone_type = models.CharField(max_length=200,choices=CONTACT_PHONE_TYPE)
-    country = models.CharField(max_length=100,choices=COUNTRY_CHOICES)
-    profile_link = models.URLField()
-    profile_link_type = models.CharField(max_length=100)
-    expected_salary = models.CharField(max_length=200)
-    resume = models.FileField(upload_to="resume")
-    gender = models.CharField(max_length=100,choices=GENDER_TYPE)
-    veteran_status = models.CharField(max_length=100)
-    race_ethnicity = models.CharField(max_length=100)
-    disability = models.CharField(max_length=100)
-    legal_name = models.CharField(max_length=100)
-    required_immigration_sponsorship = models.BooleanField(default=False,help_text='Will you now or in the future require immigration sponsorship for employment with ISN?')
-    is_previously_employed= models.BooleanField(default=False,help_text='Have you previously been employed by ISN?')
-    is_former_current_intern_or_contractor = models.BooleanField(default=False,help_text='Are you a former/current intern or contractor?')
-    receive_text_message = models.BooleanField(default=False,help_text='Do you consent to receiving text messages throughout your application process including but not limited to interview details, pre-employment screening notifications and reminders?')
     class Meta:
-        db_table = 'isn_job_application'
-        verbose_name_plural = "Job Applications"
+        db_table = "teams"
+        verbose_name_plural = "Our Teams"
+
+
+# class ApplyForCurrier(BaseModel):
+#     job = models.ForeignKey(CurrierOpportunities,on_delete=models.DO_NOTHING)
+#     first_name = models.CharField(max_length=200)
+#     last_name = models.CharField(max_length=200)
+#     email = models.EmailField()
+#     phone_number = models.CharField(max_length=40)
+#     contact_phone_type = models.CharField(max_length=200,choices=CONTACT_PHONE_TYPE)
+#     country = models.CharField(max_length=100,choices=COUNTRY_CHOICES)
+#     profile_link = models.URLField()
+#     profile_link_type = models.CharField(max_length=100)
+#     expected_salary = models.CharField(max_length=200)
+#     resume = models.FileField(upload_to="resume")
+#     gender = models.CharField(max_length=100,choices=GENDER_TYPE)
+#     veteran_status = models.CharField(max_length=100)
+#     race_ethnicity = models.CharField(max_length=100)
+#     disability = models.CharField(max_length=100)
+#     legal_name = models.CharField(max_length=100)
+#     required_immigration_sponsorship = models.BooleanField(default=False,help_text='Will you now or in the future require immigration sponsorship for employment with ISN?')
+#     is_previously_employed= models.BooleanField(default=False,help_text='Have you previously been employed by ISN?')
+#     is_former_current_intern_or_contractor = models.BooleanField(default=False,help_text='Are you a former/current intern or contractor?')
+#     receive_text_message = models.BooleanField(default=False,help_text='Do you consent to receiving text messages throughout your application process including but not limited to interview details, pre-employment screening notifications and reminders?')
+#     class Meta:
+#         db_table = 'isn_job_application'
+#         verbose_name_plural = "Job Applications"

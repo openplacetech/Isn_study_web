@@ -549,12 +549,7 @@
             enhance your recruitment strategies, and foster global partnerships.
           </p>
 
-          <div class="meetus__conatiner">
-            <div class="meetus__btn__container">
-              <button>Schedule a Meet </button>
-              <button>Contact Us</button>
-            </div>
-          </div>
+          {% include 'meet_us.html' %}
           <p class="our__engagement__content__description">Unlock the potential of international education with ISN.
             Connect, engage, and thrive globally.</p>
         </div>
@@ -570,29 +565,35 @@
         </div>
         <div class="blogs__insights__container">
           <div class="main__blog__container">
+              {% if insights|length >= 1 %}
             <div class="container__left">
               <div class="img__container">
-                <img src="{% static 'assets/images/blog.png' %}" />
+                <img src="{{ insights.0.cover_image.url }}" />
               </div>
               <div class="insights__content__container">
-                <p>Trends</p>
-                <h4>The Future of International Education Post-Pandemic</h4>
-                <p>Explore how global education is evolving in the aftermath of the COVID-19 pandemic. Discover the
-                  emerging trends and strategies that institutions are adopting to adapt to the new normal.</p>
+{#                <p>Trends</p>#}
+                <h4>{{ insights.0.title }}</h4>
+                <p>{{ insights.0.summary|truncatechars:100}}
+                        {% if  insights.0.summary|length > 100%}
+                        <span class=""> Read More</span>
+                        {% endif %}
+                </p>
               </div>
             </div>
+          {% endif %}
             <div class="container__right">
               <div class="latest__blog__title">Latest Insights</div>
-              <div class="blog__container">
-                <h6>Top 10 Countries for International Student Recruitment in 2024</h6>
-                <p>A comprehensive analysis of the most popular destinations for international students in 2024. Learn
-                  about the factors driving these trends and how your institution can leverage this data.</p>
-              </div>
-              <div class="blog__container">
-                <h6>Effective Marketing Strategies for Attracting International Students</h6>
-                <p>Uncover the best practices and innovative marketing strategies to boost your institution’s appeal to
-                  international students. From digital campaigns to personalized outreach, find out what works best.</p>
-              </div>
+                {% for item in insights|slice:"1:3" %}
+                  <div class="blog__container">
+                    <h6>{{ item.title }}</h6>
+                    <p>
+                        {{ item.summary|truncatechars:100}}
+                        {% if  item.summary|length > 100%}
+                        <span class=""> Read More</span>
+                        {% endif %}
+                    </p>
+                  </div>
+                {% endfor %}
 
             </div>
           </div>

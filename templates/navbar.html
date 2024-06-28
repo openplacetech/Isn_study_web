@@ -7,15 +7,23 @@
         </div>
 
         <ul class="navlink_container">
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="platform">ISN Platforms</a></li>
+          <li><a class="active" href="/">Home</a></li>
+          <li><a href="/platform">ISN Platforms</a></li>
           <li><a href="#">Market Entry</a></li>
           <li><a href="insights">Insights</a></li>
-          <li style="display: inline-flex; align-items: center">
-            <option value="">More</option>
-            <svg class="arrow-down" width="24" height="24" viewBox="0 0 24 24">
-              <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-            </svg>
+          <li class="more__menu">
+            <span id="more-toggle" style="display: inline-flex; align-items: center;"> More <svg class="arrow-down"
+                width="24" height="24" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+              </svg>
+
+
+            </span>
+            <ul class="dropdown-menu">
+              <li><a href="/journey">Our Journey</a></li>
+              <li><a href="">Human Resource</a></li>
+              <li><a href="privacy-policy">Private and Policy</a></li>
+            </ul>
           </li>
           <button class="btn__secondary__blueborder">University Login</button>
           <a href="/partnership"><button class="btn__primary">Start Patnership</button></a>
@@ -24,7 +32,5 @@
           <img src="{% static 'assets/images/menuicon.svg' %}" />
         </div>
       </nav>
-
-
     </div>
   </header>

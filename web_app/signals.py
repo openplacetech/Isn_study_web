@@ -5,5 +5,7 @@ from web_app.constrants import STATUS_TYPE
 
 @receiver(pre_save, sender=PrivacyPolicy)
 def ensure_single_true_status(sender, instance, **kwargs):
+    print("***************** dsjsjdh")
     if instance.status == "PUBLISHED":
-        sender.objects.exclude(pk=instance.pk).update(status="PUBLISHED")
+        print("****************************")
+        sender.objects.exclude(pk=instance.pk).update(status="UNPUBLISHED")
