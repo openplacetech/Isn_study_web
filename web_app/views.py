@@ -46,6 +46,8 @@ def isn_insights(request):
     page_obj = paginator.get_page(page_number)
     return render(request,'insights.html',{"latest_items":latest_items,'total_pages':total_pages,'insights':page_obj})
 
+def isn_insight(request,slug):
+    return render(request,'insight-detail.html')
 def isn_platform(request):
     return render(request,'isn_platform.html')
 

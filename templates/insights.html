@@ -25,7 +25,7 @@
                         <p>We care about your data in our <a style="cursor: pointer" href="/privacy-policy"><span>privacy policy</span></a></p>
                     </div>
 
-                    <button>Subscribe</button>
+                    <button class="suscribe__button">Subscribe</button>
                 </div>
             </div>
         </main>
@@ -48,6 +48,7 @@
         </div>
         <div class="latest_insights__container">
             {% if latest_items|length >= 1 %}
+            <a href="insight/1">
             <div class="left__content">
                 <img src="{{ latest_items.0.cover_image.url }}" />
 
@@ -57,11 +58,12 @@
                     <p>
                         {{ latest_items.0.summary|truncatechars:100}}
                         {% if  latest_items.0.summary|length > 100%}
-                        <span class=""> Read More</span>
+                        <a href="/insight/1"><span class=""> Read More</span></a>
                         {% endif %}
                     </p>
                 </div>
             </div>
+            </a>
             {% endif %}
             <div class="latest__container__right">
                 {% for item in latest_items|slice:"1:3" %}
@@ -146,12 +148,7 @@
                         enhance your recruitment strategies, and foster global partnerships.
                     </p>
 
-                    <div class="meetus__conatiner">
-                        <div class="meetus__btn__container">
-                            <button>Schedule a Meet </button>
-                            <button>Contact Us</button>
-                        </div>
-                    </div>
+                    {% include 'meet_us.html' %}
                     <p class="our__engagement__content__description">Unlock the potential of international education
                         with ISN.
                         Connect, engage, and thrive globally.</p>
