@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block base %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/error.css' %}" />
+    <section class="homepage__container">
+        <main class="section__container">
+            <article class="error-container">
+                <div class="error-content">
+                    <h1 style="color: #D24347;" class="title">Errror</h1>
+                    <p >Opps! the page your are looking is not available. We suggest you to go back
+                        to homepage.</p>
+                    <img src="{% static 'assets/images/404.svg' %}"/>
+                    <a href="index.html"><button style="margin-top: 2rem !important;" class="btn__primary__home ">Back to Home</button></a>
+                </div>
+            </article>
+        </main>
+    </section>
+{% endblock %}

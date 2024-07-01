@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block base %}
+
+    {% load custom_filters %}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/insigntsdetail.css' %}" />
     <section class="insignts__detail__home">
     <!-- <section class="section__container"> -->
@@ -15,7 +17,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
         </svg>
 
-        2 minute read - 1.6K views -
+        {{ insight.content|word_length }} minute read - 1.6K views -
         <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="14" height="14" viewBox="0 0 320 512">
           <path
             d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />

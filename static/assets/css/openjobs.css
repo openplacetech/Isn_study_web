@@ -1,0 +1,243 @@
+.open__job__landingpage{
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+}
+.open__job__image{
+  
+        max-height:400px  !important;
+        height: 100%;
+        max-width: 100%;
+      
+      
+}
+.openjob__title{
+    text-align: center;
+    max-width: 68%;
+    margin: 0.8rem auto;
+
+}
+
+/* opportunities list */
+
+.opportunities__list__container{
+    display: flex;
+    margin: 4rem 0;
+    gap:4rem;
+    padding: 2rem ;
+
+}
+.opportunities__left{
+    max-width: 300px;
+   
+    flex-shrink: 0;
+    /* width: 100%; */
+    
+}
+.opportunities__right{
+    flex-grow: 1;
+}
+.positions__options{
+    list-style: none;
+
+}
+.title__container{
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+    
+}
+.horizontal__line__left{
+    min-height: 60px;
+    background-color: #0040D8;
+    width: 6px;
+
+}
+.title__positions{
+    font-size: 20px;
+    font-weight: 500;
+   
+    line-height: 32px;
+}
+.positions__options {
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+}
+.positions__options li a{
+    color: black;
+    text-decoration: none;
+    
+}
+.share__linkedn__btn{
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;  
+    background-color: transparent;
+    border-radius: 40px;
+    max-width:100%;
+    border: 1px solid black;
+}
+.opportunities__card{
+    display: flex;
+    gap: 1.4rem;
+    flex-direction: column;
+    margin: 2rem 0;
+    
+}
+.type__opportunities__container{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+.type__opportunities{
+    border: 1px solid #090808;
+    padding:8px 16px;
+    border-radius: 29px;
+    font-size: 14px;
+}
+.opportunities__card h4{
+    font-size: 28px;
+    line-height: 44px;
+    font-weight: 600;
+}
+.img__container__opp{
+   
+    position: relative;
+    width: 100%;
+    
+}
+
+.img__container__opp span{
+    position: absolute;
+    bottom: 4rem;
+    right: -6rem;
+    max-width: 240px;
+}
+
+.see__positions__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.one{
+    top: 0;
+    position: absolute;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap:0.8rem
+}
+.left img{
+   width: 300px;
+    /* width:100%; */
+    
+
+}
+.img__container__opp__one {
+  
+   
+    position: relative;
+}
+.join__us__container{
+    display: grid;
+    gap: 1rem;
+    max-width: 800px;
+    margin-top: 2rem;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+.see__position__btn{
+    padding: 12px 16px;
+    background-color: var(--primary-color-red);
+    border-radius: 29px;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap:0.2rem
+}
+.img__container__mbl{
+    display: none;
+
+}
+.img__container__mbl img{
+    max-width: 100%;
+
+}
+.wrapper{
+   display: flex;
+   height: 40px;
+   width: 40px;
+   display: flex;
+   background: var(--primary-color-red);
+   align-items: center;
+   border-radius: 20px;
+   justify-content: center;
+}
+.follow-font{
+    font-size: 2rem;
+}
+.social__media__list{
+    display: grid;
+    margin-top: 2rem;
+    /* background-color: red; */
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+    list-style: none;
+    
+    
+}
+
+.social__media__list li{
+    display: flex;
+    align-items: center;
+    gap:0.8rem;
+
+}
+
+@media (min-width:1024px) {
+    .img__container__mbl{
+        display: none;
+    }
+}
+@media (max-width:1024px) {
+    .openjob__title{
+        max-width: 100%;
+    }
+    .opportunities__left{
+        display: none;
+    }
+    .opportunities__card{
+        box-shadow: 0px 8px 16px 0px #53648B1A;
+        padding: 1rem;
+       text-overflow: ellipsis;
+
+    }
+    .opportunities__list__container{
+        padding: 0;
+    }
+    .join__us__container{
+        grid-template-columns: 1fr;
+    }
+    .left img{
+        width: 100%;
+      
+    }
+    .img__container__opp{
+        display: none;
+    }
+    .img__container__mbl{
+        display: grid;
+       
+        flex-direction: column;
+    }
+   
+    
+}
+

@@ -47,7 +47,9 @@ def isn_insights(request):
     return render(request,'insights.html',{"latest_items":latest_items,'total_pages':total_pages,'insights':page_obj})
 
 def isn_insight(request,slug):
-    return render(request,'insight-detail.html')
+    insight = Insights.objects.get(slug=slug)
+    latest = Insights.objects.order_by('-created_at')[:3]
+    return render(request,'insight-detail.html',{"insight":insight,"latest":latest})
 def isn_platform(request):
     return render(request,'isn_platform.html')
 
@@ -56,6 +58,7 @@ def isn_market_entry(request):
     """this is isn market entry"""
 
 def currier_opportunity(request):
+    return render(request,'open-jobs.html')
     """this is currier opportunity"""
 
 def privacy_policy(request):

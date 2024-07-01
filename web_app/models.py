@@ -13,7 +13,7 @@ class PartnershipRequest(BaseModel):
     title = models.CharField(max_length=200)
     email = models.EmailField()
     phone_no = models.CharField(max_length=200)
-    interested_service = models.CharField(choices=INTERESTED_SERVICE,max_length=100)
+    interested_service = models.CharField(max_length=100)
     message = models.TextField()
     is_accept_privacy_policy = models.BooleanField(default=False)
     def __str__(self):
