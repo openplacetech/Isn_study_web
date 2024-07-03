@@ -1,5 +1,6 @@
 from django.urls import path
-from web_app.views import home,privacy_policy,isn_insights,isn_platform,partnership_request,our_journey,isn_insight,currier_opportunity
+from web_app.views import home,privacy_policy,isn_insights,isn_platform,partnership_request,\
+    our_journey,isn_insight,currier_opportunity,our_teams
 
 urlpatterns = [
     path("",home,name="home"),
@@ -9,6 +10,9 @@ urlpatterns = [
     path("platform",isn_platform,name="isn_platform"),
     path("contact/<str:contact_type>",partnership_request,name="partnership_request"), #partnership and us
     path("journey",our_journey,name="our_journey"),
-    path('jobs',currier_opportunity,name="currier_opportunity")
+    path('jobs',currier_opportunity,name="currier_opportunity"),
+    # path('job/<str:slug>')
+    path('teams',our_teams,name='teams'),
+
 ]
 

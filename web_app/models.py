@@ -3,7 +3,7 @@ from ckeditor.fields import RichTextField
 from tinymce.models import HTMLField
 from base.models import BaseModel
 from django.utils.text import slugify
-from web_app.constrants import COUNTRY_CHOICES,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
+from web_app.constrants import COUNTRY_CHOICES,SOCIALMEDIA_TYPE,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
 from django.contrib.auth.models import User
 
 class PartnershipRequest(BaseModel):
@@ -140,6 +140,18 @@ class ISNTeam(BaseModel):
         db_table = "teams"
         verbose_name_plural = "Our Teams"
 
+
+class SocialMedia(BaseModel):
+    name = models.CharField(max_length=100,choices=SOCIALMEDIA_TYPE,unique=True)
+    followers = models.CharField(max_length=100,default="",blank=True)
+    link = models.URLField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "social_media"
+        verbose_name_plural = "Social Media"
 
 # class ApplyForCurrier(BaseModel):
 #     job = models.ForeignKey(CurrierOpportunities,on_delete=models.DO_NOTHING)
