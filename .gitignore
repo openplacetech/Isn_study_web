@@ -1,5 +1,6 @@
 main_template
 .env
+*.pyc
 venv
 media
 main_template
