@@ -323,7 +323,9 @@
       <div></div>
     </div>
     <div class="btn__container">
-      <button class="btn__primary__home">Partner with us</button>
+        <a href="/contact/partnership">
+            <button class="btn__primary__home">Partner with us</button>
+        </a>
     </div>
     <hr class="horizontal__line" />
     <div class="partner__us__content">
@@ -556,6 +558,7 @@
     </main>
   </section>
   <section>
+  {% if insights|length >= 1 %}
     <main class="section__container">
       <div class="our__blogs__content">
         <div class="our__blogs__content__container">
@@ -565,7 +568,6 @@
         </div>
         <div class="blogs__insights__container">
           <div class="main__blog__container">
-              {% if insights|length >= 1 %}
             <div class="container__left">
               <div class="img__container">
                 <img src="{{ insights.0.cover_image.url }}" />
@@ -580,7 +582,7 @@
                 </p>
               </div>
             </div>
-          {% endif %}
+
             <div class="container__right">
               <div class="latest__blog__title">Latest Insights</div>
                 {% for item in insights|slice:"1:3" %}
@@ -600,5 +602,6 @@
         </div>
       </div>
     </main>
+  {% endif %}
   </section>
 {% endblock %}
