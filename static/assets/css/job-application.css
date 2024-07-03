@@ -14,7 +14,7 @@
 .form{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.4rem;
 }
 
 .steps{
@@ -32,7 +32,7 @@
 .user__information__grid{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
+    gap: 2.4rem;
 }
 .title__form{
     margin-bottom: 1.4rem;
@@ -43,6 +43,7 @@
     min-height: 120px;
     border-radius: 10px;
     background-color: #F7FAFF;
+    color: #808080;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,8 +55,9 @@
     flex-direction: column;
 }
 .next__btn{
-    min-width: 200px;
+    min-width: 250px;
     width: 100%;
+    font-weight: 500;
 }
 .brows__btn{
     background-color: #E9A1A3;
@@ -157,12 +159,29 @@
     padding: 0 !important;
   }
 
-  
+  .next__prev__btn__container{
+    display: flex;
+    gap: 2rem;
+  }
+  .previousbtn{
+   background-color: white;
+   color: #D24347;
+   border: 1px solid #D24347;
+  }
+
+  .form__description{
+    color: #808080;
+    font-size: 14px;
+    line-height: 24px;
+  }
   
 
 @media (max-width:1024px) {
     .job__application__container{
         max-width: 100%;
+    }
+    .next__prev__btn__container{
+      flex-direction: column;
     }
 }
 
@@ -173,4 +192,5 @@
     .next__btn{
         min-width: 100% !important;
     }
+    
 }

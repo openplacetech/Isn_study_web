@@ -38,7 +38,7 @@
 
 function setupNavbar() {
   const moreToggle = document.getElementById('more-toggle');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const dropdownMenu = document.querySelector('.dropdown-menu-navbar');
 
   if (moreToggle && dropdownMenu) {
       moreToggle.addEventListener('click', function(e) {

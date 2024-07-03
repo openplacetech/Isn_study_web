@@ -57,7 +57,7 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
-    """this is isn market entry"""
+    return render(request,'market-entry.html')
 
 def currier_opportunity(request):
     # page_number = request.GET.get('page')
