@@ -13,7 +13,7 @@
           <li><a class="{% if request.path == "/platform" %}active {% endif %}" href="/platform">ISN Platforms</a></li>
           <li><a class="" href="#">Market Entry</a></li>
           <li><a class="{% if request.path == "/insights" %}active {% endif %}" href="/insights">Insights</a></li>
-          <li class="more__menu">
+            <li class="more__menu">
             <span id="more-toggle" style="display: inline-flex; align-items: center;"> More <svg class="arrow-down"
                 width="24" height="24" viewBox="0 0 24 24">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
@@ -21,19 +21,24 @@
 
 
             </span>
-            <ul class="dropdown__style dropdown-menu ">
+            <ul class="dropdown__style dropdown-menu-navbar ">
               <li><a href="/journey">Our Journey</a></li>
-              <li>
-                <a>Human Resource</a>
+              <li class="human-resource-container">
+                <a>Human Resource
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6" width="16" height="16">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
                 <ul class="sub-dropdown-menu dropdown__style">
-                  <li><a href="/teams"></a></li>
+                  <li><a href="/teams">Teams</a></li>
                   <li><a href="/teams">Benefits</a></li>
                   <li><a href="/jobs">Opportunities</a></li>
                 </ul>
 
 
               </li>
-              <li><a href="#contact">Privacy Policy</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
 
 

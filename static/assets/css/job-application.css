@@ -11,12 +11,14 @@
 .job__form__container{
     margin: 3rem 0;
 }
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-}
 
+.form__description{
+  background-color:#F7FAFF;
+  padding:12px 20px ;
+  border-radius: 10px;
+
+}
+ 
 .steps{
     color: #3F525A;
     font-size: 18px;
@@ -29,11 +31,7 @@
 .margin{
     margin-bottom: 1.8rem !important;
 }
-.user__information__grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2.4rem;
-}
+
 .title__form{
     margin-bottom: 1.4rem;
 }
@@ -71,93 +69,8 @@
     grid-template-columns: 1fr;
    }
 
-   .radio-group {
-    margin-bottom: 20px;
-  }
   
-  .radio-group p {
-    margin-bottom: 10px;
-    color: #808080;
-  }
-  
-  .radio-options {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0.4rem;
-  }
-  
-  .radio-option {
-    margin-right: 20px;
-    display: flex;
-
-    align-items: center;
-  }
-  
-  .input__form[type="radio"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    background-color: #F7FAFF;
-    border: 1px solid #E5EFFF;
-    border-radius: 12px;
-    outline: none;
-    margin-right: 10px;
-    position: relative;
-    cursor: pointer;
-    padding: 0 !important;
-  }
-  .policy__list{
-    color: #808080;
-
-  }
-  .policy__list li{
-    margin: 0.4rem 0;
-    
-  }
-  .check__box__for__policy{
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    color: #808080;
  
-    
-  }
-  
-  .input__form[type="radio"]:checked {
-    border-color: #808080;
-  }
-  
-  .input__form[type="radio"]:checked::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background-color: #808080;
-    border-radius: 50%;
-  }
-
-  .policy-checkbox[type="radio"]{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 24px !important;
-    height: 24px !important;
-    background-color: #F7FAFF;
-    border: 1px solid #E5EFFF;
-    border-radius: 12px;
-    outline: none;
-    margin-right: 10px;
-    position: relative;
-    cursor: pointer;
-   
-    padding: 0 !important;
-  }
 
   .next__prev__btn__container{
     display: flex;
@@ -167,6 +80,9 @@
    background-color: white;
    color: #D24347;
    border: 1px solid #D24347;
+  }
+  .previousbtn:hover{
+    background-color: transparent;
   }
 
   .form__description{

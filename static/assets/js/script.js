@@ -31,6 +31,8 @@
 }
 
 
+
+
   
 
 
@@ -74,3 +76,47 @@ document.addEventListener('DOMContentLoaded', setupNavbar);
 
 
  createAvatar()
+
+
+ 
+ document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.slider');
+    const sliderContainer = slider.querySelector('.slider__container');
+    const slides = sliderContainer.querySelectorAll('.slider__card');
+    const prevBtn = slider.querySelector('.slider__arrow--left');
+    const nextBtn = slider.querySelector('.slider__arrow--right');
+    let currentIndex = 0;
+
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        sliderContainer.style.transform = `translateX(${offset}%)`;
+        updateButtonStates();
+    }
+   
+
+    function nextSlide() {
+        if (currentIndex < slides.length - 3) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+
+    function updateButtonStates() {
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = slides.length % 3 !== 0 || currentIndex === Math.floor(slides.length / 3) - 1;
+
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+   
+    // Initialize button states
+    updateButtonStates();
+});

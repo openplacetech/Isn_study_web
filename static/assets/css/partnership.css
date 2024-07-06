@@ -27,15 +27,7 @@
 .grid-flex{
     gap:1rem
 }
-.partnership__input{
-  width: 100%;
-  outline: none;
-  padding:12px 20px;
-  border: none;
-  border: 1px solid #E5EFFF;
-  background-color: #F7FAFF;
-  border-radius: 10px;
-}
+
 
 .text-area{
     min-height: 158px;
@@ -53,6 +45,8 @@
     flex-direction: column;
    
   }
+
+  
   
 .btn-submit{
     width: 100% !important;

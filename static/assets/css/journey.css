@@ -42,6 +42,19 @@
   /* object-fit: cover; */
 }
 
+.f{
+
+
+  margin-left: 2rem;
+  margin-top: 0rem;
+  margin-bottom: -12rem; 
+}
+.f img{
+width: 600px;
+max-width:100%; 
+max-height: 400px;
+object-fit: cover;
+}
 .ellipse {
   position: absolute;
 
@@ -75,10 +88,14 @@
   height: 100%;
   width: 100%;
 }
+.padding__dream{
+  padding-top: 12rem;
+}
 
 .our__dream {
   justify-content: start !important;
   color: white !important;
+  
 }
 
 .milestones__content__container {
@@ -209,6 +226,21 @@
     grid-template-columns: repeat(2,1fr);
     
   }
+  .f{
+    /* margin-left: 2rem; */
+  margin-top: 0rem;
+  margin-bottom: -8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  }
+  .f img {
+    max-width: 400px;
+    width:100%;
+
+   
+  }
 
   .journey__landing__page {
     grid-template-columns: repeat(1, 1fr);
@@ -235,4 +267,13 @@
     grid-template-columns: repeat(1, 1fr);
   }
   
+}
+
+@media (max-width:468px){
+  .f{
+    margin-bottom: -5rem;
+  }
+  .f img{
+    max-width: 300px;
+  }
 }
