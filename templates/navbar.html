@@ -3,7 +3,9 @@
     <div class="section__container">
       <nav class="navbar">
         <div class="logo-container">
-          <img src="{% static 'assets/images/isnlogo.svg' %}" alt="international study network logo" class="logo" />
+            <a href="/">
+                <img src="{% static 'assets/images/isnlogo.svg' %}" alt="international study network logo" class="logo" />
+            </a>
         </div>
 
         <ul class="navlink_container">
@@ -19,14 +21,28 @@
 
 
             </span>
-            <ul class="dropdown-menu">
-              <li><a href="/journey">Our Journey</a></li>
-              <li><a href="">Human Resource</a></li>
-              <li><a href="/privacy-policy">Private and Policy</a></li>
+            <ul class="dropdown__style dropdown-menu ">
+              <li><a href="#partner-deals">Our Journey</a></li>
+              <li>
+                <a>Human Resource</a>
+                <ul class="sub-dropdown-menu dropdown__style">
+                  <li><a href="#partner-deals">Recruitment</a></li>
+                  <li><a href="#careers">Development</a></li>
+                  <li><a href="#contact">Career Pathways</a></li>
+                </ul>
+
+
+              </li>
+              <li><a href="#contact">Privacy Policy</a></li>
             </ul>
+
+
+
+
+
           </li>
           <button class="btn__secondary__blueborder">University Login</button>
-          <a href="/partnership"><button class="btn__primary">Start Patnership</button></a>
+          <a href="/contact/partnership"><button class="btn__primary">Start Patnership</button></a>
         </ul>
         <div class="navbar__menu__icon">
           <img src="{% static 'assets/images/menuicon.svg' %}" />

@@ -62,7 +62,7 @@ def isn_market_entry(request):
 def currier_opportunity(request):
     # page_number = request.GET.get('page')
     opportunity = CurrierOpportunities.objects.all()
-    return render(request,'open-jobs.html',opportunity)
+    return render(request,'open-jobs.html',{'opportunity':opportunity})
 
 
 def privacy_policy(request):

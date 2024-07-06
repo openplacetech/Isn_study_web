@@ -1,5 +1,5 @@
 from django.contrib import admin
-from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,CurrierOpportunities
+from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,CurrierOpportunities,SocialMedia
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -24,6 +24,13 @@ class ISNTeamAdmin(admin.ModelAdmin):
 class CurrierOpportunitiesAdmin(admin.ModelAdmin):
     list_display = ('job_title', 'category', 'job_mode', 'job_type','job_status')
     search_fields = ('job_title', 'job_status','job_mode', 'job_type')
+    list_filter = ('created_at', 'updated_at','category')
+
+
+@admin.register(SocialMedia)
+class SocialMediaAdmin(admin.ModelAdmin):
+    list_display = ('name', 'followers', 'link')
+    search_fields = ('name',)
     list_filter = ('created_at', 'updated_at')
 
 admin.site.register(PrivacyPolicy)
