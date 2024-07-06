@@ -4,8 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>International study center</title>
+    <meta property="og:title" content="Your Page Title">
+    <meta property="og:description" content="A brief description of your page content.">
+    <meta property="og:image" content="{% static 'assets/images/isnlogo.svg' %}">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="{% static 'assets/images/isnlogo.svg' %}" type="image/x-icon">
+    <!-- Optional: Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Page Title">
+    <meta name="twitter:description" content="A brief description of your page content.">
+    <meta name="twitter:image" content="{% static 'assets/images/isnlogo.svg' %}">
 
+  <title>International study center</title>
   <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from web_app.forms import PartnershipRequest
+from web_app.forms import PartnershipRequestForm
 from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam
 from django.conf import settings
 from django.core.mail import send_mail
@@ -13,18 +13,14 @@ def home(request):
 
 def partnership_request(request,contact_type):
     if request.method == 'POST':
-        form = PartnershipRequest(request.POST)
+        form = PartnershipRequestForm(request.POST)
         if form.is_valid():
             partnership=form.save()
-            # send_mail(
-            #     subject=contact.subject,
-            #     message=contact.message,
-            #     from_email=contact.email,
-            #     recipient_list=[settings.CONTACT_EMAIL],
-            # )
-            return redirect('partnership_request')
+            return redirect('partnership_request',contact_type="partnership")
+        else:
+            print(form.errors)
     else:
-        form = PartnershipRequest()
+        form = PartnershipRequestForm()
     if contact_type == "us":
         return render(request, 'contact.html', {'form': form})
     elif contact_type == "partnership":
