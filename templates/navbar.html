@@ -9,10 +9,10 @@
         </div>
 
         <ul class="navlink_container">
-          <li><a class="active" href="/">Home</a></li>
-          <li><a href="/platform">ISN Platforms</a></li>
-          <li><a href="#">Market Entry</a></li>
-          <li><a href="/insights">Insights</a></li>
+          <li><a class="{% if request.path == "/" %}active {% endif %}" href="/">Home</a></li>
+          <li><a class="{% if request.path == "/platform" %}active {% endif %}" href="/platform">ISN Platforms</a></li>
+          <li><a class="" href="#">Market Entry</a></li>
+          <li><a class="{% if request.path == "/insights" %}active {% endif %}" href="/insights">Insights</a></li>
           <li class="more__menu">
             <span id="more-toggle" style="display: inline-flex; align-items: center;"> More <svg class="arrow-down"
                 width="24" height="24" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@
               <li>
                 <a>Human Resource</a>
                 <ul class="sub-dropdown-menu dropdown__style">
-                  <li><a href="/teams">Team</a></li>
+                  <li><a href="/teams"></a></li>
                   <li><a href="/teams">Benefits</a></li>
                   <li><a href="/jobs">Opportunities</a></li>
                 </ul>
