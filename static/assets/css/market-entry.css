@@ -1314,7 +1314,6 @@
     justify-content: flex-start;
     max-width: 100%;
   }
-  
   .world-content {
     flex: 1;
     flex-direction: column;
@@ -1979,7 +1978,6 @@
     line-height: normal;
     letter-spacing: normal;
   }
-  
   @media screen and (max-width: 1275px) {
     .navigation {
       padding-left: var(--padding-26xl);

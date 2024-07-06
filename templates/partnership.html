@@ -11,73 +11,84 @@
               >Your Partnership <br />
               With ISN</span
             >
+
           </div>
           <p class="secondary_title">Lorem ipsum dolor sit.</p>
-          <form class="partnership__form flex-row-aligned">
+          <form class="partnership__form flex-row-aligned" method="post" action="/contact/partnership">
+              {% csrf_token %}
             <input
               class="partnership__input"
               placeholder="Name of Institution"
+              name="institute_name"
             />
             <input
               class="partnership__input"
               placeholder="Address"
-            />
-            <input
-              class="partnership__input"
-              placeholder="Contact Person"
+              name="address"
             />
             <div style="width: 100%" class="flex-row-aligned grid-flex">
               <input
                 class="partnership__input"
-                placeholder="Email address"
+                name="contact_person"
+                placeholder="Contact Person"
               />
               <input
                 class="partnership__input"
-                placeholder="Phone number"
+                placeholder="Title"
+                name="title"
               />
             </div>
+              <input
+                    name="email"
+              class="partnership__input"
+              placeholder="Email address"
+            />
+              <input
+                class="partnership__input"
+                placeholder="Phone number"
+                name="phone_no"
+              />
             <div class="services-container flex-row-aligned">
               <p>Which services are you interested in?</p>
 
               <div class="radio-option">
                 <input
-                  type="radio"
+                  type="checkbox"
                   id="service1"
-                  name="service"
-                  value="service1"
+                  name="agent"
+                  value="Hiring as Agent"
                 />
                 <label for="service1">Hiring as Agent</label>
               </div>
 
               <div class="radio-option">
                 <input
-                  type="radio"
+                  type="checkbox"
                   id="service2"
-                  name="service"
-                  value="service2"
+                  name="market"
+                  value="Market Entry"
                 />
                 <label for="service2">Market Entry</label>
               </div>
 
               <div class="radio-option">
                 <input
-                  type="radio"
+                  type="checkbox"
                   id="service3"
-                  name="service"
-                  value="service3"
+                  name="other"
+                  value="Other Specify"
                 />
                 <label for="service3">Other Specify</label>
               </div>
 
             </div>
-            <textarea placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area"></textarea>
+            <textarea  name="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area"></textarea>
             <div  style="flex-direction:row; align-items: center !important;" class="services-container flex-row-aligned">
-              <input type="checkbox"/>
+              <input type="checkbox" name="is_accept_privacy_policy"/>
               <span>I agree to the <a href="/privacy-policy">Terms and Privacy Policy</a>.</span>
             </div>
 
-
-            <button  class="suscribe__button btn-submit">Submit</button>
+            <button  class="suscribe__button btn-submit" type="submit">Submit</button>
           </form>
         </aside>
 

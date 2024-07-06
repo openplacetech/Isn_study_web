@@ -1,10 +1,18 @@
+
+
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+{#<div class="meetus__conatiner">#}
+{#    <div class="meetus__btn__container">#}
+{#        <button id="openCalendly">Schedule a Meet </button>#}
+{#        <button><a href="/contact/us">Contact Us</a></button>#}
+{#    </div>#}
+{#</div>#}
 <div class="meetus__conatiner">
-    <div class="meetus__btn__container">
-        <button id="openCalendly">Schedule a Meet </button>
-        <button><a href="/contact/us" style="text-decoration: none ; color: var(--secondary-blue)">Contact Us</a></button>
-    </div>
-</div>
+            <div class="meetus__btn__container">
+              <button id="openCalendly" class="btn__primary schedule__meet__btn ">Schedule a Meet </button>
+              <button class="btn__contact__us"><a href="/contact/us" style="text-decoration: none ; color: var(--secondary-blue)">Contact Us</a></button>
+            </div>
+          </div>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script>
         document.getElementById('openCalendly').addEventListener('click', function() {

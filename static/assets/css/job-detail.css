@@ -1,0 +1,128 @@
+.job__content__container{
+    padding: 5rem 0;
+    display: flex;
+    flex-grow: 1;
+    gap: 3rem;
+}
+.job__content__left{
+display: flex;
+gap: 2rem;
+flex-direction: column;
+}
+.heading__title{
+  font-size: 3rem;
+}
+.job__content__right{
+    min-width:290px;
+
+    min-height: 500px;
+}
+
+.content__list{
+    color: #3F525A;
+    font-size: 18px;
+}
+.intresting__slogan__container{
+    color: #3F525A;
+    font-size: 18px;
+}
+.applynow__btn{
+    min-width: 250px;
+    width: 100%;
+}
+.job__content__right{
+    border: 1.4px dashed var(--Primary-Primary200, #F0C0C2);
+    max-height:250px;
+}
+.job__content__right{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.6rem;
+    /* padding: 0.8rem; */
+    padding: 0.8rem;
+
+    border-radius: 8px;
+    min-height:520px;
+    height: 100%;
+}
+.uploder__right{
+    width: 100%;
+}
+.header__fast__reply{
+    font-weight: 600;
+    align-self: flex-start !important;
+}
+.share__to__social__container{
+    display: flex;
+   inset: 0;
+   align-items: center;
+    margin: 2rem 0;
+    list-style: none;
+
+    gap: 1rem;
+}
+.copy__link__btn{
+    display: flex;
+    width: 100%;
+  max-width: 400px;
+
+}
+.copy__input{
+    padding:12px 20px;
+    background-color: #F7FAFF;
+    inset: 0;
+    outline: none   ;
+    border-top-left-radius: 42px;
+    border-bottom-left-radius: 42px;
+    border: 1px solid #E5EFFF;
+    width: 100%;
+    font-size: 14px;
+  box-sizing: border-box;
+  
+
+}
+.social__media__icons__list{
+    display: flex;
+    inset: 0;
+    align-items: center;
+    
+     list-style: none;
+ 
+     gap: 1rem;
+}
+.copy__btn{
+    background-color: #D24347;
+    padding: 12px 20px;
+    color: white;
+    border-top-right-radius: 42px;
+    border-bottom-right-radius: 42px;
+    outline: none;
+    border: none;
+}
+.Similar__Opportunities__container{
+    margin: 2rem 0;
+}
+.applynow__btn__right{
+    width: 100% !important;
+    max-width: 100% !important;
+}
+@media (max-width:1024px) {
+    .job__content__container{
+        flex-direction: column;
+        gap:2rem;
+    } 
+    .job__content__right{
+        max-width: 100%;
+    }
+    .share__to__social__container{
+        flex-direction: column;
+    }
+}
+@media (max-width:768px){
+   
+    .applynow__btn{
+        min-width: 100% !important;
+    }
+    
+}

@@ -96,7 +96,9 @@
 .box-4 {
   grid-row: span 35;
 }
-
+.selfappie__icon{
+  max-width: 160px;
+}
 .triangle {
   width: 0;
   height: 0;

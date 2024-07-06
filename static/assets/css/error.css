@@ -12,8 +12,11 @@
     max-width: 68%;
     text-align: center;
     margin: 0 auto;
+    display: flex   ;
+    flex-direction: column;
  
 }
+
 
 .error-content h1{
    line-height: 72px;
@@ -28,7 +31,7 @@
 
 
 .error-content img{
-    width:100% ;
+    max-width:100% ;
     margin-top: 2rem;
     min-height: 100px;
     object-fit: cover;
