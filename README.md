@@ -19,6 +19,7 @@ Welcome to the My Website Project! This project is designed to [describe the pur
 - Feature 1: Description of feature 1
 - Feature 2: Description of feature 2
 - Feature 3: Description of feature 3
+- Feature 3: Description of feature 4
 
 ## Technologies Used
 - **Frontend:** HTML, CSS, JavaScript, [Other frontend technologies]
