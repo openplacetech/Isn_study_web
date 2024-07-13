@@ -7,10 +7,10 @@
         <div class="hero__left">
           <div class="hero__container__slogan">
 {#            <p>INTERNATIONAL STUDY NETWORK</p>#}
-            <h1 style="font-weight: 600;">
+            <h1>
               Diversify Your <br />
               University: Partner <br />
-              with Today.
+              with <span><img style="scale: unset;" src="{% static 'assets/images/isn.svg' %}"/></span>  Today.
             </h1>
             <p>
               Partner with ISN to unlock your university's potential,
@@ -70,32 +70,14 @@
     <main class="ourpartner__container">
       <div class="title">Our<span> Partners.</span></div>
 
-      <ul class="ourpartner__container__lists">
-        <li>
-          <img src="{% static 'assets/images/TSU.svg' %} " class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/UNT.svg' %}" class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/WSU.svg' %}" class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/MSU.svg' %}" class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/WESU.svg' %} " class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/TUNM.svg' %}" class="partner__logo" />
-
-        </li>
-      </ul>
+      <div class="marquee marquee--6">
+        <img class="marquee__item" src={% static 'assets/images/TSU.svg' %}    alt="">
+        <img class="marquee__item" src="{% static 'assets/images/UNT.svg' %}"  alt="">
+        <img class="marquee__item" src="{% static 'assets/images/WSU.svg' %}"  alt="">
+        <img class="marquee__item"  src="{% static 'assets/images/MSU.svg' %}"  alt="">
+        <img class="marquee__item" src="{% static 'assets/images/WESU.svg' %} "  alt="">
+        <img class="marquee__item" src="{% static 'assets/images/TUNM.svg' %}"  alt="">
+      </div>
       <div class="ourpartner__chart__container">
         <img src="{% static 'assets/images/chart.svg' %}" />
 
@@ -384,14 +366,11 @@
           <div class="slider__container">
                 {% for testimonial in testimonials %}
                     <div class="slider__card">
-                      <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-                      <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
-                        exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
-                        I highly recommend their services!"</p>
+                      <img class="img" src="{{ testimonial.photo.url }}" alt="User testimonial background" />
+                      <p>{{ testimonial.message }}</p>
                       <div class="user__detail">
-                        <h4>Ed Colyer</h4>
-                        <p>Director of International Marketing & Recruitment Office of International Affairs Texas State
-                          University</p>
+                        <h4>{{ testimonial.name }}</h4>
+                        <p>{{ testimonial.designation }} at {{ testimonial.company_name }}</p>
                       </div>
                     </div>
               {% endfor %}
@@ -489,24 +468,21 @@
             </div>
           </div>
           <div class="card__trust">
-            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <img src="{% static 'assets/images/method-comp.svg' %}" />
             <div class="card__trust__content">
-              <h4>Comprehensive Research</h4>
+              <h4>Transparent Methodology</h4>
               <p>
-                Our data is meticulously gathered through extensive research and
-                verified surveys, ensuring that every piece of information is
-                both accurate and up-to-date.
+                We are committed to transparency in our data collection methods. Our rigorous standards and practices ensure the highest level of reliability and trustworthiness.
               </p>
             </div>
           </div>
           <div class="card__trust">
-            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <img src="{% static 'assets/images/trusted.svg' %}" />
             <div class="card__trust__content">
-              <h4>Comprehensive Research</h4>
+              <h4>Trusted by
+                US Institutions</h4>
               <p>
-                Our data is meticulously gathered through extensive research and
-                verified surveys, ensuring that every piece of information is
-                both accurate and up-to-date.
+                Educational institutions and recruiting partners around the globe rely on ISN for accurate and reliable data. Our platform is built on a foundation of trust and integrity, making us a dependable partner in international education.
               </p>
             </div>
           </div>

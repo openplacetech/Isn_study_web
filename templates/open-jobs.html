@@ -64,21 +64,18 @@
                         <h4>{{ job.job_title }} </h4>
                         <div class="type__opportunities__container">
                             <span class="type__opportunities">Tartu </span>
-                            <span>{{ job.job_type }}</span>
+                            <span>{{ job.get_job_type_display }}</span>
                         </div>
-                        <p>Due to growing workload, we are looking for experienced and talented Full-Stack Developers to
-                            join our fast-paced Engineering team. You will work closely with Product, Design and
-                            Marketing to analyze, develop, debug, test, roll-out and support new and existing product
-                            features.</p>
+                        <p>{{ job.job_summary|truncatechars:500 }}</p>
                         <div class="see__positions__container">
                             <span></span>
-                            <button class="see__position__btn ">See positions <svg xmlns="http://www.w3.org/2000/svg"
+                            <a href="/apply/{{ job.slug }}" style="text-decoration: none; cursor: pointer" class="see__position__btn ">See positions <svg xmlns="http://www.w3.org/2000/svg"
                                     fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16" height="16"
                                     stroke="currentColor" class="size-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                     {% endfor %}

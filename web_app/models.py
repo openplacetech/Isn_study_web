@@ -99,6 +99,7 @@ class InsightComments(BaseModel):
 
 class CurrierOpportunities(BaseModel):
     job_title = models.TextField()
+    job_summary = models.TextField(max_length=500,default="" ,help_text="Job summary should less then 500 character")
     job_description = HTMLField()
     category = models.CharField(choices=JOB_CATEGORY,max_length=100)
     keyword = models.TextField(help_text="only for SEO write a keyword seperated by comma(,) eg: python,django,hr")
@@ -155,6 +156,7 @@ class SocialMedia(BaseModel):
 
 
 class Testimonials(BaseModel):
+    photo = models.ImageField(upload_to="testimonial/photo",null=True,blank=True)
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
     company_name = models.CharField(max_length=200)

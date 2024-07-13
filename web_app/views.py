@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from web_app.forms import PartnershipRequestForm
-from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam
+from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 def home(request):
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     latest_items = insight_list[:3]
-    testimonials = "ssssdddddd"
+    testimonials = Testimonials.objects.all()
     return  render(request,"index.html",{"insights":latest_items,"testimonials":testimonials})
 
 def partnership_request(request,contact_type):
@@ -61,6 +61,9 @@ def currier_opportunity(request):
     opportunity = CurrierOpportunities.objects.all()
     return render(request,'open-jobs.html',{'opportunity':opportunity})
 
+def job_detail(request,slug):
+    job = CurrierOpportunities.objects.get(slug=slug)
+    return render(request,'job-detail.html',{'job':job})
 
 def privacy_policy(request):
     privacy = PrivacyPolicy.objects.get(status="PUBLISHED")
@@ -73,8 +76,8 @@ def our_teams(request):
     page_number = request.GET.get('page')
     latest_items = []
     no_of_item = 9
-    team = ISNTeam.objects.order_by('-created_at')  # Fetch all items
-    paginator = Paginator(team, no_of_item)  # Show 10 items per page
+    team = ISNTeam.objects.order_by('-created_at')
+    paginator = Paginator(team, no_of_item)
     total_pages = paginator.num_pages
     page_obj = paginator.get_page(page_number)
     return render(request,'team.html',{'teams':team,"page":total_pages})
