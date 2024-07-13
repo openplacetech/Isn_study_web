@@ -226,7 +226,10 @@ color: var(--primary-color-red);
 
 
 
-
+.read__more__blog{
+  color: var(--primary-color-red);
+  cursor: pointer;
+}
 
 
 .isn__banner {

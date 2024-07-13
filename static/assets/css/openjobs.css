@@ -12,13 +12,58 @@
       
       
 }
-.openjob__title{
+.openjob__title,.openjob__title__secondary{
     text-align: center;
-    max-width: 68%;
+    max-width: 50%;
     margin: 0.8rem auto;
+    
 
 }
+.mbl__for__container{
+    background-color: red;
+    
+}
+.openjob__title__secondary{
+    font-weight: 400;
+}
+ .openjob__title__mbl{
+ text-align: left;
+ 
+}
+.openjob__title__mbl{
+    font-size: 36px;
+    line-height: 40px !important;
+    margin-bottom: 16px;
+}
 
+.openjob__title__secondary__mbl{
+    color: white;
+}
+
+.container__for__mobile{
+    background-color: var(--primary-color-red);
+    text-align: left;
+    padding: 2rem;
+    max-width: 100%;
+}
+
+.nav__tab{
+    display: flex;
+    gap:10px;
+   align-items: center;
+   margin-top: 3rem;
+   overflow-x: scroll;
+   scrollbar-width: none;
+   background: linear-gradient(270deg, #D24347 62.67%, rgba(210, 67, 71, 0) 122.5%);
+
+
+}
+.tab{
+    flex-shrink: 0;
+    overflow-x: scroll;
+    color: white;
+    
+}
 /* opportunities list */
 
 .opportunities__list__container{
@@ -234,10 +279,16 @@
     border: 1px solid #FFFFFF !important;
     color: white;
 }
+
+
 @media (min-width:1024px) {
     .img__container__mbl{
         display: none;
     }
+    .container__for__mobile{
+        display: none;
+    }
+    
 }
 @media (max-width:1024px) {
     .openjob__title{
@@ -286,6 +337,9 @@
         width: 100%;
         align-items: center;
         justify-content: center;
+    }
+    .container__for__mobile{
+        display: block;
     }
 }
 

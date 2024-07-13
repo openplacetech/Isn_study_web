@@ -9,8 +9,8 @@
         </div>
 
         <ul class="navlink_container">
-          <li><a class="{% if request.path == "/" %}active {% endif %}" href="/">Home</a></li>
-          <li><a class="{% if request.path == "/platform" %}active {% endif %}" href="/platform">ISN Platforms</a></li>
+          <li><a class="{% if request.path == "/" %} active {% endif %}" href="/">Home</a></li>
+          <li><a class="{% if request.path == "/platform" %} active {% endif %}" href="/platform">ISN Platforms</a></li>
           <li><a class="{% if request.path == "/market-entry" %}active {% endif %}" href="/market-entry">Market Entry</a></li>
           <li><a class="{% if request.path == "/insights" %}active {% endif %}" href="/insights">Insights</a></li>
             <li class="more__menu">

@@ -12,7 +12,7 @@
     text-align: center;
     color: #808080;
     flex:1;
-   padding-left: 4%;
+   padding-left: 4rem;
 }
 .partnership__form{
     flex-direction:column ;
