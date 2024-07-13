@@ -26,10 +26,10 @@
 
           <div class="hero__container__question">
             <p>What are you looking for?</p>
-            <p class="faqs">
+            <a href="/journey" class="faqs">
               I want to diversify my international student population at my
               academic institution.
-            </p>
+            </a>
             <p style="font-size: 14px">
               I am recruitment partner who wants to leverage US applications,
               I am a student who wants to study in the US.
@@ -350,7 +350,8 @@
       </div>
     </main>
   </section>
-  <section class="saying__container">
+  {% if testimonials|length > 0 %}
+      <section class="saying__container">
     <main class="section__container">
 
       <div class="saying__content">
@@ -366,7 +367,7 @@
           <div class="slider__container">
                 {% for testimonial in testimonials %}
                     <div class="slider__card">
-                      <img class="img" src="{{ testimonial.photo.url }}" alt="User testimonial background" />
+                      <img class="img" src="{{ testimonial.photo.url }}" alt="User testimonial background"  width="145" height="149"/>
                       <p>{{ testimonial.message }}</p>
                       <div class="user__detail">
                         <h4>{{ testimonial.name }}</h4>
@@ -391,6 +392,7 @@
     </main>
 
   </section>
+    {% endif %}
   <section class="our__diversity__container">
     <main class="section__container">
       <div class="diversity__content">

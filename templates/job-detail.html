@@ -7,138 +7,14 @@
     <section class="section__container">
         <main class="job__content__container">
             <div class="job__content__left">
-                <div class="content__title">Full-Stack <span>Developers </span></div>
+                <div class="content__title">{{ job.job_title }} <span>Developers </span></div>
                 <div>
-                    <h6 class="heading__title">What You Will Do</h6>
-                    <ul class="content__list">
-                        <li>
-                            Develop and maintain web applications using a variety of
-                            technologies such as HTML, CSS, JavaScript, Node.js, React, and
-                            more.
-                        </li>
-                        <li>
-                            Collaborate with designers to bring UI/UX designs to life.
-                        </li>
-                        <li>
-                            Implement responsive web design principles to ensure
-                            applications render well on all devices.
-                        </li>
-                        <li>Write clean, scalable, and well-documented code.</li>
-                        <li>Debug and resolve technical issues as they arise.</li>
-                        <li>Optimize applications for maximum speed and scalability.</li>
-                        <li>
-                            Participate in code reviews and contribute to team knowledge
-                            sharing.
-                        </li>
-                        <li>
-                            Stay up-to-date with emerging technologies and industry trends
-                            to ensure our tech stack remains cutting-edge.
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h6 class="heading__title">What You Will Do</h6>
-                    <ul class="content__list">
-                        <li>
-                            Develop and maintain web applications using a variety of
-                            technologies such as HTML, CSS, JavaScript, Node.js, React, and
-                            more.
-                        </li>
-                        <li>
-                            Collaborate with designers to bring UI/UX designs to life.
-                        </li>
-                        <li>
-                            Implement responsive web design principles to ensure
-                            applications render well on all devices.
-                        </li>
-                        <li>Write clean, scalable, and well-documented code.</li>
-                        <li>Debug and resolve technical issues as they arise.</li>
-                        <li>Optimize applications for maximum speed and scalability.</li>
-                        <li>
-                            Participate in code reviews and contribute to team knowledge
-                            sharing.
-                        </li>
-                        <li>
-                            Stay up-to-date with emerging technologies and industry trends
-                            to ensure our tech stack remains cutting-edge.
-                        </li>
-                    </ul>
-                </div>
+                    {{  job.job_description|safe }}
 
-                <div>
-                    <h6 class="heading__title">Our Expectations</h6>
-                    <ul class="content__list">
-                        <li>
-                            Develop and maintain web applications using a variety of
-                            technologies such as HTML, CSS, JavaScript, Node.js, React, and
-                            more.
-                        </li>
-                        <li>
-                            Collaborate with designers to bring UI/UX designs to life.
-                        </li>
-                        <li>
-                            Implement responsive web design principles to ensure
-                            applications render well on all devices.
-                        </li>
-                        <li>Write clean, scalable, and well-documented code.</li>
-                        <li>Debug and resolve technical issues as they arise.</li>
-                        <li>Optimize applications for maximum speed and scalability.</li>
-                        <li>
-                            Participate in code reviews and contribute to team knowledge
-                            sharing.
-                        </li>
-                        <li>
-                            Stay up-to-date with emerging technologies and industry trends
-                            to ensure our tech stack remains cutting-edge.
-                        </li>
-                    </ul>
                 </div>
-                <div>
-                    <h6 class="heading__title">
-                        Whom You Will Work With (Meet Our Team)
-                    </h6>
-                    <ul class="content__list">
-                        <li>
-                            Develop and maintain web applications using a variety of
-                            technologies such as HTML, CSS, JavaScript, Node.js, React, and
-                            more.
-                        </li>
-                        <li>
-                            Collaborate with designers to bring UI/UX designs to life.
-                        </li>
-                        <li>
-                            Implement responsive web design principles to ensure
-                            applications render well on all devices.
-                        </li>
-                        <li>Write clean, scalable, and well-documented code.</li>
-                        <li>Debug and resolve technical issues as they arise.</li>
-                        <li>Optimize applications for maximum speed and scalability.</li>
-                        <li>
-                            Participate in code reviews and contribute to team knowledge
-                            sharing.
-                        </li>
-                        <li>
-                            Stay up-to-date with emerging technologies and industry trends
-                            to ensure our tech stack remains cutting-edge.
-                        </li>
-                        <li>
-                            Quality Assurance: Coordinate with QA engineers to ensure the
-                            highest quality of software is delivered.
-                        </li>
-                    </ul>
-                </div>
-                <div class="intresting__slogan__container">
-                    <h6 class="heading__title">Sounds Like an Interesting Job?</h6>
-                    <p>
-                        If this sounds like the perfect opportunity for you, we’d love to
-                        meet you! Apply now and become a part of our innovative and
-                        growing team. Send your resume and a cover letter explaining why
-                        you’re a great fit for this role to [email address]. We are
-                        excited to see what you can bring to our team!
-                    </p>
-
-                    <a href="/apply/{{ job.id }}" style="text-decoration: none; cursor: pointer" class="btn__primary__home applynow__btn">Apply now</a>
-                </div>
+                <div >
+                        <a href="/apply/{{ job.id }}" style="text-decoration: none; cursor: pointer" class="btn__primary__home applynow__btn">Apply now</a>
+                    </div>
                 <div class="share__to__social__container">
 
 
