@@ -9,7 +9,8 @@ from django.core.paginator import Paginator
 def home(request):
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     latest_items = insight_list[:3]
-    return  render(request,"index.html",{"insights":latest_items})
+    testimonials = "ssssdddddd"
+    return  render(request,"index.html",{"insights":latest_items,"testimonials":testimonials})
 
 def partnership_request(request,contact_type):
     if request.method == 'POST':
@@ -77,3 +78,8 @@ def our_teams(request):
     total_pages = paginator.num_pages
     page_obj = paginator.get_page(page_number)
     return render(request,'team.html',{'teams':team,"page":total_pages})
+
+def apply_job(request,job_id):
+    if request.method == "POST":
+        print(request.POST.get('policy'),request.POST.get('first_name'),request.POST.get('sponsorship'))
+    return render(request,"job_apply.html")

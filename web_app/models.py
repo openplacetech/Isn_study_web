@@ -153,6 +153,20 @@ class SocialMedia(BaseModel):
         db_table = "social_media"
         verbose_name_plural = "Social Media"
 
+
+class Testimonials(BaseModel):
+    name = models.CharField(max_length=200)
+    designation = models.CharField(max_length=200)
+    company_name = models.CharField(max_length=200)
+    message = models.TextField(max_length=300)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "testimonial"
+        verbose_name_plural = "Testimonials"
+
 # class ApplyForCurrier(BaseModel):
 #     job = models.ForeignKey(CurrierOpportunities,on_delete=models.DO_NOTHING)
 #     first_name = models.CharField(max_length=200)

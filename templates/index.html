@@ -7,7 +7,7 @@
         <div class="hero__left">
           <div class="hero__container__slogan">
 {#            <p>INTERNATIONAL STUDY NETWORK</p>#}
-            <h1>
+            <h1 style="font-weight: 600;">
               Diversify Your <br />
               University: Partner <br />
               with Today.
@@ -39,15 +39,15 @@
         <div class="hero__right">
           <div class="hero__right__card__container">
             <div class="card__red">
-              <div class="card__ratedby">80k<span>+</span></div>
+              <div class="card__ratedby">10k<span>+</span></div>
               <div style="font-size: 14px">Students Helped</div>
             </div>
             <div class="card__lightgreen">
-              <div class="card__ratedby">65k</div>
+              <div class="card__ratedby">500<span>+</span></div>
               <div style="font-size: 14px">Recruitment Partners</div>
             </div>
             <div class="card__green">
-              <div class="card__ratedby">12k<span>+</span></div>
+              <div class="card__ratedby">5000<span>+</span></div>
               <div style="font-size: 14px; text-align: center">
                 Patner Institutions
               </div>
@@ -55,7 +55,7 @@
             <div class="card__secondaryblue">
               <div class="card__ratedby">150<span>+</span></div>
               <div style="font-size: 14px">
-                Countries<span style="visibility: hidden"> dd</span>
+                Countries<span style="visibility: hidden"> hidden</span>
               </div>
             </div>
           </div>
@@ -268,7 +268,7 @@
       </div>
     </div>
     <div class="empower__container__bottom">
-      <p class="secondary_title">HOW CAN HELP</p>
+      <p class="secondary_title">HOW WE CAN HELP</p>
       <div class="content__title">
         Empower Your Institution: <span>How We Can Help</span>
       </div>
@@ -382,68 +382,19 @@
 
         <div class="slider">
           <div class="slider__container">
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
-                exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
-                I highly recommend their services!"</p>
-              <div class="user__detail">
-                <h4>Ed Colyer</h4>
-                <p>Director of International Marketing & Recruitment Office of International Affairs Texas State
-                  University</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"[Company Name] exceeded our expectations in every way. Their innovative solutions and attention to
-                detail transformed our project. We're looking forward to collaborating with them again in the future!"
-              </p>
-              <div class="user__detail">
-                <h4>Sarah Johnson</h4>
-                <p>Chief Technology Officer, TechInnovate Solutions</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"The team at [Company Name] is truly outstanding. Their expertise and professionalism made our complex
-                project seem effortless. We couldn't be happier with the results and the positive impact on our
-                business."</p>
-              <div class="user__detail">
-                <h4>Michael Chen</h4>
-                <p>VP of Operations, Global Enterprises Inc.</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"[Company Name] exceeded our expectations in every way. Their innovative solutions and attention to
-                detail transformed our project. We're looking forward to collaborating with them again in the future!"
-              </p>
-              <div class="user__detail">
-                <h4>Sarah Johnson</h4>
-                <p>Chief Technology Officer, TechInnovate Solutions</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"The team at [Company Name] is truly outstanding. Their expertise and professionalism made our complex
-                project seem effortless. We couldn't be happier with the results and the positive impact on our
-                business."</p>
-              <div class="user__detail">
-                <h4>Michael Chen</h4>
-                <p>VP of Operations, Global Enterprises Inc.</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"The team at [Company Name] is truly outstanding. Their expertise and professionalism made our complex
-                project seem effortless. We couldn't be happier with the results and the positive impact on our
-                business."</p>
-              <div class="user__detail">
-                <h4>Michael Chen</h4>
-                <p>VP of Operations, Global Enterprises Inc.</p>
-              </div>
-            </div>
-
+                {% for testimonial in testimonials %}
+                    <div class="slider__card">
+                      <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
+                      <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
+                        exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
+                        I highly recommend their services!"</p>
+                      <div class="user__detail">
+                        <h4>Ed Colyer</h4>
+                        <p>Director of International Marketing & Recruitment Office of International Affairs Texas State
+                          University</p>
+                      </div>
+                    </div>
+              {% endfor %}
           </div>
           <button class="slider__arrow slider__arrow--left" aria-label="Previous slide">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">

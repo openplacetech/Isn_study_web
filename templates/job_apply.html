@@ -1,0 +1,84 @@
+{%  extends 'base.html' %}
+{% block base %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/job-application.css' %}" />
+    <section class="section__container">
+        <main class="job__application__container">
+            <div class="content__title">Job <span>Application </span></div>
+            <h6 class="job__title">Full-Stack Developers</h6>
+            <div class="job__form__container">
+                <div id="step_count" class="steps margin"></div>
+                <h4 class="content__title margin " >Personal Informations</h4>
+
+            <form class="form" action="/apply/job_slug" method="post">
+                {% csrf_token %}
+                <div id = "step_1">
+                    {% include 'apply_step_1.html' %}
+                    <button type="button"  class="btn__primary__home next__btn" onclick="show_next_step()">Next</button>
+                </div>
+                <div id = "step_2">
+                    <div class="user__information__grid direction-column">
+                        {% include 'apply_step_2.html' %}
+
+                        <div class="next__prev__btn__container">
+                            <button type="button" onclick="show_previous_step()" class="btn__primary__home next__btn previousbtn" >Previous</button>
+                            <button type="button"  class="btn__primary__home next__btn" onclick="show_next_step()">Next</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div id = "step_3">
+                    {% include 'apply_step_3.html'  %}
+                    <div class="next__prev__btn__container">
+                        <button type="button" class="btn__primary__home next__btn previousbtn" onclick="show_previous_step()">Previous</button>
+                        <button type="submit" class="btn__primary__home next__btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </main>
+    </section>
+    <script>
+        var current_step = 1
+        var step_count=document.getElementById("step_count")
+        step_count.innerHTML = "Step 1 of 3"
+        let  hidden_id  = hide_steps_id("step_1")
+        for (let element of hidden_id) {
+            document.getElementById(element).style.display = "none";
+        }
+        function show_next_step(){
+            if (current_step <3){
+                current_step = current_step + 1
+                step_count.innerHTML = "Step " +current_step+"of 3"
+                var step_id = "step_"+current_step.toString()
+                let  hidden_id  = hide_steps_id(step_id)
+                document.getElementById(step_id).style.display = "block"
+                for (let element of hidden_id) {
+                    document.getElementById(element).style.display = "none";
+                }
+            }
+        }
+
+        function show_previous_step(){
+            if (current_step >1){
+                current_step = current_step - 1
+                step_count.innerHTML = "Step " +current_step+"of 3"
+                var step_id = "step_"+current_step.toString()
+                let  hidden_id  = hide_steps_id(step_id)
+                document.getElementById(step_id).style.display = "block"
+                for (let element of hidden_id) {
+                    document.getElementById(element).style.display = "none";
+                }
+            }
+        }
+        function hide_steps_id(show){
+            if (show == "step_1"){
+                return ["step_3","step_2"]
+            }else if(show == "step_2"){
+                return ["step_3","step_1"]
+            }else{
+                return ["step_1","step_2"]
+            }
+        }
+    </script>
+{% endblock %}
