@@ -1,5 +1,5 @@
 from django import forms
-from web_app.models import PartnershipRequest,Subscriber
+from web_app.models import PartnershipRequest,Subscriber,InsightComments
 class PartnershipRequestForm(forms.ModelForm):
     agent = forms.CharField(max_length=255,required=False)
     market_entry = forms.CharField(max_length=255,required=False)
@@ -53,3 +53,8 @@ class SubscriberForm(forms.ModelForm):
     class Meta:
         model = Subscriber
         fields = ['name','email']
+
+class InsightCommentsForm(forms.ModelForm):
+    class Meta:
+        model = InsightComments
+        fields = ['name','email','message']

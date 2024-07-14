@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from web_app.forms import PartnershipRequestForm,SubscriberForm
+from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm
 from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials
 from django.conf import settings
 from django.core.mail import send_mail
@@ -31,9 +31,13 @@ def partnership_request(request,contact_type):
 
 def isn_insights(request):
     page_number = request.GET.get('page')
+    search = request.GET.get('search')
     latest_items= []
     no_of_item = 9
-    insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
+    if search:
+        insight_list = Insights.objects.filter(title__search=search).order_by('-created_at')
+    else:
+        insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     if page_number == None or page_number == 1:
         latest_items = insight_list[:3]
         no_of_item = 6
@@ -96,3 +100,20 @@ def subscription_view(request):
             print(form.errors)
         referer = request.META.get('HTTP_REFERER', '/')
         return redirect(referer)
+
+def insight_comment(request):
+    if request.method == "POST":
+        form  = InsightCommentsForm(request.POST)
+        slug = request.POST.get('slug')
+        referer = request.META.get('HTTP_REFERER', '/')
+        try:
+            insight=Insights.objects.get(slug=slug)
+            if form.is_valid():
+                comment = form.save(commit=False)
+                comment.insight = insight
+                form.save()
+            else:
+                print(form.errors)
+        except Insights.DoesNotExist:
+            return redirect(referer)
+

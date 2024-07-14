@@ -1638,6 +1638,12 @@ hr {
   align-items: center;
 }
 
+.check-option{
+  display: flex;
+  gap:0.8rem;
+  align-items: center;
+}
+
 .input__form[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;

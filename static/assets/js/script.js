@@ -3,6 +3,7 @@
 //   })
 
 
+
   var currentUrl = window.location.href;
 
   
@@ -119,4 +120,119 @@ document.addEventListener('DOMContentLoaded', setupNavbar);
    
     // Initialize button states
     updateButtonStates();
+});
+
+var opportunitiesData = [
+    {
+        "designation": "Developer",
+        "jobs": [
+            {
+                "title": "Software Engineer - Backend Developer",
+                "description": "Develop and maintain server-side logic and databases.",
+                "location": "New York",
+                "type": "Full-time"
+            },
+            {
+                "title": "UX Designer - Frontend Developer",
+                "description": "Create intuitive user interfaces and implement frontend designs.",
+                "location": "San Francisco",
+                "type": "Contract"
+            }
+        ]
+    },
+    {
+        "designation": "Engineering",
+        "jobs": [
+            {
+                "title": "Data Scientist - Backend Developer",
+                "description": "Analyze complex data sets and develop machine learning models.",
+                "location": "Boston",
+                "type": "Full-time"
+            },
+            {
+                "title": "Web Developer - Frontend Developer",
+                "description": "Build responsive and interactive web applications.",
+                "location": "Remote",
+                "type": "Part-time"
+            }
+        ]
+    },
+    {
+        "designation": "Product",
+        "jobs": [
+            {
+                "title": "Product Manager - Backend Developer",
+                "description": "Lead product development and coordinate between teams.",
+                "location": "Seattle",
+                "type": "Full-time"
+            },
+            {
+                "title": "UI Designer - Frontend Developer",
+                "description": "Design visually appealing and functional user interfaces.",
+                "location": "Los Angeles",
+                "type": "Freelance"
+            }
+        ]
+    }
+];
+
+function createOpportunityCard(job) {
+    return `
+        <div class="opportunities__card">
+            <h4>${job.title}</h4>
+            <div class="type__opportunities__container">
+                <span class="type__opportunities">${job.location}</span>
+                <span>${job.type}</span>
+            </div>
+            <p class="opportunity-description">
+                ${job.description}
+            </p>
+            <div class="see__positions__container">
+                <span></span>
+                <button class="see__position__btn">See positions
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16"
+                        height="16" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+function filterJobs(designation) {
+    const container = document.getElementById('opportunities__right');
+    let filteredJobs;
+
+    if (designation === 'All') {
+        filteredJobs = opportunitiesData.flatMap(dev => dev.jobs);
+    } else {
+        filteredJobs = opportunitiesData.find(dev => dev?.designation === designation)?.jobs || [];
+    }
+
+    container.innerHTML = filteredJobs.map(createOpportunityCard).join('');
+    const activefilter=document.querySelectorAll('.title__container')
+
+    document.getElementById('job-count').textContent = filteredJobs.length;
+
+    // Update active link
+    document.querySelectorAll('.filter-link').forEach(link => {
+
+      link.classList.toggle('active', link.dataset.filter === designation);
+      activefilter.forEach((d)=>d.to)
+
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const filterLinks = document.querySelectorAll('.filter-link');
+    filterLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(e.target.dataset.filter)
+            filterJobs(e.target.dataset.filter);
+        });
+    });
+
+    filterJobs('All'); // Initially show all jobs
 });

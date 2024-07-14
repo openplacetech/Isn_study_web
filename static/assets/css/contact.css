@@ -50,10 +50,7 @@ flex-grow: 1;
     padding: 3rem;
     
 }
-.check-option{
-    display: flex;
-    gap:0.8rem;
-}
+
 .checkox{
     width: 24px;
     height: 24px;
@@ -94,7 +91,7 @@ flex-grow: 1;
 .services-container{
     color: #808080;
     width: 100%;
-     gap: 0.8rem;
+     gap: 0.4rem;
     align-items:start;
     flex-direction: column;
    

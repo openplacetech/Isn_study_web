@@ -40,7 +40,7 @@
   .services-container{
    
     width: 100%;
-     gap: 0.8rem;
+     gap: 0.4rem;
     align-items:start;
     flex-direction: column;
    
@@ -81,6 +81,6 @@
     border-top-left-radius: 185px;
   }
   .parntership__left{
-    padding-left: 0;
+    padding-left: 1rem;
   }
  }
