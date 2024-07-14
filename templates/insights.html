@@ -45,7 +45,9 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </button>
-                    <input type="text" class="search-input" placeholder="Search for insights" />
+                    <form method="get" action="/insights">
+                        <input type="text"  name="search" class="search-input" placeholder="Search for insights" />
+                    </form>
                 </div>
             </div>
         </div>
@@ -156,4 +158,13 @@
                 </div>
         </main>
     </section>
+    <script>
+        // JavaScript to handle Enter key press for form submission
+        document.getElementById('search').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the default Enter key behavior
+                document.getElementById('myForm').submit(); // Submit the form
+            }
+        });
+    </script>
 {% endblock %}

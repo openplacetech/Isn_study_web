@@ -1,6 +1,7 @@
 from django.urls import path
 from web_app.views import home,privacy_policy,isn_insights,isn_platform,partnership_request,\
-    our_journey,isn_insight,currier_opportunity,our_teams,isn_market_entry,apply_job,job_detail,subscription_view
+    our_journey,isn_insight,currier_opportunity,our_teams,isn_market_entry,apply_job,job_detail,subscription_view,\
+    insight_comment
 
 urlpatterns = [
     path("",home,name="home"),
@@ -15,7 +16,8 @@ urlpatterns = [
     path('apply/<str:job_id>',apply_job,name="apply_job"),
     path('market-entry',isn_market_entry,name='isn_market_entry'),
     path('teams',our_teams,name='teams'),
-    path('subscription',subscription_view, name="subscription")
+    path('subscription',subscription_view, name="subscription"),
+    path('comment',insight_comment,name="insight_comment")
 
 ]
 

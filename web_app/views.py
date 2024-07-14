@@ -35,7 +35,7 @@ def isn_insights(request):
     latest_items= []
     no_of_item = 9
     if search:
-        insight_list = Insights.objects.filter(title__search=search).order_by('-created_at')
+        insight_list = Insights.objects.filter(title__in=search).order_by('-created_at')
     else:
         insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     if page_number == None or page_number == 1:
@@ -108,12 +108,14 @@ def subscription_view(request):
         return redirect(referer)
 
 def insight_comment(request):
+    referer = request.META.get('HTTP_REFERER', '/')
     if request.method == "POST":
         form  = InsightCommentsForm(request.POST)
-        slug = request.POST.get('slug')
-        referer = request.META.get('HTTP_REFERER', '/')
+        id = request.POST.get('id')
+        print("*********",id)
+
         try:
-            insight=Insights.objects.get(slug=slug)
+            insight=Insights.objects.get(pk=id)
             if form.is_valid():
                 comment = form.save(commit=False)
                 comment.insight = insight
@@ -122,4 +124,5 @@ def insight_comment(request):
                 print(form.errors)
         except Insights.DoesNotExist:
             return redirect(referer)
+    return redirect(referer)
 

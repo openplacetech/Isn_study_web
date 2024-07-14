@@ -46,7 +46,6 @@ body {
     --font-size-9xl: 28px;
     --font-size-6xl: 25px;
   
-    /* Colors */
     --base: #fff;
     --primary: #d24347;
     --primary-97: #f0f6ff;
@@ -61,7 +60,7 @@ body {
     --a0e0f: #0a0e0f;
     --color-darkslategray-100: #2a373c;
     --secondary: #2d2f82;
-    --color-indianred: #eb5c61;
+   
     --d79: #536d79;
     --a0ac: #86a0ac;
     --primary-primary200: #f0c0c2;

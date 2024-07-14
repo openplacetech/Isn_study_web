@@ -27,6 +27,7 @@ body {
 }
 .section___contactus__right{
     max-width: 700px;
+    width: 100%;
    padding-right: 4rem;
    padding-left: 2rem;
    
@@ -50,7 +51,11 @@ flex-grow: 1;
     padding: 3rem;
     
 }
-
+.check-option{
+    display: flex;
+    gap:0.8rem;
+    align-items: center;
+}
 .checkox{
     width: 24px;
     height: 24px;
@@ -91,7 +96,7 @@ flex-grow: 1;
 .services-container{
     color: #808080;
     width: 100%;
-     gap: 0.4rem;
+     gap: 0.8rem;
     align-items:start;
     flex-direction: column;
    
@@ -139,10 +144,20 @@ flex-grow: 1;
     top: -4rem;
     object-fit: cover;
 }
+.availability__zone{
+    margin-top: 1rem;
+}
+.availability__zone img{
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 .linear__group{
     height: 200px;
-    width: 100%;
+    max-width: 100%;
+    width: 100% !important;
+    object-fit: cover;
 }
 
 .linear__group__left{

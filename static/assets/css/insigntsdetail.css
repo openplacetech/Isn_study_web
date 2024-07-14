@@ -18,6 +18,16 @@
   max-width: 100%;
 }
 
+.btn__container__comment{
+  
+  width: 100%;
+}
+
+.btn-submit-comment{
+  max-width: 220px !important;
+  
+}
+
 .font {
   font-size: 14px !important;
 }
@@ -241,6 +251,9 @@
   background-color: var(--primary-color-red);
   
   width: 100%;
+}
+.btn__suscribe:hover{
+  background-color: var(--color-indianred);
 }
 .terms__condition{
   display: flex;
