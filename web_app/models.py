@@ -25,7 +25,7 @@ class PartnershipRequest(BaseModel):
 
 
 class Subscriber(BaseModel):
-    name = models.CharField(max_length=100,null=True,default="")
+    name = models.CharField(max_length=100,null=True,default="",blank=True)
     email = models.EmailField()
     def __str__(self):
         return self.email

@@ -1,5 +1,5 @@
 from django import forms
-from web_app.models import PartnershipRequest
+from web_app.models import PartnershipRequest,Subscriber
 class PartnershipRequestForm(forms.ModelForm):
     agent = forms.CharField(max_length=255,required=False)
     market_entry = forms.CharField(max_length=255,required=False)
@@ -48,3 +48,8 @@ class CombinedDataForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
+
+class SubscriberForm(forms.ModelForm):
+    class Meta:
+        model = Subscriber
+        fields = ['name','email']

@@ -29,10 +29,13 @@
 
           <ul class="quick__links">
             <p>Stay inform about our latest new <br /> Insights from ISN</p>
-            <div class="input__container">
-              <input type="text" placeholder="hello@youremai.com" />
-              <img src="{% static 'assets/images/Send.svg' %}" />
-            </div>
+            <form method="post" action="/subscription">
+                {% csrf_token %}
+                <div class="input__container">
+                  <input type="text" placeholder="hello@youremai.com" name="email" />
+                  <button type="submit" style="border: none; background: none"><img src="{% static 'assets/images/Send.svg' %}" /></button>
+                </div>
+            </form>
 
           </ul>
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from web_app.forms import PartnershipRequestForm
+from web_app.forms import PartnershipRequestForm,SubscriberForm
 from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials
 from django.conf import settings
 from django.core.mail import send_mail
@@ -86,3 +86,13 @@ def apply_job(request,job_id):
     if request.method == "POST":
         print(request.POST.get('policy'),request.POST.get('first_name'),request.POST.get('sponsorship'))
     return render(request,"job_apply.html")
+
+def subscription_view(request):
+    if request.method == "POST":
+        form  = SubscriberForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            print(form.errors)
+        referer = request.META.get('HTTP_REFERER', '/')
+        return redirect(referer)

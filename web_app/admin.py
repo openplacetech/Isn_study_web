@@ -1,5 +1,6 @@
 from django.contrib import admin
-from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,CurrierOpportunities,SocialMedia,Testimonials
+from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,\
+    CurrierOpportunities,SocialMedia,Testimonials,Subscriber
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -38,5 +39,11 @@ class TestimonialsAdmin(admin.ModelAdmin):
     list_display = ('name','company_name','designation')
     search_fields = ('name','company_name')
     list_filter = ('created_at', 'updated_at','designation')
+
+@admin.register(Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ('email','name')
+    search_fields = ('email',)
+    list_filter = ('created_at', 'updated_at')
 
 admin.site.register(PrivacyPolicy)

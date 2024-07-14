@@ -19,14 +19,17 @@
                     and graphs, offering a clear view of key metrics on demography,
                     diversity, and more.
                 </p>
-                <div class="suscribe__box">
-                    <div class="box__left">
-                        <input placeholder="hello@youremai.com" />
-                        <p>We care about your data in our <a style="cursor: pointer" href="/privacy-policy"><span>privacy policy</span></a></p>
-                    </div>
+                <form method="post" action="/subscription">
+                    {% csrf_token %}
+                    <div class="suscribe__box">
+                        <div class="box__left">
+                            <input type="email" name="email" placeholder="hello@youremai.com" required/>
+                            <p>We care about your data in our <a style="cursor: pointer" href="/privacy-policy"><span>privacy policy</span></a></p>
+                        </div>
 
-                    <button class="suscribe__button">Subscribe</button>
-                </div>
+                        <button type="submit" class="suscribe__button">Subscribe</button>
+                    </div>
+                </form>
             </div>
         </main>
     </section>
