@@ -630,9 +630,12 @@
   .inverted-triangle-icon1 {
     height: 7.5px;
     width: 7.5px;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
+    position: absolute;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
   }
   .afghanistan-parent {
     align-self: stretch;
@@ -641,6 +644,9 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-xl);
+  }
+  .select__parent{
+    position: relative;
   }
   .text-container-inner,
   .text-container1 {
@@ -655,9 +661,24 @@
     box-sizing: border-box;
     overflow: hidden;
     justify-content: center;
-    padding: var(--padding-8xs) var(--padding-6xs);
+   
     font-size: var(--font-size-sm-6);
     color: var(--primary);
+  }
+
+  .select__btn{
+ padding: var(--padding-8xs) var(--padding-6xs);
+ border: none !important;
+ outline: none !important;
+ appearance: none;
+ width: 100% !important;
+ color: var(--primary-color-red);
+ 
+  }
+  
+  .option__country{
+    padding: 4rem !important;
+  
   }
   .text-container1 {
     align-self: stretch;
@@ -1559,7 +1580,9 @@
   .destination__title{
     max-width: 100%;
   }
-
+.country-item-icon{
+  display: none;
+}
   .container__right{
    display: flex;
    align-items: center;
@@ -1579,6 +1602,8 @@
         gap: 0.8rem;
         
     }
+
+    
 
     .customer-review1{
         padding: 0 2rem;
@@ -1721,4 +1746,16 @@
    
   }
 
-  
+
+
+   @media screen and (max-width: 480px){
+  .destinations__title{
+    font-size: 2.4rem !important;
+  }
+   }
+
+   @media screen and (max-width:1256px){
+    .country-item-icon{
+      display: none;
+    }
+   }

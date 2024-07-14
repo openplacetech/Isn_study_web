@@ -50,6 +50,14 @@ flex-grow: 1;
     padding: 3rem;
     
 }
+.check-option{
+    display: flex;
+    gap:0.8rem;
+}
+.checkox{
+    width: 24px;
+    height: 24px;
+}
 .contact__info__mbl{
     margin:0;
     padding: 0;
