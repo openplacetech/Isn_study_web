@@ -546,9 +546,7 @@
 {#                <p>Trends</p>#}
                 <h4>{{ insights.0.title }}</h4>
                 <p>{{ insights.0.summary|truncatechars:100}}
-                        {% if  insights.0.summary|length > 100%}
-                        <span class=""> Read More</span>
-                        {% endif %}
+                        <a href="/insight/{{ insights.0.slug }}"><span class=""> Read More</span></a>
                 </p>
               </div>
             </div>
@@ -561,7 +559,7 @@
                     <p>
                         {{ item.summary|truncatechars:100}}
                         {% if  item.summary|length > 100%}
-                        <span class=""> Read More</span>
+                        <a href="/insight/{{ item.slug }}"><span class=""> Read More</span></a>
                         {% endif %}
                     </p>
                   </div>

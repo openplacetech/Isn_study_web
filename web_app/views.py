@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm
-from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials
+from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials,InsightComments
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
@@ -48,9 +48,16 @@ def isn_insights(request):
     return render(request,'insights.html',{"latest_items":latest_items,'total_pages':total_pages,'insights':page_obj})
 
 def isn_insight(request,slug):
+    comment_page_no = request.GET.get("comment_page")
+    if comment_page_no==None:
+            comment_page_no = 1
     insight = Insights.objects.get(slug=slug)
-    latest = Insights.objects.order_by('-created_at')[:3]
-    return render(request,'insight-detail.html',{"insight":insight,"latest":latest})
+    latest = Insights.objects.exclude(id=insight.pk).order_by('-created_at')[:3]
+    comment = InsightComments.objects.order_by('-created_at')[:5]
+    comment_paginator = Paginator(comment,5*comment_page_no)
+    page_obj = comment_paginator.get_page(comment_page_no)
+    recommendation = Insights.objects.filter(category=insight.category).exclude(id=insight.pk).order_by('-created_at')[:3]
+    return render(request,'insight-detail.html',{"insight":insight,"latest":latest,"comment":page_obj,"recommendation":recommendation})
 
 
 def isn_platform(request):
@@ -78,13 +85,12 @@ def our_journey(request):
 
 def our_teams(request):
     page_number = request.GET.get('page')
-    latest_items = []
     no_of_item = 9
     team = ISNTeam.objects.order_by('-created_at')
     paginator = Paginator(team, no_of_item)
     total_pages = paginator.num_pages
     page_obj = paginator.get_page(page_number)
-    return render(request,'team.html',{'teams':team,"page":total_pages})
+    return render(request,'team.html',{'teams':page_obj,"page":total_pages})
 
 def apply_job(request,job_id):
     if request.method == "POST":

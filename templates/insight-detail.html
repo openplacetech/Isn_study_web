@@ -4,7 +4,7 @@
 
     {% load custom_tags%}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/insigntsdetail.css' %}" />
-    <section class="insignts__detail__home">
+    <section class="insignts__detail__home" style="background-image: url('{{ insight.cover_image.url }}');">
     <!-- <section class="section__container"> -->
     <div class="content__conatiner">
       <div style="color: white !important; text-align: center" class="content__title">
@@ -249,60 +249,20 @@
           </div>
           <div class="latest__blog flex-row-aligned">
             <h1 style="font-size: 22.03px !important;" class="title__base">The latest</h1>
+              {% for lat in latest %}
+            <div class="latest__blog__container in-insights-detail">
+              <img src="{{ lat.cover_image.url }}" style="height: 200px; width: 297px"/>
+              <div class="blog__content__description">
+                <h6 class="font-weight font-normal">
+                  {{ lat.title }}
+                </h6>
+                <p class="font-normal">
+                  {{ lat.summary|truncatechars:100 }}  <a href="/insight/{{ lat.slug }}"><span class=""> Read More</span></a>
+                </p>
+              </div>
+            </div>
+              {% endfor %}
 
-
-            <div class="latest__blog__container in-insights-detail">
-              <img src="{% static 'assets/images/blog2.svg' %}" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="">Read More</span>
-                </p>
-              </div>
-            </div>
-            <div class="latest__blog__container in-insights-detail">
-              <img src="{% static 'assets/images/blog2.svg' %}" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="primary-color">Read More</span>
-                </p>
-              </div>
-            </div>
-            <div class="latest__blog__container in-insights-detail">
-              <img src="{% static 'assets/images/blog2.svg' %}" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="primary-color">Read More</span>
-                </p>
-              </div>
-            </div>
-            <div class="latest__blog__container in-insights-detail">
-              <img src="{% static 'assets/images/blog2.svg' %}" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="primary-color">Read More</span>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -310,40 +270,17 @@
       <div class="you__may__also__like">
         <h6 class="title__base">You May Also Like</h6>
         <div style="margin: 2rem 0;" class="all__blogs__container">
-
-          <div class="grid-item">
-            <img src="{% static 'assets/images/blogimage1.svg' %}" />
-            <h6 class="font-weight font-normal margin">
-              Top 10 Countries for International Student Recruitment in 2024
-            </h6>
-            <p class="font-normal">
-              A comprehensive analysis of the most popular destinations for
-              international students in 2024. Learn about the factors driving
-              these trends and how your institution can... <span>Read More</span>
-            </p>
-          </div>
-          <div class="grid-item">
-            <img src="{% static 'assets/images/blogimage1.svg' %}" />
-            <h6 class="font-weight font-normal margin">
-              Top 10 Countries for International Student Recruitment in 2024
-            </h6>
-            <p class="font-normal">
-              A comprehensive analysis of the most popular destinations for
-              international students in 2024. Learn about the factors driving
-              these trends and how your institution can... <span>Read More</span>
-            </p>
-          </div>
-          <div class="grid-item">
-            <img src="{% static 'assets/images/blogimage1.svg' %}" />
-            <h6 class="font-weight font-normal margin">
-              Top 10 Countries for International Student Recruitment in 2024
-            </h6>
-            <p class="font-normal">
-              A comprehensive analysis of the most popular destinations for
-              international students in 2024. Learn about the factors driving
-              these trends and how your institution can... <span>Read More</span>
-            </p>
-          </div>
+            {% for rec in recommendation %}
+              <div class="grid-item">
+                <img src="{{ rec.cover_image.url }}" />
+                <h6 class="font-weight font-normal margin">
+                  {{ rec.title }}
+                </h6>
+                <p class="font-normal">
+                  {{ rec.summary|truncatechars:200 }} <a href="/insight/{{ rec.slug }}"><span class=""> Read More</span></a>
+                </p>
+              </div>
+            {% endfor %}
 
 
 
