@@ -1,4 +1,4 @@
-<select name="availability_or_notice_period" name="availability_or_notice_period" class="input__form selectinputappearance">
+<select id="availability_or_notice_period" name="availability_or_notice_period" class="input__form selectinputappearance">
     <option value="" disabled selected>What is your availability or notice period?</option>
     {% for n,np in notice_period %}
         <option value="{{ n }}">{{ np }}</option>
@@ -10,8 +10,8 @@
 
     <div class="radio-options">
         <div class="radio-option">
-            <input type="radio" name="required_immigration_sponsorship" value="yes" class="input__form" checked>
-            <label for="sponsorship-yes">Yes</label>
+            <input type="radio" id="required_immigration_sponsorship1" name="required_immigration_sponsorship" value="yes" class="input__form" checked>
+            <label for="required_immigration_sponsorship1">Yes</label>
         </div>
         <div class="radio-option">
             <input type="radio" name="required_immigration_sponsorship" value="no" class="input__form">

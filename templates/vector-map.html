@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
 <style>
     #world-map {
-        width: 600px;
-        height: 400px;
+        width: 900px;
+        height: 600px;
     }
     .jqvmap-zoomin{
         display: none;
@@ -10,9 +10,48 @@
     .jqvmap-zoomout{
         display: none;
     }
+    #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #vmap {
+            width: 600px;
+            height: 400px;
+        }
+
+        .legend {
+            margin-left: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .legend-item {
+            margin-bottom: 5px;
+        }
+
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+        }
 </style>
+
 <div id="world-map"></div>
 
+<div class="legend">
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #D24347;"></span> Destination
+        </div>
+        <div class="legend-item">
+            <span class="legend-color" style="background-color: #2D2F82;"></span> From
+        </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script>
@@ -36,7 +75,9 @@
             showTooltip: true,
             colors: {
                 'us': '#D24347',
-                'nepal': '#2D2F82'
+                'np': '#2D2F82',
+                'in':"#2D2F82",
+                'cad':'#D24347'
             },
         });
     });

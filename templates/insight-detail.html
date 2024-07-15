@@ -43,6 +43,7 @@
       <div class="content__wrapper">
         <div content="content__left">
           {{ insight.content|safe }}
+        {% if comment|length > 0 %}
           <section class="comment__container">
             {% for cmt in  comment %}
                 <div class=" comments__container">
@@ -64,8 +65,12 @@
               </div>
             </div>
               {% endfor %}
-            <div class="see__more__comments font">See 10 more comments</div>
+
+          {% if comment.has_next %}
+            <a href="/insight/{{ insight.slug }}?comment_page={{ request.GET.comment_page }}" style="cursor: pointer" class="see__more__comments font">See 10 more comments</a>
+          {% endif %}
           </section>
+        {% endif %}
             <form method="POST" action="/comment">
                 {% csrf_token %}
                 <section class="comment__container">

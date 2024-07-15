@@ -1,7 +1,7 @@
 from django.urls import path
 from web_app.views import home,privacy_policy,isn_insights,isn_platform,partnership_request,\
     our_journey,isn_insight,currier_opportunity,our_teams,isn_market_entry,apply_job,job_detail,subscription_view,\
-    insight_comment
+    insight_comment,something_went_wrong
 
 urlpatterns = [
     path("",home,name="home"),
@@ -17,7 +17,8 @@ urlpatterns = [
     path('market-entry',isn_market_entry,name='isn_market_entry'),
     path('teams',our_teams,name='teams'),
     path('subscription',subscription_view, name="subscription"),
-    path('comment',insight_comment,name="insight_comment")
+    path('comment',insight_comment,name="insight_comment"),
+    path('error',something_went_wrong,name="error")
 
 ]
 

@@ -56,11 +56,12 @@ def isn_insight(request,slug):
             comment_page_no = 1
     insight = Insights.objects.get(slug=slug)
     latest = Insights.objects.exclude(id=insight.pk).order_by('-created_at')[:3]
-    comment = InsightComments.objects.filter(insight=insight).order_by('-created_at')[:5]
-    comment_paginator = Paginator(comment,5*comment_page_no)
+    comment = InsightComments.objects.filter(insight=insight).order_by('-created_at')
+    comment_paginator = Paginator(comment,5)
+    comment_pages = comment_paginator.num_pages
     page_obj = comment_paginator.get_page(comment_page_no)
     recommendation = Insights.objects.filter(category=insight.category).exclude(id=insight.pk).order_by('-created_at')[:3]
-    return render(request,'insight-detail.html',{"insight":insight,"latest":latest,"comment":page_obj,"recommendation":recommendation})
+    return render(request,'insight-detail.html',{"insight":insight,"comment_pages":comment_pages,"latest":latest,"comment":page_obj,"recommendation":recommendation})
 
 
 def isn_platform(request):
@@ -178,3 +179,5 @@ def insight_comment(request):
             return redirect(referer)
     return redirect(referer)
 
+def something_went_wrong(request):
+    return render(request,'error.html')
