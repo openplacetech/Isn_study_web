@@ -112,8 +112,6 @@ def insight_comment(request):
     if request.method == "POST":
         form  = InsightCommentsForm(request.POST)
         id = request.POST.get('id')
-        print("*********",id)
-
         try:
             insight=Insights.objects.get(pk=id)
             if form.is_valid():

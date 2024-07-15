@@ -6,6 +6,13 @@ INTERESTED_SERVICE = (
 CONTACT_PHONE_TYPE = (
     ("Mobile","Mobile"),
 )
+REGION_TYPE = (
+    ("WEST_AFRICA","West Africa"),
+    ("SOUTH_AND_CENTRAL_ASIA","South and Central Asia"),
+    ("SOUTHEAST_ASIA","Southeast Asia"),
+    ("MEXICO_AND_CENTRAL_AMERICA","Mexico and Central America"),
+    ("SOUTH_AMERICA","South America"),
+)
 
 GENDER_TYPE = (
     ("MALE","Male"),

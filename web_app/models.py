@@ -3,7 +3,7 @@ from ckeditor.fields import RichTextField
 from tinymce.models import HTMLField
 from base.models import BaseModel
 from django.utils.text import slugify
-from web_app.constrants import COUNTRY_CHOICES,SOCIALMEDIA_TYPE,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
+from web_app.constrants import COUNTRY_CHOICES,REGION_TYPE,SOCIALMEDIA_TYPE,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
 from django.contrib.auth.models import User
 
 class PartnershipRequest(BaseModel):
@@ -47,13 +47,21 @@ class PrivacyPolicy(BaseModel):
         verbose_name_plural = "privacy policy"
 
 
-# class NumberOfStudentStudyInUS(BaseModel):
-#     country = models.CharField(choices=COUNTRY_CHOICES,max_length=100)
-#     student_no = models.IntegerField()
-#
-#     class Meta:
-#         db_table = 'NumberOfStudentStudyInUS'
-#         verbose_name_plural = "US Student Number"
+class StudyDestinationOfNepali(BaseModel):
+    region = models.CharField(max_length=100,choices=REGION_TYPE)
+    country = models.CharField(max_length=100)
+    student_no = models.IntegerField()
+    class Meta:
+        db_table = 'NumberOfStudentStudy'
+        verbose_name_plural = "Student Number"
+
+    def __str__(self):
+        return self.country
+
+    def save(self, *args, **kwargs):
+        if self.country:
+            self.name = self.country.capitalize()
+        super().save(*args, **kwargs)
 
 
 
