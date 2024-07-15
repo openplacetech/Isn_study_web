@@ -23,6 +23,7 @@
     background-color: red;
     
 }
+
 .openjob__title__secondary{
     font-weight: 400;
 }
@@ -84,8 +85,10 @@
     /* width: 100%; */
     
 }
-.opportunities__right{
+#opportunities__right{
     flex-grow: 1;
+    
+
 }
 .positions__options{
     list-style: none;
@@ -95,12 +98,19 @@
     display: flex;
     gap: 1.4rem;
     align-items: center;
+    position: relative;
+    /* background-color: red;    */
+   
     
 }
 .horizontal__line__left{
     min-height: 60px;
     background-color: #0040D8;
     width: 6px;
+    
+    position: absolute;
+    left: -1.2rem;
+   
 
 }
 .title__positions{
@@ -120,6 +130,7 @@
     text-decoration: none;
     
 }
+
 .share__linkedn__btn{
     padding: 12px 24px;
     font-size: 16px;
@@ -133,8 +144,12 @@
 .opportunities__card{
     display: flex;
     gap: 1.4rem;
+    /* background-color: red; */
     flex-direction: column;
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 850px;
+    
     
 }
 .type__opportunities__container{

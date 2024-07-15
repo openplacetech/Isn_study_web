@@ -33,6 +33,7 @@
 }
 
 .title__form{
+    margin-top: 51px;
     margin-bottom: 1.4rem;
 }
 .uploader__image{
@@ -42,6 +43,7 @@
     border-radius: 10px;
     background-color: #F7FAFF;
     color: #808080;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect
-from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm
-from web_app.models import Insights,Subscriber,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials,InsightComments
+from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm,ApplyForCurrierForm
+from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials,InsightComments
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
+from django.db.models import Count
+from web_app.constrants import DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
+import json
 # Create your views here.
 
 def home(request):
@@ -65,12 +68,37 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
-    return render(request,'market-entry.html')
+    wast_africa = StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA")
+    south_and_center_asia = StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA")
+    south_asia = StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA")
+    mexico = StudyDestinationOfNepali.objects.filter(region="MEXICO_AND_CENTRAL_AMERICA")
+    south_america = StudyDestinationOfNepali.objects.filter(region="SOUTH_AMERICA")
+    return render(request,'market-entry.html',{"wast_africa":wast_africa,
+                                               "south_and_center_asia":south_and_center_asia,
+                                               "south_asia":south_asia,
+                                               "mexico":mexico,
+                                               "south_america":south_america})
 
 def currier_opportunity(request):
     # page_number = request.GET.get('page')
-    opportunity = CurrierOpportunities.objects.all()
-    return render(request,'open-jobs.html',{'opportunity':opportunity})
+    category_grouping = CurrierOpportunities.objects.values('category').annotate(count=Count('category')).order_by('category')
+    result = []
+    JOB_TYPE_DICT = dict(JOB_TYPE)
+    JOB_STATUS_DICT = dict(STATUS_TYPE)
+    JOB_MODE_DICT = dict(JOB_MODE)
+    for group in category_grouping:
+        jobs = list(CurrierOpportunities.objects.filter(category=group['category']).values('job_title', 'job_summary',
+                                                                                           'job_mode', 'job_type',
+                                                                                           'job_status', 'slug'))
+        for job in jobs:
+            job['job_type'] = JOB_TYPE_DICT.get(job['job_type'], job['job_type'])
+            job['job_mode'] = JOB_MODE_DICT.get(job['job_mode'],job['job_mode'])
+            job['job_status'] = JOB_STATUS_DICT.get(job['job_status'],job['job_status'])
+        result.append({
+            'category': group['category'],
+            'jobs':jobs
+        })
+    return render(request,'open-jobs.html',{'opportunity':json.dumps(result)})
 
 def job_detail(request,slug):
     job = CurrierOpportunities.objects.get(slug=slug)
@@ -93,9 +121,35 @@ def our_teams(request):
     return render(request,'team.html',{'teams':page_obj,"page":total_pages})
 
 def apply_job(request,job_id):
-    if request.method == "POST":
-        print(request.POST.get('policy'),request.POST.get('first_name'),request.POST.get('sponsorship'))
-    return render(request,"job_apply.html")
+    referer = request.META.get('HTTP_REFERER', '/')
+    try:
+        job = CurrierOpportunities.objects.get(pk=job_id)
+        if request.method == "POST":
+            form = ApplyForCurrierForm(request.POST,request.FILES)
+            if form.is_valid():
+                application = form.save(commit=False)
+                application.job = job
+                application.save()
+            else:
+                print("********",form.errors)
+            path = '/job/{}'.format(job.slug)
+            return redirect(path)
+        else:
+            context = {
+                'country': COUNTRY_CHOICES,
+                'phone_type':CONTACT_PHONE_TYPE,
+                'gender_type':GENDER_TYPE,
+                "profile_link":PROFILE_LINK_TYPE,
+                'notice_period':NOTICE_PERIOD,
+                'veteran_status':VETERAN_STATUS_CHOICES,
+                'gender':GENDER_TYPE,
+                'race_eth':RACE_ETHNICITY_CHOICES,
+                'disability':DISABILITY_TYPE_CHOICES,
+                "job":job
+            }
+            return render(request,'job_apply.html',context)
+    except CurrierOpportunities.DoesNotExist:
+        return redirect(referer)
 
 def subscription_view(request):
     if request.method == "POST":

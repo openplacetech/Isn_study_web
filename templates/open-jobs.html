@@ -41,47 +41,27 @@
 
             <div class="opportunities__list__container">
                 <aside class="opportunities__left">
-                    <div class="title__container">
-                        <span class="horizontal__line__left"> </span>
-                        <h4 class="title__positions">All positions (17)</h4>
-                    </div>
+{#                    <div class="title__container">#}
+{#                        <span class="horizontal__line__left" cla> </span>#}
+{#                        <h4 class="title__positions">All positions (<span id="job-count">0</span>)</h4>#}
+{#                    </div>#}
 
                     <ul class="positions__options">
-                        <li><a href="">Engineering</a></li>
-                        <li><a href="">Product (3)</a></li>
-                        <li><a href="">Operation (4)</a></li>
-                        <li><a href="">Marketing (2)</a></li>
-                        <li></li>
+
                     </ul>
                     <p class="secondary_title">We are always seeking talented people. In case you cannot find your
                         desired position here, please send us your LinkedIn profile and give us your contact
                         information. We will be in touch. </p>
                     <button class="share__linkedn__btn">Share your Linkedn profile</button>
                 </aside>
-                <aside class="opportunities__right">
-                    {% for job in opportunity %}
-                    <div class="opportunities__card">
-                        <h4>{{ job.job_title }} </h4>
-                        <div class="type__opportunities__container">
-                            <span class="type__opportunities">Tartu </span>
-                            <span>{{ job.get_job_type_display }}</span>
-                        </div>
-                        <p>{{ job.job_summary|truncatechars:500 }}</p>
-                        <div class="see__positions__container">
-                            <span></span>
-                            <a href="/job/{{ job.slug }}" style="text-decoration: none; cursor: pointer" class="see__position__btn ">See positions <svg xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16" height="16"
-                                    stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
-                            </a>
-                        </div>
+                <aside id="opportunities__right">
+ss
+
+
+                    <div class="see__more__for__mobile">
+
+                        <button class="see__more__btn">See more</button>
                     </div>
-                    {% endfor %}
-
-
-
                 </aside>
 
             </div>
@@ -241,4 +221,105 @@
         </span> -->
 
     </section>
+        <script>
+        var opportunitiesData = JSON.parse('{{ opportunity|escapejs }}')
+        console.log(opportunitiesData)
+        filteredJobs = opportunitiesData.flatMap(dev => dev.jobs);
+        var total_job=filteredJobs.length
+function createOpportunityCard(job) {
+    return `
+        <div class="opportunities__card">
+            <h4>${job.job_title}</h4>
+            <div class="type__opportunities__container">
+                <span class="type__opportunities">${job.job_type}</span>
+                <span>${job.job_mode}</span>
+            </div>
+            <p class="opportunity-description">
+                ${job.job_summary}
+            </p>
+            <div class="see__positions__container">
+                <span></span>
+                <a style="text-decoration: none" class="see__position__btn" href="/job/${job.slug}">See positions
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16"
+                        height="16" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    `;
+}
+function filterJobs(designation) {
+    const container = document.getElementById('opportunities__right');
+    let filteredJobs;
+
+    if (designation === 'All') {
+        filteredJobs = opportunitiesData.flatMap(dev => dev.jobs);
+    } else {
+        filteredJobs = opportunitiesData.find(dev => dev?.category === designation)?.jobs || [];
+    }
+
+    container.innerHTML = filteredJobs.map(createOpportunityCard).join('');
+
+
+    document.querySelectorAll('.filter-link').forEach(link => {
+        const isActive = link.dataset.filter === designation;
+        link.classList.toggle('active', isActive);
+
+        // Find corresponding .title__container element for active link
+        if (isActive) {
+            const titleContainers = document.querySelectorAll('.title__container');
+            titleContainers.forEach(container => {
+                const containerDesignation = container.getAttribute('data-designation');
+                const spanExists = container.querySelector('.horizontal__line__left');
+
+                if (containerDesignation === designation && !spanExists) {
+                    const span = document.createElement('span');
+                    span.className = 'horizontal__line__left';
+                    container.insertBefore(span, container.firstChild);
+                } else if (containerDesignation !== designation && spanExists) {
+                    spanExists.remove();
+                }
+            });
+        }
+    });
+}
+
+// Initial call to filterJobs with 'All' to show all jobs initially
+filterJobs('All');
+
+// Event listeners for filter links
+document.querySelectorAll('.filter-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const designation = this.dataset.filter;
+        filterJobs(designation);
+    });
+});
+
+function createFilterOptions(data) {
+    data.unshift({"category": "All","jobs":[]})
+    return data.map(data => `
+        <div class="title__container" data-designation="${data.category}">
+            <span class="horizontal__line__left"></span>
+            <li><a href="#" class="filter-link ${data.category === 'All' ? 'active' : ''}" data-filter="${data.category}">${data.category=="All" ? `All Positions (${total_job})` :`${data.category}(${data.jobs.length})`}</a></li>
+        </div>
+    `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterContainer = document.querySelector('.positions__options');
+    filterContainer.innerHTML = createFilterOptions(opportunitiesData);
+
+    filterJobs('All');
+
+    // Add click event listeners to filter links
+    document.querySelectorAll('.filter-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterJobs(e.target.dataset.filter);
+        });
+    });
+});
+    </script>
 {% endblock %}

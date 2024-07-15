@@ -19,6 +19,29 @@ GENDER_TYPE = (
     ("Female","Female"),
 )
 
+
+RACE_ETHNICITY_CHOICES = [
+    ('asian', 'Asian'),
+    ('black_or_african_american', 'Black or African American'),
+    ('hispanic_or_latino', 'Hispanic or Latino'),
+    ('native_american_or_alaska_native', 'Native American or Alaska Native'),
+    ('native_hawaiian_or_other_pacific_islander', 'Native Hawaiian or Other Pacific Islander'),
+    ('white', 'White'),
+    ('two_or_more_races', 'Two or More Races'),
+    ('other', 'Other'),
+]
+DISABILITY_TYPE_CHOICES = [
+    ('visual_impairment', 'Visual Impairment'),
+    ('hearing_impairment', 'Hearing Impairment'),
+    ('mobility_impairment', 'Mobility Impairment'),
+    ('cognitive_impairment', 'Cognitive Impairment'),
+    ('mental_health_condition', 'Mental Health Condition'),
+    ('chronic_health_condition', 'Chronic Health Condition'),
+    ('developmental_disability', 'Developmental Disability'),
+    ('speech_impairment', 'Speech Impairment'),
+    ('other', 'Other'),
+]
+
 JOB_TYPE=(
     ("FULL_TIME","Full time"),
     ("PART_TIME","Part time"),
@@ -48,6 +71,32 @@ SOCIALMEDIA_TYPE = (
     ("TICKTOK","TICKTOK"),
     ("TWITTER","TWITTER"),
     ("INSTAGRAM","INSTAGRAM"),
+)
+
+PROFILE_LINK_TYPE = (
+    ("FACEBOOK","Facebook"),
+    ("LINKEDIN","Linkedin"),
+    ("WEBSITE","Website"),
+    ("YOUTUBE","Youtube"),
+    ("TICKTOK","Ticktok"),
+    ("TWITTER","Twitter"),
+    ("INSTAGRAM","Instagram"),
+)
+
+
+VETERAN_STATUS_CHOICES = [
+    ('military_branches', 'Veterans by military branches'),
+    ('combat_war_veterans', 'Combat or war veterans'),
+    ('disabled_veterans', 'Disabled veterans'),
+    ('other_services', 'Veterans of services other than the armed forces'),
+]
+
+NOTICE_PERIOD = (
+    ('Immediate','Immediate'),
+    ('1 week','1 week'),
+    ('2 weeks','2 week'),
+    ('1 month','1 month'),
+    ('More than 1 month','More than 1 month'),
 )
 INSIGHTS_CATEGORY = (
     ("SCIENCE_AND_TECHNOLOGY","Science and technology"),
