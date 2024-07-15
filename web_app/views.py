@@ -53,7 +53,7 @@ def isn_insight(request,slug):
             comment_page_no = 1
     insight = Insights.objects.get(slug=slug)
     latest = Insights.objects.exclude(id=insight.pk).order_by('-created_at')[:3]
-    comment = InsightComments.objects.order_by('-created_at')[:5]
+    comment = InsightComments.objects.filter(insight=insight).order_by('-created_at')[:5]
     comment_paginator = Paginator(comment,5*comment_page_no)
     page_obj = comment_paginator.get_page(comment_page_no)
     recommendation = Insights.objects.filter(category=insight.category).exclude(id=insight.pk).order_by('-created_at')[:3]
