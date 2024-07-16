@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block base %}
+<style>
+    .success_body {
+        text-align: center;
+        height: 100vh;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .success-icon {
+        font-size: 64px;
+        color: #28a745; /* Success color */
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    a {
+        color: #007bff; /* Link color */
+        text-decoration: none;
+    }
+</style>
+
+<div class="success_body">
+<div class="container">
+    <div class="success-icon">
+        <i class="fas fa-check-circle"></i> <!-- Font Awesome check-circle icon -->
+    </div>
+    <h1>Success!</h1>
+    <p>Your request has been successfully processed.</p>
+    <p>Thank you for using our service.</p>
+    <a href="/" class="btn__primary">Return to Homepage</a>
+</div>
+</div>
+
+{% endblock %}

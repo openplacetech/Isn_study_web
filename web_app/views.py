@@ -21,7 +21,7 @@ def partnership_request(request,contact_type):
         form = PartnershipRequestForm(request.POST)
         if form.is_valid():
             partnership=form.save()
-            return redirect('partnership_request',contact_type=contact_type)
+            return redirect('success')
         else:
             print(form.errors)
             return render(request, 'error.html')
@@ -138,7 +138,7 @@ def apply_job(request,job_id):
             else:
                 print("********",form.errors)
             path = '/job/{}'.format(job.slug)
-            return redirect(path)
+            return redirect("success")
         else:
             context = {
                 'country': COUNTRY_CHOICES,
@@ -185,3 +185,5 @@ def insight_comment(request):
 
 def something_went_wrong(request):
     return render(request,'error.html')
+def success(request):
+    return render(request,'success.html')
