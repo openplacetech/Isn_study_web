@@ -57,11 +57,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.world.js"></script>
 
 <script>
+    var bg="{{ bg }}"
+    var default_bg = ' radial-gradient(34.92% 51.68% at 58.4% 52.8%, #FFFFFF 0%, #F9F9F9 100%) '
     $(document).ready(function() {
         $('#world-map').vectorMap({
             map: 'world_en',
             zoomButtons : false,
-            backgroundColor: ' radial-gradient(34.92% 51.68% at 58.4% 52.8%, #FFFFFF 0%, #F9F9F9 100%) ',
+            backgroundColor: bg,
             borderColor: '#818181',
             borderOpacity: 0.25,
             borderWidth: 1,

@@ -46,7 +46,7 @@
                         </svg>
                     </button>
                     <form method="get" action="/insights">
-                        <input type="text"  name="search" class="search-input" placeholder="Search for insights" />
+                        <input type="text" value="{{ request.GET.search }}" name="search" class="search-input" placeholder="Search for insights" />
                     </form>
                 </div>
             </div>
