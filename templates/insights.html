@@ -6,7 +6,7 @@
     <section class="homepage__container">
         <main class="section__container">
             <div class="insights__home">
-                <p class="secondary_title">ISN PLATFORMS</p>
+{#                <p class="secondary_title">ISN PLATFORMS</p>#}
 
                 <div style="white-space-collapse: discard; word-break: normal !important" class="content__title">
                     Unlock Key Insights: Data- <br />Driven
@@ -19,14 +19,17 @@
                     and graphs, offering a clear view of key metrics on demography,
                     diversity, and more.
                 </p>
-                <div class="suscribe__box">
-                    <div class="box__left">
-                        <input placeholder="hello@youremai.com" />
-                        <p>We care about your data in our <a style="cursor: pointer" href="/privacy-policy"><span>privacy policy</span></a></p>
-                    </div>
+                <form method="post" action="/subscription">
+                    {% csrf_token %}
+                    <div class="suscribe__box">
+                        <div class="box__left">
+                            <input type="email" name="email" placeholder="hello@youremai.com" required/>
+                            <p>We care about your data in our <a style="cursor: pointer" href="/privacy-policy"><span>privacy policy</span></a></p>
+                        </div>
 
-                    <button class="suscribe__button">Subscribe</button>
-                </div>
+                        <button type="submit" class="suscribe__button">Subscribe</button>
+                    </div>
+                </form>
             </div>
         </main>
     </section>
@@ -42,33 +45,33 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </button>
-                    <input type="text" class="search-input" placeholder="Search for insights" />
+                    <form method="get" action="/insights">
+                        <input type="text" value="{{ request.GET.search }}" name="search" class="search-input" placeholder="Search for insights" />
+                    </form>
                 </div>
             </div>
         </div>
         <div class="latest_insights__container">
             {% if latest_items|length >= 1 %}
-            <a href="insight/1">
-            <div class="left__content">
-                <img src="{{ latest_items.0.cover_image.url }}" />
-
+            <div class="left__content"  >
+                <img src="{{ latest_items.0.cover_image.url }}" style="max-height: 200px"/>
                 <div class="latest__insights__container">
-{#                    <p>Trends</p>#}
+                    <p>Trends</p>
                     <h4>{{ latest_items.0.title }}</h4>
                     <p>
                         {{ latest_items.0.summary|truncatechars:100}}
                         {% if  latest_items.0.summary|length > 100%}
-                        <a href="/insight/1"><span class=""> Read More</span></a>
+                        <a href="/insight/{{ latest_items.0.slug }}"><span class=""> Read More</span></a>
                         {% endif %}
                     </p>
                 </div>
             </div>
-            </a>
             {% endif %}
             <div class="latest__container__right">
                 {% for item in latest_items|slice:"1:3" %}
                 <div class="latest__blog__container">
                     <img src="{{ item.cover_image.url }}" />
+{#                    <img src="{% static 'assets/images/blog2.svg' %}" />#}
                     <div class="blog__content__description">
                         <p>
                             {{ item.title }}
@@ -76,7 +79,7 @@
                         <p>
                             {{ item.summary|truncatechars:100}}
                             {% if  item.summary|length > 100%}
-                            <span class="">Read More</span>
+                            <a href="/insight/{{ item.slug }}"><span class=""> Read More</span></a>
                             {% endif %}
                         </p>
                     </div>
@@ -96,7 +99,7 @@
                 <p>
                     {{ item.summary|truncatechars:100}}
                             {% if  item.summary|length > 100%}
-                            <span class="">Read More</span>
+                            <a style="text-decoration: none" href="/insight/{{ item.slug }}"><span class="">Read More</span></a>
                             {% endif %}
                 </p>
             </div>
@@ -114,13 +117,18 @@
                     <span>Previous</span>
                 </div>
                 <div class="pagenumber__container">
-                    <div class="active-page pagenumber">1</div>
-                    <div class="pagenumber">2</div>
-                    <div class="pagenumber">3</div>
-                    ...
-                    <div class="pagenumber">8</div>
-                    <div class="pagenumber">9</div>
-                    <div class="pagenumber">10</div>
+
+                {% with ''|center:total_pages as range %}
+                    {% for num in range %}
+                        {% if request.GET.page == num %}
+                            <a href="/insights?page={{ forloop.counter }}" style="text-decoration: none; cursor: pointer" class="active-page pagenumber" >{{ forloop.counter }}</a>
+                        {% elif request.GET.page is None and forloop.counter == 1%}
+                            <a href="/insights?page={{ forloop.counter }}" style="text-decoration: none; cursor: pointer" class="active-page pagenumber" >{{ forloop.counter }}</a>
+                        {% else %}
+                            <a href="/insights?page={{ forloop.counter }}" style="text-decoration: none; cursor: pointer" class="pagenumber">{{ forloop.counter }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
                 </div>
                 <div class="next">
                     <span>Next</span>
@@ -155,4 +163,13 @@
                 </div>
         </main>
     </section>
+    <script>
+        // JavaScript to handle Enter key press for form submission
+        document.getElementById('search').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the default Enter key behavior
+                document.getElementById('myForm').submit(); // Submit the form
+            }
+        });
+    </script>
 {% endblock %}

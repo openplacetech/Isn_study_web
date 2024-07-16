@@ -2,7 +2,7 @@
 {% load static %}
 {% block base %}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/partnership.css' %}" />
-<section class="section__container__3xl">
+    <section class="section__container__3xl">
       <main class="partnership__container">
         <aside class="parntership__left">
           <div class="content__title">
@@ -20,71 +20,81 @@
               class="partnership__input"
               placeholder="Name of Institution"
               name="institute_name"
+              required
             />
             <input
               class="partnership__input"
               placeholder="Address"
               name="address"
+              required
             />
             <div style="width: 100%" class="flex-row-aligned grid-flex">
               <input
                 class="partnership__input"
                 name="contact_person"
                 placeholder="Contact Person"
+                required
               />
               <input
                 class="partnership__input"
                 placeholder="Title"
                 name="title"
+                required
               />
             </div>
               <input
+                      type="email"
                     name="email"
               class="partnership__input"
               placeholder="Email address"
+                    required
             />
               <input
                 class="partnership__input"
                 placeholder="Phone number"
                 name="phone_no"
+                required
               />
             <div class="services-container flex-row-aligned">
               <p>Which services are you interested in?</p>
 
-              <div class="radio-option">
+              <div class="check-option">
                 <input
                   type="checkbox"
                   id="service1"
                   name="agent"
                   value="Hiring as Agent"
+                  required
                 />
                 <label for="service1">Hiring as Agent</label>
               </div>
 
-              <div class="radio-option">
+              <div class="check-option">
                 <input
                   type="checkbox"
                   id="service2"
                   name="market"
                   value="Market Entry"
+                  class="checbox"
                 />
                 <label for="service2">Market Entry</label>
               </div>
 
-              <div class="radio-option">
+              <div class="check-option">
                 <input
                   type="checkbox"
                   id="service3"
                   name="other"
                   value="Other Specify"
+                  class="checbox"
                 />
                 <label for="service3">Other Specify</label>
               </div>
 
             </div>
-            <textarea  name="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area"></textarea>
+            <textarea  name="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area" required></textarea>
             <div  style="flex-direction:row; align-items: center !important;" class="services-container flex-row-aligned">
-              <input type="checkbox" name="is_accept_privacy_policy"/>
+              <input type="checkbox" class="checbox" name="is_accept_privacy_policy"/>
               <span>I agree to the <a href="/privacy-policy">Terms and Privacy Policy</a>.</span>
             </div>
 

@@ -1,10 +1,298 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+    <link rel="stylesheet" href="{% static 'assets/css/market-entry.css' %}" />
+    <section class="homepage__container">
+      <main class="section__container margin__container">
+        <div class="market__entry__container" >
+          <div class="hero__left left__padding">
+            <div class="hero__container__slogan">
 
-</body>
-</html>
+              <h1 style="text-align: left;" class="title">
+                Expand Your Global Reach <br />
+                with <span>ISN Market Entry </span>
+
+              </h1>
+              <p>
+                At ISN, we offer a unique service to universities aiming to expand their international presence. Our Market Entry program provides dedicated employees who act as ambassadors, supporting your institution in specific countries around the world.
+              </p>
+              <h3 class="saying__dedicated">“Dedicated In-Country Representative and In-Depth Insights to Boost Your International Presence”</h3>
+            </div>
+            <div style="margin:1.5rem 0;" class="hero_btn_container">
+              <button class="btn__primary__home readmore">Read More</button>
+            </div>
+
+
+          </div>
+          <div class="container__right">
+           <img src="{% static 'assets/images/market-centry-boy.svg' %}"/>
+          </div>
+        </div>
+      </main>
+    </section>
+      <section class="customer-review-wrapper ">
+        <div  class="customer-review ">
+          <div class="customer-review1">
+            <div class="heading-structure">
+              <div class="testimonials">Testimonials</div>
+              <div class="how-it-works-parent">
+                <h1 class="how-it-works">How It Works...</h1>
+                <div class="hear-directly-from">
+                  Hear directly from our partners about their experiences and
+                  the impact of working with ISN.
+                </div>
+              </div>
+            </div>
+            <div class="brand-goals">
+              <!-- <div class="brand-identity">
+                <div class="goal-steps">
+                  <h3 class="goals">Goals.</h3>
+                  <div class="we-are-committed">
+                    We are committed to staying at the forefront of technology,
+                    continuously exploring new ways to enhance our platform.
+                  </div>
+                </div>
+              </div> -->
+              <div class="work__description__container">
+                <div class="agreement-parent">
+                  <h3 class="agreement">Goals.</h3>
+                  <div class="our-users-are">
+                    Our users are at the heart of everything we do. We strive to
+                    understand their needs and exceed their expectations through
+                    reliable and user-friendly.
+                  </div>
+                </div>
+                <img class="contact-btn-icon" loading="lazy" alt="" />
+              </div>
+              <div class="work__description__container">
+                <div class="agreement-parent">
+                  <h3 class="agreement">Agreement.</h3>
+                  <div class="our-users-are">
+                    Our users are at the heart of everything we do. We strive to understand their needs and exceed their expectations through reliable and user-friendly.
+                  </div>
+                </div>
+                <img class="contact-btn-icon" loading="lazy" alt="" />
+              </div>
+              <div class="work__description__container">
+                <div class="agreement-parent">
+                  <h3 class="agreement">Strategize.</h3>
+                  <div class="our-users-are">
+                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                  </div>
+                </div>
+                <img class="contact-btn-icon" loading="lazy" alt="" />
+              </div>
+              <div class="work__description__container">
+                <div class="agreement-parent">
+                  <h3 class="agreement">Hire.</h3>
+                  <div class="our-users-are">
+                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                  </div>
+                </div>
+                <img class="contact-btn-icon" loading="lazy" alt="" />
+              </div>
+              <div  class="work__description__container ">
+                <div class="agreement-parent">
+                  <h3 class="agreement">Train.</h3>
+                  <div class="our-users-are">
+                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                  </div>
+                </div>
+                <img class="contact-btn-icon" loading="lazy" alt="" />
+              </div>
+
+              <div style="border-right: none !important;" class="work__description__container ">
+                <div class="agreement-parent">
+                  <h3 class="agreement">Begin.</h3>
+                  <div class="our-users-are">
+                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                  </div>
+                </div>
+                <img class="contact-btn-icon" loading="lazy" alt="" />
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <section style="padding: 3rem 0 !important;" class="section__container destination__main__container">
+        <div class="rectangle-parent">
+          <div class="frame-child"></div>
+          <div class="preference-container">
+            <div class="preference-content">
+              <div class="study-destination-preferences-wrapper">
+                <div class="title destinations">
+                  Study Destination Preferences of
+                  <span >Nepalese Students</span>
+                </div>
+              </div>
+              <div class="nepalese-students-prioritize">
+                Nepalese students prioritize affordability and job prospects
+                when choosing study destinations. They seek countries with
+                better opportunities due to Nepal's competitive job market.
+                Returning with an international degree and work experience
+                enhances their careers. Key factors include immigration costs,
+                work permit pathways, job opportunities, and stay-back policies.
+              </div>
+            </div>
+          </div>
+          <div class="world-container">
+            <div class="world-content">
+              <div class="world-instance">
+                {% include 'vector-map.html' with bg="#fff"%}
+              </div>
+              <div class="country-data">
+                <div class="country-list">
+                  <img
+                    class="country-item-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{% static 'assets/images/frame-market-entry.svg' %}"
+                  />
+                </div>
+                <div class="country-details">
+
+                  <div class="country-card">
+                    <div class="text-container-parent">
+                      <div class="text-container1">
+                        <div class="heading3">West Africa</div>
+                        <div class="text-container-inner">
+                          <div  class="afghanistan-parent select__parent">
+                            <select   class="afghanistan select__btn">
+                              <option value="benin" class="afghanistan1 option__country">Benin</option>
+                              <option value="benin" class="afghanistan1 option__country">Benin</option>
+                            </select>
+                            <img
+                            class="inverted-triangle-icon1"
+                            alt=""
+                            src="{% static 'assets/images/inverted-triangle-1.svg' %}"
+                          />
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div">201+</div>
+                    </div>
+                  </div>
+                  <div class="country-card">
+                    <div class="text-container-parent">
+                      <div class="text-container1">
+                        <div class="heading3">South and Central Asia</div>
+                        <div class="text-container-inner">
+                          <div class="afghanistan-parent select__parent">
+                            <select class="afghanistan select__btn">
+                              <option value="afganistan" class="afghanistan1 option__country">Afghanistan</option>
+                              <option value="india" class="afghanistan1 option__country">India</option>
+                            </select>
+                            <img
+                              class="inverted-triangle-icon1"
+                              alt=""
+                              src="{% static 'assets/images/inverted-triangle-1.svg' %}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div">420+</div>
+                    </div>
+                  </div>
+                  <div class="country-card">
+                    <div class="text-container-group">
+                      <div class="text-container2">
+                        <div class="heading4">Southeast Asia</div>
+                        <div class="text-container-inner">
+                          <div class="afghanistan-parent select__parent">
+                            <select class="afghanistan select__btn">
+                              <option value="brunei" class="afghanistan1 option__country"> Brunei</option>
+                              <option value="indonesia" class="afghanistan1 option__country">Indonesia</option>
+                            </select>
+                            <img
+                              class="inverted-triangle-icon1"
+                              alt=""
+                              src="{% static 'assets/images/inverted-triangle-1.svg' %}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div1">42+</div>
+                    </div>
+                  </div>
+                  <div class="country-card">
+                    <div class="text-container-parent">
+                      <div class="text-container1">
+                        <div class="heading3">Mexico and Central America</div>
+                        <div class="text-container-inner">
+                          <div class="afghanistan-parent select__parent">
+                            <select class="afghanistan select__btn">
+                              <option value="mexico" class="afghanistan1 option__country">Mexico</option>
+                              <option value="cuba" class="afghanistan1 option__country">Cuba</option>
+                            </select>
+                            <img
+                              class="inverted-triangle-icon1"
+                              alt=""
+                              src="{% static 'assets/images/inverted-triangle-1.svg' %}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div">420+</div>
+                    </div>
+                  </div>
+                  <div class="country-cards4">
+                    <div class="text-container-parent1">
+                      <div class="text-container4">
+                        <div class="heading6">South America</div>
+                        <div class="text-container-inner">
+                          <div class="afghanistan-parent select__parent">
+                            <select class="afghanistan select__btn">
+                              <option value="argentina" class="afghanistan1 option__country">Argentina</option>
+                              <option value="brazil" class="afghanistan1 option__country">Brazil</option>
+                            </select>
+                            <img
+                              class="inverted-triangle-icon1"
+                              alt=""
+                              src="{% static 'assets/images/inverted-triangle-1.svg' %}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="div3">2718+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sub-container">
+            <i class="description">
+              <span>*</span>
+              <span class="source-httpswwwsitenamec">
+                Source: https://www.sitename.com/data for year
+              </span>
+            </i>
+          </div>
+        </div>
+      </section>
+      <section class="our__engagement__container">
+        <main class="section__container">
+          <div class="our__engagement__container">
+            <div class="our__engagement__content">
+              <p  class="secondary_title hire__developers">Hire developers from the largest AI-vetted talent network</p>
+              <div class="title__lg">
+                Ready to Transform Your <br />
+                <span>International Engagement? </span>
+              </div>
+              <p class="our__engagement__content__description">
+                Join the growing network of educational institutions and recruiting
+                partners benefiting from ISN’s comprehensive platform. Our tools and
+                data insights are designed to simplify your international outreach,
+                enhance your recruitment strategies, and foster global partnerships.
+              </p>
+
+              {% include 'meet_us.html' %}
+              <p class="our__engagement__content__description">Unlock the potential of international education with ISN.
+                Connect, engage, and thrive globally.</p>
+            </div>
+        </main>
+      </section>
+{% endblock %}

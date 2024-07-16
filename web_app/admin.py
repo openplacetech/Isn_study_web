@@ -1,5 +1,6 @@
 from django.contrib import admin
-from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,CurrierOpportunities,SocialMedia
+from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,\
+    CurrierOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCurrier
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -12,6 +13,12 @@ class PartnershipRequestAdmin(admin.ModelAdmin):
 class InsightsAdmin(admin.ModelAdmin):
     list_display = ('title','slug','category','created_at', 'updated_at')
     search_fields = ('title', 'slug', 'category')
+    list_filter = ('created_at', 'updated_at')
+
+@admin.register(InsightComments)
+class InsightCommentsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'insight_name', 'created_at', 'updated_at')
+    search_fields = ('name', 'insight')
     list_filter = ('created_at', 'updated_at')
 
 @admin.register(ISNTeam)
@@ -32,5 +39,23 @@ class SocialMediaAdmin(admin.ModelAdmin):
     list_display = ('name', 'followers', 'link')
     search_fields = ('name',)
     list_filter = ('created_at', 'updated_at')
+
+@admin.register(Testimonials)
+class TestimonialsAdmin(admin.ModelAdmin):
+    list_display = ('name','company_name','designation')
+    search_fields = ('name','company_name')
+    list_filter = ('created_at', 'updated_at','designation')
+
+@admin.register(Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ('email','name')
+    search_fields = ('email',)
+    list_filter = ('created_at', 'updated_at')
+
+@admin.register(ApplyForCurrier)
+class ApplyForCurrierAdmin(admin.ModelAdmin):
+    list_display = ('full_name','email','phone_number','job')
+    search_fields = ('full_name','email')
+    list_filter = ('created_at', 'updated_at','job')
 
 admin.site.register(PrivacyPolicy)

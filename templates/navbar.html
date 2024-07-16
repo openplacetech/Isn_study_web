@@ -9,9 +9,9 @@
         </div>
 
         <ul class="navlink_container">
-          <li><a class="{% if request.path == "/" %}active {% endif %}" href="/">Home</a></li>
-          <li><a class="{% if request.path == "/platform" %}active {% endif %}" href="/platform">ISN Platforms</a></li>
-          <li><a class="" href="#">Market Entry</a></li>
+          <li><a class="{% if request.path == "/" %} active {% endif %}" href="/">Home</a></li>
+          <li><a class="{% if request.path == "/platform" %} active {% endif %}" href="/platform">ISN Platforms</a></li>
+          <li><a class="{% if request.path == "/market-entry" %}active {% endif %}" href="/market-entry">Market Entry</a></li>
           <li><a class="{% if request.path == "/insights" %}active {% endif %}" href="/insights">Insights</a></li>
             <li class="more__menu">
             <span id="more-toggle" style="display: inline-flex; align-items: center;"> More <svg class="arrow-down"
@@ -46,8 +46,8 @@
 
 
           </li>
-          <button class="btn__secondary__blueborder">University Login</button>
-          <a href="/contact/partnership"><button class="btn__primary">Start Patnership</button></a>
+          <button class="btn__right__nav login">University Login</button>
+          <a href="/contact/partnership"><button class="btn__right__nav partnership">Start Patnership</button></a>
         </ul>
         <div class="navbar__menu__icon">
           <img src="{% static 'assets/images/menuicon.svg' %}" />

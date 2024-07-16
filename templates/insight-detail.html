@@ -2,16 +2,17 @@
 {% load static %}
 {% block base %}
 
-    {% load custom_filters %}
+    {% load custom_tags%}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/insigntsdetail.css' %}" />
-    <section class="insignts__detail__home">
+    <section class="insignts__detail__home" style="background-image: url('{{ insight.cover_image.url }}');">
     <!-- <section class="section__container"> -->
     <div class="content__conatiner">
       <div style="color: white !important; text-align: center" class="content__title">
-        The Future of International Education <span>Post-Pandemic.</span>
+{#        The Future of International Education <span>Post-Pandemic.</span>#}
+          {{ insight.title }}
       </div>
       <div class="stats__insights font">
-        by Rahul -
+        by {{ insight.author.first_name }} -
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="14px" height="14px" viewBox="0 0 24 24"
           stroke-width="1.5" stroke="currentColor" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -41,158 +42,74 @@
     <main class="section__container">
       <div class="content__wrapper">
         <div content="content__left">
-          <p>
-            Structured gripped tape invisible moulded cups for sauppor firm
-            hold strong powermesh front liner sport detail. Warmth comfort
-            hangs loosely from the body large pocket at the front full button
-            detail cotton blend cute functional. Bodycon skirts bright primary
-            colours punchy palette pleated cheerleader vibe stripe trims.
-            Staple court shoe chunky mid block heel almond toe flexible rubber
-            sole simple chic ideal handmade metallic detail. Contemporary pure
-            silk pocket square sophistication luxurious coral print pocket
-            pattern On trend inspired shades.
-          </p>
-          <p>
-            Striking pewter studded epaulettes silver zips inner drawstring
-            waist channel urban edge single-breasted jacket. Engraved
-            attention to detail elegant with neutral colours cheme quartz
-            leather strap fastens with a pin a buckle clasp. Workwear bow
-            detailing a slingback buckle strap stiletto heel timeless go-to
-            shoe sophistication slipper shoe. Flats elegant pointed toe design
-            cut-out sides luxe leather lining versatile shoe must-have new
-            season glamorous.
-          </p>
-          <div class="saying">
-            <h1>
-              Knicker lining concealed back zip fasten swing style high
-              waisted double layer full pattern floral.
-            </h1>
-          </div>
-          <p>
-            Foam padding in the insoles leather finest quality staple flat
-            slip-on design pointed toe off-duty shoe. Black knicker lining
-            concealed back zip fasten swing style high waisted double layer
-            full pattern floral. Polished finish elegant court shoe work duty
-            stretchy slingback strap mid kitten heel this ladylike design
-          </p>
-          <p>
-            Eget aenean tellus venenatis. Donec odio tempus. Felis arcu
-            pretium metus nullam quam aenean sociis quis sem neque vici
-            libero. Venenatis nullam fringilla pretium magnis aliquam nunc
-            vulputate integer augue ultricies cras. Eget viverra feugiat cras
-            ut. Sit natoque montes tempus ligula eget vitae pede rhoncus
-            maecenas consectetuer commodo condimentum aenean.
-          </p>
-
+          {{ insight.content|safe }}
+        {% if comment|length > 0 %}
           <section class="comment__container">
-            <div class="comment__input__container">
+            {% for cmt in  comment %}
+                <div class=" comments__container">
               <div class="user__avatar__container">
-                <div class="user__avatar flex-row-aligned comment__avatar" id="userAvatar">Ralph Edwards</div>
-              </div>
-              <div class="input-container">
-                <input class="remove__input__style" type="text" placeholder="Add a comment" />
-                <button class="post__btn remove__input__style">Post</button>
-              </div>
-            </div>
-            <div class=" comments__container">
-              <div class="user__avatar__container">
-                <div class="user__avatar flex-row-aligned" id="userAvatar">Ralph Edwards</div>
+                <div class="user__avatar flex-row-aligned" id="userAvatar">{{ cmt.name }}</div>
               </div>
 
               <!-- <img class="user__image" src="/assets/images/user.png" /> -->
               <div class="comment">
                 <div style="justify-content: space-between" class="flex">
-                  <h6 style="font-weight: 600">Ralph Edwards</h6>
+                  <h6 style="font-weight: 600">{{ cmt.name }}</h6>
                 <p style="color: #9397ad; font-size: 14px !important">
-                    Aug 19, 2021
+                    {{ cmt.created_at }} (CDT)
                   </p>
                 </div>
                 <p>
-                  In mauris porttitor tincidunt mauris massa sit lorem sed
-                  scelerisque. Fringilla pharetra vel massa enim sollicitudin
-                  cras. At pulvinar eget sociis adipiscing eget donec
-                  ultricies nibh tristique.
+                  {{ cmt.message }}
                 </p>
               </div>
             </div>
-            <div class=" comments__container">
-              <div class="user__avatar__container">
-                <div class="user__avatar flex-row-aligned" id="userAvatar">Ralph Edwards</div>
-              </div>
+              {% endfor %}
 
-              <!-- <img class="user__image" src="/assets/images/user.png" /> -->
-              <div class="comment">
-                <div style="justify-content: space-between" class="flex">
-                  <h6 style="font-weight: 600">Ralph Edwards</h6>
-                  <p style="color: #9397ad; font-size: 14px !important">
-                    Aug 19, 2021
-                  </p>
-                </div>
-                <p>
-                  In mauris porttitor tincidunt mauris massa sit lorem sed
-                  scelerisque. Fringilla pharetra vel massa enim sollicitudin
-                  cras. At pulvinar eget sociis adipiscing eget donec
-                  ultricies nibh tristique.
-                </p>
-              </div>
-            </div>
-            <div class=" comments__container">
-              <div class="user__avatar__container">
-                <div class="user__avatar flex-row-aligned" id="userAvatar">Ralph Edwards</div>
-              </div>
-
-              <!-- <img class="user__image" src="/assets/images/user.png" /> -->
-              <div class="comment">
-                <div style="justify-content: space-between" class="flex">
-                  <h6 style="font-weight: 600">Ralph Edwards</h6>
-                  <p style="color: #9397ad; font-size: 14px !important">
-                    Aug 19, 2021
-                  </p>
-                </div>
-                <p>
-                  In mauris porttitor tincidunt mauris massa sit lorem sed
-                  scelerisque. Fringilla pharetra vel massa enim sollicitudin
-                  cras. At pulvinar eget sociis adipiscing eget donec
-                  ultricies nibh tristique.
-                </p>
-              </div>
-            </div>
-            <!-- <div class="flex comments__container">
-              <div class="user__avatar flex-row-aligned" id="userAvatar">Ralph Edwards</div>
-              <div class="comment">
-                <div style="justify-content: space-between" class="flex">
-                  <h6 style="font-weight: 600">Ralph Edwards</h6>
-                  <p style="color: #9397ad; font-size: 14px !important">
-                    Aug 19, 2021
-                  </p>
-                </div>
-                <p>
-                  In mauris porttitor tincidunt mauris massa sit lorem sed
-                  scelerisque. Fringilla pharetra vel massa enim sollicitudin
-                  cras. At pulvinar eget sociis adipiscing eget donec
-                  ultricies nibh tristique.
-                </p>
-              </div>
-            </div>
-            <div class="flex comments__container">
-              <span class="user__avatar flex-row-aligned" id="userAvatar">Ralph Edwards</span>
-              <div class="comment">
-                <div style="justify-content: space-between" class="flex">
-                  <h6 style="font-weight: 600">Ralph Edwards</h6>
-                  <p style="color: #9397ad; font-size: 14px !important">
-                    Aug 19, 2021
-                  </p>
-                </div>
-                <p>
-                  In mauris porttitor tincidunt mauris massa sit lorem sed
-                  scelerisque. Fringilla pharetra vel massa enim sollicitudin
-                  cras. At pulvinar eget sociis adipiscing eget donec
-                  ultricies nibh tristique.
-                </p>
-              </div>
-            </div> -->
-            <div class="see__more__comments font">See 10 more comments</div>
+          {% if comment.has_next %}
+            <a href="/insight/{{ insight.slug }}?comment_page={{ comment.next_page_number }}" style="cursor: pointer" class="see__more__comments font">See 10 more comments</a>
+          {% endif %}
           </section>
+        {% endif %}
+            <form method="POST" action="/comment">
+                {% csrf_token %}
+                <section class="comment__container">
+                <h4 style="text-align: left; margin-bottom: 1.6rem ; margin-top: 1rem">Comment on this post</h4>
+                <div class="comment__input__container">
+                    <input type="text" value="{{ insight.id }}" name="id" hidden>
+                  <div class="comment__inputs">
+                    <input name="name" placeholder="Enter your name" class="input__form" required>
+                    <input type="email" name="email" placeholder="Enter your email" class="input__form" required>
+
+                  </div>
+                  <textarea name="message" placeholder="Enter your comment" class="input__form input__textarea" required>
+
+                  </textarea>
+                    <div class="btn__container__comment">
+                    <button type="submit" style="align-self: left" class="btn__suscribe btn-submit-comment ">submit</button>
+                  </div>
+                </div>
+
+              </section>
+
+            </form>
+            <form method="POST" action="/subscription">
+                {% csrf_token %}
+                <section class="newsletter">
+            <div class="Signup__newsletter"><span style="color:#D24347">Sign Up for Our Newsletters</span> <br/> <span style="color:#E9A1A3"> Get notified of the best deals on our <br/> WordPress themes.</span></div>
+
+            <div style="margin-top: 0.8rem;" class="comment__inputs ">
+              <input name="name" type="text" placeholder="Enter your name" class="input__form input__form--email" required>
+              <input name="email" type="text" placeholder="Enter your email address" class="input__form input__form--email" required>
+
+              <button type="submit" class="btn__suscribe ">Subscribe</button>
+            </div>
+            <div class="terms__condition">
+              <input type="checkbox" id="checkbox" name="confirm_tac" class="checkbox">
+              <label for="checkbox">By checking this box, you confirm that you have read and are agreeing to our terms of use regarding the storage of the data submitted through this form.</label>
+            </div>
+          </section>
+            </form>
           <!-- <section style="margin-top: 1rem !important;" class="comment__container">
              <h6 style="font-weight: 600; size: 24px;">Comment on this post</h6>
               <div class="c">
@@ -252,74 +169,36 @@
               <p>68k</p>
             </li>
           </ul>
-
+        <form method="POST" action="/subscription">
+            {% csrf_token %}
           <div class="suscribe__box">
             <p>
               Subscription Subscribe to our newsletter and receive a selection
               of cool articles every weeks
             </p>
 
-            <input class="suscrible__input " placeholder="hello@youremai.com" />
+            <input name="email" class="suscrible__input " placeholder="hello@youremai.com" />
 
 
-            <button style="width: 100%; margin:2rem 0;" class="suscribe__button">Subscribe</button>
+            <button type="submit" style="width: 100%; margin:2rem 0;" class="suscribe__button">Subscribe</button>
           </div>
+        </form>
           <div class="latest__blog flex-row-aligned">
             <h1 style="font-size: 22.03px !important;" class="title__base">The latest</h1>
+              {% for lat in latest %}
+            <div class="latest__blog__container in-insights-detail">
+              <img src="{{ lat.cover_image.url }}" style="height: 200px; width: 297px"/>
+              <div class="blog__content__description">
+                <h6 class="font-weight font-normal">
+                  {{ lat.title }}
+                </h6>
+                <p class="font-normal">
+                  {{ lat.summary|truncatechars:100 }}  <a href="/insight/{{ lat.slug }}"><span class=""> Read More</span></a>
+                </p>
+              </div>
+            </div>
+              {% endfor %}
 
-
-            <div class="latest__blog__container in-insights-detail">
-              <img src="./assets/images/blog2.svg" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="">Read More</span>
-                </p>
-              </div>
-            </div>
-            <div class="latest__blog__container in-insights-detail">
-              <img src="./assets/images/blog2.svg" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="primary-color">Read More</span>
-                </p>
-              </div>
-            </div>
-            <div class="latest__blog__container in-insights-detail">
-              <img src="./assets/images/blog2.svg" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="primary-color">Read More</span>
-                </p>
-              </div>
-            </div>
-            <div class="latest__blog__container in-insights-detail">
-              <img src="./assets/images/blog2.svg" />
-              <div class="blog__content__description">
-                <h6 class="font-weight font-normal">
-                  Top 10 Countries for International Student Recruitment in 2024
-                </h6>
-                <p class="font-normal">
-                  A comprehensive analysis of the most popular destinations for
-                  international students in 2024. Learn about the factors driving
-                  these trends and.. <span class="primary-color">Read More</span>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -327,40 +206,17 @@
       <div class="you__may__also__like">
         <h6 class="title__base">You May Also Like</h6>
         <div style="margin: 2rem 0;" class="all__blogs__container">
-
-          <div class="grid-item">
-            <img src="./assets/images/blogimage1.svg" />
-            <h6 class="font-weight font-normal margin">
-              Top 10 Countries for International Student Recruitment in 2024
-            </h6>
-            <p class="font-normal">
-              A comprehensive analysis of the most popular destinations for
-              international students in 2024. Learn about the factors driving
-              these trends and how your institution can... <span>Read More</span>
-            </p>
-          </div>
-          <div class="grid-item">
-            <img src="./assets/images/blogimage1.svg" />
-            <h6 class="font-weight font-normal margin">
-              Top 10 Countries for International Student Recruitment in 2024
-            </h6>
-            <p class="font-normal">
-              A comprehensive analysis of the most popular destinations for
-              international students in 2024. Learn about the factors driving
-              these trends and how your institution can... <span>Read More</span>
-            </p>
-          </div>
-          <div class="grid-item">
-            <img src="./assets/images/blogimage1.svg" />
-            <h6 class="font-weight font-normal margin">
-              Top 10 Countries for International Student Recruitment in 2024
-            </h6>
-            <p class="font-normal">
-              A comprehensive analysis of the most popular destinations for
-              international students in 2024. Learn about the factors driving
-              these trends and how your institution can... <span>Read More</span>
-            </p>
-          </div>
+            {% for rec in recommendation %}
+              <div class="grid-item">
+                <img src="{{ rec.cover_image.url }}" />
+                <h6 class="font-weight font-normal margin">
+                  {{ rec.title }}
+                </h6>
+                <p class="font-normal">
+                  {{ rec.summary|truncatechars:200 }} <a href="/insight/{{ rec.slug }}"><span class=""> Read More</span></a>
+                </p>
+              </div>
+            {% endfor %}
 
 
 

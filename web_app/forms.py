@@ -1,5 +1,5 @@
 from django import forms
-from web_app.models import PartnershipRequest
+from web_app.models import PartnershipRequest,Subscriber,InsightComments,ApplyForCurrier
 class PartnershipRequestForm(forms.ModelForm):
     agent = forms.CharField(max_length=255,required=False)
     market_entry = forms.CharField(max_length=255,required=False)
@@ -7,7 +7,7 @@ class PartnershipRequestForm(forms.ModelForm):
 
     class Meta:
         model = PartnershipRequest
-        fields = ['institute_name','address','contact_person','contact_person','contact_person','title','email','phone_no','message']
+        fields = ['institute_name','address','contact_person','title','email','phone_no','message']
 
     def clean(self):
         cleaned_data = super().clean()
@@ -48,3 +48,21 @@ class CombinedDataForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
+
+class SubscriberForm(forms.ModelForm):
+    class Meta:
+        model = Subscriber
+        fields = ['name','email']
+
+class InsightCommentsForm(forms.ModelForm):
+    class Meta:
+        model = InsightComments
+        fields = ['name','email','message']
+
+class ApplyForCurrierForm(forms.ModelForm):
+    class Meta:
+        model = ApplyForCurrier
+        fields = ['first_name','last_name','email','phone_number','contact_phone_type','other_job_consider',
+                  'country','profile_link','expected_salary','resume','gender','veteran_status',
+                  'race_ethnicity','disability','disability','legal_name','required_immigration_sponsorship',
+                  'is_previously_employed','is_former_current_intern_or_contractor','receive_text_message','availability_or_notice_period']

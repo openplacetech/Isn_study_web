@@ -1,0 +1,45 @@
+<div style="margin-bottom: 20px">
+    <div class="user__information__grid" id="step_1_form">
+    <input placeholder="Legal First Name" id="first_name" name="first_name" class="input__form" required/>
+    <input placeholder="Legal last name" id="last_name" name="last_name" class="input__form" required/>
+    <input placeholder="Phone Number" id="phone_number" name="phone_number" class="input__form" required/>
+    <select name="contact_phone_type" id="contact_phone_type" class="input__form selectinputappearance" required>
+        <option value="" disabled selected>Contact Phone Type</option>
+        {% for p,pt in phone_type %}
+        <option value="{{ p }}">{{ pt }}</option>
+        {% endfor %}
+    </select>
+    <input  name="email" id="email_id" placeholder="Email address" class="input__form " required/>
+    <select name="country" id="country" class="input__form selectinputappearance" required>
+        <option value="" disabled selected>Country/Region of Residence</option>
+        {% for c, cou in country %}
+        <option value={{ c }}>{{ cou }}</option>
+        {% endfor %}
+    </select>
+</div>
+<div>
+    <h6 class="title__form" style="margin-top: 51px; font-size: 18px; font-weight: 400px">Please provide at least one item below to proceed.</h6>
+    <div class="user__information__grid">
+        <input placeholder="Profile Link" id="profile_link" name="profile_link" class="input__form" required/>
+        <select  name="profile_link_type" id="profile_link_type" class="input__form selectinputappearance" required>
+            <option value="" disabled selected>Profile Link Type</option>
+            {% for p ,pl in profile_link %}
+            <option value="p">{{ pl }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <input style="margin-top: 2rem;"  id="expected_salary" name="expected_salary" placeholder="expected salary" class="input__form" required/>
+</div>
+<div>
+    <h6 style="margin: 0.4rem !important;" class="title__form ">Resume</h6>
+    <p style="margin-left: 0.4rem;" class="secondary_title">One file max size 10 MB (PDF, Doc, TXT)</p>
+
+    <div onclick="browseFile()" class="uploader__image" >
+        <div  class="uploader__center">
+            <p>Upload your resume</p>
+            <button  type="button" class="brows__btn">Browse</button>
+            <input  name="resume" type="file" id="fileInput" style="display: none;"  onchange="handleFileSelect(event)" required>
+        </div>
+    </div>
+</div>
+</div>

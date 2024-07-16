@@ -3,6 +3,7 @@
 //   })
 
 
+
   var currentUrl = window.location.href;
 
   
@@ -21,16 +22,27 @@
   });
 
 
-  function toggleDetails(item) {
-    item.classList.toggle('characteristics__active')
-    var descriptionCard = item.querySelector('.card__with__description');
-    descriptionCard.classList.toggle('active'); 
-    const paragraph = item.querySelector('.card__with__description p');
-    console.log(paragraph)
-    paragraph.classList.toggle('show');
+  function setupHoverToggle(item) {
+    item.addEventListener('mouseenter', function() {
+        toggleDetails(item, true);
+    });
+
+    item.addEventListener('mouseleave', function() {
+        toggleDetails(item, false);
+    });
 }
 
+function toggleDetails(item, show) {
+    item.classList.toggle('characteristics__active', show);
+    var descriptionCard = item.querySelector('.card__with__description');
+    descriptionCard.classList.toggle('active', show);
+    
+    const paragraph = item.querySelector('.card__with__description p');
+    paragraph.classList.toggle('show', show);
+}
 
+// Apply this to all cards
+document.querySelectorAll('.characterstic__card').forEach(setupHoverToggle);
 
 
   
@@ -120,3 +132,4 @@ document.addEventListener('DOMContentLoaded', setupNavbar);
     // Initialize button states
     updateButtonStates();
 });
+

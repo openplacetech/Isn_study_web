@@ -3,6 +3,11 @@ register = template.Library()
 from web_app.models import SocialMedia
 
 
+@register.filter(name='word_length')
+def word_length(value):
+    """Returns the length of the given word/string."""
+    return round(len(value)/1500)
+
 @register.simple_tag
 def facebook_followers():
     try:

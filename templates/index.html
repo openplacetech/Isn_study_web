@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block base %}
+    <style>
+    .about-us-list{
+
+    }
+    </style>
 <section class="homepage__container">
     <main class="section__container">
       <div class="hero__container">
         <div class="hero__left">
           <div class="hero__container__slogan">
-            <p>INTERNATIONAL STUDY NETWORK</p>
+{#            <p>INTERNATIONAL STUDY NETWORK</p>#}
             <h1>
               Diversify Your <br />
               University: Partner <br />
-              with Today.
+              with <span><img style="scale: unset;" src="{% static 'assets/images/isn.svg' %}"/></span>  Today.
             </h1>
             <p>
               Partner with ISN to unlock your university's potential,
@@ -26,28 +31,30 @@
 
           <div class="hero__container__question">
             <p>What are you looking for?</p>
-            <p class="faqs">
+            <a href="/journey" class="faqs">
               I want to diversify my international student population at my
               academic institution.
+            </a>
+            <p class="faqs">
+              I am recruitment partner who wants to leverage US applications.
             </p>
-            <p style="font-size: 14px">
-              I am recruitment partner who wants to leverage US applications,
-              I am a student who wants to study in the US.
-            </p>
+              <p class="faqs">
+                   I am a student who wants to study in the US.
+              </p>
           </div>
         </div>
         <div class="hero__right">
           <div class="hero__right__card__container">
             <div class="card__red">
-              <div class="card__ratedby">80k<span>+</span></div>
+              <div class="card__ratedby">10k<span>+</span></div>
               <div style="font-size: 14px">Students Helped</div>
             </div>
             <div class="card__lightgreen">
-              <div class="card__ratedby">65k</div>
+              <div class="card__ratedby">500<span>+</span></div>
               <div style="font-size: 14px">Recruitment Partners</div>
             </div>
             <div class="card__green">
-              <div class="card__ratedby">12k<span>+</span></div>
+              <div class="card__ratedby">5000<span>+</span></div>
               <div style="font-size: 14px; text-align: center">
                 Patner Institutions
               </div>
@@ -55,7 +62,7 @@
             <div class="card__secondaryblue">
               <div class="card__ratedby">150<span>+</span></div>
               <div style="font-size: 14px">
-                Countries<span style="visibility: hidden"> dd</span>
+                Countries<span style="visibility: hidden"> hidden</span>
               </div>
             </div>
           </div>
@@ -70,32 +77,14 @@
     <main class="ourpartner__container">
       <div class="title">Our<span> Partners.</span></div>
 
-      <ul class="ourpartner__container__lists">
-        <li>
-          <img src="{% static 'assets/images/TSU.svg' %} " class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/UNT.svg' %}" class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/WSU.svg' %}" class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/MSU.svg' %}" class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/WESU.svg' %} " class="partner__logo" />
-
-        </li>
-        <li>
-          <img src="{% static 'assets/images/TUNM.svg' %}" class="partner__logo" />
-
-        </li>
-      </ul>
+      <div class="marquee marquee--6">
+        <img class="marquee__item" src={% static 'assets/images/texas-state.svg' %}    alt="">
+        <img class="marquee__item" src="{% static 'assets/images/UNT.svg' %}"  alt="">
+        <img class="marquee__item" src="{% static 'assets/images/WSU.svg' %}"  alt="">
+        <img class="marquee__item"  src="{% static 'assets/images/MSU.svg' %}"  alt="">
+        <img class="marquee__item" src="{% static 'assets/images/WESU.svg' %} "  alt="">
+        <img class="marquee__item" src="{% static 'assets/images/TUNM.svg' %}"  alt="">
+      </div>
       <div class="ourpartner__chart__container">
         <img src="{% static 'assets/images/chart.svg' %}" />
 
@@ -155,7 +144,7 @@
               <img src="{% static 'assets/images/star.svg' %}" alt="star__icon" />
             </div>
             <div id="card" class="card__with__description">
-              <h4>Outstanding Performance</h4>
+              <h4 class="card__title">Outstanding Performance</h4>
               <p> Our system allows institutions to easily update their data,
                 ensuring the most accurate and current information is always
                 available.</p>
@@ -164,6 +153,15 @@
           </div>
         </div>
 
+      </div>
+        <div>
+        <hr class="horizontal__line" />
+        <div class="partner__us__content">
+          <p>
+            Join us in shaping the future of international education. Partner with ISN and discover the power of global
+            connections.
+          </p>
+        </div>
       </div>
     </main>
   </section>
@@ -236,10 +234,10 @@
             <img src="{% static 'assets/images/students.svg' %}" class="d-block w-100" alt="Image 1">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'assets/images/bannerstudents.svg' %}" class="d-block w-100" alt="Image 2">
+            <img src="{% static 'assets/images/slider.png' %}" class="d-block w-100" alt="Image 2">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'assets/images/students.svg' %}" class="d-block w-100" alt="Image 3">
+            <img src="{% static 'assets/images/slider1.png' %}" class="d-block w-100" alt="Image 3">
           </div>
         </div>
 
@@ -259,7 +257,7 @@
       </div>
     </div>
     <div class="empower__container__bottom">
-      <p class="secondary_title">HOW CAN HELP</p>
+      <p class="secondary_title">HOW WE CAN HELP</p>
       <div class="content__title">
         Empower Your Institution: <span>How We Can Help</span>
       </div>
@@ -359,7 +357,8 @@
       </div>
     </main>
   </section>
-  <section class="saying__container">
+  {% if testimonials|length > 0 %}
+      <section class="saying__container">
     <main class="section__container">
 
       <div class="saying__content">
@@ -373,68 +372,16 @@
 
         <div class="slider">
           <div class="slider__container">
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"Working with [Company Name] has been a pleasure from start to finish. Their customer service is
-                exceptional—they were responsive, knowledgeable, and genuinely invested in ensuring our needs were met.
-                I highly recommend their services!"</p>
-              <div class="user__detail">
-                <h4>Ed Colyer</h4>
-                <p>Director of International Marketing & Recruitment Office of International Affairs Texas State
-                  University</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"[Company Name] exceeded our expectations in every way. Their innovative solutions and attention to
-                detail transformed our project. We're looking forward to collaborating with them again in the future!"
-              </p>
-              <div class="user__detail">
-                <h4>Sarah Johnson</h4>
-                <p>Chief Technology Officer, TechInnovate Solutions</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"The team at [Company Name] is truly outstanding. Their expertise and professionalism made our complex
-                project seem effortless. We couldn't be happier with the results and the positive impact on our
-                business."</p>
-              <div class="user__detail">
-                <h4>Michael Chen</h4>
-                <p>VP of Operations, Global Enterprises Inc.</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"[Company Name] exceeded our expectations in every way. Their innovative solutions and attention to
-                detail transformed our project. We're looking forward to collaborating with them again in the future!"
-              </p>
-              <div class="user__detail">
-                <h4>Sarah Johnson</h4>
-                <p>Chief Technology Officer, TechInnovate Solutions</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"The team at [Company Name] is truly outstanding. Their expertise and professionalism made our complex
-                project seem effortless. We couldn't be happier with the results and the positive impact on our
-                business."</p>
-              <div class="user__detail">
-                <h4>Michael Chen</h4>
-                <p>VP of Operations, Global Enterprises Inc.</p>
-              </div>
-            </div>
-            <div class="slider__card">
-              <img class="img" src="{% static 'assets/images/user-slider.svg' %}" alt="User testimonial background" />
-              <p>"The team at [Company Name] is truly outstanding. Their expertise and professionalism made our complex
-                project seem effortless. We couldn't be happier with the results and the positive impact on our
-                business."</p>
-              <div class="user__detail">
-                <h4>Michael Chen</h4>
-                <p>VP of Operations, Global Enterprises Inc.</p>
-              </div>
-            </div>
-
+                {% for testimonial in testimonials %}
+                    <div class="slider__card">
+                      <img class="img" src="{{ testimonial.photo.url }}" alt="User testimonial background"  width="145" height="149"/>
+                      <p>{{ testimonial.message }}</p>
+                      <div class="user__detail">
+                        <h4>{{ testimonial.name }}</h4>
+                        <p>{{ testimonial.designation }} at {{ testimonial.company_name }}</p>
+                      </div>
+                    </div>
+              {% endfor %}
           </div>
           <button class="slider__arrow slider__arrow--left" aria-label="Previous slide">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
@@ -450,7 +397,9 @@
           </button>
         </div>
     </main>
+
   </section>
+    {% endif %}
   <section class="our__diversity__container">
     <main class="section__container">
       <div class="diversity__content">
@@ -528,24 +477,21 @@
             </div>
           </div>
           <div class="card__trust">
-            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <img src="{% static 'assets/images/method-comp.svg' %}" />
             <div class="card__trust__content">
-              <h4>Comprehensive Research</h4>
+              <h4>Transparent Methodology</h4>
               <p>
-                Our data is meticulously gathered through extensive research and
-                verified surveys, ensuring that every piece of information is
-                both accurate and up-to-date.
+                We are committed to transparency in our data collection methods. Our rigorous standards and practices ensure the highest level of reliability and trustworthiness.
               </p>
             </div>
           </div>
           <div class="card__trust">
-            <img src="{% static 'assets/images/rafiki.svg' %}" />
+            <img src="{% static 'assets/images/trusted.svg' %}" />
             <div class="card__trust__content">
-              <h4>Comprehensive Research</h4>
+              <h4>Trusted by
+                US Institutions</h4>
               <p>
-                Our data is meticulously gathered through extensive research and
-                verified surveys, ensuring that every piece of information is
-                both accurate and up-to-date.
+                Educational institutions and recruiting partners around the globe rely on ISN for accurate and reliable data. Our platform is built on a foundation of trust and integrity, making us a dependable partner in international education.
               </p>
             </div>
           </div>
@@ -602,9 +548,7 @@
 {#                <p>Trends</p>#}
                 <h4>{{ insights.0.title }}</h4>
                 <p>{{ insights.0.summary|truncatechars:100}}
-                        {% if  insights.0.summary|length > 100%}
-                        <span class=""> Read More</span>
-                        {% endif %}
+                        <a href="/insight/{{ insights.0.slug }}"><span class=""> Read More</span></a>
                 </p>
               </div>
             </div>
@@ -617,7 +561,7 @@
                     <p>
                         {{ item.summary|truncatechars:100}}
                         {% if  item.summary|length > 100%}
-                        <span class=""> Read More</span>
+                        <a href="/insight/{{ item.slug }}"><span class=""> Read More</span></a>
                         {% endif %}
                     </p>
                   </div>
