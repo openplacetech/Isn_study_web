@@ -18,6 +18,16 @@
   max-width: 100%;
 
 }
+.human-resource-whyus{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+    padding: 3rem 0;
+    
+}
+
+
+
 
 
 .benefit__with__us{

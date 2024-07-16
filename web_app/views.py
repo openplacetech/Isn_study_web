@@ -20,9 +20,10 @@ def partnership_request(request,contact_type):
         form = PartnershipRequestForm(request.POST)
         if form.is_valid():
             partnership=form.save()
-            return redirect('partnership_request',contact_type="partnership")
+            return redirect('partnership_request',contact_type=contact_type)
         else:
             print(form.errors)
+            return render(request, 'error.html')
     else:
         form = PartnershipRequestForm()
     if contact_type == "us":

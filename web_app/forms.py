@@ -7,7 +7,7 @@ class PartnershipRequestForm(forms.ModelForm):
 
     class Meta:
         model = PartnershipRequest
-        fields = ['institute_name','address','contact_person','contact_person','contact_person','title','email','phone_no','message']
+        fields = ['institute_name','address','contact_person','title','email','phone_no','message']
 
     def clean(self):
         cleaned_data = super().clean()

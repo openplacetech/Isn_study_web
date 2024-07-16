@@ -4,7 +4,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/contact.css' %}" />
     <section class="contact__us__landingpage">
     <div class="get__in__touch" style="background-image: url('{% static 'assets/images/get-in-touch.svg' %}');">
-
     </div>
     <div class="lets__talk">
       <img  src="{% static 'assets/images/lets-talk.svg' %}"/>
@@ -16,34 +15,22 @@
       </div>
       <div class="contact__info">
        <h6>VISIT US</h6>
-
         <span>International Study Network LLC 13101 Preston  Texas 75240</span>
         <span>Road Suite 110 #3536 Dallas,</span>
         <span>United States</span>
-
       </div>
       <div class="call__us__container">
         <div style="margin-top: 0 !important;" class="contact__info ">
           <h6>CALL US</h6>
-
            <span>+971-4-576-6770
           </span>
            <span>  +971-55-983-7007</span>
-
-
          </div>
          <div style="margin-top: 0 !important;" class="contact__info ">
           <h6>EMAIL US</h6>
-
            <span>univpartners@isnstudy.com</span>
-
-
          </div>
-
-
       </div>
-
-
     </main>
     <main class="section___contactus__right">
       <img class="linear__group" src="{% static 'assets/images/linear.svg' %}"/>
@@ -54,65 +41,51 @@
           75240 </span></span>United States.</span>
         <!-- <span>View on map</span> -->
       </div>
-      <form class="form">
+      <form class="form" method="POST" action="/contact/us">
+          {% csrf_token %}
         <div style="text-align: center;" class="content__title ">
           Start <span>Your Partnership <br /> With ISN</span>.
           <p class="parntership__title"> Lorem ipsum dolor sit amet consectetur.</p>
         </div>
-        <input placeholder="Name of Institution" class="input__form" />
-        <input placeholder="Address" class="input__form" />
+        <input placeholder="Name of Institution" name="institute_name" class="input__form" required/>
+        <input placeholder="Address" name="address" class="input__form" required/>
         <div class="user__information__grid">
-          <input placeholder="Contact Person" class="input__form" />
-          <input placeholder="Title" class="input__form" />
+          <input placeholder="Contact Person" name="contact_person" class="input__form" required/>
+          <input placeholder="Title" name="title" class="input__form" required/>
         </div>
-        <input placeholder="Email address" class="input__form" />
-        <input placeholder="Phone number" class="input__form" />
+        <input placeholder="Email address" name="email" class="input__form" required/>
+        <input placeholder="Phone number" name="phone_no" class="input__form" required/>
         <div class="services-container flex-row-aligned">
           <p>Which services are you interested in?</p>
-
           <div class="check-option">
-            <input type="checkbox" id="service1" name="service" class="checbox" value="service1" />
+            <input type="checkbox" id="service1" name="agent" class="checbox" value="Hiring as Agent" />
             <label for="service1">Hiring as Agent</label>
           </div>
-
           <div class="check-option">
-            <input type="checkbox" id="service2" class="checbox" name="service" value="service2" />
+            <input type="checkbox" id="service2" class="checbox" name="market" value="Market Entry" />
             <label for="service2">Market Entry</label>
           </div>
-
           <div class="check-option" >
-            <input type="checkbox" id="service3" name="service" class="checkbox" value="service3" />
+            <input type="checkbox" id="service3" name="other" class="checkbox" value="Other Specify" />
             <label for="service3">Other Specify</label>
           </div>
-
         </div>
-        <textarea placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area"></textarea>
+        <textarea placeholder="Questions/Comments" name="message" class="partnership__input hide-scrollbar text-area" required></textarea>
         <div class="check__box__for__policy">
           <input type="radio" id="policy-checkbox" class="input__form" name="policy">
           <span>I agree to the Terms and Privacy Policy.
           </span>
-
-
         </div>
         <button class="btn__primary__home btn-submit__contactus">Submit</button>
-
-
-
       </form>
       <div class="contact__info__mbl">
         <h6>Visit Us</h6>
-
          <span>International Study Network LLC 13101 Preston  Texas 75240</span>
          <span>Road Suite 110 #3536 Dallas,</span>
          <span>United States</span>
-
        </div>
-
-
     </main>
-
   </section>
-
   <section class="our__avalability__container">
     <main class="section__container">
       <div class="availability__content">
@@ -123,8 +96,6 @@
         <div class="availability__zone__map">
           {% include 'vector-map.html' %}
         </div>
-
-
       </div>
     </main>
   </section>
@@ -142,7 +113,6 @@
             data insights are designed to simplify your international outreach,
             enhance your recruitment strategies, and foster global partnerships.
           </p>
-
           <div class="meetus__conatiner">
             <div class="meetus__btn__container">
               <button class="btn__primary schedule__meet__btn ">Schedule a Meet </button>
