@@ -99,7 +99,7 @@
                 <p>
                     {{ item.summary|truncatechars:100}}
                             {% if  item.summary|length > 100%}
-                            <span class="">Read More</span>
+                            <a style="text-decoration: none" href="/insight/{{ item.slug }}"><span class="">Read More</span></a>
                             {% endif %}
                 </p>
             </div>
