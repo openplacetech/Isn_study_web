@@ -3,6 +3,7 @@ from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsF
 from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials,InsightComments
 from django.conf import settings
 from django.core.mail import send_mail
+from django.db.models import Q
 from django.core.paginator import Paginator
 from django.db.models import Count
 from web_app.constrants import DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
@@ -104,7 +105,9 @@ def currier_opportunity(request):
 
 def job_detail(request,slug):
     job = CurrierOpportunities.objects.get(slug=slug)
-    return render(request,'job-detail.html',{'job':job})
+    recommendation = CurrierOpportunities.objects.filter(Q(category=job.category)|Q(job_mode=job.job_mode)|Q(job_status=job.job_status)).exclude(id=job.pk)[:3]
+
+    return render(request,'job-detail.html',{'job':job,"recommendation":recommendation})
 
 def privacy_policy(request):
     privacy = PrivacyPolicy.objects.get(status="PUBLISHED")

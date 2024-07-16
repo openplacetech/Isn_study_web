@@ -525,20 +525,20 @@ hr {
   line-height: 24px;
 }
 
-.hero__container__question :nth-child(2) {
+.hero__container__question .faqs:hover {
   color: var(--secondary-blue);
   font-weight: 600;
-  
   font-size: 14px;
   text-decoration: underline 1px solid var(--secondary-blue);
 }
 
-.hero__container__question :nth-child(3) {
+.hero__container__question .faqs{
   color: var(--text-light-grey);
   line-height: 1.5rem;
   font-size: 14px;
-  
+  cursor: pointer;
 }
+
 .hero__container__question :nth-child(5) {
   color: var(--text-light-grey);
   line-height: 1.5rem;

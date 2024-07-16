@@ -43,7 +43,7 @@
                     </span>
 
                     <div class="copy__link__btn">
-                        <input id="job_link" value="https://isn.com/career/full-stack-developer" class="copy__input" />
+                        <input id="job_link" value="{{ request.build_absolute_uri }}" class="copy__input" />
                         <button onclick=copyURL("job_link") class="copy__btn">Copy</button>
                     </div>
 
@@ -51,78 +51,26 @@
                 </div>
                 <aside class="opportunities__right Similar__Opportunities__container">
                     <div  class="content__title">Similar <span>Opportunities</span></div>
-                    <div class="opportunities__card">
-                        <h4>Full-Stack Developers </h4>
-                        <div class="type__opportunities__container">
-                            <span class="type__opportunities">Tartu </span>
-                            <span>Full-time</span>
-                        </div>
-                        <p>Due to growing workload, we are looking for experienced and talented Full-Stack Developers to
-                            join our fast-paced Engineering team. You will work closely with Product, Design and
-                            Marketing to analyze, develop, debug, test, roll-out and support new and existing product
-                            features.</p>
-                        <div class="see__positions__container">
-
-                            <button class="see__position__btn ">See positions <svg xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16" height="16"
-                                    stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="opportunities__card">
-                        <h4>Full-Stack Developers </h4>
-                        <div class="type__opportunities__container">
-                            <span class="type__opportunities">Tartu </span>
-                            <span>Full-time</span>
-                        </div>
-                        <p>Due to growing workload, we are looking for experienced and talented Full-Stack Developers to
-                            join our fast-paced Engineering team. You will work closely with Product, Design and
-                            Marketing to analyze, develop, debug, test, roll-out and support new and existing product
-                            features.</p>
-                        <div class="see__positions__container">
-
-                            <button class="see__position__btn ">See positions <svg xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16" height="16"
-                                    stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <section>
-
-
+                    {% for rec in recommendation %}
                         <div class="opportunities__card">
-                            <h4>Full-Stack Developers </h4>
-                            <div class="type__opportunities__container">
-                                <span class="type__opportunities">Tartu </span>
-                                <span>Full-time</span>
-                            </div>
-                            <p>Due to growing workload, we are looking for experienced and talented Full-Stack
-                                Developers to
-                                join our fast-paced Engineering team. You will work closely with Product, Design and
-                                Marketing to analyze, develop, debug, test, roll-out and support new and existing
-                                product
-                                features.</p>
-                            <div class="see__positions__container">
-
-                                <button class="see__position__btn ">See positions <svg
-                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" width="16" height="16" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                    </svg>
-                                </button>
-                            </div>
+                        <h4>{{ rec.job_title }} </h4>
+                        <div class="type__opportunities__container">
+                            <span class="type__opportunities">{{ rec.get_job_type_display }} </span>
+                            <span>{{ rec.get_job_mode_display }}</span>
                         </div>
+                        <p>{{ rec.job_summary }}</p>
+                        <div class="see__positions__container">
 
-                        <div>
+                            <a href="/job/{{ rec.slug }}" style="text-decoration: none" class="see__position__btn ">See positions <svg xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" width="16" height="16"
+                                    stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+                            </a>
                         </div>
-
+                    </div>
+                    {% endfor %}
 
                 </aside>
             </div>
@@ -180,7 +128,7 @@
           document.body.removeChild(tempTextArea);
 
           // Alert the user
-          alert("Text copied: " + textToCopy);
+          alert("Url copied");
         }
 
     </script>
