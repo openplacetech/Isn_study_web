@@ -41,7 +41,6 @@ def isn_insights(request):
     no_of_item = 9
     if search:
         insight_list = Insights.objects.filter(title__icontains=search).order_by('-created_at')
-        print("******************",insight_list,search)
     else:
         insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     if page_number == None or page_number == 1:
