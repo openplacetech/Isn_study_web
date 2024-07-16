@@ -117,13 +117,18 @@
                     <span>Previous</span>
                 </div>
                 <div class="pagenumber__container">
-                    <div class="active-page pagenumber">1</div>
-                    <div class="pagenumber">2</div>
-                    <div class="pagenumber">3</div>
-                    ...
-                    <div class="pagenumber">8</div>
-                    <div class="pagenumber">9</div>
-                    <div class="pagenumber">10</div>
+
+                {% with ''|center:total_pages as range %}
+                    {% for num in range %}
+                        {% if request.GET.page == num %}
+                            <a href="/insights?page={{ forloop.counter }}" style="text-decoration: none; cursor: pointer" class="active-page pagenumber" >{{ forloop.counter }}</a>
+                        {% elif request.GET.page is None and forloop.counter == 1%}
+                            <a href="/insights?page={{ forloop.counter }}" style="text-decoration: none; cursor: pointer" class="active-page pagenumber" >{{ forloop.counter }}</a>
+                        {% else %}
+                            <a href="/insights?page={{ forloop.counter }}" style="text-decoration: none; cursor: pointer" class="pagenumber">{{ forloop.counter }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
                 </div>
                 <div class="next">
                     <span>Next</span>

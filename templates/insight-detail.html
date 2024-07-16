@@ -67,7 +67,7 @@
               {% endfor %}
 
           {% if comment.has_next %}
-            <a href="/insight/{{ insight.slug }}?comment_page={{ request.GET.comment_page }}" style="cursor: pointer" class="see__more__comments font">See 10 more comments</a>
+            <a href="/insight/{{ insight.slug }}?comment_page={{ comment.next_page_number }}" style="cursor: pointer" class="see__more__comments font">See 10 more comments</a>
           {% endif %}
           </section>
         {% endif %}
