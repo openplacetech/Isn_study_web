@@ -814,30 +814,19 @@ hr {
 }
 
 
-.ourplatform___right> :nth-child(1) {
+.ourplatform___card:hover {
   background-color: white !important;
 
   border: 1px solid #d243478c;
 }
 
-.ourplatform___right> :nth-child(2) {
-
-  border: 1px solid rgba(210, 67, 71, 0.17);
-}
-.ourplatform___right> :nth-child(4) {
-
-  border: 1px solid rgba(210, 67, 71, 0.17);
-}
-
-.ourplatform___right> :nth-child(3) {
-
-  border: 1px solid rgba(210, 67, 71, 0.17);
-}
 
 .ourplatform___card {
+  border: 1px solid rgba(210, 67, 71, 0.17);
   padding: 2rem;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  border: 1px solid rgba(210, 67, 71, 0.17);
 }
 
 .medal__icon__container {
@@ -947,6 +936,10 @@ hr {
   padding: 2rem;
   border-radius: 1rem;
   border: 1px solid rgba(198, 229, 217, 1);
+}
+.empower__card:hover{
+  background-color: white !important;
+  border: 1px solid #d243478c;
 }
 
 .empower__card__container {
