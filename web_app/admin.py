@@ -1,6 +1,6 @@
 from django.contrib import admin
 from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,\
-    CurrierOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCurrier
+    CurrierOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCurrier,StudyDestinationOfNepali
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -57,5 +57,9 @@ class ApplyForCurrierAdmin(admin.ModelAdmin):
     list_display = ('full_name','email','phone_number','job')
     search_fields = ('full_name','email')
     list_filter = ('created_at', 'updated_at','job')
+
+@admin.register(StudyDestinationOfNepali)
+class StudyDestinationOfNepali(admin.ModelAdmin):
+    pass
 
 admin.site.register(PrivacyPolicy)

@@ -223,7 +223,6 @@ ss
     </section>
         <script>
         var opportunitiesData = JSON.parse('{{ opportunity|escapejs }}')
-        console.log(opportunitiesData)
         filteredJobs = opportunitiesData.flatMap(dev => dev.jobs);
         var total_job=filteredJobs.length
 function createOpportunityCard(job) {
