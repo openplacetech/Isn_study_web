@@ -1,0 +1,23 @@
+.privacy__page{
+    padding-top: 5rem ;
+    padding-bottom: 5rem ;
+}
+
+ul li{
+    list-style: none;
+}
+
+
+.privacy__policy__header{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+section{
+    margin: 2rem 0;
+}
+
+h2{
+    font-size: 18px;
+    font-weight: 700;
+}

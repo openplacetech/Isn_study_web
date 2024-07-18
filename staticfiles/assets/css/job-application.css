@@ -1,0 +1,113 @@
+.job__application__container{
+    padding: 5rem 0;
+    max-width: 60%;
+  
+}
+
+.position{
+
+}
+
+.job__form__container{
+    margin: 3rem 0;
+}
+
+.form__description{
+  background-color:#F7FAFF;
+  padding:12px 20px ;
+  border-radius: 10px;
+
+}
+ 
+.steps{
+    color: #3F525A;
+    font-size: 18px;
+   
+}
+.job__title{
+    font-size: 20px;
+    margin: 0.4rem 0;
+}
+.margin{
+    margin-bottom: 1.8rem !important;
+}
+
+.title__form{
+    margin-bottom: 1.4rem;
+}
+.uploader__image{
+    max-width: 100%;
+    border: 1px dashed #A6A6A6;
+    min-height: 120px;
+    border-radius: 10px;
+    background-color: #F7FAFF;
+    color: #808080;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.uploader__center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.next__btn{
+    min-width: 250px;
+    width: 100%;
+    font-weight: 500;
+}
+.brows__btn{
+    background-color: #E9A1A3;
+    padding: 6px 26px  ; 
+    border-radius: 16px;
+    outline: none;
+    border: none;
+    color: white;
+}
+.direction-column{
+    grid-template-columns: 1fr;
+   }
+
+  
+ 
+
+  .next__prev__btn__container{
+    display: flex;
+    gap: 2rem;
+  }
+  .previousbtn{
+   background-color: white;
+   color: #D24347;
+   border: 1px solid #D24347;
+  }
+  .previousbtn:hover{
+    background-color: transparent;
+  }
+
+  .form__description{
+    color: #808080;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  
+
+@media (max-width:1024px) {
+    .job__application__container{
+        max-width: 100%;
+    }
+    .next__prev__btn__container{
+      flex-direction: column;
+    }
+}
+
+@media (max-width:768px){
+    .user__information__grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .next__btn{
+        min-width: 100% !important;
+    }
+    
+}

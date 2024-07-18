@@ -3,6 +3,7 @@ from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsF
 from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials,InsightComments
 from django.conf import settings
 from django.core.mail import send_mail
+from django.core import serializers
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.db.models import Count
@@ -71,11 +72,11 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
-    wast_africa = StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA")
-    south_and_center_asia = StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA")
-    south_asia = StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA")
-    mexico = StudyDestinationOfNepali.objects.filter(region="MEXICO_AND_CENTRAL_AMERICA")
-    south_america = StudyDestinationOfNepali.objects.filter(region="SOUTH_AMERICA")
+    wast_africa = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA"))
+    south_and_center_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
+    south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
+    mexico = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="MEXICO_AND_CENTRAL_AMERICA"))
+    south_america = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AMERICA"))
     return render(request,'market-entry.html',{"wast_africa":wast_africa,
                                                "south_and_center_asia":south_and_center_asia,
                                                "south_asia":south_asia,

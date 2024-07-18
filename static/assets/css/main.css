@@ -2167,25 +2167,25 @@ hr {
            }
    
         
-           @media (max-width: 768px) {
+           @media (min-width: 320px) and (max-width: 768px) {
                :root {
-                   --marquee-gap:60px !important; /* Smaller gap for small devices */
+                   --marquee-gap:120px !important; /* Smaller gap for small devices */
                }
                .marquee--6 {
-                   --marquee-item-width: 80px; /* Smaller items for small devices */
-                   --marquee-item-height: 80px;
+                   --marquee-item-width: 70px; /* Smaller items for small devices */
+                   --marquee-item-height: 70px;
                }
            }
 
-
-
-
-
-
-
-
-
-
+.start_partnership_footer{
+font-size: 20px;
+  color: var(--FFFFFF, #FFF);
+font-style: normal;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: -0.4px;
+text-decoration-line: underline;
+}
 
 
 

@@ -159,9 +159,7 @@
                         <div class="heading3">West Africa</div>
                         <div class="text-container-inner">
                           <div  class="afghanistan-parent select__parent">
-                            <select   class="afghanistan select__btn">
-                              <option value="benin" class="afghanistan1 option__country">Benin</option>
-                              <option value="benin" class="afghanistan1 option__country">Benin</option>
+                            <select id="west-africa" onchange="displaySelectedValue()" class="afghanistan select__btn">
                             </select>
                             <img
                             class="inverted-triangle-icon1"
@@ -172,7 +170,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="div">201+</div>
+                      <div id="west-africa-country-std" class="div">1234</div>
                     </div>
                   </div>
                   <div class="country-card">
@@ -181,9 +179,7 @@
                         <div class="heading3">South and Central Asia</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select class="afghanistan select__btn">
-                              <option value="afganistan" class="afghanistan1 option__country">Afghanistan</option>
-                              <option value="india" class="afghanistan1 option__country">India</option>
+                            <select id="central-asis-id" class="afghanistan select__btn">
                             </select>
                             <img
                               class="inverted-triangle-icon1"
@@ -193,7 +189,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="div">420+</div>
+                      <div id="central-asis-value-id" class="div">420+</div>
                     </div>
                   </div>
                   <div class="country-card">
@@ -202,9 +198,7 @@
                         <div class="heading4">Southeast Asia</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select class="afghanistan select__btn">
-                              <option value="brunei" class="afghanistan1 option__country"> Brunei</option>
-                              <option value="indonesia" class="afghanistan1 option__country">Indonesia</option>
+                            <select id="south_asia_id" class="afghanistan select__btn">
                             </select>
                             <img
                               class="inverted-triangle-icon1"
@@ -214,7 +208,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="div1">42+</div>
+                      <div id="south_asia_value_id" class="div1">42+</div>
                     </div>
                   </div>
                   <div class="country-card">
@@ -223,9 +217,7 @@
                         <div class="heading3">Mexico and Central America</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select class="afghanistan select__btn">
-                              <option value="mexico" class="afghanistan1 option__country">Mexico</option>
-                              <option value="cuba" class="afghanistan1 option__country">Cuba</option>
+                            <select id="mexico_id" class="afghanistan select__btn">
                             </select>
                             <img
                               class="inverted-triangle-icon1"
@@ -235,7 +227,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="div">420+</div>
+                      <div id="mexico_value_id" class="div">420+</div>
                     </div>
                   </div>
                   <div class="country-cards4">
@@ -244,7 +236,7 @@
                         <div class="heading6">South America</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select class="afghanistan select__btn">
+                            <select id="south_america_id" class="afghanistan select__btn">
                               <option value="argentina" class="afghanistan1 option__country">Argentina</option>
                               <option value="brazil" class="afghanistan1 option__country">Brazil</option>
                             </select>
@@ -256,7 +248,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="div3">2718+</div>
+                      <div id="south_america_value_id" class="div3">2718+</div>
                     </div>
                   </div>
                 </div>
@@ -295,4 +287,43 @@
             </div>
         </main>
       </section>
+    <script>
+    const westAfrica = JSON.parse('{{ wast_africa|escapejs }}')
+    const south_and_center_asia = JSON.parse('{{ south_and_center_asia|escapejs }}')
+    const south_asia = JSON.parse('{{ south_asia|escapejs }}')
+    const mexico = JSON.parse('{{ mexico|escapejs }}')
+    const south_america = JSON.parse('{{ south_america|escapejs }}')
+        // Function to initialize the select field with options
+        function initializeSelect(options,select_ele_id,display_id) {
+            const selectElement = document.getElementById(select_ele_id);
+            selectElement.innerHTML = ''; // Clear existing options
+            options.forEach((option,i) => {
+                const opt = document.createElement('option');
+                opt.value = option.fields.student_no;
+                opt.textContent = option.fields.country;
+                selectElement.appendChild(opt);
+                if(i==0){
+                    displaySelectedValue(select_ele_id,display_id)
+                }
+            });
+        }
+
+
+
+        // Function to display the selected value in the div
+        function displaySelectedValue(select_ele_id,display_id) {
+            const selectElement = document.getElementById(select_ele_id);
+            const selectedValue = selectElement.value;
+            document.getElementById(display_id).textContent = `${selectedValue}`;
+        }
+
+        // Initialize the select field with all options on page load
+        window.onload = () => {
+            initializeSelect(westAfrica,"west-africa","west-africa-country-std");
+            initializeSelect(south_and_center_asia,"central-asis-id","central-asis-value-id");
+            initializeSelect(south_asia,"south_asia_id","south_asia_value_id");
+            initializeSelect(mexico,"mexico_id","mexico_value_id")
+            initializeSelect(south_america,"south_america_id","south_america_value_id")
+        };
+    </script>
 {% endblock %}
