@@ -105,17 +105,20 @@
             </div>
             {% endfor %}
         </div>
+
     {% if total_pages > 1 %}
         <div class="pagination__container">
             <hr class="pagination__vertical__line" />
             <div class="pagination">
-                <div class="prev">
+
+                <a class="prev" href="/insights?page={% if page_obj.has_previous %}{{ insights.previous_page_number }}{% else %}1{% endif %}" style="text-decoration: none">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="16" height="16"
                         stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                     </svg>
                     <span>Previous</span>
-                </div>
+                </a>
+
                 <div class="pagenumber__container">
 
                 {% with ''|center:total_pages as range %}
@@ -130,13 +133,15 @@
                     {% endfor %}
                 {% endwith %}
                 </div>
-                <div class="next">
+                {% if insights.has_next %}
+                <a class="next" href="/insights?page={{ insights.next_page_number }}" style="text-decoration: none">
                     <span>Next</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="16" height="16"
                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
-                </div>
+                </a>
+                    {% endif %}
             </div>
         </div>
     {% endif %}

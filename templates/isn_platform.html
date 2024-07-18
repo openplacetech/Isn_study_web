@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block base %}
+    <style>
+    .platform-text{
+        color:  #86A0AC;
+        text-align: center;
+        leading-trim: both;
+
+        text-edge: cap;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px; /* 128.571% */
+        text-transform: uppercase;
+    }
+    </style>
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/isnplatform.css' %}" />
     <section class="homepage__container">
     <main class="section__container">
@@ -152,15 +166,15 @@
           <div class="triangle trangel-top "></div>
           <div class="counter counter-top">03</div>
           <img src="{% static 'assets/images/Heart.svg' %}" />
-          <h6>High Incentives</h6>
+          <h6>Student Favorite Universities</h6>
           <p>Exclusive Access: Partner with top-ranked universities loved by students worldwide.</p>
         </div>
         <div class="box box-4 item-bottom">
           <div class="triangle trangel-bottom"></div>
           <div class="counter-bottom  counter">04</div>
           <img src="{% static 'assets/images/Provision.svg' %}" />
-          <h6>High Incentives</h6>
-          <p>Empowering Partnerships: Gain access to cutting-edge tools for exceptional student support..</p>
+          <h6>Tools and Resources</h6>
+          <p>Empowering Partnerships: Gain access to cutting-edge tools for exceptional student support.</p>
         </div>
 
       </div>

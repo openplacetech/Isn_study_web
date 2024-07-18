@@ -213,6 +213,9 @@ color: var(--primary-color-red);
         grid-template-columns: repeat(2,1fr);
         row-gap: 10rem;
     }
+    .human-resource-whyus{
+        grid-template-columns: repeat(1,1fr);
+    }
     
   }
   @media (max-width: 768px){

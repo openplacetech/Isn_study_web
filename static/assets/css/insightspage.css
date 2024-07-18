@@ -173,6 +173,7 @@
   font-size: 18px;
   line-height: 27px;
   font-weight: 500;
+ 
   
 }
 .blog__content__description>:nth-child(2){
@@ -444,5 +445,12 @@ justify-content: center;
     overflow: unset;
 
 
+  }
+  .pagination{
+    gap: 0.2rem !important;
+    
+  }
+  .pagenumber__container{
+    gap: 1px !important;
   }
 }

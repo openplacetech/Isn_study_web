@@ -46,7 +46,14 @@ document.querySelectorAll('.characterstic__card').forEach(setupHoverToggle);
 
 
   
-
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    menu.classList.toggle('isactive');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+}
 
 
 

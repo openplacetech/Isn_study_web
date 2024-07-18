@@ -2,8 +2,17 @@
 {% load static %}
 {% block base %}
     <style>
-    .about-us-list{
+    .faqs:hover{
+        color: #2D2F82 !important;
+        leading-trim: both;
 
+        text-edge: cap;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px; /* 128.571% */
+        text-decoration-line: underline;
     }
     </style>
 <section class="homepage__container">
@@ -22,7 +31,7 @@
               connecting with top international students for a diverse,
               excellent, and culturally rich academic community.
             </p>
-          </div><a href="/journey">
+          </div><a href="#know-more">
             <div style="margin: 1rem 0" class="hero_btn_container">
             <button class="btn__primary__home">Know more about ISN</button>
           </div>
@@ -62,7 +71,7 @@
             <div class="card__secondaryblue">
               <div class="card__ratedby">150<span>+</span></div>
               <div style="font-size: 14px">
-                Countries<span style="visibility: hidden"> hidden</span>
+                Countries<span style="visibility: hidden"> dd</span>
               </div>
             </div>
           </div>
@@ -250,7 +259,7 @@
         </div>
       </div>
     </div>
-    <div class="empower__container__bottom">
+    <div class="empower__container__bottom" id="know-more">
       <p class="secondary_title">HOW WE CAN HELP</p>
       <div class="content__title">
         Empower Your Institution: <span>How We Can Help</span>
@@ -410,8 +419,9 @@
           <div class="diversity__card">
             <img src="{% static 'assets/images/stem.svg' %}" />
             <div class="diversity__card__stems">
-              <div>STEM Majors</div>
-              <div>Non-STEM Majors</div>
+              <div>
+                  ✅ STEM majors</div>
+              <div>✅ non-STEM majors</div>
             </div>
           </div>
           <div class="diversity__card">
