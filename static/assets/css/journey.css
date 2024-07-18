@@ -86,6 +86,12 @@ object-fit: cover;
 }
 
 .our__dream__list__container {
+  text-align: justify;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%; /* 32.4px */
+  letter-spacing: 0.36px;
   margin: 2rem 0;
 }
 

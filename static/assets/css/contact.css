@@ -22,7 +22,7 @@ body {
 .contactus__container {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 4rem;
+    gap: 3rem;
     /* padding: 2rem 0; */
 }
 .section___contactus__right{
@@ -141,7 +141,7 @@ flex-grow: 1;
 .linear__group,.linear__group__left{
     
     position: relative;
-    top: -4rem;
+    top: -5rem;
     object-fit: cover;
 }
 .availability__zone{
@@ -171,12 +171,26 @@ flex-grow: 1;
     left: 45%;
     transform: translateX(-45%);
 }
+.get__in__touch img{
+    width: 225px;
+    height: 225px;
+}
+.visit__us{
+    position: absolute;
+    top:35rem;
+    
+   
+}
 
 .lets__talk{
     position:absolute ;
-    top: 4rem;
+    top: 7.4rem;
     z-index: 99;
-    left: 1.6rem;
+    left: 0rem;
+}
+.lets__talk img{
+    max-width: 600px;
+    width: 100%;
 }
 .you__can__find{
     display: flex   ;
@@ -202,9 +216,27 @@ font-weight: 400;
 .call__us__container{
     display: flex;
     align-items: center;
+    
 }
 
-@media (max-width:1024px){
+.call__us__container__mbl{
+    margin-top: 2rem;
+    display: none;
+}
+
+.call__us__container__mbl h6{
+    
+        font-weight: 600;
+        font-size: 28px;
+    
+}
+
+.get__in__touch__with__us__mbl{
+    display: none;
+}
+
+
+@media (max-width:1250px){
     .contact__us__landingpage{
         flex-direction: column;
         width: 100% !important;
@@ -216,6 +248,9 @@ font-weight: 400;
     .section___contactus__right{
         max-width: 100%;
     }
+    .contactus__container{
+        grid-template-columns: 1fr;
+    } 
     .contact__info{
         display: none;
     }
@@ -227,18 +262,43 @@ font-weight: 400;
     .contact__info__mbl{
         display: flex;
     }
+    .call__us__container__mbl{
+        display: block;
+    }
+    .get__in__touch__with__us__mbl{
+       position: relative;
+    
+      top: -3rem;
+      display: block
+       
+    }
     .get__in__touch{
         display: none;
     }
-
+    .get__in__touch__with__us__mbl{
+        display: block;
+        position: relative;
+       
+    }
+   .get-touch{
+    position:absolute;
+    left: -12rem;
+   }
+    .get__in__touch__with__us__mbl img{
+        width: 300px !important;
+        height: 200px !important;
+    }
     .lets__talk{
        display: flex;
        align-items: center;
        justify-content: center;
        position: static;
     }
+    
     .lets__talk img{
-        width: 300px;
+    
+        max-width: 100%;
+       
     }
    
 }

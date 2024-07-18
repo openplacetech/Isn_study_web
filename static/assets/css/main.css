@@ -831,7 +831,6 @@ hr {
 
 .ourplatform___card:hover {
   background-color: white !important;
-
   border: 1px solid #d243478c;
 }
 
@@ -2354,4 +2353,24 @@ hr {
 
 .hidden{
   display: none;
+}
+.secondary_atag_button{
+  display: flex;
+  width: 275px;
+  height: 65px;
+  padding: 13.8px 21px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  border: #2D2F82;
+  color: #2D2F82;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: -0.464px;
+}
+
+.secondary_atag_button:hover{
+  background-color:#FBFBFF ;
 }

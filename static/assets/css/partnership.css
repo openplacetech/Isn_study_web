@@ -80,7 +80,7 @@
 
   .partnership__right img {
     /* min-height: 100vh; */
-
+   width: 100% !important;
     border-top-left-radius: 185px;
   }
 
