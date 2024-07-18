@@ -1,0 +1,45 @@
+.error-container{
+    display: flex;
+   
+    justify-content: center ;
+    padding-top: 2rem 0;
+  
+    min-height: calc(100vh - 120px);
+    
+    
+}
+.error-content{
+    max-width: 68%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex   ;
+    flex-direction: column;
+ 
+}
+
+
+.error-content h1{
+   line-height: 72px;
+   margin: 0 0 1rem 0;
+}
+
+.error-content p{
+    line-height: 27px;
+    font-size: var(--font-size-lg);
+    text-align: center;
+ }
+
+
+.error-content img{
+    max-width:100% ;
+    margin-top: 2rem;
+    min-height: 100px;
+    object-fit: cover;
+ }
+
+ 
+@media (max-width: 1024px) {
+    .error-content{
+        max-width: 100%;
+    }
+}

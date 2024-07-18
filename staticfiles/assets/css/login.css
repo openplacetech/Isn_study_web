@@ -1,0 +1,52 @@
+.login__right img{
+    max-width: 750px;
+    width: 100%;
+    max-height: 800px;
+    border-top-right-radius: 350px;
+}
+.section__container__login{
+    padding-right: 4%;
+}
+.login__form{
+    gap:1.6rem;
+    
+}
+
+.login__left{
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+   padding: 8rem 0;
+    flex: 1;
+}
+
+.become__partner{
+    font-size: 14px;
+    line-height: 21px;
+    margin: 4rem 0;
+}
+.become__partner span{
+    color: var(--primary-color-red);
+    margin: 2rem 0;
+}
+.margin__btn{
+  margin: 2rem 0;
+}
+
+
+@media (max-width:1024px){
+   .section__container__login{
+    padding:0 2rem;
+   } 
+   .login__left{
+    padding: 0;
+    
+   }
+   .login__direction{
+    flex-direction: column;
+   }
+   .login__right img{
+    border-top-right-radius: 185px;
+   }
+}

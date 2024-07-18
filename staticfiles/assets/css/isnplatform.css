@@ -1,0 +1,234 @@
+/*isnplaformpage*/
+
+.isn__platform__home {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 18.5rem;
+  flex-direction: column;
+}
+.isn__platform__home .content__title {
+  text-align: center;
+  line-height: 60px;
+}
+
+.short__description {
+  max-width: 68%;
+  text-align: center;
+  line-height: 27px;
+  font-size: 18px;
+  color: var(--text-slate);
+}
+
+.isn__banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -17rem;
+  padding-bottom: 2rem;
+}
+.isn__banner > img {
+  max-width: 100%;
+  object-fit: cover;
+  min-height: 450px;
+}
+
+.SelfAppie__content {
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1.6rem;
+  line-height: 43px;
+  font-weight: 600;
+  max-width: 68%;
+}
+
+.SelfAppie__content > span {
+  background-color: var(--primary-color-red);
+  color: white;
+  border-radius: 6px;
+}
+
+.time__line__container {
+  margin-top: 2.4rem;
+}
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1px;
+
+  gap: 1.4rem;
+
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0rem auto;
+  margin-top: 5rem;
+}
+.box {
+  background-color: #FAFCFF;
+  border: 1px solid #d0d1ff;
+  padding: 2rem 1.4rem;
+  border-radius: 213px;
+  break-inside: avoid;
+  display: flex;
+  height: 380px !important;
+  max-width: 280px;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  position: relative;
+  justify-content: center;
+  align-items: center; /* Default top alignment */
+}
+.item-bottom {
+  margin-top: 50%; /* Bottom alignment */
+}
+.box-1 {
+  grid-row: span 25;
+}
+.box-2 {
+  grid-row: span 35;
+}
+.box-3 {
+  grid-row: span 25;
+}
+.box-4 {
+  grid-row: span 35;
+}
+.selfappie__icon{
+  max-width: 160px;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #d0d1ff;
+  position: absolute;
+  
+}
+.trangel-top {
+  top: -1.2rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.trangel-bottom {
+  bottom: -1.2rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+.box p {
+  text-align: center;
+  line-height: 24px;
+  color: var(--text-slate);
+}
+.box h6 {
+  line-height: 33px;
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+}
+
+.counter {
+  position: absolute;
+  background-color: #f7faff;
+  border: 1px solid var(--primary-color-red);
+  padding: 6px;
+  color: var(--primary-color-red);
+  max-width: 50px;
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100px;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #d0d1ff;
+}
+
+.counter-top {
+  top: -3.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.counter-bottom {
+  bottom: -3.2rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.column {
+  display: flex;
+
+  gap: 2rem;
+  min-width: 200px;
+}
+
+.item {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+/* To create a more masonry-like effect, vary the heights */
+.item {
+  margin-bottom: 1rem;
+  height: 275px;
+  border-radius: 200px;
+}
+.item:nth-child(2) {
+  height: 230px;
+  border-radius: 200px;
+}
+.item:nth-child(3) {
+  height: 250px;
+  border-radius: 200px;
+}
+.item:nth-child(4) {
+  min-height: 450px;
+  padding: 4rem 2rem;
+  border-radius: 200px;
+}
+
+.border {
+  border-bottom: 1px dashed white;
+  border-right: 1px dashed white;
+  padding: 0.8rem;
+  border-radius: 200px;
+}
+.collaboration__container {
+  background-color: #f0f3f5;
+}
+.our__collaboration__container {
+  padding: 2rem 0;
+}
+.isn__platform__home > img {
+  max-height: 60px;
+}
+.our__partner__container .SelfAppie__content span {
+  background: var(--secondary-blue);
+}
+@media (max-width: 1024px) {
+  .SelfAppie__content {
+    max-width: 100%;
+  }
+  .short__description {
+    max-width: 100%;
+  }
+  .masonry-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+ 
+    place-items: center ;
+  }
+  .item-bottom {
+    margin-top: 0;
+  }
+}

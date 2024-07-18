@@ -1,0 +1,251 @@
+.humanresource__content__container{
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:3rem
+}
+
+.left{
+    padding-top: 3rem;
+}
+.title__h6{
+    margin: 0.8rem 0;
+    font-size: 1.6rem;
+}
+.humanresource__right img{
+  max-height:500px ;
+  height: 100%;
+  max-width: 100%;
+
+}
+.human-resource-whyus{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+    padding: 3rem 0;
+    
+}
+
+
+
+
+
+.benefit__with__us{
+    padding: 2rem 0;
+    text-align: center;
+}
+.benefit__list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+    max-width: 950px;
+    
+  
+    padding: 20px;
+    gap: 1.6rem;
+
+}
+.benefit__list__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    /* background-color: red; */
+    
+}
+.benefit__card{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center !important;
+    /* text-align: center; */
+    background: linear-gradient(180deg, #FFF0F0 0%, #FFEFEF 100%);
+
+    padding: 20px;
+    width: 100%;
+    gap:0.6rem ;
+    border-radius: 8px;
+}
+
+.benefit__card p{
+    inset: 0;
+}
+
+/* staff */
+
+.staff__section__container{
+    background-color: var(--primary-color-red);
+    margin-bottom: 2rem;
+}
+.staff__list__content{
+    padding: 2rem 0;
+}
+
+.title__staff{
+    max-width: 68%;
+    color: white;
+    text-align: center;
+    margin: 0.8rem auto;
+ 
+}
+
+.staff__list__grid{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 3rem;
+    
+    
+    max-width: 100%;
+    padding: 3rem 0;
+    row-gap: 6rem;
+  
+}
+
+
+
+
+
+
+
+
+ .container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    padding-top: 75px; /* Half of the image height */
+}
+
+
+.rectangle {
+    width: 100%;
+    height: 400px;
+  /*  */
+    background-color: var(--primary-color-red);
+    border-left: 25px solid white;
+    border-right: 25px solid white;
+    border-bottom: 80px solid white;
+    border-top:25px solid white ;
+    position: relative;
+    z-index: 1;
+}
+
+.image-wrapper {
+    position: absolute;
+    /* top: -1rem; */
+    left: 50%;
+    bottom: 0.3rem;
+    transform: translateX(-50%);
+width:60%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    z-index: 2;
+}
+.name{
+    height: max-content;
+    text-align: center;
+    display: flex   ;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -4rem;
+    transform: translateX(-50%);    
+    left: 50%;
+    gap: 0.4rem;
+    overflow: hidden;
+    justify-content: center;
+   
+    color: black;
+    z-index: 999;
+}
+
+
+.name__staff{
+    font-weight: 700;
+    inset: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
+   
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    /* border: 2px solid #333; */
+}
+.button__container{
+   
+    display: flex;
+    margin-top: 2rem ;
+    margin-bottom: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+.btn__white{
+background-color: white !important;
+color: var(--primary-color-red);
+}
+
+@media (min-width:1024px) {
+    .image-wrapper {
+      
+        max-width:80%; /* Adjust as needed */
+        
+    }
+}
+@media (max-width: 1024px){
+    .humanresource__content__container{
+        grid-template-columns: repeat(1,1fr);
+      
+    }
+    .left{
+        padding: 0;
+    }
+    .benefit__list{
+        grid-template-columns: repeat(3,1fr) ;
+        max-width: 100%;
+    }
+    .title__staff{
+        max-width: 100%;
+        
+     
+    }
+    .staff__list__grid{
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 10rem;
+    }
+    
+  }
+  @media (max-width: 768px){
+    .benefit__list{
+        max-width: 100%;
+        grid-template-columns: repeat(2,1fr) ;
+    }
+  }
+  @media (max-width: 668px){
+    .benefit__list{
+        max-width: 100%;
+        padding: 0;
+        grid-template-columns: repeat(2,1fr) ;
+    }
+    .staff__list__grid{
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 10rem;
+    }
+    .image-wrapper {
+      
+        width:54%; /* Adjust as needed */
+        
+    }
+  }
+
+  @media (max-width: 480px){
+    .benefit__list{
+        max-width: 100%;
+        padding: 0;
+        grid-template-columns: repeat(1,1fr) ;
+    }
+    .image-wrapper{
+        width:70% ;
+    }
+  }
+  

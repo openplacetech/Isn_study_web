@@ -1,0 +1,279 @@
+.journey__content__container {
+  padding: 2rem 0;
+}
+
+.journey__landing__page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  align-items: stretch;
+  /* position: relative; */
+}
+
+.journey__content__left {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.journey__landing__page>* {
+  display: flex;
+  flex-direction: column;
+}
+
+.line-height-title {
+  line-height: 70px;
+}
+
+.description-line-height {
+  line-height: 27px;
+}
+
+.journey__content__right {
+  position: relative;
+}
+
+.journey__content__right img {
+  max-height: 100%;
+  object-fit: fill;
+  height: 540px;
+  width: 100%;
+  /* object-fit: cover; */
+}
+
+.f{
+
+
+  margin-left: 2rem;
+  margin-top: 0rem;
+  margin-bottom: -12rem; 
+}
+.f img{
+width: 600px;
+max-width:100%; 
+max-height: 400px;
+object-fit: cover;
+}
+.ellipse {
+  position: absolute;
+
+  rotate: 90deg;
+  z-index: -1;
+  left: -6rem;
+  padding: 10px;
+
+  height: 968px;
+  width: 968px;
+}
+
+.section__mission {
+  background-color: var(--primary-color-red);
+}
+
+.journey__banner img {
+  max-width: 500px;
+  min-width: auto;
+  width: 100%;
+  margin-left: 2rem;
+  margin-top: -10rem;
+  margin-bottom: 2rem;
+}
+
+.our__dream__list__container {
+  margin: 2rem 0;
+}
+
+.our__dream__right>img {
+  height: 100%;
+  width: 100%;
+}
+.padding__dream{
+  padding-top: 12rem;
+}
+
+.our__dream {
+  justify-content: start !important;
+  color: white !important;
+  
+}
+
+.milestones__content__container {
+  padding: 5rem 0;
+}
+
+.header__container {
+  text-align: center;
+  max-width: 68%;
+  margin: 0 auto;
+}
+
+.progress__bar {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem ;
+  margin-bottom: 2rem;
+}
+
+.progress__bar__line__first {
+  background:linear-gradient(90deg, 
+  #2D2F82 70%, 
+   
+  #e5efff 30%
+);
+  
+
+  
+  
+}
+
+.progress__bar__line {
+  flex: 1;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  width: 100%;
+  background-color: #e5efff;
+}
+
+.counter__active {
+  background-color: #f8e0e0 !important;
+}
+
+.counter__circle {
+  display: flex;
+  background-color: #fafcff;
+  height: 46px;
+  border-radius: 23px;
+  border: 1px solid #f0f6ff;
+  width: 46px;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  /* background-color: red; */
+}
+.milestones__list__container{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 1rem;
+}
+.milestone__card{
+  display: flex;
+  gap: 0.4rem;
+  flex-direction: column;
+  border: 1px solid #E5EFFF;
+  padding: 28px;
+  border-radius: 22px;
+}
+.milestone__card img{
+  height: 60px;
+  width: 60px;
+
+}
+.milestone__card h6{
+  color: #0B0A0A;
+  font-size: 24px;
+  line-height: 36px;
+}
+.milestone__card p{
+  color: #666666;
+  font-size: 16px;
+  line-height: 24px;
+ 
+}
+.milestone__card p span{
+  color: var(--primary-color-red);
+  font-weight: 600;
+}
+.milestone__image__container{
+  margin: 4rem 0;
+}
+.milestone__image__container img{
+ max-width: 100%;
+ min-height: 500px;
+ object-fit: cover;
+ 
+ 
+}
+.future__goal__container{
+  margin: 2rem 0;
+}
+.future__goals__container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.border__futuregoal__card{
+  padding: 36px;
+  border: 1px solid var(--Chromophobia-Green-300, #C6E5D9)
+}
+
+@media (max-width: 1240px) {
+  .journey__banner img {
+    max-width: 60%;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .milestones__list__container{
+    
+    grid-template-columns: repeat(2,1fr);
+    
+  }
+  .f{
+    /* margin-left: 2rem; */
+  margin-top: 0rem;
+  margin-bottom: -8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  }
+  .f img {
+    max-width: 400px;
+    width:100%;
+
+   
+  }
+
+  .journey__landing__page {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .future__goals__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header__container {
+    max-width: 100%;
+  }
+  .progress__bar{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .milestones__list__container{
+    
+    grid-template-columns: repeat(1,1fr);
+    
+  }
+  .future__goals__container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+}
+
+@media (max-width:468px){
+  .f{
+    margin-bottom: -5rem;
+  }
+  .f img{
+    max-width: 300px;
+  }
+}
