@@ -19,7 +19,9 @@
               <h3 class="saying__dedicated">“Dedicated In-Country Representative and In-Depth Insights to Boost Your International Presence”</h3>
             </div>
             <div style="margin:1.5rem 0;" class="hero_btn_container">
-              <button class="btn__primary__home readmore">Read More</button>
+              <a href="#how-it-works">
+                <button class="btn__primary__home readmore">Read More</button>
+              </a>
             </div>
 
 
@@ -27,6 +29,7 @@
           <div class="container__right">
            <img src="{% static 'assets/images/market-centry-boy.svg' %}" loading="lazy"/>
           </div>
+          <div id="how-it-works" style="visibility:hidden;"> </div>
         </div>
       </main>
     </section>
@@ -94,6 +97,7 @@
                   </div>
                 </div>
               </div>
+
 
             </div>
           </div>
@@ -252,16 +256,13 @@
         <main class="section__container">
           <div class="our__engagement__container">
             <div class="our__engagement__content">
-              <p  class="secondary_title hire__developers">Hire developers from the largest AI-vetted talent network</p>
               <div class="title__lg">
                 Ready to Transform Your <br />
                 <span>International Engagement? </span>
               </div>
               <p class="our__engagement__content__description">
-                Join the growing network of educational institutions and recruiting
-                partners benefiting from ISN’s comprehensive platform. Our tools and
-                data insights are designed to simplify your international outreach,
-                enhance your recruitment strategies, and foster global partnerships.
+                Join us at ISN Platforms and leverage our tools to make your international education journey smoother and more successful. Whether you're a student looking to study
+                abroad or a university seeking global partnerships, we have the right solution for you.
               </p>
 
               {% include 'meet_us.html' %}
