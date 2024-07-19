@@ -74,7 +74,7 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
-    map_country_list = ["us"]
+    map_country_list = {"country": ['us']}
     wast_africa = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA"))
     south_and_center_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
     south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
@@ -84,7 +84,7 @@ def isn_market_entry(request):
                                                "south_and_center_asia":south_and_center_asia,
                                                "south_asia":south_asia,
                                                "mexico":mexico,
-                                               "south_america":south_america,"map_country_list":map_country_list})
+                                               "south_america":south_america,"map_country_list":json.dumps(map_country_list)})
 
 def currier_opportunity(request):
     # page_number = request.GET.get('page')

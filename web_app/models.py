@@ -50,7 +50,7 @@ class PrivacyPolicy(BaseModel):
 class StudyDestinationOfNepali(BaseModel):
     region = models.CharField(max_length=100,choices=REGION_TYPE)
     country = models.CharField(max_length=100)
-    student_no = models.IntegerField()
+    student_no = models.CharField(max_length=100)
     class Meta:
         db_table = 'NumberOfStudentStudy'
         verbose_name_plural = "Student Number"
