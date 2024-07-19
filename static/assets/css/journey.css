@@ -125,6 +125,7 @@ object-fit: cover;
 }
 
 .progress__bar {
+  margin: 80px;
   display: flex;
   gap: 2rem;
   align-items: center;
