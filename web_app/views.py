@@ -163,9 +163,8 @@ def subscription_view(request):
         if form.is_valid():
             form.save()
         else:
-            print(form.errors)
-        referer = request.META.get('HTTP_REFERER', '/')
-        return redirect(referer)
+            return redirect("error")
+        return redirect("success")
 
 def insight_comment(request):
     referer = request.META.get('HTTP_REFERER', '/')
