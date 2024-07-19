@@ -231,6 +231,9 @@ object-fit: cover;
   max-width: 100% !important;
   border: 1px solid var(--Chromophobia-Green-300, #C6E5D9) !important
 }
+.border__futuregoal__card:hover{
+  background-color: white !important;
+}
 .journey__dream__left{
   text-align: justify;
   text-justify: inter-word;
