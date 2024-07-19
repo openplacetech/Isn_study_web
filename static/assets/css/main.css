@@ -816,8 +816,6 @@ hr {
   font-weight: 400 !important;
   font-size: 18px;
   line-height: 27px !important;
-
-
 }
 
 
@@ -2300,8 +2298,7 @@ hr {
   background-color:white;
   display: flex;
   padding: 7rem 2rem;
-  
-  transform: translateY(-100%);
+  transform: translateY(-500%);
   transition: transform 0.3s ease-in-out;
 }
 

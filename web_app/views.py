@@ -19,6 +19,7 @@ def home(request):
     return  render(request,"index.html",{"insights":latest_items,"testimonials":testimonials,"map_country_list":json.dumps(map_country_list)})
 
 def partnership_request(request,contact_type):
+    map_country_list = {"country": ['us']}
     if request.method == 'POST':
         form = PartnershipRequestForm(request.POST)
         if form.is_valid():
@@ -30,7 +31,7 @@ def partnership_request(request,contact_type):
     else:
         form = PartnershipRequestForm()
     if contact_type == "us":
-        return render(request, 'contact.html', {'form': form,"map_country_list":map_country_list})
+        return render(request, 'contact.html', {'form': form,"map_country_list":json.dumps(map_country_list)})
     elif contact_type == "partnership":
         return render(request, 'partnership.html', {'form': form})
     else:

@@ -12,8 +12,6 @@
     .partnership__left,
     .partnership__right {
       flex: 1;
-
-
     }
 
     .partnership__right{
@@ -21,16 +19,15 @@
     }
 
     .partnership__left {
-      padding: 5rem;
+      {#padding: 5rem;#}
       align-items:stretch;
     }
 
 
     .partnership__right img {
-      width: 100%;
       max-height: 100%;
       border-top-left-radius: 366px;
-
+        width: 100%;
       object-fit: cover;
     }
 
@@ -47,9 +44,6 @@
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-    .section__container__partnership {
-      padding: 2rem 2rem;
-    }
 
 
     /* Footer styles */
@@ -57,7 +51,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/partnership.css' %}" />
 
 
-    <main class="partnership__container" >
+    <main class="section__container grid-flex" >
     <aside class="partnership__left">
       <div style="text-align: center;" class="content__title ">
         Start
