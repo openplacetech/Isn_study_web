@@ -1621,7 +1621,7 @@
 
     
     .agreement-parent{
-        border-bottom: 1px solid var(--neutrals-neutrals200);
+        border-bottom: 5px solid var(--neutrals-neutrals200);
         border-right: none !important;  
         padding-bottom: 1rem;
     }
