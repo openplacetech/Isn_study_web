@@ -96,16 +96,16 @@
             <form method="POST" action="/subscription">
                 {% csrf_token %}
                 <section class="newsletter">
-            <div class="Signup__newsletter"><span style="color:#D24347">Sign Up for Our Newsletters</span> <br/> <span style="color:#E9A1A3"> Get notified of the best deals on our <br/> WordPress themes.</span></div>
+            <div class="Signup__newsletter"><span style="color:#D24347">Sign Up for Our Newsletters</span></div>
 
             <div style="margin-top: 0.8rem;" class="comment__inputs ">
               <input name="name" type="text" placeholder="Enter your name" class="input__form input__form--email" required>
-              <input name="email" type="text" placeholder="Enter your email address" class="input__form input__form--email" required>
+              <input name="email" type="email" placeholder="Enter your email address" class="input__form input__form--email" required>
 
               <button type="submit" class="btn__suscribe ">Subscribe</button>
             </div>
             <div class="terms__condition">
-              <input type="checkbox" id="checkbox" name="confirm_tac" class="checkbox">
+              <input type="checkbox" id="checkbox" name="confirm_tac" class="checkbox" required>
               <label for="checkbox">By checking this box, you confirm that you have read and are agreeing to our terms of use regarding the storage of the data submitted through this form.</label>
             </div>
           </section>
@@ -123,50 +123,53 @@
 
           <ul class="flex-row-aligned social-stats">
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="facebook">
+              <a href="https://www.facebook.com/isnstudy" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="facebook">
                 <path fill="#231f20"
                   d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm2.97 6.63a.19.19 0 0 1-.19.19l-1.19.001c-.79 0-.93.31-.93.91v1.25h2.05c.054 0 .105.023.14.064s.052.094.045.147l-.29 2.26a.187.187 0 0 1-.186.163h-1.76v5.602a.188.188 0 0 1-.187.187h-2.31a.188.188 0 0 1-.187-.187v-5.602H8.95a.187.187 0 0 1-.187-.187v-2.26c0-.103.084-.187.187-.187h1.76V9.12c0-1.957 1.184-3.17 3.09-3.17.82 0 1.544.061 1.766.09a.188.188 0 0 1 .163.186v2.018z" />
               </svg>
-              <p>10</p>
+              </a>
+<!--              <p>10</p>-->
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="twitter">
+              <a href="https://www.youtube.com/@internationalstudynetwork" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="youtube-logo">
+                <rect width="24" height="24" fill="none"></rect>
                 <path
-                  d="M24 5.309a10.259 10.259 0 0 1-2.835.777 4.893 4.893 0 0 0 2.165-2.72 9.833 9.833 0 0 1-3.12 1.191 4.92 4.92 0 0 0-8.511 3.365c0 .39.033.765.114 1.122a13.926 13.926 0 0 1-10.142-5.147 4.928 4.928 0 0 0 1.512 6.576 4.86 4.86 0 0 1-2.23-.616v.054a4.943 4.943 0 0 0 3.942 4.835 4.911 4.911 0 0 1-1.29.162 4.35 4.35 0 0 1-.932-.084 4.967 4.967 0 0 0 4.598 3.427 9.885 9.885 0 0 1-6.101 2.099c-.404 0-.791-.018-1.178-.068a13.851 13.851 0 0 0 7.548 2.21c9.054 0 14.004-7.5 14.004-14.001 0-.218-.008-.428-.018-.636A10.316 10.316 0 0 0 24 5.309z" />
+                  d="M21.96849 6.54351a2.24659 2.24659 0 0 0-1.35983-1.53246C17.39589 3.77646 12.27933 3.78651 12 3.78822c-.27919-.00224-5.39579-.01181-8.60863 1.22283a2.247 2.247 0 0 0-1.35983 1.53152C1.78781 7.47441 1.5 9.17679 1.5 12c0 2.82317.28781 4.52554.54154 5.45649a2.24659 2.24659 0 0 0 1.35983 1.53246c3.07558 1.18189 7.89578 1.22301 8.54691 1.22301.05818.00005.06532.00005.12351 0 .65159-.00005 5.47147-.04118 8.54686-1.22301a2.247 2.247 0 0 0 1.35983-1.53149C22.21219 16.52612 22.5 14.82374 22.5 12c0-.00047-.00003-.00093-.00003-.0014C22.49959 9.17752 22.21208 7.4757 21.96849 6.54351zm-6.76048 5.76851-4.5 3A.37497.37497 0 0 1 10.125 15V9a.37498.37498 0 0 1 .58301-.3117l4.5 3a.37498.37498 0 0 1 0 .62402z">
+                </path>
               </svg>
-
-              <p>17k</p>
+              </a>
+<!--            <p>68k</p>-->
             </li>
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="instagram-logo">
+              <a href="https://www.instagram.com/isnstudy" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="instagram-logo">
                 <rect width="24" height="24" fill="none"></rect>
                 <circle cx="12" cy="12" r="3"></circle>
                 <path
                   d="M16.125 2.625h-8.25A5.25594 5.25594 0 0 0 2.625 7.875v8.25a5.25594 5.25594 0 0 0 5.25 5.25h8.25a5.25594 5.25594 0 0 0 5.25-5.25v-8.25a5.25594 5.25594 0 0 0-5.25-5.25zM12 16.5a4.5 4.5 0 1 1 4.5-4.5A4.50509 4.50509 0 0 1 12 16.5zm4.875-8.25a1.125 1.125 0 1 1 1.125-1.125A1.125 1.125 0 0 1 16.875 8.25z">
                 </path>
               </svg>
-
-              <p>45</p>
+              </a>
+<!--              <p>45</p>-->
             </li>
-
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="pinterest">
-                <path fill="#CC2127"
-                  d="M12 0C5.373 0 0 5.372 0 12c0 4.913 2.955 9.135 7.184 10.991-.034-.837-.006-1.845.208-2.756.23-.974 1.543-6.538 1.543-6.538s-.382-.767-.382-1.9c0-1.778 1.032-3.106 2.315-3.106 1.09 0 1.618.82 1.618 1.802 0 1.096-.7 2.738-1.06 4.258-.3 1.274.638 2.311 1.894 2.311 2.274 0 3.805-2.92 3.805-6.38 0-2.63-1.772-4.598-4.993-4.598-3.64 0-5.908 2.714-5.908 5.745 0 1.047.308 1.784.79 2.354.224.264.253.368.172.67-.056.219-.189.753-.244.963-.08.303-.326.413-.6.3-1.678-.684-2.458-2.52-2.458-4.585 0-3.408 2.875-7.497 8.576-7.497 4.582 0 7.598 3.318 7.598 6.875 0 4.708-2.617 8.225-6.476 8.225-1.294 0-2.513-.7-2.931-1.495 0 0-.697 2.765-.844 3.298-.254.925-.752 1.85-1.208 2.57 1.08.319 2.22.493 3.4.493C18.627 24 24 18.627 24 12 24 5.372 18.627 0 12 0" />
-              </svg>
-
-              <p>68k</p>
+              <a href="https://www.linkedin.com/company/isnstudy/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="linkedin">
+                  <path
+                    d="M24 5.309a10.259 10.259 0 0 1-2.835.777 4.893 4.893 0 0 0 2.165-2.72 9.833 9.833 0 0 1-3.12 1.191 4.92 4.92 0 0 0-8.511 3.365c0 .39.033.765.114 1.122a13.926 13.926 0 0 1-10.142-5.147 4.928 4.928 0 0 0 1.512 6.576 4.86 4.86 0 0 1-2.23-.616v.054a4.943 4.943 0 0 0 3.942 4.835 4.911 4.911 0 0 1-1.29.162 4.35 4.35 0 0 1-.932-.084 4.967 4.967 0 0 0 4.598 3.427 9.885 9.885 0 0 1-6.101 2.099c-.404 0-.791-.018-1.178-.068a13.851 13.851 0 0 0 7.548 2.21c9.054 0 14.004-7.5 14.004-14.001 0-.218-.008-.428-.018-.636A10.316 10.316 0 0 0 24 5.309z" />
+                </svg>
+              </a>
+<!--              <p>17k</p>-->
             </li>
-
             <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="youtube-logo">
-                <rect width="24" height="24" fill="none"></rect>
-                <path
-                  d="M21.96849 6.54351a2.24659 2.24659 0 0 0-1.35983-1.53246C17.39589 3.77646 12.27933 3.78651 12 3.78822c-.27919-.00224-5.39579-.01181-8.60863 1.22283a2.247 2.247 0 0 0-1.35983 1.53152C1.78781 7.47441 1.5 9.17679 1.5 12c0 2.82317.28781 4.52554.54154 5.45649a2.24659 2.24659 0 0 0 1.35983 1.53246c3.07558 1.18189 7.89578 1.22301 8.54691 1.22301.05818.00005.06532.00005.12351 0 .65159-.00005 5.47147-.04118 8.54686-1.22301a2.247 2.247 0 0 0 1.35983-1.53149C22.21219 16.52612 22.5 14.82374 22.5 12c0-.00047-.00003-.00093-.00003-.0014C22.49959 9.17752 22.21208 7.4757 21.96849 6.54351zm-6.76048 5.76851-4.5 3A.37497.37497 0 0 1 10.125 15V9a.37498.37498 0 0 1 .58301-.3117l4.5 3a.37498.37498 0 0 1 0 .62402z">
-                </path>
-              </svg>
-
-              <p>68k</p>
+              <a href="https://www.tiktok.com/@isnstudy" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="tiktok">
+                  <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+</svg>
+              </a>
+<!--              <p>17k</p>-->
             </li>
           </ul>
         <form method="POST" action="/subscription">
@@ -177,7 +180,7 @@
               of cool articles every weeks
             </p>
 
-            <input name="email" class="suscrible__input " placeholder="hello@youremai.com" />
+            <input name="email" class="suscrible__input " placeholder="hello@youremai.com"  required/>
 
 
             <button type="submit" style="width: 100%; margin:2rem 0;" class="suscribe__button">Subscribe</button>
@@ -204,7 +207,9 @@
       </div>
 
       <div class="you__may__also__like">
-        <h6 class="title__base">You May Also Like</h6>
+        {% if recommendation %}
+          <h6 class="title__base">You May Also Like</h6>
+        {% endif %}
         <div style="margin: 2rem 0;" class="all__blogs__container">
             {% for rec in recommendation %}
               <div class="grid-item">

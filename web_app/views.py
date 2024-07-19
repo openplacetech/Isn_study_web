@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm,ApplyForCurrierForm
-from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CurrierOpportunities,ISNTeam,Testimonials,InsightComments
+from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm,ApplyForCareerForm
+from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CareerOpportunities,ISNTeam,Testimonials,InsightComments
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core import serializers
@@ -89,15 +89,15 @@ def isn_market_entry(request):
                                                "mexico":mexico,
                                                "south_america":south_america,"map_country_list":json.dumps(map_country_list)})
 
-def currier_opportunity(request):
+def career_opportunity(request):
     # page_number = request.GET.get('page')
-    category_grouping = CurrierOpportunities.objects.values('category').annotate(count=Count('category')).order_by('category')
+    category_grouping = CareerOpportunities.objects.values('category').annotate(count=Count('category')).order_by('category')
     result = []
     JOB_TYPE_DICT = dict(JOB_TYPE)
     JOB_STATUS_DICT = dict(STATUS_TYPE)
     JOB_MODE_DICT = dict(JOB_MODE)
     for group in category_grouping:
-        jobs = list(CurrierOpportunities.objects.filter(category=group['category']).values('job_title', 'job_summary',
+        jobs = list(CareerOpportunities.objects.filter(category=group['category']).values('job_title', 'job_summary',
                                                                                            'job_mode', 'job_type',
                                                                                            'job_status', 'slug'))
         for job in jobs:
@@ -111,8 +111,8 @@ def currier_opportunity(request):
     return render(request,'open-jobs.html',{'opportunity':json.dumps(result)})
 
 def job_detail(request,slug):
-    job = CurrierOpportunities.objects.get(slug=slug)
-    recommendation = CurrierOpportunities.objects.filter(Q(category=job.category)|Q(job_mode=job.job_mode)|Q(job_status=job.job_status)).exclude(id=job.pk)[:3]
+    job = CareerOpportunities.objects.get(slug=slug)
+    recommendation = CareerOpportunities.objects.filter(Q(category=job.category)|Q(job_mode=job.job_mode)|Q(job_status=job.job_status)).exclude(id=job.pk)[:3]
 
     return render(request,'job-detail.html',{'job':job,"recommendation":recommendation})
 
@@ -135,9 +135,9 @@ def our_teams(request):
 def apply_job(request,job_id):
     referer = request.META.get('HTTP_REFERER', '/')
     try:
-        job = CurrierOpportunities.objects.get(pk=job_id)
+        job = CareerOpportunities.objects.get(pk=job_id)
         if request.method == "POST":
-            form = ApplyForCurrierForm(request.POST,request.FILES)
+            form = ApplyForCareerForm(request.POST,request.FILES)
             if form.is_valid():
                 application = form.save(commit=False)
                 application.job = job
@@ -160,7 +160,7 @@ def apply_job(request,job_id):
                 "job":job
             }
             return render(request,'job_apply.html',context)
-    except CurrierOpportunities.DoesNotExist:
+    except CareerOpportunities.DoesNotExist:
         return redirect(referer)
 
 def subscription_view(request):

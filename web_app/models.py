@@ -108,7 +108,7 @@ class InsightComments(BaseModel):
     def insight_name(self):
         return self.insight.title
 
-class CurrierOpportunities(BaseModel):
+class CareerOpportunities(BaseModel):
     job_title = models.TextField()
     job_summary = models.TextField(max_length=500,default="" ,help_text="Job summary should less then 500 character")
     job_description = HTMLField()
@@ -137,8 +137,8 @@ class CurrierOpportunities(BaseModel):
     def __str__(self):
         return self.job_title
     class Meta:
-        db_table = 'CurrierOpportunities'
-        verbose_name_plural = "Currier Opportunities"
+        db_table = 'CareerOpportunities'
+        verbose_name_plural = "Career Opportunities"
 
 
 class ISNTeam(BaseModel):
@@ -180,8 +180,8 @@ class Testimonials(BaseModel):
         db_table = "testimonial"
         verbose_name_plural = "Testimonials"
 
-class ApplyForCurrier(BaseModel):
-    job = models.ForeignKey(CurrierOpportunities,on_delete=models.DO_NOTHING)
+class ApplyForCareer(BaseModel):
+    job = models.ForeignKey(CareerOpportunities,on_delete=models.DO_NOTHING)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField()

@@ -1,5 +1,5 @@
 from django import forms
-from web_app.models import PartnershipRequest,Subscriber,InsightComments,ApplyForCurrier
+from web_app.models import PartnershipRequest,Subscriber,InsightComments,ApplyForCareer
 class PartnershipRequestForm(forms.ModelForm):
     agent = forms.CharField(max_length=255,required=False)
     market_entry = forms.CharField(max_length=255,required=False)
@@ -59,9 +59,9 @@ class InsightCommentsForm(forms.ModelForm):
         model = InsightComments
         fields = ['name','email','message']
 
-class ApplyForCurrierForm(forms.ModelForm):
+class ApplyForCareerForm(forms.ModelForm):
     class Meta:
-        model = ApplyForCurrier
+        model = ApplyForCareer
         fields = ['first_name','last_name','email','phone_number','contact_phone_type','other_job_consider',
                   'country','profile_link','expected_salary','resume','gender','veteran_status',
                   'race_ethnicity','disability','disability','legal_name','required_immigration_sponsorship',
