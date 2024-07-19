@@ -15,7 +15,8 @@ def home(request):
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     latest_items = insight_list[:3]
     testimonials = Testimonials.objects.all()
-    return  render(request,"index.html",{"insights":latest_items,"testimonials":testimonials})
+    map_country_list = {"country":['us']}
+    return  render(request,"index.html",{"insights":latest_items,"testimonials":testimonials,"map_country_list":json.dumps(map_country_list)})
 
 def partnership_request(request,contact_type):
     if request.method == 'POST':
@@ -29,7 +30,7 @@ def partnership_request(request,contact_type):
     else:
         form = PartnershipRequestForm()
     if contact_type == "us":
-        return render(request, 'contact.html', {'form': form})
+        return render(request, 'contact.html', {'form': form,"map_country_list":map_country_list})
     elif contact_type == "partnership":
         return render(request, 'partnership.html', {'form': form})
     else:
@@ -72,6 +73,7 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
+    map_country_list = ["us"]
     wast_africa = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA"))
     south_and_center_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
     south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
@@ -81,7 +83,7 @@ def isn_market_entry(request):
                                                "south_and_center_asia":south_and_center_asia,
                                                "south_asia":south_asia,
                                                "mexico":mexico,
-                                               "south_america":south_america})
+                                               "south_america":south_america,"map_country_list":map_country_list})
 
 def currier_opportunity(request):
     # page_number = request.GET.get('page')

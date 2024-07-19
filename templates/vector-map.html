@@ -51,6 +51,10 @@
 
 <script>
     var bg="{{ bg }}"
+    var countryColor="{{ color }}"
+    var countries = "{{ map_country_list }}"
+    const countryColorMap = {};
+    {#console.log("countryColorMap",countryColorMap)#}
     var default_bg = ' radial-gradient(34.92% 51.68% at 58.4% 52.8%, #FFFFFF 0%, #F9F9F9 100%) '
     $(document).ready(function() {
         $('#world-map').vectorMap({
@@ -69,7 +73,7 @@
             selectedRegions: null,
             showTooltip: true,
             colors: {
-                'us': '#D24347'
+                'us': countryColor
             },
         });
     });

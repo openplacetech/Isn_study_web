@@ -359,7 +359,7 @@
         </p>
         <div class="availability__zone__map">
 {#          <img src="{% static 'assets/images/map.svg' %}" />#}
-            {% include 'vector-map.html' %}
+            {% include 'vector-map.html' with country=map_country_list color="#D24347" %}
         </div>
       </div>
     </main>
