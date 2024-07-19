@@ -78,18 +78,18 @@
                 {% csrf_token %}
                 <div class="job__content__right">
                 <div class="header__fast__reply">
-                    <h4>Fast Apply</h4>
+                    <h4>Fast Apply ⚡️</h4>
                 </div>
 
-                <input name="first_name" placeholder="Your first name" class="input__form" />
-                <input name="last_name" placeholder="Your last name" class="input__form" />
-                <input name="email" placeholder="Enter your email" class="input__form" />
-                <input name="phone_number" placeholder="Enter your phone number" class="input__form" />
+                <input name="first_name" placeholder="Your first name *" class="input__form" required/>
+                <input name="last_name" placeholder="Your last name *" class="input__form" required/>
+                <input name="email" placeholder="Enter your email *" class="input__form" required/>
+                <input name="phone_number" placeholder="Enter your phone number *" class="input__form" required/>
                 <div onclick="browseFile()"  class="uploader__image uploder__right">
                     <div  class="uploader__center">
-                        <p>Upload your resume</p>
+                        <p>Upload your resume *</p>
                         <button class="brows__btn" type="button">Browse</button>
-                        <input type="file" name="resume" id="fileInput" style="display: none;"  onchange="handleFileSelect(event)">
+                        <input type="file" name="resume" id="fileInput" style="display: none;"  onchange="handleFileSelect(event)" required>
                     </div>
                 </div>
 
