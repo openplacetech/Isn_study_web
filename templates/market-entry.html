@@ -19,14 +19,17 @@
               <h3 class="saying__dedicated">“Dedicated In-Country Representative and In-Depth Insights to Boost Your International Presence”</h3>
             </div>
             <div style="margin:1.5rem 0;" class="hero_btn_container">
-              <button class="btn__primary__home readmore">Read More</button>
+              <a href="#how-it-works">
+                <button class="btn__primary__home readmore">Read More</button>
+              </a>
             </div>
 
 
           </div>
           <div class="container__right">
-           <img src="{% static 'assets/images/market-centry-boy.svg' %}"/>
+           <img src="{% static 'assets/images/market-centry-boy.svg' %}" loading="lazy"/>
           </div>
+          <div id="how-it-works" style="visibility:hidden;"> </div>
         </div>
       </main>
     </section>
@@ -44,31 +47,19 @@
               </div>
             </div>
             <div class="brand-goals">
-              <!-- <div class="brand-identity">
-                <div class="goal-steps">
-                  <h3 class="goals">Goals.</h3>
-                  <div class="we-are-committed">
-                    We are committed to staying at the forefront of technology,
-                    continuously exploring new ways to enhance our platform.
-                  </div>
-                </div>
-              </div> -->
               <div class="work__description__container">
                 <div class="agreement-parent">
                   <h3 class="agreement">Goals.</h3>
                   <div class="our-users-are">
-                    Our users are at the heart of everything we do. We strive to
-                    understand their needs and exceed their expectations through
-                    reliable and user-friendly.
+                    We Are Committed To Staying At The Forefront Of Technology, Continuously Exploring New Ways TO Enhance Our Platform.
                   </div>
                 </div>
-                <img class="contact-btn-icon" loading="lazy" alt="" />
               </div>
               <div class="work__description__container">
                 <div class="agreement-parent">
                   <h3 class="agreement">Agreement.</h3>
                   <div class="our-users-are">
-                    Our users are at the heart of everything we do. We strive to understand their needs and exceed their expectations through reliable and user-friendly.
+                    Our Users Are At The Heart Of Everything We Do. We Strive To Understand Their Needs And Exceed Their Expectations Through Reliable And User-Friendly.
                   </div>
                 </div>
                 <img class="contact-btn-icon" loading="lazy" alt="" />
@@ -77,38 +68,34 @@
                 <div class="agreement-parent">
                   <h3 class="agreement">Strategize.</h3>
                   <div class="our-users-are">
-                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                    Decisions Are Made Regarding The Marketing Approach, Participation In Events And Student Engagements, And The Allocation Of Budgets And Priorities.
                   </div>
                 </div>
-                <img class="contact-btn-icon" loading="lazy" alt="" />
               </div>
               <div class="work__description__container">
                 <div class="agreement-parent">
                   <h3 class="agreement">Hire.</h3>
                   <div class="our-users-are">
-                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                    Qualified Candidates Are Shortlisted And Interviewed. The Final Selection Is Presented To Your Institution Before They Join.
                   </div>
                 </div>
-                <img class="contact-btn-icon" loading="lazy" alt="" />
               </div>
               <div  class="work__description__container ">
                 <div class="agreement-parent">
                   <h3 class="agreement">Train.</h3>
                   <div class="our-users-are">
-                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                   Comprehensive Training Is Conducted To Acquaint The Representative With The Admission Process, Departmental Objectives, And The Institution's Mission.
                   </div>
                 </div>
-                <img class="contact-btn-icon" loading="lazy" alt="" />
               </div>
 
-              <div style="border-right: none !important;" class="work__description__container ">
-                <div class="agreement-parent">
+              <div class="work__description__container">
+                <div class="agreement-parent" style="border-right: none;">
                   <h3 class="agreement">Begin.</h3>
-                  <div class="our-users-are">
-                    We believe in transparency, honesty, and ethical practices. Trust is the foundation of our relationships with hosts and guests alike.
+                  <div class="our-users-are" >
+                    The Representative builds relationships with applicants, counselors, agency partners, institutions, and prospective students, executing the role according to defined strategies.
                   </div>
                 </div>
-                <img class="contact-btn-icon" loading="lazy" alt="" />
               </div>
 
 
@@ -140,7 +127,7 @@
           <div class="world-container">
             <div class="world-content">
               <div class="world-instance">
-                {% include 'vector-map.html' with bg="#fff"%}
+                {% include 'vector-map.html' with country=map_country_list color="#15B097" %}
               </div>
               <div class="country-data">
                 <div class="country-list">
@@ -269,16 +256,13 @@
         <main class="section__container">
           <div class="our__engagement__container">
             <div class="our__engagement__content">
-              <p  class="secondary_title hire__developers">Hire developers from the largest AI-vetted talent network</p>
               <div class="title__lg">
                 Ready to Transform Your <br />
                 <span>International Engagement? </span>
               </div>
               <p class="our__engagement__content__description">
-                Join the growing network of educational institutions and recruiting
-                partners benefiting from ISN’s comprehensive platform. Our tools and
-                data insights are designed to simplify your international outreach,
-                enhance your recruitment strategies, and foster global partnerships.
+                Join us at ISN Platforms and leverage our tools to make your international education journey smoother and more successful. Whether you're a student looking to study
+                abroad or a university seeking global partnerships, we have the right solution for you.
               </p>
 
               {% include 'meet_us.html' %}

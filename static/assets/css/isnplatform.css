@@ -232,16 +232,3 @@
     margin-top: 0;
   }
 }
-
-.platform-text{
-  color: var(--86A0AC, #86A0AC);
-  text-align: center;
-  leading-trim: both;
-  text-edge: cap;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px; /* 128.571% */
-  text-transform: uppercase;
-}

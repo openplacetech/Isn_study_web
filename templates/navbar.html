@@ -1,4 +1,5 @@
 {% load static %}
+
 <header>
     <div class="section__container">
       <nav class="navbar">
@@ -32,7 +33,7 @@
                 </svg>
                 <ul class="sub-dropdown-menu dropdown__style">
                   <li><a href="/teams">Teams</a></li>
-                  <li><a href="/teams">Benefits</a></li>
+                  <li><a href="/teams#benefits">Benefits</a></li>
                   <li><a href="/jobs">Opportunities</a></li>
                 </ul>
 
@@ -47,11 +48,32 @@
 
           </li>
           <button class="btn__right__nav login">University Login</button>
-          <a href="/contact/partnership"><button class="btn__right__nav partnership">Start Patnership</button></a>
+          <a href="/contact/partnership"><button class="btn__right__nav partnership">Start Partnership</button></a>
         </ul>
-        <div class="navbar__menu__icon">
-          <img src="{% static 'assets/images/menuicon.svg' %}" />
+        <div onclick="toggleMenu()" class="navbar__menu__icon">
+          <img src="{% static 'assets/images/menuicon.svg' %}" alt="Menu" class="menu-icon" id="menuIcon">
+          <svg class="close-icon hidden" id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+
         </div>
       </nav>
     </div>
   </header>
+<nav class="menu" id="mobileMenu">
+    <ul>
+        <li><a class="{% if request.path == "/" %} active {% endif %}" href="/">Home</a></li>
+        <li><a class="{% if request.path == "/platform" %} active {% endif %}" href="/platform">ISN Platforms</a></li>
+        <li><a class="{% if request.path == "/market-entry" %}active {% endif %}" href="/market-entry">Market Entry</a></li>
+        <li><a class="{% if request.path == "/insights" %}active {% endif %}" href="/insights">Insights</a></li>
+        <li><a href="/journey">Our Journey</a></li>
+        <li><a href="/teams">Teams</a></li>
+        <li><a href="/teams#benefits">Benefits</a></li>
+        <li><a href="/jobs">Opportunities</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+      <div class="nav__btn__container  nav__btn__container__mobile">
+        <a href="#"><button class=" btn__right__nav login">University Login</button></a>
+        <a href="/contact/partnership"><button class="btn__right__nav partnership">Start Partnership</button></a>
+      </div>
+    </ul>
+  </nav>

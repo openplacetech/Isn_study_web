@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block base %}
+    <style>
+    .platform-text{
+        color:  #86A0AC;
+        text-align: center;
+        leading-trim: both;
+
+        text-edge: cap;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px; /* 128.571% */
+        text-transform: uppercase;
+    }
+    </style>
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/isnplatform.css' %}" />
     <section class="homepage__container">
     <main class="section__container">
       <div class="isn__platform__home">
 {#        <p class="secondary_title">ISN PLATFORMS</p>#}
-        <div><img class="selfappie__icon" src="{% static 'assets/images/selfappie.svg' %}"></div>
+        <div><img class="selfappie__icon" src="{% static 'assets/images/selfappie.svg' %}" loading="lazy"></div>
         <div style="white-space-collapse: discard; word-break: normal !important" class="content__title">
           Simplifying Your
           <span>Application <br />
@@ -77,8 +91,8 @@
 <div>
           <hr class="horizontal__line" />
           <div class="partner__us__content">
-            <p>
-              Discover how SelfAppie can simplify your application process and support your educational journey. Learn more about SelfAppie <a href="/success">here</a>.
+            <p class="secondary_title">
+              Discover how SelfAppie can simplify your application process and support your educational journey. Learn more about SelfAppie <a href="">here</a>.
             </p>
           </div>
         </div>
@@ -86,7 +100,7 @@
   </section>
   <section class="collaboration__container">
     <main class="section__container">
-      <div class="our__collaboration__container">
+      <div class="our__collaboration__container" id="study-usa-partners">
         <div class="our__engagement__content">
           <div class="isn__platform__home">
 {#            <p class="secondary_title">ISN PLATFORMS</p>#}
@@ -112,9 +126,8 @@
   <section style="background-color: white" class="our__partner__container">
     <main class="section__container">
       <div class="SelfAppie__content">
-        With <span>SelfAppie</span>, we streamline applications to US universities for international students,<span>
-          making the process simple, logical, and joyful,</span> forging a direct path to higher education for students
-        worldwide.
+        <span>StudyUSA</span> Partners' goal is to simplify and expedite the US application process while <span>
+        offering high incentives to our recruiting partners,</span> ensuring a seamless and rewarding experience.
       </div>
 
 
@@ -152,18 +165,23 @@
           <div class="triangle trangel-top "></div>
           <div class="counter counter-top">03</div>
           <img src="{% static 'assets/images/Heart.svg' %}" />
-          <h6>High Incentives</h6>
+          <h6>Student Favorite Universities</h6>
           <p>Exclusive Access: Partner with top-ranked universities loved by students worldwide.</p>
         </div>
         <div class="box box-4 item-bottom">
           <div class="triangle trangel-bottom"></div>
           <div class="counter-bottom  counter">04</div>
           <img src="{% static 'assets/images/Provision.svg' %}" />
-          <h6>High Incentives</h6>
-          <p>Empowering Partnerships: Gain access to cutting-edge tools for exceptional student support..</p>
+          <h6>Tools and Resources</h6>
+          <p>Empowering Partnerships: Gain access to cutting-edge tools for exceptional student support.</p>
         </div>
 
       </div>
+
+      <hr class="horizontal__line" />
+      <p style="text-align: center; margin-top: 0.8rem" class="secondary_title">
+          Explore how StudyUSA Partner can enhance your institution's international recruit,ent efforts. Learn more about StudyUSA Partner <a href="#study-usa-partners">here</a>.
+      </p>
 
     </main>
   </section>
@@ -171,7 +189,6 @@
     <main class="section__container">
       <div class="our__engagement__container">
         <div class="our__engagement__content">
-            <div class="platform-text">Hire developers from the largest AI-vetted talent network</div>
           <div class="title__lg">
             Ready to Transform Your <br />
             <span>International Engagement? </span>

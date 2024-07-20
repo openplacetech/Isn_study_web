@@ -1,6 +1,6 @@
 from django.contrib import admin
 from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,\
-    CurrierOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCurrier,StudyDestinationOfNepali
+    CareerOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCareer,StudyDestinationOfNepali
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -27,8 +27,8 @@ class ISNTeamAdmin(admin.ModelAdmin):
     search_fields = ('full_name','designation')
     list_filter = ('created_at','updated_at')
 
-@admin.register(CurrierOpportunities)
-class CurrierOpportunitiesAdmin(admin.ModelAdmin):
+@admin.register(CareerOpportunities)
+class CareerOpportunitiesAdmin(admin.ModelAdmin):
     list_display = ('job_title', 'category', 'job_mode', 'job_type','job_status')
     search_fields = ('job_title', 'job_status','job_mode', 'job_type')
     list_filter = ('created_at', 'updated_at','category')
@@ -52,8 +52,8 @@ class SubscriberAdmin(admin.ModelAdmin):
     search_fields = ('email',)
     list_filter = ('created_at', 'updated_at')
 
-@admin.register(ApplyForCurrier)
-class ApplyForCurrierAdmin(admin.ModelAdmin):
+@admin.register(ApplyForCareer)
+class ApplyForCareerAdmin(admin.ModelAdmin):
     list_display = ('full_name','email','phone_number','job')
     search_fields = ('full_name','email')
     list_filter = ('created_at', 'updated_at','job')

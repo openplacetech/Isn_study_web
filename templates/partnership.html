@@ -1,20 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block base %}
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/partnership.css' %}" />
-    <section class="section__container__3xl">
-      <main class="partnership__container">
-        <aside class="parntership__left">
-          <div class="content__title">
-            Start
-            <span
-              >Your Partnership <br />
-              With ISN</span
-            >
+    <style>
+    /* Main content styles */
+    .partnership__container {
+      display: flex;
+      min-height: calc(100vh - 80px);
+      /* Adjust if header height changes */
+    }
 
-          </div>
-          <p class="secondary_title">Lorem ipsum dolor sit.</p>
-          <form class="partnership__form flex-row-aligned" method="post" action="/contact/partnership">
+    .partnership__left,
+    .partnership__right {
+      flex: 1;
+    }
+
+    .partnership__right{
+      max-height:1120px;
+    }
+
+    .partnership__left {
+      padding: 5rem 0;
+      align-items:stretch;
+    }
+
+
+    .partnership__right img {
+      max-height: 100%;
+      border-top-left-radius: 366px;
+        width: 100%;
+      object-fit: cover;
+    }
+
+    .partnership__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      flex-grow: 1;
+
+    }
+
+    .grid-flex {
+      display: flex;
+      gap: 2rem;
+    }
+    /* Footer styles */
+  </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/partnership.css' %}" />
+
+
+    <main class="section__container grid-flex" >
+    <aside class="partnership__left" >
+      <div style="text-align: center;" class="content__title ">
+        Start
+        <span>Your Partnership <br />
+          With ISN</span>
+      </div>
+      <p style="text-align: center;" class="secondary_title partnership__title"></p>
+      <form class="partnership__form flex-row-aligned" method="post" action="/contact/partnership">
               {% csrf_token %}
             <input
               class="partnership__input"
@@ -100,11 +142,10 @@
 
             <button  class="suscribe__button btn-submit" type="submit">Submit</button>
           </form>
-        </aside>
+    </aside>
 
-        <section class="partnership__right">
-          <img src="{% static 'assets/images/partnershipbg.png' %}"/>
-        </section>
-      </main>
+    <section class="partnership__right">
+      <img src="{% static 'assets/images/partnershipbg.png' %}" alt="Partnership background" />
     </section>
+  </main>
 {% endblock %}

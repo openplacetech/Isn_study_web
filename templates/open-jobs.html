@@ -7,16 +7,16 @@
         <main class="humanresource__content__container">
             <aside class="openjob__left">
                 <div class="content__title">
-                    Join Our Team: <br /> <span>Explore Career</span><br /><span>Opportunities at <br />ISN
+                    Join Our Team: <br /> <span>Explore Career</span><br /><span>Opportunities at <br />ISN.
 
                 </div>
 
-                <p class="secondary_title">At ISN, we believe in fostering a collaborative and innovative work
+                <p class="secondary_title" style="margin-bottom: 10px ">At ISN, we believe in fostering a collaborative and innovative work
                     environment where each team member can thrive. We are committed to supporting our employees'
                     professional development and personal growth. If you're passionate about making a difference in the
                     international education landscape, we'd love to hear from you. Explore our current job openings and
                     find the perfect fit for your career aspirations.</p>
-                <button style="margin-top: 0.8rem;" class="btn__primary__home">Join Our Team</button>'
+                <a style="margin-top: 0.8rem; text-decoration: none; " href="#job_list"><button class="btn__primary__home">Join Our Team</button></a>
             </aside>
             <aside class="humanresource__right ">
                 <img class="open__job__image" src="{% static 'assets/images/openjob.svg' %}" />
@@ -26,7 +26,7 @@
     </section>
 
 
-    <section class="section__container">
+    <section id="job_list" class="section__container">
         <section class="opportunities__container ">
             <div class="mbl__container">
                 <div class="content__title openjob__title">
@@ -52,10 +52,9 @@
                     <p class="secondary_title">We are always seeking talented people. In case you cannot find your
                         desired position here, please send us your LinkedIn profile and give us your contact
                         information. We will be in touch. </p>
-                    <button class="share__linkedn__btn">Share your Linkedn profile</button>
+<!--                    <button class="share__linkedn__btn">Share your Linkedn profile</button>-->
                 </aside>
                 <aside id="opportunities__right">
-ss
 
 
                     <div class="see__more__for__mobile">
@@ -68,7 +67,7 @@ ss
             <div>
                 <hr class="horizontal__line" />
                 <div class="partner__us__content">
-                    <p style="color: #2C3E56;">
+                    <p style="color: #2C3E56;" class="secondary_title">
                         Join ISN and be part of a team that values innovation, collaboration, and growth. Check out our
                         current openings and start your journey with us today!.
                     </p>
@@ -80,7 +79,7 @@ ss
     <section class="section__container">
         <div class="join__us__container">
             <div class="left">
-                <span class=" follow-font"><span style="color:#d24347;">Follow</span> us on <br /> social to see <br />
+                <span class=" follow-font"><span style="color:#d24347;"><strong>Follow</strong></span> us on <br /> social to see <br />
                     what we're up <br /> to!</span>
                 <img src="{% static 'assets/images/students-opp.svg' %}" />
 
@@ -96,16 +95,16 @@ ss
                                     <path fill="#231f20"
                                         d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm2.97 6.63a.19.19 0 0 1-.19.19l-1.19.001c-.79 0-.93.31-.93.91v1.25h2.05c.054 0 .105.023.14.064s.052.094.045.147l-.29 2.26a.187.187 0 0 1-.186.163h-1.76v5.602a.188.188 0 0 1-.187.187h-2.31a.188.188 0 0 1-.187-.187v-5.602H8.95a.187.187 0 0 1-.187-.187v-2.26c0-.103.084-.187.187-.187h1.76V9.12c0-1.957 1.184-3.17 3.09-3.17.82 0 1.544.061 1.766.09a.188.188 0 0 1 .163.186v2.018z" />
                                 </svg>
-                                <p>Facebook</p>
+                                <a href="https://www.facebook.com/isnstudy" target="_blank">Facebook</a>
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    id="twitter">
+                                    id="tiktok">
                                     <path
                                         d="M24 5.309a10.259 10.259 0 0 1-2.835.777 4.893 4.893 0 0 0 2.165-2.72 9.833 9.833 0 0 1-3.12 1.191 4.92 4.92 0 0 0-8.511 3.365c0 .39.033.765.114 1.122a13.926 13.926 0 0 1-10.142-5.147 4.928 4.928 0 0 0 1.512 6.576 4.86 4.86 0 0 1-2.23-.616v.054a4.943 4.943 0 0 0 3.942 4.835 4.911 4.911 0 0 1-1.29.162 4.35 4.35 0 0 1-.932-.084 4.967 4.967 0 0 0 4.598 3.427 9.885 9.885 0 0 1-6.101 2.099c-.404 0-.791-.018-1.178-.068a13.851 13.851 0 0 0 7.548 2.21c9.054 0 14.004-7.5 14.004-14.001 0-.218-.008-.428-.018-.636A10.316 10.316 0 0 0 24 5.309z" />
                                 </svg>
 
-                                <p>Twitter</p>
+                                <a href="https://www.tiktok.com/@isnstudy" target="_blank">Tiktok</a>
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -117,17 +116,7 @@ ss
                                     </path>
                                 </svg>
 
-                                <p>Instagram</p>
-                            </li>
-
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    id="pinterest">
-                                    <path fill="#CC2127"
-                                        d="M12 0C5.373 0 0 5.372 0 12c0 4.913 2.955 9.135 7.184 10.991-.034-.837-.006-1.845.208-2.756.23-.974 1.543-6.538 1.543-6.538s-.382-.767-.382-1.9c0-1.778 1.032-3.106 2.315-3.106 1.09 0 1.618.82 1.618 1.802 0 1.096-.7 2.738-1.06 4.258-.3 1.274.638 2.311 1.894 2.311 2.274 0 3.805-2.92 3.805-6.38 0-2.63-1.772-4.598-4.993-4.598-3.64 0-5.908 2.714-5.908 5.745 0 1.047.308 1.784.79 2.354.224.264.253.368.172.67-.056.219-.189.753-.244.963-.08.303-.326.413-.6.3-1.678-.684-2.458-2.52-2.458-4.585 0-3.408 2.875-7.497 8.576-7.497 4.582 0 7.598 3.318 7.598 6.875 0 4.708-2.617 8.225-6.476 8.225-1.294 0-2.513-.7-2.931-1.495 0 0-.697 2.765-.844 3.298-.254.925-.752 1.85-1.208 2.57 1.08.319 2.22.493 3.4.493C18.627 24 24 18.627 24 12 24 5.372 18.627 0 12 0" />
-                                </svg>
-
-                                <p>Pinterest</p>
+                                <a href="https://www.instagram.com/isnstudy" target="_blank">Instagram</a>
                             </li>
 
                             <li>
@@ -139,7 +128,7 @@ ss
                                     </path>
                                 </svg>
 
-                                <p>Youtube</p>
+                                <a href="https://www.youtube.com/@internationalstudynetwork" target="_blank">Youtube</a>
                             </li>
                         </ul>
 
@@ -169,7 +158,7 @@ ss
                             </svg>
                         </span>
 
-                        <p>Twitter</p>
+                        <p>Youtube</p>
 
                     </li>
                     <li>
@@ -182,18 +171,6 @@ ss
                             </svg>
                         </span>
                         <p>Linkedin</p>
-                    </li>
-
-                    <li>
-                        <span class="wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24" height="24"
-                                viewBox="0 0 24 24" id="pinterest">
-                                <path
-                                    d="M12 0C5.373 0 0 5.372 0 12c0 4.913 2.955 9.135 7.184 10.991-.034-.837-.006-1.845.208-2.756.23-.974 1.543-6.538 1.543-6.538s-.382-.767-.382-1.9c0-1.778 1.032-3.106 2.315-3.106 1.09 0 1.618.82 1.618 1.802 0 1.096-.7 2.738-1.06 4.258-.3 1.274.638 2.311 1.894 2.311 2.274 0 3.805-2.92 3.805-6.38 0-2.63-1.772-4.598-4.993-4.598-3.64 0-5.908 2.714-5.908 5.745 0 1.047.308 1.784.79 2.354.224.264.253.368.172.67-.056.219-.189.753-.244.963-.08.303-.326.413-.6.3-1.678-.684-2.458-2.52-2.458-4.585 0-3.408 2.875-7.497 8.576-7.497 4.582 0 7.598 3.318 7.598 6.875 0 4.708-2.617 8.225-6.476 8.225-1.294 0-2.513-.7-2.931-1.495 0 0-.697 2.765-.844 3.298-.254.925-.752 1.85-1.208 2.57 1.08.319 2.22.493 3.4.493C18.627 24 24 18.627 24 12 24 5.372 18.627 0 12 0" />
-                            </svg>
-                        </span>
-
-                        <p>Pinterest</p>
                     </li>
 
                     <li>
@@ -214,11 +191,6 @@ ss
 
 
         </div>
-
-        <!-- <span class="img__container__opp">
-            <img src="assets/images/group-students.svg" />
-            <span>jskdk</span>
-        </span> -->
 
     </section>
         <script>

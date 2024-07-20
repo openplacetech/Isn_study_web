@@ -2,41 +2,45 @@
 {% load static %}
 {% block base %}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/journey.css' %}" />
-    <section class="section__container">
+    <section class="journey__section__container">
     <main class="journey__content__container">
       <article class="journey__landing__page">
         <aside class="journey__content__left">
           <div class="content__title line-height-title">Our Journey: <br /> From <span> Vision to <br /> Global
               Impact.</span></div>
-          <p class="secondary_title description">Welcome to the story of ISN. Our journey is one of passion, dedication,
+          <p class="secondary_title description-line-height">Welcome to the story of ISN. Our journey is one of passion, dedication,
             and
             relentless pursuit of excellence in international education. Here, we share our origins, significant
             milestones, remarkable growth, and ambitious future goals.</p>
         </aside>
-        <aside class="journey__content__right">
-          <img src="{% static 'assets/images/frame-journy.svg' %}" />
-          <!-- <img class="ellipse" src="/assets/images/Ellipse.svg"/> -->
-        </aside>
-
-
+        <main class="journey__right">
+          <aside class="journey__content__right">
+            <img src="{% static 'assets/images/journey__bg.svg' %}" />
+          </aside>
+        </main>
       </article>
-
     </main>
   </section>
-
+  <main class="journey__right__for__mobile">
+    <aside class="journey__content__right">
+      <img src="{% static 'assets/images/journey-bg-for-mbl.svg' %}" />
+    </aside>
+  </main>
+  <div class="f">
+    <img src="{% static 'assets/images/students__dream.svg' %}" />
+  </div>
   <section class="section__mission">
-    <section class="section__container">
-      <!-- <div class="journey__banner"><img src="/assets/images/journey-people.png"/></div> -->
-      <main class="journey__content__container">
+    <section class="section__container__another">
+      <main class="journey__content__container padding__dream">
         <article class="journey__landing__page  ">
-          <aside class="journey__content__left">
+          <aside class=" journey__dream__left">
             <div class="our__dream">
               <div style=" color: white;" class="content__title line-height-title ">Our Mission: DREAM
               </div>
 
               <div class="our__dream__list__container">
 
-                <h6 style="color: white;" class="secondary_title">At ISN, our mission is to help students DREAM big and
+                <h6 style="color: white;">At ISN, our mission is to help students DREAM big and
                   achieve their goal of studying at some of the
                   world's best institutions.</h6>
 
@@ -49,7 +53,7 @@
                     futures but also positively impact their families, communities, and the world.</li>
                   <li>Accountability: Ensuring transparency and adherence to ethical practices in all our
                     services.</li>
-                  <li>Motivation: Motivating students to strive for excellence and realize their full
+                  <li>Motivation: Motivating students to strive for excellence and realize their
                     potential.</li>
                 </ul>
               </div>
@@ -78,12 +82,8 @@
           </aside>
           <aside class="our__dream__right">
             <img src="{% static 'assets/images/our__dream.svg' %}" />
-            <!-- <img class="ellipse" src="/assets/images/Ellipse.svg"/> -->
           </aside>
-
-
         </article>
-
       </main>
     </section>
   </section>
@@ -113,27 +113,27 @@
           <div class="milestone__card">
             <img src="{% static 'assets/images/Icon.svg' %}" />
             <h6>2016</h6>
-            <p>Incorporated as a <span>company</span> in Nepal.</p>
+            <p>Started as a <span>Facebook group</span> to help international students around the world.</p>
           </div>
           <div class="milestone__card">
             <img src="{% static 'assets/images/Icon.svg' %}" />
             <h6>2022</h6>
-            <p>Moved <span>HQ to Dallas, Texas.</span></p>
+            <p>Incorporated as a <span>company</span> in Nepal.</p>
           </div>
           <div class="milestone__card">
             <img src="{% static 'assets/images/Icon.svg' %}" />
             <h6>2023</h6>
-          <p>Helped <span>10000+ students </span>achieve their dreams.</p>
+            <p>Moved <span>HQ to Dallas, Texas.</span></p>
           </div>
           <div class="milestone__card">
             <img src="{% static 'assets/images/Icon.svg' %}" />
             <h6>2024</h6>
-            <p>Launched <span>state-of-the-art portals</span> to assist students and recruitment partners.</p>
+          <p>Helped <span>10000+ students </span>achieve their dreams.</p>
           </div>
           <div class="milestone__card">
             <img src="{% static 'assets/images/Icon.svg' %}" />
             <h6>2025</h6>
-            <p>Started as a <span>Facebook group </span> to help international students around the world.</p>
+            <p>Launched <span>state-of-the-art portals</span> to assist students and recruitment partners.</p>
           </div>
         </div>
 
@@ -151,7 +151,7 @@
               <div class="medal__icon__container">
                 <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
               </div>
-              <div class="platform__description">
+              <div class="platform__description platform__description__journey ">
                 <h4 style="font-weight: 600;">Expanding Our Reach</h4>
                 <p>
                   Continue to grow our network, reaching more students and universities in new regions.
@@ -162,7 +162,7 @@
               <div class="medal__icon__container">
                 <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
               </div>
-              <div class="platform__description ">
+              <div class="platform__description platform__description__journey">
                 <h4 style="font-weight: 600;">Innovative Solutions</h4>
                 <p>
                   Develop new tools and services that address the evolving needs of our users.
@@ -173,7 +173,7 @@
               <div class="medal__icon__container ">
                 <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
               </div>
-              <div class="platform__description ">
+              <div class="platform__description platform__description__journey">
                 <h4 style="font-weight: 600;">Sustainable Impact</h4>
                 <p>
                   Continue to grow our network, reaching more students and universities in new regions.
@@ -181,13 +181,14 @@
                 </p>
               </div>
             </div>
+
           </div>
 
         </div>
         <div>
           <hr class="horizontal__line" />
           <div class="partner__us__content">
-            <p>
+            <p class="secondary_title">
               Join us as we continue to pave the way for a more connected and accessible world of international education. Explore our journey and see how ISN is making a difference, one student and one institution at a time.
             </p>
           </div>

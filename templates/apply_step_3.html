@@ -18,24 +18,18 @@
         Europe, the Middle East, or North Africa.
         Black or African American (Not Hispanic or Latino): A person having origins in any of the black
         racial groups of Africa</div>
-
-
     <div class="check__box__for__policy">
         <input type="radio" id="policy-checkbox" class="input__form" name="policy">
         <span>I have read and understand the statements above and accept them as conditions of employment
         </span>
-
-
     </div>
     <div class="user__information__grid">
-
         <select  name="gender" id="gender" class="input__form selectinputappearance">
             <option value="" disabled selected>Gender</option>
             {% for g,gt in gender %}
             <option value="{{ g }}">{{ gt }}</option>
             {% endfor %}
         </select>
-
         <select name="veteran_status" id="veteran_status" class="input__form selectinputappearance">
             <option value="" disabled selected>Veteran Status</option>
             {% for v,vs in veteran_status %}
@@ -54,7 +48,6 @@
             <option value="{{ dt }}">{{ dt }}</option>
             {% endfor %}
         </select>
-
     </div>
     <div>
         <input  placeholder="Legal Name" class="input__form" style="margin-top: 20px" />

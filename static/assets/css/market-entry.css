@@ -197,7 +197,7 @@
     font-family: inherit;
   }
   .our-users-are {
-    height: 240px;
+    min-height: 300px;
     font-size: var(--font-size-base);
     line-height: 190%;
     color: var(--neutrals-base-white);
@@ -213,6 +213,7 @@
     border-right: 1px solid var(--neutrals-neutrals200);
     gap: var(--gap-base);
   }
+
   .contact-btn-icon {
     width: 0;
     height: 0;
@@ -1621,7 +1622,7 @@
 
     
     .agreement-parent{
-        border-bottom: 1px solid var(--neutrals-neutrals200);
+        border-bottom: 5px solid var(--neutrals-neutrals200);
         border-right: none !important;  
         padding-bottom: 1rem;
     }

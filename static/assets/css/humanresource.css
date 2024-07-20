@@ -54,7 +54,7 @@
     
 }
 .benefit__card{
-    display: flex;
+    display: block;
     /* flex-direction: column; */
     align-items: center !important;
     /* text-align: center; */
@@ -65,9 +65,25 @@
     gap:0.6rem ;
     border-radius: 8px;
 }
+.benefit__card:hover {
+    cursor: pointer;
+    .benefit__card__description {
+        visibility: visible;
+    }
+    border: 1px solid red;
+    background: white;
+}
+.benefit__card__description {
+    visibility: hidden;
+    width:100%;
+}
 
-.benefit__card p{
-    inset: 0;
+.benefit__card div{
+    text-align:left;
+    margin-top: 4px;
+}
+.benefit__card div p {
+    visibility: hidden;
 }
 
 /* staff */
@@ -133,9 +149,10 @@
     /* top: -1rem; */
     left: 50%;
     bottom: 0.3rem;
+    height: 75%;
     transform: translateX(-50%);
-width:60%; /* Adjust as needed */
-    height: auto; /* Adjust as needed */
+    width:80%; /* Adjust as needed */
+    /*height: auto; !* Adjust as needed *!*/
     z-index: 2;
 }
 .name{
@@ -153,6 +170,7 @@ width:60%; /* Adjust as needed */
     justify-content: center;
    
     color: black;
+    /*background-color: #0a0e0f;*/
     z-index: 999;
 }
 
@@ -168,7 +186,6 @@ width:60%; /* Adjust as needed */
 .image-wrapper img {
     width: 100%;
     height: 100%;
-    
     object-fit: cover;
     /* border: 2px solid #333; */
 }
@@ -187,9 +204,9 @@ color: var(--primary-color-red);
 
 @media (min-width:1024px) {
     .image-wrapper {
-      
-        max-width:80%; /* Adjust as needed */
-        
+
+        max-width:100%; /* Adjust as needed */
+
     }
 }
 @media (max-width: 1024px){
@@ -213,6 +230,9 @@ color: var(--primary-color-red);
         grid-template-columns: repeat(2,1fr);
         row-gap: 10rem;
     }
+    .human-resource-whyus{
+        grid-template-columns: repeat(1,1fr);
+    }
     
   }
   @media (max-width: 768px){
@@ -232,9 +252,9 @@ color: var(--primary-color-red);
         row-gap: 10rem;
     }
     .image-wrapper {
-      
-        width:54%; /* Adjust as needed */
-        
+
+        width:100%; /* Adjust as needed */
+
     }
   }
 
@@ -245,7 +265,8 @@ color: var(--primary-color-red);
         grid-template-columns: repeat(1,1fr) ;
     }
     .image-wrapper{
-        width:70% ;
+        width:80% ;
+        height: 75%;
     }
   }
   
