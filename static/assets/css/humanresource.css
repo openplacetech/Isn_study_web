@@ -54,7 +54,7 @@
     
 }
 .benefit__card{
-    display: flex;
+    display: block;
     /* flex-direction: column; */
     align-items: center !important;
     /* text-align: center; */
@@ -65,9 +65,25 @@
     gap:0.6rem ;
     border-radius: 8px;
 }
+.benefit__card:hover {
+    cursor: pointer;
+    .benefit__card__description {
+        visibility: visible;
+    }
+    border: 1px solid red;
+    background: white;
+}
+.benefit__card__description {
+    visibility: hidden;
+    width:100%;
+}
 
-.benefit__card p{
-    inset: 0;
+.benefit__card div{
+    text-align:left;
+    margin-top: 4px;
+}
+.benefit__card div p {
+    visibility: hidden;
 }
 
 /* staff */
