@@ -41,7 +41,7 @@
             <form method="post" action="/subscription">
                 {% csrf_token %}
                 <div class="input__container">
-                  <input type="email" placeholder="hello@youremai.com" name="email" required/>
+                  <input type="email" placeholder="hello@youremail.com" name="email" required/>
                   <button type="submit" style="border: none; background: none"><img src="{% static 'assets/images/Send.svg' %}" /></button>
                 </div>
             </form>
