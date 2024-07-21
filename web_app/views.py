@@ -74,10 +74,10 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
-    map_country_list = {"country": ['us','bf', 'bj', 'ci', 'cv', 'gh', 'gm', 'gn', 'gw', 'lr', 'ml', 'mr',
+    map_country_list = {"country": ['bf', 'bj', 'ci', 'cv', 'gh', 'gm', 'gn', 'gw', 'lr', 'ml', 'mr',
                                    'ne', 'ng', 'sn', 'sl', 'tg','bn', 'kh', 'id', 'la', 'my', 'mm', 'ph', 'sg',
                                    'th', 'tl', 'vn','bz', 'cr', 'sv', 'gt','hn', 'mx', 'ni', 'pa','ar', 'bo',
-                                   'br', 'cl', 'co', 'ec', 'gy', 'py', 'pe', 'sr', 'uy', 've']}
+                                   'br', 'cl', 'co', 'ec', 'gy', 'py', 'pe', 'sr', 'uy', 've', 'in', 'af', 'tj', 'kg', 'np', 'lk', 'gf']}
     wast_africa = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA"))
     south_and_center_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
     south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
