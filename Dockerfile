@@ -28,5 +28,5 @@ ENV STATIC_ROOT /core/static/
 RUN python manage.py migrate
 RUN python manage.py collectstatic --no-input
 
-EXPOSE 9091
+EXPOSE 8888
 CMD ["gunicorn","--bind", ":8888", "ISNstudy_web.wsgi:application"]
