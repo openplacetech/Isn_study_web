@@ -122,9 +122,7 @@ class CareerOpportunities(BaseModel):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            # Generate a unique slug based on the title
             self.slug = slugify(self.job_title)
-            # Ensure the slug is unique
             original_slug = self.slug
             queryset = Insights.objects.filter(slug=original_slug)
             counter = 1

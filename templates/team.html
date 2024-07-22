@@ -250,16 +250,27 @@
 
 
                 {% for team in teams %}
-                    <div class="container">
-                        <div class="image-wrapper">
-                            <img src="{{ team.profile_image.url }}" />
+                    <div class="card__staff">
+                        <div class="frame">
+                            <img src="{{ team.profile_image.url }}"  alt="Your Image"/>
                         </div>
-                        <div class="name">
-                            <span class="name__staff">{{ team.full_name }}</span>
-                            <span >{{ team.designation }}</span>
+                        <div class="card-text">
+                            <div class="name">{{ team.full_name }}</div>
+                            <span>{{ team.designation }}</span>
+{#                            <span>Northen, Jakarta</span>  #}
+
                         </div>
-                        <div class="rectangle"></div>
                     </div>
+{#                    <div class="container">#}
+{#                        <div class="image-wrapper">#}
+{#                            <img src="{{ team.profile_image.url }}" />#}
+{#                        </div>#}
+{#                        <div class="name">#}
+{#                            <span class="name__staff">{{ team.full_name }}</span>#}
+{#                            <span >{{ team.designation }}</span>#}
+{#                        </div>#}
+{#                        <div class="rectangle"></div>#}
+{#                    </div>#}
                 {% endfor %}
 
                 </div>

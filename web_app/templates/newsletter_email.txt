@@ -1,0 +1,11 @@
+Hello {{ username }},
+
+Welcome to our monthly newsletter. Here are the latest updates:
+
+- Update 1: Lorem ipsum dolor sit amet.
+- Update 2: Consectetur adipiscing elit.
+- Update 3: Sed do eiusmod tempor incididunt.
+
+Thank you for subscribing!
+
+Unsubscribe: {{ unsubscribe_link }}

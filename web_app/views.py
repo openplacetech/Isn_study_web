@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 from django.db.models import Count
 from web_app.constrants import DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
 import json
-# Create your views here.
+
 
 def home(request):
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
