@@ -16,7 +16,7 @@ REGION_TYPE = (
 
 GENDER_TYPE = (
     ("MALE","Male"),
-    ("Female","Female"),
+    ("FEMALE","Female"),
 )
 
 
@@ -68,7 +68,7 @@ SOCIALMEDIA_TYPE = (
     ("FACEBOOK","FACEBOOK"),
     ("YOUTUBE","YOUTUBE"),
     ("LINKEDIN","LINKEDIN"),
-    ("TICKTOK","TICKTOK"),
+    ("TIKTOK","TIKTOK"),
     ("TWITTER","TWITTER"),
     ("INSTAGRAM","INSTAGRAM"),
 )
@@ -78,7 +78,7 @@ PROFILE_LINK_TYPE = (
     ("LINKEDIN","Linkedin"),
     ("WEBSITE","Website"),
     ("YOUTUBE","Youtube"),
-    ("TICKTOK","Ticktok"),
+    ("TIKTOK","Tiktok"),
     ("TWITTER","Twitter"),
     ("INSTAGRAM","Instagram"),
 )
