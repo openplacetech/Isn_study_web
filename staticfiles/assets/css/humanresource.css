@@ -23,7 +23,7 @@
     grid-template-columns: repeat(2,1fr);
     gap:2rem;
     padding: 3rem 0;
-    
+
 }
 
 
@@ -39,8 +39,8 @@
     grid-template-columns: repeat(4,1fr);
     width: 100%;
     max-width: 950px;
-    
-  
+
+
     padding: 20px;
     gap: 1.6rem;
 
@@ -51,10 +51,10 @@
     justify-content: center;
     margin-top: 2rem;
     /* background-color: red; */
-    
+
 }
 .benefit__card{
-    display: flex;
+    display: block;
     /* flex-direction: column; */
     align-items: center !important;
     /* text-align: center; */
@@ -65,13 +65,26 @@
     gap:0.6rem ;
     border-radius: 8px;
 }
-
-.benefit__card p{
-    inset: 0;
+.benefit__card:hover {
+    cursor: pointer;
+    border: 1px solid red;
+    background: white;
+    .benefit__card__description {
+        visibility: visible;
+    }
+}
+.benefit__card__description {
+    visibility: hidden;
+    width:100%;
 }
 
-/* staff */
-
+.benefit__card div{
+    text-align:left;
+    margin-top: 4px;
+}
+.benefit__card div p {
+    visibility: hidden;
+}
 .staff__section__container{
     background-color: var(--primary-color-red);
     margin-bottom: 2rem;
@@ -85,28 +98,17 @@
     color: white;
     text-align: center;
     margin: 0.8rem auto;
- 
 }
 
 .staff__list__grid{
     display: grid;
     grid-template-columns:repeat(3,1fr);
     gap: 3rem;
-    
-    
     max-width: 100%;
     padding: 3rem 0;
     row-gap: 6rem;
-  
+
 }
-
-
-
-
-
-
-
-
  .container {
     position: relative;
     width: 300px;
@@ -117,12 +119,12 @@
 
 .rectangle {
     width: 100%;
-    height: 400px;
+    height: 480px;
   /*  */
     background-color: var(--primary-color-red);
     border-left: 25px solid white;
     border-right: 25px solid white;
-    border-bottom: 80px solid white;
+    border-bottom: 160px solid white;
     border-top:25px solid white ;
     position: relative;
     z-index: 1;
@@ -133,47 +135,79 @@
     /* top: -1rem; */
     left: 50%;
     bottom: 0.3rem;
+    height: 75%;
     transform: translateX(-50%);
-width:60%; /* Adjust as needed */
-    height: auto; /* Adjust as needed */
+    width:80%; /* Adjust as needed */
+    /*height: auto; !* Adjust as needed *!*/
     z-index: 2;
 }
-.name{
-    height: max-content;
-    text-align: center;
-    display: flex   ;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    bottom: -4rem;
-    transform: translateX(-50%);
-    left: 50%;
-    gap: 0.4rem;
-    overflow: hidden;
-    justify-content: center;
-   
-    color: black;
-    z-index: 999;
+
+
+.card__staff {
+
+    width: 100%;
+    min-height: 400px; /*increaseheight*/
+    max-width: 340px;
+    position: relative;
+    background-color: white;
+    margin: 20px auto;
+    overflow: hidden; /* Ensure content inside card does not overflow */
 }
+.card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    right: 0;
 
+    flex-direction: column;
+    min-height: 100px;
+    padding: 0.6rem;
 
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.frame {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.frame img {
+  object-fit: cover;
+    width: 92%; /* Ensure image does not exceed frame */
+    max-height: 92%;
+    height: 100%;
+     /* Ensure image does not exceed frame */
+}
+.card-text .name{
+    font-size: 25px;
+    font-weight: 700;
+}
 .name__staff{
     font-weight: 700;
     inset: 0;
     font-size: 1.5rem;
     white-space: nowrap;
-   
+
 }
 
 .image-wrapper img {
     width: 100%;
     height: 100%;
-    
     object-fit: cover;
     /* border: 2px solid #333; */
 }
 .button__container{
-   
+
     display: flex;
     margin-top: 2rem ;
     margin-bottom: 5rem;
@@ -181,21 +215,21 @@ width:60%; /* Adjust as needed */
     align-items: center;
 }
 .btn__white{
-background-color: white !important;
-color: var(--primary-color-red);
+    background-color: white !important;
+    color: var(--primary-color-red);
 }
 
 @media (min-width:1024px) {
     .image-wrapper {
-      
-        max-width:80%; /* Adjust as needed */
-        
+
+        max-width:100%; /* Adjust as needed */
+
     }
 }
 @media (max-width: 1024px){
     .humanresource__content__container{
         grid-template-columns: repeat(1,1fr);
-      
+
     }
     .left{
         padding: 0;
@@ -206,14 +240,17 @@ color: var(--primary-color-red);
     }
     .title__staff{
         max-width: 100%;
-        
-     
+
+
     }
     .staff__list__grid{
         grid-template-columns: repeat(2,1fr);
         row-gap: 10rem;
     }
-    
+    .human-resource-whyus{
+        grid-template-columns: repeat(1,1fr);
+    }
+
   }
   @media (max-width: 768px){
     .benefit__list{
@@ -232,9 +269,9 @@ color: var(--primary-color-red);
         row-gap: 10rem;
     }
     .image-wrapper {
-      
-        width:54%; /* Adjust as needed */
-        
+
+        width:100%; /* Adjust as needed */
+
     }
   }
 
@@ -245,7 +282,8 @@ color: var(--primary-color-red);
         grid-template-columns: repeat(1,1fr) ;
     }
     .image-wrapper{
-        width:70% ;
+        width:80% ;
+        height: 75%;
     }
   }
   
