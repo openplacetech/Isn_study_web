@@ -71,7 +71,7 @@ class Insights(BaseModel):
     summary = models.TextField()
     slug = models.SlugField(unique=True, blank=True)
     content = HTMLField()
-    cover_image = models.ImageField(upload_to='blog_cover/',help_text="Upload a profile picture. The image will be stored in the 'blog_cover/' directory.")
+    cover_image = models.ImageField(upload_to='blog_cover/',help_text="Upload a cover picture. which height recommended size is 2,00x1,334 ")
     keywords = models.TextField(help_text="Do not add more then five keyword this is only for SEO")
     category = models.CharField(choices=INSIGHTS_CATEGORY,max_length=100)
 
@@ -142,7 +142,7 @@ class CareerOpportunities(BaseModel):
 class ISNTeam(BaseModel):
     full_name = models.CharField(max_length=100)
     designation = models.CharField(max_length=300)
-    profile_image = models.ImageField(upload_to="team_profile")
+    profile_image = models.ImageField(upload_to="team_profile" , help_text="recommended size is 612x408")
     def __str__(self):
         return self.full_name
 
@@ -165,7 +165,7 @@ class SocialMedia(BaseModel):
 
 
 class Testimonials(BaseModel):
-    photo = models.ImageField(upload_to="testimonial/photo",null=True,blank=True)
+    photo = models.ImageField(upload_to="testimonial/photo",null=True,blank=True,help_text="Recommended size is 500x500")
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
     company_name = models.CharField(max_length=200)
