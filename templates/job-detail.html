@@ -7,14 +7,13 @@
     <section class="section__container">
         <main class="job__content__container">
             <div class="job__content__left">
-                <div class="content__title">{{ job.job_title }} <span>Developers </span></div>
+                <div class="content__title">{{ job.job_title }} </div>
                 <div>
                     {{  job.job_description|safe }}
-
                 </div>
                 <div >
-                        <a href="/apply/{{ job.id }}" style="text-decoration: none; cursor: pointer" class="btn__primary__home applynow__btn">Apply now</a>
-                    </div>
+                    <a href="/apply/{{ job.id }}" style="text-decoration: none; cursor: pointer" class="btn__primary__home applynow__btn">Apply now</a>
+                </div>
                 <div class="share__to__social__container">
 
 
