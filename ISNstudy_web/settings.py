@@ -29,10 +29,10 @@ SECRET_KEY = os.getenv('SECRET_KEY',"psdfbsdkjfhsdbfsdvfnbdsvfbnsdvf")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv('DEBUG',False)
-DEBUG = True
-
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', "*")
-ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS.split(',') if host.strip()]
+DEBUG = False
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', "*")
+# ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS.split(',') if host.strip()]
 
 
 # Application definition
