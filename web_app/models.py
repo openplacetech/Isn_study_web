@@ -169,7 +169,7 @@ class Testimonials(BaseModel):
     name = models.CharField(max_length=200)
     designation = models.CharField(max_length=200)
     company_name = models.CharField(max_length=200)
-    message = models.TextField(max_length=300)
+    message = models.TextField()
 
     def __str__(self):
         return self.name
