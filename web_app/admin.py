@@ -60,6 +60,7 @@ class ApplyForCareerAdmin(admin.ModelAdmin):
 
 @admin.register(StudyDestinationOfNepali)
 class StudyDestinationOfNepali(admin.ModelAdmin):
-    pass
+    list_display = ('country', 'region', 'student_no')
+
 
 admin.site.register(PrivacyPolicy)

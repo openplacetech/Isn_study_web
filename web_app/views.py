@@ -80,7 +80,7 @@ def isn_market_entry(request):
                                    'br', 'cl', 'co', 'ec', 'gy', 'py', 'pe', 'sr', 'uy', 've', 'in', 'af', 'tj', 'kg', 'np', 'lk', 'gf']}
     wast_africa = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA"))
     south_and_center_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
-    south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
+    south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTHEAST_ASIA"))
     mexico = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="MEXICO_AND_CENTRAL_AMERICA"))
     south_america = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AMERICA"))
     return render(request,'market-entry.html',{"wast_africa":wast_africa,
