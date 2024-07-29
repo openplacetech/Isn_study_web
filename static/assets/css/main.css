@@ -2361,7 +2361,7 @@ hr {
   align-items: center;
   gap: 6px;
   border-radius: 8px;
-  border: #2D2F82;
+  border: 1px solid #2D2F82;
   color: #2D2F82;
   font-size: 16px;
   font-weight: 500;
