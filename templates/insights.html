@@ -33,6 +33,7 @@
             </div>
         </main>
     </section>
+    {% if latest_items|length >= 1 %}
     <section class="section__container">
         <div class="insights__blogs__container">
             <div class="search__container__box">
@@ -88,6 +89,7 @@
             </div>
         </div>
     </section>
+    {% endif %}
     <section class="section__container">
         <div class="all__blogs__container">
             {% for item in insights %}

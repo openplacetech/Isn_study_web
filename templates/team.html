@@ -238,6 +238,7 @@
         </main>
         </main>
     </section>
+    {% if teams|length >= 1 %}
     <section class="staff__section__container">
         <main class="section__container">
             <article class="staff__list__content">
@@ -282,5 +283,6 @@
         {% endif %}
         </main>
     </section>
+    {% endif %}
 
 {% endblock %}
