@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 from django.db.models import Count
 from web_app.constrants import DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
 import json
-# Create your views here.
+
 
 def home(request):
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
@@ -74,13 +74,13 @@ def isn_platform(request):
 
 
 def isn_market_entry(request):
-    map_country_list = {"country": ['us','bf', 'bj', 'ci', 'cv', 'gh', 'gm', 'gn', 'gw', 'lr', 'ml', 'mr',
+    map_country_list = {"country": ['bf', 'bj', 'ci', 'cv', 'gh', 'gm', 'gn', 'gw', 'lr', 'ml', 'mr',
                                    'ne', 'ng', 'sn', 'sl', 'tg','bn', 'kh', 'id', 'la', 'my', 'mm', 'ph', 'sg',
                                    'th', 'tl', 'vn','bz', 'cr', 'sv', 'gt','hn', 'mx', 'ni', 'pa','ar', 'bo',
-                                   'br', 'cl', 'co', 'ec', 'gy', 'py', 'pe', 'sr', 'uy', 've']}
+                                   'br', 'cl', 'co', 'ec', 'gy', 'py', 'pe', 'sr', 'uy', 've', 'in', 'af', 'tj', 'kg', 'np', 'lk', 'gf']}
     wast_africa = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="WEST_AFRICA"))
     south_and_center_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
-    south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AND_CENTRAL_ASIA"))
+    south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTHEAST_ASIA"))
     mexico = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="MEXICO_AND_CENTRAL_AMERICA"))
     south_america = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AMERICA"))
     return render(request,'market-entry.html',{"wast_africa":wast_africa,

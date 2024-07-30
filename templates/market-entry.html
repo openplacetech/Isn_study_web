@@ -146,7 +146,7 @@
                         <div class="heading3">West Africa</div>
                         <div class="text-container-inner">
                           <div  class="afghanistan-parent select__parent">
-                            <select id="west-africa" onchange="displaySelectedValue()" class="afghanistan select__btn">
+                            <select id="west-africa" onchange=displaySelectedValue("west-africa","west-africa-country-std") class="afghanistan select__btn">
                             </select>
                             <img
                             class="inverted-triangle-icon1"
@@ -166,7 +166,7 @@
                         <div class="heading3">South and Central Asia</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select id="central-asis-id" class="afghanistan select__btn">
+                            <select id="central-asis-id" onchange=displaySelectedValue("central-asis-id","central-asis-value-id") class="afghanistan select__btn">
                             </select>
                             <img
                               class="inverted-triangle-icon1"
@@ -185,7 +185,7 @@
                         <div class="heading4">Southeast Asia</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select id="south_asia_id" class="afghanistan select__btn">
+                            <select id="south_asia_id" onchange=displaySelectedValue("south_asia_id","south_asia_value_id") class="afghanistan select__btn">
                             </select>
                             <img
                               class="inverted-triangle-icon1"
@@ -204,7 +204,7 @@
                         <div class="heading3">Mexico and Central America</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select id="mexico_id" class="afghanistan select__btn">
+                            <select id="mexico_id" onchange=displaySelectedValue("mexico_id","mexico_value_id") class="afghanistan select__btn">
                             </select>
                             <img
                               class="inverted-triangle-icon1"
@@ -223,7 +223,7 @@
                         <div class="heading6">South America</div>
                         <div class="text-container-inner">
                           <div class="afghanistan-parent select__parent">
-                            <select id="south_america_id" class="afghanistan select__btn">
+                            <select id="south_america_id" onchange=displaySelectedValue("south_america_id","south_america_value_id") class="afghanistan select__btn">
                               <option value="argentina" class="afghanistan1 option__country">Argentina</option>
                               <option value="brazil" class="afghanistan1 option__country">Brazil</option>
                             </select>
@@ -278,6 +278,7 @@
     const mexico = JSON.parse('{{ mexico|escapejs }}')
     const south_america = JSON.parse('{{ south_america|escapejs }}')
         // Function to initialize the select field with options
+
         function initializeSelect(options,select_ele_id,display_id) {
             const selectElement = document.getElementById(select_ele_id);
             selectElement.innerHTML = ''; // Clear existing options
@@ -291,11 +292,9 @@
                 }
             });
         }
-
-
-
         // Function to display the selected value in the div
         function displaySelectedValue(select_ele_id,display_id) {
+
             const selectElement = document.getElementById(select_ele_id);
             const selectedValue = selectElement.value;
             document.getElementById(display_id).textContent = `${selectedValue}`;

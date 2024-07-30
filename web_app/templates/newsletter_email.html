@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Add your email styling here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .header, .footer {
+            text-align: center;
+            padding: 10px;
+        }
+        .content {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Newsletter</h1>
+        </div>
+        <div class="content">
+            <p>Hello {{ username }},</p>
+            <p>Welcome to our monthly newsletter. Here are the latest updates:</p>
+            <!-- Add your newsletter content here -->
+            <ul>
+                <li>Update 1: Lorem ipsum dolor sit amet.</li>
+                <li>Update 2: Consectetur adipiscing elit.</li>
+                <li>Update 3: Sed do eiusmod tempor incididunt.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>Thank you for subscribing!</p>
+            <p><a href="{{ unsubscribe_link }}">Unsubscribe</a></p>
+        </div>
+    </div>
+</body>
+</html>

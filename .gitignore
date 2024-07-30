@@ -8,3 +8,4 @@ main_template/isn_template
 media/blog_cover
 .idea
 db.sqlite3
+old_db

@@ -14,8 +14,8 @@ class PartnershipRequestForm(forms.ModelForm):
         agent = cleaned_data.get('agent')
         market_entry = cleaned_data.get('market_entry')
         others = cleaned_data.get('others')
-
-        combined_value = f"{agent} , {market_entry}, {agent}"
+        parts = [item for item in [agent, market_entry, others] if item]
+        combined_value = ", ".join(parts)
         cleaned_data['interested_service'] = combined_value
 
         return cleaned_data

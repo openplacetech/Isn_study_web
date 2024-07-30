@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-la3@k(weqkjrwfp4p803^9pso7x0z7hvc5*xf64e65m8icm^c2'
+SECRET_KEY = os.getenv('SECRET_KEY',"psdfbsdkjfhsdbfsdvfnbdsvfbnsdvf")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', "*")
+# ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS.split(',') if host.strip()]
 
 
 # Application definition
@@ -124,10 +130,10 @@ STATIC_URL = '/static/'
 if DEBUG:
     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
-    STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+    STATIC_ROOT = os.path.join(BASE_DIR,'static')
 #
 MEDIA_URL = '/media/'
-STATIC_ROOT = "/var/www/"
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -184,18 +190,19 @@ TINYMCE_DEFAULT_CONFIG = {
 
 #email setup
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.your-email-provider.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@example.com'
-EMAIL_HOST_PASSWORD = 'your-email-password'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_USE_TLS')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
 # Contact email address
-CONTACT_EMAIL = 'your-email@example.com'
+CONTACT_EMAIL = 'info@isnstudy.com'
 
 
 SOCIAL_MEDIA_FACEBOOK_URL = ""
 SOCIAL_MEDIA_INSTAGRAM_URL = ""
 SOCIAL_MEDIA_LINKEDIN_URL = ""
 SOCIAL_MEDIA_TWITTER_URL = ""
+CALENDARY_URL = os.getenv('CALENDARY_URL')

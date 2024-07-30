@@ -35,7 +35,7 @@
                     </div>
                     <h6 class="title__h6">Our Values: CARE</h6>
                     <p class="secondary_title">
-                        Our core values define who we are and guide everything we do at ISN. We believe in CARE
+                        Our core values define who we are and guide everything we do at ISN. We believe in CARE:
                     </p>
 
                 </div>
@@ -45,7 +45,7 @@
                             <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
                         </div>
                         <div class="platform__description">
-                            <h4>Commitment</h4>
+                            <h4>Commitment:</h4>
                             <p>
                                 We are committed to putting students first, ensuring their needs and aspirations are at
                                 the center of our work.
@@ -57,7 +57,7 @@
                             <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
                         </div>
                         <div class="platform__description">
-                            <h4>Accountability</h4>
+                            <h4>Accountability:</h4>
                             <p>
                                 We hold ourselves accountable to the highest ethical standards, ensuring fairness and
                                 integrity in all our actions.
@@ -69,7 +69,7 @@
                             <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
                         </div>
                         <div class="platform__description">
-                            <h4>Respect</h4>
+                            <h4>Respect:</h4>
                             <p>
                                 We treat all students, partners, and team members with respect and dignity, fostering a
                                 supportive and inclusive environment.
@@ -81,11 +81,9 @@
                             <img src="{% static 'assets/images/medal.svg' %}" alt="star__icon" />
                         </div>
                         <div class="platform__description">
-                            <h4>Empathy</h4>
+                            <h4>Empathy:</h4>
                             <p>
-                                We treat all students, partners, and team members with respect and dignity, fostering a
-                                supportive and inclusive environment.
-
+                                We empathize with the challenges faced by international students and strive to provide compassionate and understanding support.
                             </p>
                         </div>
                     </div>
@@ -240,6 +238,7 @@
         </main>
         </main>
     </section>
+    {% if teams|length >= 1 %}
     <section class="staff__section__container">
         <main class="section__container">
             <article class="staff__list__content">
@@ -252,16 +251,27 @@
 
 
                 {% for team in teams %}
-                    <div class="container">
-                        <div class="image-wrapper">
-                            <img src="{{ team.profile_image.url }}" />
+                    <div class="card__staff">
+                        <div class="frame">
+                            <img src="{{ team.profile_image.url }}"  alt="Your Image"/>
                         </div>
-                        <div class="name">
-                            <span class="name__staff">{{ team.full_name }}</span>
-                            <span >{{ team.designation }}</span>
+                        <div class="card-text">
+                            <div class="name">{{ team.full_name }}</div>
+                            <span>{{ team.designation }}</span>
+{#                            <span>Northen, Jakarta</span>  #}
+
                         </div>
-                        <div class="rectangle"></div>
                     </div>
+{#                    <div class="container">#}
+{#                        <div class="image-wrapper">#}
+{#                            <img src="{{ team.profile_image.url }}" />#}
+{#                        </div>#}
+{#                        <div class="name">#}
+{#                            <span class="name__staff">{{ team.full_name }}</span>#}
+{#                            <span >{{ team.designation }}</span>#}
+{#                        </div>#}
+{#                        <div class="rectangle"></div>#}
+{#                    </div>#}
                 {% endfor %}
 
                 </div>
@@ -273,5 +283,6 @@
         {% endif %}
         </main>
     </section>
+    {% endif %}
 
 {% endblock %}
