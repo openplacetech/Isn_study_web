@@ -9,3 +9,4 @@ media/blog_cover
 .idea
 old_db/db.sqlite3
 old_db
+db.sqlite3
