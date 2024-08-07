@@ -12,6 +12,7 @@ import json
 
 
 def home(request):
+
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     latest_items = insight_list[:3]
     testimonials = Testimonials.objects.all()
@@ -24,6 +25,7 @@ def partnership_request(request,contact_type):
         form = PartnershipRequestForm(request.POST)
         if form.is_valid():
             partnership=form.save()
+            request.session['source_url'] = "partnership"
             return redirect('success')
         else:
             print(form.errors)
@@ -191,5 +193,9 @@ def insight_comment(request):
 
 def something_went_wrong(request):
     return render(request,'error.html')
+
 def success(request):
+    source_url = request.session.get('source_url', None)
+    if source_url=="partnership":
+        return render(request,'partnership_success.html')
     return render(request,'success.html')
