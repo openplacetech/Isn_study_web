@@ -126,7 +126,7 @@ def our_journey(request):
 def our_teams(request):
     page_number = request.GET.get('page')
     no_of_item = 9
-    team = ISNTeam.objects.order_by('-created_at')
+    team = ISNTeam.objects.order_by('created_at')
     paginator = Paginator(team, no_of_item)
     total_pages = paginator.num_pages
     page_obj = paginator.get_page(page_number)
