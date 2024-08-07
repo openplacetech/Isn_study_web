@@ -54,8 +54,11 @@ JOB_MODE = (
 )
 
 JOB_CATEGORY = (
-    ("ENGINEERING","Engineering"),
-    ("DESIGN","Design"),
+    ("PROCESSING","Processing"),
+    ("MARKETING","Marketing"),
+    ("PARTNERSHIP","Partnership"),
+    ("TECHNOLOGY","Technology"),
+    ("OPERATIONS","Operations")
 )
 STATUS_TYPE = (
     ("DRAFT","DRAFT"),
@@ -99,9 +102,9 @@ NOTICE_PERIOD = (
     ('More than 1 month','More than 1 month'),
 )
 INSIGHTS_CATEGORY = (
-    ("SCIENCE_AND_TECHNOLOGY","Science and technology"),
-    ("EDUCATION","Education"),
-    ("IMMIGRATION","Immigration")
+    ("TRENDS","Trends"),
+    ("CASE_STUDY","Case Study"),
+    ("INFORMATICS","Informatics")
 )
 COUNTRY_CHOICES = [
     ('AF', 'Afghanistan'),
