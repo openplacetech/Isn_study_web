@@ -25,7 +25,7 @@ class InsightCommentsAdmin(admin.ModelAdmin):
 class ISNTeamAdmin(admin.ModelAdmin):
     list_display = ('full_name','designation','created_at', 'updated_at')
     search_fields = ('full_name','designation')
-    list_filter = ('created_at','updated_at')
+    list_filter = ('created_at',)
 
 @admin.register(CareerOpportunities)
 class CareerOpportunitiesAdmin(admin.ModelAdmin):

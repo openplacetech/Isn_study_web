@@ -1,6 +1,7 @@
 {%  extends 'base.html' %}
+{% block title %}ISN Study - {{ job.job_title }}{% endblock %}
 {% block base %}
-    {% block title %}ISN Study - {{ job.job_title }}{% endblock %}
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'assets/css/job-application.css' %}" />
     <script>
@@ -136,10 +137,14 @@
 
         function handleFileSelect(event) {
             const file = event.target.files[0];
+            document.getElementById('file-name').innerText=file.name
+            {#file.name#}
+
         }
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
+
     </script>
 {% endblock %}

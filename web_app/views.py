@@ -12,6 +12,7 @@ import json
 
 
 def home(request):
+
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     latest_items = insight_list[:3]
     testimonials = Testimonials.objects.all()
@@ -24,6 +25,7 @@ def partnership_request(request,contact_type):
         form = PartnershipRequestForm(request.POST)
         if form.is_valid():
             partnership=form.save()
+            request.session['source_url'] = "partnership"
             return redirect('success')
         else:
             print(form.errors)
@@ -126,7 +128,7 @@ def our_journey(request):
 def our_teams(request):
     page_number = request.GET.get('page')
     no_of_item = 9
-    team = ISNTeam.objects.order_by('-created_at')
+    team = ISNTeam.objects.order_by('created_at')
     paginator = Paginator(team, no_of_item)
     total_pages = paginator.num_pages
     page_obj = paginator.get_page(page_number)
@@ -191,5 +193,9 @@ def insight_comment(request):
 
 def something_went_wrong(request):
     return render(request,'error.html')
+
 def success(request):
+    source_url = request.session.get('source_url', None)
+    if source_url=="partnership":
+        return render(request,'partnership_success.html')
     return render(request,'success.html')
