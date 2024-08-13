@@ -7,6 +7,7 @@ main_template
 main_template/isn_template
 media/blog_cover
 .idea
-old_db/db.sqlite3
+db.sqlite3
 old_db
+old_db/server/db.sqlite3
 db.sqlite3
