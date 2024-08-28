@@ -8,7 +8,6 @@
                 <img src="{% static 'assets/images/isnlogo.svg' %}" alt="international study network logo" class="logo" />
             </a>
         </div>
-
         <ul class="navlink_container">
           <li><a class="{% if request.path == "/" %} active {% endif %}" href="/">Home</a></li>
           <li><a class="{% if request.path == "/platform" %} active {% endif %}" href="/platform">ISN Platforms</a></li>
@@ -19,8 +18,6 @@
                 width="24" height="24" viewBox="0 0 24 24">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
               </svg>
-
-
             </span>
             <ul class="dropdown__style dropdown-menu-navbar ">
               <li><a href="/journey">Our Journey</a></li>
@@ -36,18 +33,11 @@
                   <li><a href="/teams#benefits">Benefits</a></li>
                   <li><a href="/jobs">Opportunities</a></li>
                 </ul>
-
-
               </li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
-
-
-
-
-
           </li>
-          <button class="btn__right__nav login">University Login</button>
+            <a href="www.university.isnstudy.com"><button class="btn__right__nav login">University Login</button></a>
           <a href="/contact/partnership"><button class="btn__right__nav partnership">Start Partnership</button></a>
         </ul>
         <div onclick="toggleMenu()" class="navbar__menu__icon">
@@ -72,7 +62,7 @@
         <li><a href="/jobs">Opportunities</a></li>
         <li><a href="/privacy-policy">Privacy Policy</a></li>
       <div class="nav__btn__container  nav__btn__container__mobile">
-        <a href="#"><button class=" btn__right__nav login">University Login</button></a>
+        <a href="https://www.university.isnstudy.com" target="_blank" rel="noopener noreferrer"><button class=" btn__right__nav login">University Login</button></a>
         <a href="/contact/partnership"><button class="btn__right__nav partnership">Start Partnership</button></a>
       </div>
     </ul>

@@ -1,0 +1,167 @@
+.my-form-control {
+    width: 300px;
+    height: 47px;
+    color: rgba(253,253,255,0.702);
+    background-color: transparent;
+    border: 1px solid rgba(235,235,235,1);
+}
+
+.my-form-control::placeholder {
+    color: rgba(253,253,255,0.702);
+}
+
+.input-group-append {
+    background-color: transparent;
+}
+
+.my-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.bi-search {
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.student-profile {
+    font-size: 12px;
+}
+
+.custom-button {
+    background-color: #0083C2;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.msd-row {
+    background-color: rgba(210,245,217,1) !important;
+}
+
+#table th.sortable {
+    cursor: pointer;
+}
+
+.form-check-label {
+    padding: 1px;
+}
+
+.form-check-label:hover {
+    padding: 2px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.btn-highlighted {
+    border-color: black !important;
+}
+
+.centered-content {
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+.search {
+    position: relative;
+}
+
+.search button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search input {
+    padding-right: 50px;
+}
+
+@media print {
+    .navbar, .footer, #printButton {
+        display: none !important;
+    }
+}
+
+.nav-entries-fragment .dropdown-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-entries-fragment .dropdown-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.custom-container {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 600px;
+}
+
+.custom-btn {
+    background-color: white;
+    color: black;
+    border: 1px solid #E4E4E4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #E4E4E4;
+    color: black;
+}
+
+.custom-btn-selected {
+    background-color: #0083C2;
+    color: white;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-btn-selected:hover {
+    background-color: #006a99;
+    color: white;
+}
+
+.footer-dropdown {
+    background-color: rgba(237,237,237,1);
+}
+
+.header-dropdown {
+    background-color: rgba(23,33,62,1);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.footer-nav .dropdown-item:hover {
+    background-color: rgba(150,150,150,0.7);
+    color: rgba(237,237,237,1);
+}
+
+.table-responsive {
+    min-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .table-responsive {
+        min-width: 1080px;
+    }
+}
+
+.custom-breadcrumb-divider {
+    --bs-breadcrumb-divider: '>';
+}
