@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://apps.cs.miu.edu/resume-builder/app/resume/view/3667.html -->
+<html style=""><script id="allow-copy_script" src="chrome-extension://aefehdhdciieocakfobpaaolhipkcpgc/content_scripts/copy.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="_csrf" content="xoxocts7dWfC0Me3qpl-gU8ikgyFy5pq5ihKdVxskSk7rUVuoroLRu8PQQHv5feCnLRKsi1Gv23j-_9H3hh-Ezhf9RsPyCdc">
+  <meta name="_csrf_header" content="X-CSRF-TOKEN">
+
+  
+  
+
+  <title>Student/Applicant View Page</title>
+
+  
+  <link rel="stylesheet" type="text/css" href="./Student_Applicant View Page_files/bootstrap.min.css">
+
+  
+  <link rel="stylesheet" type="text/css" href="./Student_Applicant View Page_files/bootstrap-icons.css">
+
+  
+  <link rel="stylesheet" href="./Student_Applicant View Page_files/common.css">
+
+  
+  <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head><body class="d-flex flex-column min-vh-100"><div>
+    
+    <link rel="stylesheet" type="text/css" href="./Student_Applicant View Page_files/intlTelInput.css">
+
+    
+    <link rel="stylesheet" type="text/css" href="./Student_Applicant View Page_files/style.css">
+</div>
+
+  
+  <script type="text/javascript" src="./Student_Applicant View Page_files/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="./Student_Applicant View Page_files/bootstrap.bundle.min.js"></script>
+
+  
+  <script src="./Student_Applicant View Page_files/common.js"></script>
+
+  
+  <div>
+    
+    <script type="text/javascript" src="./Student_Applicant View Page_files/intlTelInput.js"></script>
+
+    
+    <script type="text/javascript" src="./Student_Applicant View Page_files/utils.js"></script>
+
+    
+    <script type="text/javascript" src="./Student_Applicant View Page_files/cleave.min.js"></script>
+
+    
+    <script type="text/javascript" src="./Student_Applicant View Page_files/cleave-phone.i18n.js"></script>
+
+    
+    <script type="text/javascript" src="./Student_Applicant View Page_files/autosize.js"></script>
+</div>
+
+
+
+    
+
+        
+        <header>
+    <nav class="navbar navbar-expand-md bg-gradient navbar-dark" style="background-color: rgba(23,33,62,1)">
+        <div class="container-fluid">
+            <div class="row align-items-center w-100">
+
+                <div class="col d-flex justify-content-start align-items-center">
+
+                    
+                    
+
+                    <div>
+                        <a href="https://apps.cs.miu.edu/resume-builder/app/resume/view/3667.html#">
+                            <img class="navbar-brand" src="./Student_Applicant View Page_files/headertree.png" style="width:40px;">
+                        </a>
+                    </div>
+                    <div class="navbar-text">
+                        <a href="https://apps.cs.miu.edu/resume-builder/app/resume/view/3667.html#" class="nav flex-column text-light" style="text-decoration: none;">
+                            <span>Maharishi International University</span>
+                            <span>Computer Science Department</span>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="col-auto">
+                    
+                </div>
+                <div class="col-auto">
+                    
+                </div>
+                <div class="col-auto">
+                    
+                </div>
+
+                
+                <div class="col-auto ms-auto">
+                    <div>
+    <form action="https://apps.cs.miu.edu/resume-builder/logout" method="post" style="margin-block-end: 0;"><input type="hidden" name="_csrf" value="xoxocts7dWfC0Me3qpl-gU8ikgyFy5pq5ihKdVxskSk7rUVuoroLRu8PQQHv5feCnLRKsi1Gv23j-_9H3hh-Ezhf9RsPyCdc">
+        <input type="submit" value="Logout" class="nav flex-column text-light my-auto" style="background:none; border:none; padding:0; cursor:pointer; text-decoration: none;">
+    </form>
+</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+        
+        
+
+        <main class="container-fluid flex-grow-1 mt-5 pt-5">
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            <div id="contentOne">
+        <div>
+    <div>
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Confirm Submission</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You are about to submit the resume. You will not be able to edit it anymore. Do you want to proceed?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmSubmit">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div>
+    <div class="modal fade" id="checkboxConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="checkboxAlertModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkboxAlertModalTitle">Confirmation Required</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Please confirm the declaration by selecting the checkbox.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div>
+    <div class="modal fade" id="unsavedChangesModal" tabindex="-1" role="dialog" aria-labelledby="unsavedChangesModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="unsavedChangesModalTitle">Unsaved Changes</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You have unsaved changes. Are you sure you want to leave?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmLeave">Leave</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div>
+  <div id="spinnerOverlay">
+    <div id="spinner" class="spinner-border text-primary" role="status">
+      <span class="sr-only"></span>
+    </div>
+    <div id="uploadingText"></div>
+  </div>
+</div>
+
+    <div></div>
+
+    <form action="https://apps.cs.miu.edu/resume-builder/app/resume/save.html" method="post" id="resumeForm" class="view-mode"><input type="hidden" name="_csrf" value="xoxocts7dWfC0Me3qpl-gU8ikgyFy5pq5ihKdVxskSk7rUVuoroLRu8PQQHv5feCnLRKsi1Gv23j-_9H3hh-Ezhf9RsPyCdc" readonly="readonly" disabled="disabled">
+
+        <div>
+    <input type="hidden" id="formAltered" name="formAltered" value="false" readonly="readonly" disabled="disabled">
+    <input type="hidden" value="false" id="draftInput" name="draft" readonly="readonly" disabled="disabled">
+    <input type="hidden" value="false" id="nextInput" name="nextButtonClicked" readonly="readonly" disabled="disabled">
+    <input type="hidden" value="" id="studentId" name="studentId" readonly="readonly" disabled="disabled">
+    <input type="hidden" value="418989" id="admissionsId" name="admissionsId" readonly="readonly" disabled="disabled">
+    <input type="hidden" value="3667" id="resumeId" name="resumeId" readonly="readonly" disabled="disabled">
+    <input type="hidden" value="" id="status" name="status" readonly="readonly" disabled="disabled">
+    <input type="hidden" name="nextViewPath" value="" id="nextViewPath" readonly="readonly" disabled="disabled">
+    <input type="hidden" name="view" value="forms/review-form" id="view" readonly="readonly" disabled="disabled">
+    <input type="hidden" name="formType" value="reviewValidation" readonly="readonly" disabled="disabled">
+    <input type="hidden" name="isAdmin" id="isAdmin" value="false" readonly="readonly" disabled="disabled">
+</div>
+
+        <div>
+    
+</div>
+
+        <!-- error message if any -->
+        
+
+        <!-- contact information-->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Contact Information</legend>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-6">
+      <label class="form-label" for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName" value="Pramish" readonly="readonly" disabled="disabled">
+    </div>
+    <div class="form-group col-md-6">
+      <label class="form-label" for="lastName">Last Name *</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName" value="Karkee" readonly="readonly" disabled="disabled">
+      
+    </div>
+  </div>
+
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-6">
+      <label class="form-label" for="email">Email *</label>
+      <input type="email" class="form-control" id="email" placeholder="yourname@domain.com" name="email" value="karkipramish18@gmail.com" readonly="readonly" disabled="disabled">
+      
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-label" for="phone">Phone * (Please add the international country code)</label>
+        </div>
+        <div class="col-md-12">
+          <input type="tel" class="form-control" id="phone" placeholder="Example: +1-641-451-1234" name="phone" value="+977-981-6382207" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-3">
+      <label class="form-label" for="city">City *</label>
+      <input type="text" class="form-control" id="city" placeholder="Fairfield" name="city" value="kathmandu" readonly="readonly" disabled="disabled">
+      
+    </div>
+    <div class="form-group col-md-3">
+      <label class="form-label" for="state" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="If State/Provence is not applicable to your Country, enter your Country instead.">State/Provence *</label>
+      <input type="text" class="form-control" id="state" placeholder="Iowa" name="state" value="Bagmati" readonly="readonly" disabled="disabled">
+      
+    </div>
+    <div class="form-group col-md-3">
+  <label class="form-label" for="country">Country</label>
+  <select id="country" class="form-control dynamic-bold-select" required="" name="country" readonly="readonly" disabled="disabled">
+    <option value="">Select Country</option>
+    <option value="Afghanistan">Afghanistan</option>
+    <option value="Albania">Albania</option>
+    <option value="Algeria">Algeria</option>
+    <option value="Andorra">Andorra</option>
+    <option value="Angola">Angola</option>
+    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+    <option value="Argentina">Argentina</option>
+    <option value="Armenia">Armenia</option>
+    <option value="Australia">Australia</option>
+    <option value="Austria">Austria</option>
+    <option value="Azerbaijan">Azerbaijan</option>
+    <option value="Bahamas">Bahamas</option>
+    <option value="Bahrain">Bahrain</option>
+    <option value="Bangladesh">Bangladesh</option>
+    <option value="Barbados">Barbados</option>
+    <option value="Belarus">Belarus</option>
+    <option value="Belgium">Belgium</option>
+    <option value="Belize">Belize</option>
+    <option value="Benin">Benin</option>
+    <option value="Bhutan">Bhutan</option>
+    <option value="Bolivia">Bolivia</option>
+    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+    <option value="Botswana">Botswana</option>
+    <option value="Brazil">Brazil</option>
+    <option value="Brunei">Brunei</option>
+    <option value="Bulgaria">Bulgaria</option>
+    <option value="Burkina Faso">Burkina Faso</option>
+    <option value="Burundi">Burundi</option>
+    <option value="Cabo Verde">Cabo Verde</option>
+    <option value="Cambodia">Cambodia</option>
+    <option value="Cameroon">Cameroon</option>
+    <option value="Canada">Canada</option>
+    <option value="Central African Republic">Central African Republic</option>
+    <option value="Chad">Chad</option>
+    <option value="Chile">Chile</option>
+    <option value="China">China</option>
+    <option value="Colombia">Colombia</option>
+    <option value="Comoros">Comoros</option>
+    <option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+    <option value="Congo, Republic of the">Congo, Republic of the</option>
+    <option value="Costa Rica">Costa Rica</option>
+    <option value="Croatia">Croatia</option>
+    <option value="Cuba">Cuba</option>
+    <option value="Cyprus">Cyprus</option>
+    <option value="Czech Republic">Czech Republic</option>
+    <option value="Denmark">Denmark</option>
+    <option value="Djibouti">Djibouti</option>
+    <option value="Dominica">Dominica</option>
+    <option value="Dominican Republic">Dominican Republic</option>
+    <option value="East Timor (Timor-Leste)">East Timor (Timor-Leste)</option>
+    <option value="Ecuador">Ecuador</option>
+    <option value="Egypt">Egypt</option>
+    <option value="El Salvador">El Salvador</option>
+    <option value="Equatorial Guinea">Equatorial Guinea</option>
+    <option value="Eritrea">Eritrea</option>
+    <option value="Estonia">Estonia</option>
+    <option value="Eswatini">Eswatini</option>
+    <option value="Ethiopia">Ethiopia</option>
+    <option value="Fiji">Fiji</option>
+    <option value="Finland">Finland</option>
+    <option value="France">France</option>
+    <option value="Gabon">Gabon</option>
+    <option value="Gambia">Gambia</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Germany">Germany</option>
+    <option value="Ghana">Ghana</option>
+    <option value="Greece">Greece</option>
+    <option value="Grenada">Grenada</option>
+    <option value="Guatemala">Guatemala</option>
+    <option value="Guinea">Guinea</option>
+    <option value="Guinea-Bissau">Guinea-Bissau</option>
+    <option value="Guyana">Guyana</option>
+    <option value="Haiti">Haiti</option>
+    <option value="Honduras">Honduras</option>
+    <option value="Hungary">Hungary</option>
+    <option value="Iceland">Iceland</option>
+    <option value="India">India</option>
+    <option value="Indonesia">Indonesia</option>
+    <option value="Iran">Iran</option>
+    <option value="Iraq">Iraq</option>
+    <option value="Ireland">Ireland</option>
+    <option value="Israel">Israel</option>
+    <option value="Italy">Italy</option>
+    <option value="Ivory Coast (Cote d&#39;Ivoire)">Ivory Coast (Cote d'Ivoire)</option>
+    <option value="Jamaica">Jamaica</option>
+    <option value="Japan">Japan</option>
+    <option value="Jordan">Jordan</option>
+    <option value="Kazakhstan">Kazakhstan</option>
+    <option value="Kenya">Kenya</option>
+    <option value="Kiribati">Kiribati</option>
+    <option value="Korea, North">Korea, North</option>
+    <option value="Korea, South">Korea, South</option>
+    <option value="Kosovo">Kosovo</option>
+    <option value="Kuwait">Kuwait</option>
+    <option value="Kyrgyzstan">Kyrgyzstan</option>
+    <option value="Laos">Laos</option>
+    <option value="Latvia">Latvia</option>
+    <option value="Lebanon">Lebanon</option>
+    <option value="Lesotho">Lesotho</option>
+    <option value="Liberia">Liberia</option>
+    <option value="Libya">Libya</option>
+    <option value="Liechtenstein">Liechtenstein</option>
+    <option value="Lithuania">Lithuania</option>
+    <option value="Luxembourg">Luxembourg</option>
+    <option value="Madagascar">Madagascar</option>
+    <option value="Malawi">Malawi</option>
+    <option value="Malaysia">Malaysia</option>
+    <option value="Maldives">Maldives</option>
+    <option value="Mali">Mali</option>
+    <option value="Malta">Malta</option>
+    <option value="Marshall Islands">Marshall Islands</option>
+    <option value="Mauritania">Mauritania</option>
+    <option value="Mauritius">Mauritius</option>
+    <option value="Mexico">Mexico</option>
+    <option value="Micronesia">Micronesia</option>
+    <option value="Moldova">Moldova</option>
+    <option value="Monaco">Monaco</option>
+    <option value="Mongolia">Mongolia</option>
+    <option value="Montenegro">Montenegro</option>
+    <option value="Morocco">Morocco</option>
+    <option value="Mozambique">Mozambique</option>
+    <option value="Myanmar (Burma)">Myanmar (Burma)</option>
+    <option value="Namibia">Namibia</option>
+    <option value="Nauru">Nauru</option>
+    <option value="Nepal" selected="selected">Nepal</option>
+    <option value="Netherlands">Netherlands</option>
+    <option value="New Zealand">New Zealand</option>
+    <option value="Nicaragua">Nicaragua</option>
+    <option value="Niger">Niger</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="North Macedonia">North Macedonia</option>
+    <option value="Norway">Norway</option>
+    <option value="Oman">Oman</option>
+    <option value="Pakistan">Pakistan</option>
+    <option value="Palau">Palau</option>
+    <option value="Palestine State">Palestine State</option>
+    <option value="Panama">Panama</option>
+    <option value="Papua New Guinea">Papua New Guinea</option>
+    <option value="Paraguay">Paraguay</option>
+    <option value="Peru">Peru</option>
+    <option value="Philippines">Philippines</option>
+    <option value="Poland">Poland</option>
+    <option value="Portugal">Portugal</option>
+    <option value="Qatar">Qatar</option>
+    <option value="Romania">Romania</option>
+    <option value="Russia">Russia</option>
+    <option value="Rwanda">Rwanda</option>
+    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+    <option value="Saint Lucia">Saint Lucia</option>
+    <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+    <option value="Samoa">Samoa</option>
+    <option value="San Marino">San Marino</option>
+    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+    <option value="Saudi Arabia">Saudi Arabia</option>
+    <option value="Senegal">Senegal</option>
+    <option value="Serbia">Serbia</option>
+    <option value="Seychelles">Seychelles</option>
+    <option value="Sierra Leone">Sierra Leone</option>
+    <option value="Singapore">Singapore</option>
+    <option value="Slovakia">Slovakia</option>
+    <option value="Slovenia">Slovenia</option>
+    <option value="Solomon Islands">Solomon Islands</option>
+    <option value="Somalia">Somalia</option>
+    <option value="South Africa">South Africa</option>
+    <option value="South Sudan">South Sudan</option>
+    <option value="Spain">Spain</option>
+    <option value="Sri Lanka">Sri Lanka</option>
+    <option value="Sudan">Sudan</option>
+    <option value="Suriname">Suriname</option>
+    <option value="Sweden">Sweden</option>
+    <option value="Switzerland">Switzerland</option>
+    <option value="Syria">Syria</option>
+    <option value="Taiwan">Taiwan</option>
+    <option value="Tajikistan">Tajikistan</option>
+    <option value="Tanzania">Tanzania</option>
+    <option value="Thailand">Thailand</option>
+    <option value="Togo">Togo</option>
+    <option value="Tonga">Tonga</option>
+    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+    <option value="Tunisia">Tunisia</option>
+    <option value="Turkey">Turkey</option>
+    <option value="Turkmenistan">Turkmenistan</option>
+    <option value="Tuvalu">Tuvalu</option>
+    <option value="Uganda">Uganda</option>
+    <option value="Ukraine">Ukraine</option>
+    <option value="United Arab Emirates">United Arab Emirates</option>
+    <option value="United Kingdom">United Kingdom</option>
+    <option value="United States">United States</option>
+    <option value="Uruguay">Uruguay</option>
+    <option value="Uzbekistan">Uzbekistan</option>
+    <option value="Vanuatu">Vanuatu</option>
+    <option value="Vatican City">Vatican City</option>
+    <option value="Venezuela">Venezuela</option>
+    <option value="Vietnam">Vietnam</option>
+    <option value="Yemen">Yemen</option>
+    <option value="Zambia">Zambia</option>
+    <option value="Zimbabwe">Zimbabwe</option>
+  </select>
+</div>
+    <div class="form-group col-md-3">
+      <label class="form-label" for="zip">Zip Code *</label>
+      <input type="text" class="form-control" id="zip" placeholder="Ex: 90210 or SW1A 1AA" name="zip" value="44600" readonly="readonly" disabled="disabled">
+      
+    </div>
+  </div>
+
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-6">
+      <label class="form-label" for="linkedin">Linkedin Profile *</label>
+      <input type="text" class="form-control" id="linkedin" placeholder="https://www.linkedin.com/in/username/" name="linkedin" value="https://www.linkedin.com/in/pramish-karki/" readonly="readonly" disabled="disabled">
+      
+    </div>
+    <div class="form-group col-md-6">
+      <label class="form-label" for="website">Website</label>
+      <input type="text" class="form-control" id="website" placeholder="https://www.domain.com" name="website" value="https://pramishkarki.vercel.app/" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+</fieldset>
+
+        <!-- Career Summary -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Career Summary</legend>
+  
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="jobTitle">Job Title *</label>
+      <input type="text" class="form-control" id="jobTitle" placeholder="i.e. Java Developer, Dot Net Developer, Back End Developer " name="jobTitle" value="Sr. Software Engineer" readonly="readonly" disabled="disabled">
+      
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="careerGoal">Career Goal *</label>
+      <textarea type="text" class="form-control" id="careerGoal" placeholder="Career Career Goal" name="careerGoal" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">My career goal is to become a successful entrepreneur in the software industry by exploring software architecture and AI to create scalable and valuable products.</textarea>
+      
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="careerSummary">Career Summary *</label>
+      <textarea type="text" class="form-control" id="careerSummary" placeholder="Career Summary in 2 sentences" name="careerSummary" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 110px;">I am a dedicated backend developer with expertise in Python and Go, specializing in creating high-performance, scalable, and secure systems. I have a strong track record in developing robust applications, optimizing backend architectures, and integrating with cloud services. My career is marked by a passion for problem-solving and continuous learning, with a growing interest in AI. I aim to advance into a technical leadership role where I can lead innovative projects, mentor teams to deliver exceptional value.</textarea>
+      
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="coreCompetencies">Core Competencies *</label>
+      <textarea type="text" class="form-control" id="coreCompetencies" placeholder="i.e. Major phases of SDLC, Web Services, Design Patterns, SOA" name="coreCompetencies" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Backend Development,Software architecture,Concurrency and Multi-Threading,Python, Go programming,Postgresql,javascript,Project Management,Deployment,CI/CD,Git</textarea>
+      
+    </div>
+  </div>
+</fieldset>
+
+        <!-- Technical Skills -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Technical Skills</legend>
+  
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="languages">Languages</label>
+      <input type="text" class="form-control" id="languages" placeholder="Java, C#, C++" name="languages" value="python,golang" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="web">Web</label>
+      <input type="text" class="form-control" id="web" placeholder="HTML, HTML5, CSS, CSS3, JavaScript" name="web" value="HTML,CSS,JS" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="webServices">Web Services</label>
+      <input type="text" class="form-control" id="webServices" placeholder="RES, SOAP, GraphQL" name="webServices" value="REST,GRAPHQL" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="servers">Web &amp; Application Servers</label>
+      <input type="text" class="form-control" id="servers" placeholder="Apache, Tomcat, WebLogic" name="servers" value="Nginx" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="frameworks">Frameworks</label>
+      <input type="text" class="form-control" id="frameworks" placeholder="Spring, Spring boot, NodeJS" name="frameworks" value="Django,gin,React" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="databases">Databases</label>
+      <input type="text" class="form-control" id="databases" placeholder="MS SQL, MySQL, Oracle" name="databases" value="PostgreSql,Sqllite,Mongodb" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="software">Software Application Name/Product</label>
+      <input type="text" class="form-control" id="software" placeholder="Salesforce, SAP, PeopleSoft" name="software" value="Github,Gitlab,Minio" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="designPatterns">Design Patterns</label>
+      <input type="text" class="form-control" id="designPatterns" placeholder="Singleton, Decorator, Command" name="designPatterns" value="" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="sdlc">SDLC</label>
+      <input type="text" class="form-control" id="sdlc" placeholder="Agile, Waterfall" name="sdlc" value="Agile" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="tools">Tools</label>
+      <input type="text" class="form-control" id="tools" placeholder="Maven, Gradle, Ant, Eclipse" name="tools" value="PyCharm,VsCode,Git,Postman,Slack,clickup,Docker,pgAdmin,Swagger/OpenAPI,Graphqls" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="platforms">Platforms</label>
+      <input type="text" class="form-control" id="platforms" placeholder="Windows, Linux, MacOS" name="platforms" value="Linux,MacOs" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+  <div class="row bg-light p-2">
+    <div class="form-group col-md-12">
+      <label class="form-label" for="bigData">Big Data</label>
+      <input type="text" class="form-control" id="bigData" placeholder="Hadoop, Spark, Hive, Pig" name="bigData" value="" readonly="readonly" disabled="disabled">
+    </div>
+  </div>
+</fieldset>
+
+        <!-- Professional Experiences -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Professional Experience<button class="btn btn-primary mt-3 mb-2" id="addExperience" title="Add Experience">+ Add Experience</button></legend>
+  
+  <div id="experiences">
+    <div class="experience border p-3 mb-4" id="experience0">
+      
+      <!-- Add hidden fields for persistedExperience and lastExperience -->
+      <input type="hidden" id="experiences0.persistedExperience" name="experiences[0].persistedExperience" value="false" readonly="readonly" disabled="disabled">
+      <input type="hidden" id="experiences0.lastExperience" name="experiences[0].lastExperience" value="false" readonly="readonly" disabled="disabled">
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyName0">Company Name</label>
+          <input type="text" class="form-control" id="companyName0" placeholder="Company Name" name="experiences[0].companyName" value="Rara labs" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+          <input type="text" class="form-control" id="clientName0" placeholder="Client Name" name="experiences[0].companyClientName" value="" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCity0">City</label>
+          <input type="text" class="form-control" id="companyCity0" placeholder="Fairfield" name="experiences[0].companyCity" value="Kathmandu" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyState0">State</label>
+          <input type="text" class="form-control" id="companyState0" placeholder="Iowa" name="experiences[0].companyState" value="Bagmati" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCountry0">Country</label>
+          <input type="text" class="form-control" id="companyCountry0" placeholder="USA" name="experiences[0].companyCountry" value="Nepal" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromDate0">Date Employed From</label>
+          <input type="text" class="form-control" id="companyFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[0].companyFromDate" value="01/2022" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromTo0">Date Employed To</label>
+          <input type="text" class="form-control" id="companyFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[0].companyToDate" value="11/2022" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyDescription0">Company Description</label>
+          <textarea class="form-control" id="companyDescription0" placeholder="" name="experiences[0].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Rara labs is a mobile and web development company specializing in software and enterprise app development. With over 15 years of experience, Rara labs has crafted exceptional software for clients worldwide, offering a comprehensive approach to every phase of software development.</textarea>
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobTitle0">Job Title</label>
+          <input type="text" class="form-control" id="companyJobTitle0" placeholder="Sr. Software Engineer" name="experiences[0].companyJobTitle" value="Backend Engineer" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobDescription0">Job Description</label>
+          <input type="text" class="form-control" id="companyJobDescription0" placeholder="Build Microservices" name="experiences[0].companyJobDescription" value="Working in web application" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+          <textarea class="form-control" id="companyResponsibilities0" placeholder="" name="experiences[0].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">As a software engineer, design, develop, and maintain software applications while collaborating with teams to integrate features and resolve issues. Achievements include launching key features of different project, optimizing performance, and implementing best practices to enhance system functionality and team productivity.</textarea>
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+          <input type="text" class="form-control" id="companyTechnologyUsed0" placeholder="Java, Spring, Hibernate" name="experiences[0].technologyUsed" value="Golang,Digitalocen,Postgresql,Sqllite,Rabbitmq,Docker" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <fieldset class="border p-3 mb-4 projectDetailsFieldset">
+        <legend class="w-auto">Project Details <button class="btn btn-primary mt-3 mb-2 addProjectDetail" title="Add Project Details" data-experience-index="0">+ Add Project Details</button></legend>
+        <div class="projectDetails">
+          <div class="projectDetail">
+            
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectName0">Project Name</label>
+                <input type="text" class="form-control" id="companyProjectName0" placeholder="Project Name" name="experiences[0].companyProjectList[0].name" value="Intellix" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromDate0">Project Start Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[0].companyProjectList[0].fromDate" value="01/2022" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromTo0">Project End Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[0].companyProjectList[0].toDate" value="08/2022" readonly="readonly" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectTotalProgrammingTime0">Total Programing time (in weeks)</label>
+                <input type="text" class="form-control" id="companyProjectTotalProgrammingTime0" placeholder="How many weeks between your start &amp; End Date were you working on this project?" name="experiences[0].companyProjectList[0].totalProgrammingTime" value="42" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnCoding0">Hours per day on Coding</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnCoding0" name="experiences[0].companyProjectList[0].hoursPerDayOnCoding" value="5" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnTesting0">Hours per day on Testing, Information Gathering, etc.</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnTesting0" name="experiences[0].companyProjectList[0].hoursPerDayOnTesting" value="3" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="companyProjectMainProgrammingLanguages0">Main Programming Language(s) used</label>
+                <input type="text" class="form-control" id="companyProjectMainProgrammingLanguages0" name="experiences[0].companyProjectList[0].mainProgrammingLanguages" value="Golang" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="projectDetails0">Project Details</label>
+                <textarea class="form-control" id="projectDetails0" name="experiences[0].companyProjectList[0].projectDetails" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">Intellix is a comprehensive patient diagnostic system where nurses ask targeted questions to gather detailed information about patients. Based on the responses and additional factors, such as previous reports and medical history, the system generates comprehensive diagnostic reports to assist in accurate patient assessment and decision-making. The project is developed using Go (Golang) and React.js, with PostgreSQL and SQLite databases.</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="projectDetail">
+            <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Project Details</button></div>
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectName0">Project Name</label>
+                <input type="text" class="form-control" id="companyProjectName0" placeholder="Project Name" name="experiences[0].companyProjectList[1].name" value="Xuno" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromDate0">Project Start Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[0].companyProjectList[1].fromDate" value="08/2022" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromTo0">Project End Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[0].companyProjectList[1].toDate" value="11/2022" readonly="readonly" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectTotalProgrammingTime0">Total Programing time (in weeks)</label>
+                <input type="text" class="form-control" id="companyProjectTotalProgrammingTime0" placeholder="How many weeks between your start &amp; End Date were you working on this project?" name="experiences[0].companyProjectList[1].totalProgrammingTime" value="42" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnCoding0">Hours per day on Coding</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnCoding0" name="experiences[0].companyProjectList[1].hoursPerDayOnCoding" value="5" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnTesting0">Hours per day on Testing, Information Gathering, etc.</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnTesting0" name="experiences[0].companyProjectList[1].hoursPerDayOnTesting" value="3" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="companyProjectMainProgrammingLanguages0">Main Programming Language(s) used</label>
+                <input type="text" class="form-control" id="companyProjectMainProgrammingLanguages0" name="experiences[0].companyProjectList[1].mainProgrammingLanguages" value="Golang" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="projectDetails0">Project Details</label>
+                <textarea class="form-control" id="projectDetails0" name="experiences[0].companyProjectList[1].projectDetails" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Xuno is a cross-border payment system based in Nepal that facilitates the seamless transfer of funds from various countries into Nepal. The platform simplifies international money transfers, enabling users to send money efficiently and securely across borders.</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      </div>
+    <div class="experience border p-3 mb-4" id="experience1">
+      <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Professional Experience</button></div>
+      <!-- Add hidden fields for persistedExperience and lastExperience -->
+      <input type="hidden" id="experiences1.persistedExperience" name="experiences[1].persistedExperience" value="false" readonly="readonly" disabled="disabled">
+      <input type="hidden" id="experiences1.lastExperience" name="experiences[1].lastExperience" value="false" readonly="readonly" disabled="disabled">
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyName0">Company Name</label>
+          <input type="text" class="form-control" id="companyName0" placeholder="Company Name" name="experiences[1].companyName" value="Aeon Soft Solution Technology" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+          <input type="text" class="form-control" id="clientName0" placeholder="Client Name" name="experiences[1].companyClientName" value="Pralhad Karki" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCity0">City</label>
+          <input type="text" class="form-control" id="companyCity0" placeholder="Fairfield" name="experiences[1].companyCity" value="Kathmandu" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyState0">State</label>
+          <input type="text" class="form-control" id="companyState0" placeholder="Iowa" name="experiences[1].companyState" value="Bagmati" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCountry0">Country</label>
+          <input type="text" class="form-control" id="companyCountry0" placeholder="USA" name="experiences[1].companyCountry" value="Nepal" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromDate0">Date Employed From</label>
+          <input type="text" class="form-control" id="companyFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyFromDate" value="03/2021" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromTo0">Date Employed To</label>
+          <input type="text" class="form-control" id="companyFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyToDate" value="01/2022" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyDescription0">Company Description</label>
+          <textarea class="form-control" id="companyDescription0" placeholder="" name="experiences[1].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Aeon Soft Solution is a Nepal-based web development company located in Putalisadak, Kathmandu, focused on helping small businesses digitalize and thrive in the digital era.</textarea>
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobTitle0">Job Title</label>
+          <input type="text" class="form-control" id="companyJobTitle0" placeholder="Sr. Software Engineer" name="experiences[1].companyJobTitle" value="Software Engineer" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobDescription0">Job Description</label>
+          <input type="text" class="form-control" id="companyJobDescription0" placeholder="Build Microservices" name="experiences[1].companyJobDescription" value="As a software developer working with Python Django and React.js,  design and implement web applications using MVC principles. Your role involves developing backend logic with Django, creating dynamic UIs with React.js, integrating both components, and managing data with PostgreSQL and  also optimize performance, test and debug code, and document work to support ongoing improvements." readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+          <textarea class="form-control" id="companyResponsibilities0" placeholder="" name="experiences[1].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">successfully implementing key features, optimizing application performance, collaborating effectively with the team, resolving critical bugs, and introducing innovative solutions to enhance functionality.</textarea>
+          
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+          <input type="text" class="form-control" id="companyTechnologyUsed0" placeholder="Java, Spring, Hibernate" name="experiences[1].technologyUsed" value="Python, django,reactjs,mongodb,Postgresql,rest api,redis" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+
+      <fieldset class="border p-3 mb-4 projectDetailsFieldset">
+        <legend class="w-auto">Project Details <button class="btn btn-primary mt-3 mb-2 addProjectDetail" title="Add Project Details" data-experience-index="1">+ Add Project Details</button></legend>
+        <div class="projectDetails">
+          <div class="projectDetail">
+            
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectName0">Project Name</label>
+                <input type="text" class="form-control" id="companyProjectName0" placeholder="Project Name" name="experiences[1].companyProjectList[0].name" value="Doctorsubidha" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromDate0">Project Start Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyProjectList[0].fromDate" value="12/2020" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromTo0">Project End Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyProjectList[0].toDate" value="01/2022" readonly="readonly" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectTotalProgrammingTime0">Total Programing time (in weeks)</label>
+                <input type="text" class="form-control" id="companyProjectTotalProgrammingTime0" placeholder="How many weeks between your start &amp; End Date were you working on this project?" name="experiences[1].companyProjectList[0].totalProgrammingTime" value="20" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnCoding0">Hours per day on Coding</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnCoding0" name="experiences[1].companyProjectList[0].hoursPerDayOnCoding" value="3" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnTesting0">Hours per day on Testing, Information Gathering, etc.</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnTesting0" name="experiences[1].companyProjectList[0].hoursPerDayOnTesting" value="1" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="companyProjectMainProgrammingLanguages0">Main Programming Language(s) used</label>
+                <input type="text" class="form-control" id="companyProjectMainProgrammingLanguages0" name="experiences[1].companyProjectList[0].mainProgrammingLanguages" value="Python,JS,Html,CSS" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="projectDetails0">Project Details</label>
+                <textarea class="form-control" id="projectDetails0" name="experiences[1].companyProjectList[0].projectDetails" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 110px;">Doctorsubidha is a cutting-edge healthcare platform designed to simplify and enhance the medical appointment process. By connecting patients with a network of skilled healthcare providers, Doctorsubidha offers a user-friendly interface for scheduling, managing, and attending medical appointments. The project is developed using Python Django with the MVT architecture, and PostgreSQL is used for data storage, ensuring a streamlined and efficient experience for users.</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="projectDetail">
+            <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Project Details</button></div>
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectName0">Project Name</label>
+                <input type="text" class="form-control" id="companyProjectName0" placeholder="Project Name" name="experiences[1].companyProjectList[1].name" value="studyhub" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromDate0">Project Start Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyProjectList[1].fromDate" value="06/2021" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromTo0">Project End Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyProjectList[1].toDate" value="01/2022" readonly="readonly" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectTotalProgrammingTime0">Total Programing time (in weeks)</label>
+                <input type="text" class="form-control" id="companyProjectTotalProgrammingTime0" placeholder="How many weeks between your start &amp; End Date were you working on this project?" name="experiences[1].companyProjectList[1].totalProgrammingTime" value="42" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnCoding0">Hours per day on Coding</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnCoding0" name="experiences[1].companyProjectList[1].hoursPerDayOnCoding" value="5" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnTesting0">Hours per day on Testing, Information Gathering, etc.</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnTesting0" name="experiences[1].companyProjectList[1].hoursPerDayOnTesting" value="3" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="companyProjectMainProgrammingLanguages0">Main Programming Language(s) used</label>
+                <input type="text" class="form-control" id="companyProjectMainProgrammingLanguages0" name="experiences[1].companyProjectList[1].mainProgrammingLanguages" value="Django,Python" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="projectDetails0">Project Details</label>
+                <textarea class="form-control" id="projectDetails0" name="experiences[1].companyProjectList[1].projectDetails" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">The Exam Resource Hub is a comprehensive and user-friendly online platform designed to provide students and learners with easy access to a wealth of educational materials, including exam notes, syllabi, and past question collections, all available for free. The primary goal of this project is to support and enhance the learning experience of students by offering them a centralized repository of academic resources to aid their preparation for exams.</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="projectDetail">
+            <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Project Details</button></div>
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectName0">Project Name</label>
+                <input type="text" class="form-control" id="companyProjectName0" placeholder="Project Name" name="experiences[1].companyProjectList[2].name" value="Kanipur city college website" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromDate0">Project Start Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromDate0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyProjectList[2].fromDate" value="12/2020" readonly="readonly" disabled="disabled">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectFromTo0">Project End Date (month/year)</label>
+                <input type="text" class="form-control" id="companyProjectFromTo0" placeholder="MM/yyyy format. eg. 04/2023" name="experiences[1].companyProjectList[2].toDate" value="06/2021" readonly="readonly" disabled="disabled">
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectTotalProgrammingTime0">Total Programing time (in weeks)</label>
+                <input type="text" class="form-control" id="companyProjectTotalProgrammingTime0" placeholder="How many weeks between your start &amp; End Date were you working on this project?" name="experiences[1].companyProjectList[2].totalProgrammingTime" value="20" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnCoding0">Hours per day on Coding</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnCoding0" name="experiences[1].companyProjectList[2].hoursPerDayOnCoding" value="3" readonly="readonly" disabled="disabled">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <label class="form-label" for="companyProjectHoursPerDayOnTesting0">Hours per day on Testing, Information Gathering, etc.</label>
+                <input type="text" class="form-control" id="companyProjectHoursPerDayOnTesting0" name="experiences[1].companyProjectList[2].hoursPerDayOnTesting" value="1" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="companyProjectMainProgrammingLanguages0">Main Programming Language(s) used</label>
+                <input type="text" class="form-control" id="companyProjectMainProgrammingLanguages0" name="experiences[1].companyProjectList[2].mainProgrammingLanguages" value="php,javascript" readonly="readonly" disabled="disabled">
+                
+              </div>
+            </div>
+
+            <div class="row bg-light p-2">
+              <div class="form-group col-md-12">
+                <label class="form-label" for="projectDetails0">Project Details</label>
+                <textarea class="form-control" id="projectDetails0" name="experiences[1].companyProjectList[2].projectDetails" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">The Kantipur City College website is an interactive platform developed using PHP and WordPress, allowing students to directly apply to the college online. The website also features a dynamic section for posting college events, photos, and insights, providing visitors with up-to-date information and a glimpse into life at Kantipur City College.</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      </div>
+    </div>
+</fieldset>
+
+        <!-- Freelance Experiences -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Freelance Work<button class="btn btn-primary mt-3 mb-2" id="addFreelance" title="Add Experience">+ Add Experience</button></legend>
+  <div id="freelances">
+    <div class="freelance">
+      
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyName0">Company Name</label>
+          <input type="text" class="form-control" id="companyName00" placeholder="Company Name" name="freelances[0].companyName" value="" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+          <input type="text" class="form-control" id="clientName00" placeholder="Client Name" name="freelances[0].companyClientName" value="Krishna karki" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCity0">City</label>
+          <input type="text" class="form-control" id="companyCity00" placeholder="Fairfield" name="freelances[0].companyCity" value="Irving" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyState0">State</label>
+          <input type="text" class="form-control" id="companyState00" placeholder="Iowa" name="freelances[0].companyState" value="Texas" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCountry0">Country</label>
+          <input type="text" class="form-control" id="companyCountry00" placeholder="USA" name="freelances[0].companyCountry" value="USA" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromDate0">Date Employed From</label>
+          <input type="text" class="form-control" id="companyFromDate00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[0].companyFromDate" value="04/2024" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromTo0">Date Employed To</label>
+          <input type="text" class="form-control" id="companyFromTo00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[0].companyToDate" value="08/2024" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyDescription0">Company Description</label>
+          <textarea class="form-control" id="companyDescription00" placeholder="" name="freelances[0].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;"></textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobTitle0">Job Title</label>
+          <input type="text" class="form-control" id="companyJobTitle00" placeholder="Sr. Software Engineer" name="freelances[0].companyJobTitle" value="Sr. Software Engineer" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobDescription0">Job Description</label>
+          <input type="text" class="form-control" id="companyJobDescription00" placeholder="Build Microservices" name="freelances[0].companyJobDescription" value="Fullstack developer" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+          <textarea class="form-control" id="companyResponsibilities00" placeholder="" name="freelances[0].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">System design, Fullstack development, Team lead</textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+          <input type="text" class="form-control" id="companyTechnologyUsed00" placeholder="Java, Spring, Hibernate" name="freelances[0].technologyUsed" value="python ,javascript" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+    </div>
+    <div class="freelance">
+      <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Freelance Experience</button></div>
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyName0">Company Name</label>
+          <input type="text" class="form-control" id="companyName00" placeholder="Company Name" name="freelances[1].companyName" value="" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+          <input type="text" class="form-control" id="clientName00" placeholder="Client Name" name="freelances[1].companyClientName" value="Bibit Karki" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCity0">City</label>
+          <input type="text" class="form-control" id="companyCity00" placeholder="Fairfield" name="freelances[1].companyCity" value="leuven" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyState0">State</label>
+          <input type="text" class="form-control" id="companyState00" placeholder="Iowa" name="freelances[1].companyState" value="Flemish Brabant" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCountry0">Country</label>
+          <input type="text" class="form-control" id="companyCountry00" placeholder="USA" name="freelances[1].companyCountry" value="Belgium" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromDate0">Date Employed From</label>
+          <input type="text" class="form-control" id="companyFromDate00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[1].companyFromDate" value="07/2024" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromTo0">Date Employed To</label>
+          <input type="text" class="form-control" id="companyFromTo00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[1].companyToDate" value="ongoing" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyDescription0">Company Description</label>
+          <textarea class="form-control" id="companyDescription00" placeholder="" name="freelances[1].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;"></textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobTitle0">Job Title</label>
+          <input type="text" class="form-control" id="companyJobTitle00" placeholder="Sr. Software Engineer" name="freelances[1].companyJobTitle" value="Sr. Software Engineer" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobDescription0">Job Description</label>
+          <input type="text" class="form-control" id="companyJobDescription00" placeholder="Build Microservices" name="freelances[1].companyJobDescription" value="Build Architecture and Backend development" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+          <textarea class="form-control" id="companyResponsibilities00" placeholder="" name="freelances[1].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Designed API architecture with webhook and message queue integration, successfully implemented a message queue system, and optimized database design for enhanced performance.</textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+          <input type="text" class="form-control" id="companyTechnologyUsed00" placeholder="Java, Spring, Hibernate" name="freelances[1].technologyUsed" value="Python Django" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+    </div>
+    <div class="freelance">
+      <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Freelance Experience</button></div>
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyName0">Company Name</label>
+          <input type="text" class="form-control" id="companyName00" placeholder="Company Name" name="freelances[2].companyName" value="" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+          <input type="text" class="form-control" id="clientName00" placeholder="Client Name" name="freelances[2].companyClientName" value="Pinioneng" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCity0">City</label>
+          <input type="text" class="form-control" id="companyCity00" placeholder="Fairfield" name="freelances[2].companyCity" value="" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyState0">State</label>
+          <input type="text" class="form-control" id="companyState00" placeholder="Iowa" name="freelances[2].companyState" value="" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCountry0">Country</label>
+          <input type="text" class="form-control" id="companyCountry00" placeholder="USA" name="freelances[2].companyCountry" value="USA" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromDate0">Date Employed From</label>
+          <input type="text" class="form-control" id="companyFromDate00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[2].companyFromDate" value="02/2024" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromTo0">Date Employed To</label>
+          <input type="text" class="form-control" id="companyFromTo00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[2].companyToDate" value="03/2024" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyDescription0">Company Description</label>
+          <textarea class="form-control" id="companyDescription00" placeholder="" name="freelances[2].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;"></textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobTitle0">Job Title</label>
+          <input type="text" class="form-control" id="companyJobTitle00" placeholder="Sr. Software Engineer" name="freelances[2].companyJobTitle" value="Backend Developer" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobDescription0">Job Description</label>
+          <input type="text" class="form-control" id="companyJobDescription00" placeholder="Build Microservices" name="freelances[2].companyJobDescription" value="Build full payment system in backend using strip" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+          <textarea class="form-control" id="companyResponsibilities00" placeholder="" name="freelances[2].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Developed backend APIs in Go using the Gin framework, implemented webhooks, integrated OAuth for authentication, and integrated Stripe for payment processing.</textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+          <input type="text" class="form-control" id="companyTechnologyUsed00" placeholder="Java, Spring, Hibernate" name="freelances[2].technologyUsed" value="golang" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+    </div>
+    <div class="freelance">
+      <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Freelance Experience</button></div>
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyName0">Company Name</label>
+          <input type="text" class="form-control" id="companyName00" placeholder="Company Name" name="freelances[3].companyName" value="Aeon soft Solution Technology" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+          <input type="text" class="form-control" id="clientName00" placeholder="Client Name" name="freelances[3].companyClientName" value="Pralhad Karki" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCity0">City</label>
+          <input type="text" class="form-control" id="companyCity00" placeholder="Fairfield" name="freelances[3].companyCity" value="Kathmandu" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyState0">State</label>
+          <input type="text" class="form-control" id="companyState00" placeholder="Iowa" name="freelances[3].companyState" value="Bagmati" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="companyCountry0">Country</label>
+          <input type="text" class="form-control" id="companyCountry00" placeholder="USA" name="freelances[3].companyCountry" value="Nepal" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromDate0">Date Employed From</label>
+          <input type="text" class="form-control" id="companyFromDate00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[3].companyFromDate" value="01/2023" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyFromTo0">Date Employed To</label>
+          <input type="text" class="form-control" id="companyFromTo00" placeholder="MM/yyyy format. eg. 04/2023" name="freelances[3].companyToDate" value="ongoing" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyDescription0">Company Description</label>
+          <textarea class="form-control" id="companyDescription00" placeholder="" name="freelances[3].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">Aeon Soft Solution is a Nepal-based web development company located in Putalisadak, Kathmandu, focused on helping small businesses digitalize and thrive in the digital era.</textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobTitle0">Job Title</label>
+          <input type="text" class="form-control" id="companyJobTitle00" placeholder="Sr. Software Engineer" name="freelances[3].companyJobTitle" value="Sr. Software engineer" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="companyJobDescription0">Job Description</label>
+          <input type="text" class="form-control" id="companyJobDescription00" placeholder="Build Microservices" name="freelances[3].companyJobDescription" value="Sr. Software engineer" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+          <textarea class="form-control" id="companyResponsibilities00" placeholder="" name="freelances[3].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">My responsibilities include hiring and guiding developers and interns in project development, overseeing project build and deployment, optimizing database queries, implementing caching systems with redis, designing project architectures, and reviewing code to ensure quality and efficiency.</textarea>
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+          <input type="text" class="form-control" id="companyTechnologyUsed00" placeholder="Java, Spring, Hibernate" name="freelances[3].technologyUsed" value="Golang,Python,Django,Javascript,celery,Redis,Docker,CI/CD,git,graphql" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+        <!-- Internship Experiences -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+    <legend class="w-auto">Internships<button class="btn btn-primary mt-3 mb-2" id="addInternship" title="Add Experience">+ Add Experience</button></legend>
+    <div id="internships">
+        <div class="internship">
+            
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="companyName0">Company Name</label>
+                    <input type="text" class="form-control" id="companyName000" placeholder="Company Name" name="internships[0].companyName" value="BitsBeat" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="clientName0">Client Name (if applicable)</label>
+                    <input type="text" class="form-control" id="clientName000" placeholder="Client Name" name="internships[0].companyClientName" value="" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-4">
+                    <label class="form-label" for="companyCity0">City</label>
+                    <input type="text" class="form-control" id="companyCity000" placeholder="Fairfield" name="internships[0].companyCity" value="Kathmandu" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label" for="companyState0">State</label>
+                    <input type="text" class="form-control" id="companyState000" placeholder="Iowa" name="internships[0].companyState" value="Bagmati" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="form-label" for="companyCountry0">Country</label>
+                    <input type="text" class="form-control" id="companyCountry000" placeholder="USA" name="internships[0].companyCountry" value="Nepal" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="companyFromDate0">Date Employed From</label>
+                    <input type="text" class="form-control" id="companyFromDate000" placeholder="MM/yyyy format. eg. 04/2023" name="internships[0].companyFromDate" value="08/2020" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="companyFromTo0">Date Employed To</label>
+                    <input type="text" class="form-control" id="companyFromTo000" placeholder="MM/yyyy format. eg. 04/2023" name="internships[0].companyToDate" value="11/2020" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="companyDescription0">Company Description</label>
+                    <textarea class="form-control" id="companyDescription000" placeholder="" name="internships[0].companyDescription" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">Bitsbeat, established in 2015, is a global software development company offering innovative solutions based on emerging technologies. With a dynamic team and flagship products like Nodebeats and BlockAction, Bitsbeat serve a diverse clientele worldwide, including start-ups, businesses, and governments, aiming to solve real-world problems and drive global growth.</textarea>
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="companyJobTitle0">Job Title</label>
+                    <input type="text" class="form-control" id="companyJobTitle000" placeholder="Sr. Software Engineer" name="internships[0].companyJobTitle" value="Software Engineer" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="companyJobDescription0">Job Description</label>
+                    <input type="text" class="form-control" id="companyJobDescription000" placeholder="Build Microservices" name="internships[0].companyJobDescription" value="Working In MVC architecture" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="companyResponsibilities0">Responsibilities &amp; Achievements</label>
+                    <textarea class="form-control" id="companyResponsibilities000" placeholder="" name="internships[0].companyJobResponsibilities" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">As an intern,  supporting development tasks such as coding, debugging, and testing software, while gaining hands-on experience with various tools and technologies like python,nodejs,blockchain,nosql and also collaborate with the development team on projects, assist with documentation, and contribute to improving processes and workflows.</textarea>
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="companyTechnologyUsed0">Technologies Used</label>
+                    <input type="text" class="form-control" id="companyTechnologyUsed000" placeholder="Java, Spring, Hibernate" name="internships[0].technologyUsed" value="Nodjs,Reactjs" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+        <!-- Academic Projects -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+    <legend class="w-auto">Academic Project<button class="btn btn-primary mt-3 mb-2" id="addAcademicProject" title="Add Project">+ Add Experience</button></legend>
+    
+    <div id="academicProjects">
+        <div class="academicProject border p-3 mb-4">
+            
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTitle0">Project Title *</label>
+                    <input type="text" class="form-control" id="academicProjectTitle0" name="academicProjects[0].title" value="Student Management System" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectSchool0">School *</label>
+                    <input type="text" class="form-control" id="academicProjectSchool0" name="academicProjects[0].school" value="Kantipur City College" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectYear0">Project Year *</label>
+                    <input type="text" class="form-control" id="academicProjectYear0" name="academicProjects[0].year" value="2017" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTech0">Technologies Used *</label>
+                    <input type="text" class="form-control" id="academicProjectTech0" name="academicProjects[0].tech" value="c++" readonly="readonly" disabled="disabled">
+                    
+                </div>
+            </div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="academicProjectDescription0">Project Description *</label>
+                    <textarea class="form-control" id="academicProjectDescription0" name="academicProjects[0].description" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">The Student Management System is a college project developed in C++ that uses file storage for data management and C++ graphics for the visual interface, enabling efficient handling of student records through a graphical user interface. In this project, I led the team, contributed to the C++ coding.</textarea>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="academicProject border p-3 mb-4">
+            <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Academic Project</button></div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTitle0">Project Title *</label>
+                    <input type="text" class="form-control" id="academicProjectTitle0" name="academicProjects[1].title" value="Hotel Booking System" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectSchool0">School *</label>
+                    <input type="text" class="form-control" id="academicProjectSchool0" name="academicProjects[1].school" value="Kantipur City College" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectYear0">Project Year *</label>
+                    <input type="text" class="form-control" id="academicProjectYear0" name="academicProjects[1].year" value="2018" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTech0">Technologies Used *</label>
+                    <input type="text" class="form-control" id="academicProjectTech0" name="academicProjects[1].tech" value="PHP" readonly="readonly" disabled="disabled">
+                    
+                </div>
+            </div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="academicProjectDescription0">Project Description *</label>
+                    <textarea class="form-control" id="academicProjectDescription0" name="academicProjects[1].description" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">The Hotel Booking System is a college project that features a web application built with PHP, providing a seamless experience for customers to search, filter, and book hotels effortlessly. In this project, I led the team and was responsible for writing all the backend code.
+</textarea>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="academicProject border p-3 mb-4">
+            <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Academic Project</button></div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTitle0">Project Title *</label>
+                    <input type="text" class="form-control" id="academicProjectTitle0" name="academicProjects[2].title" value="Job Portal" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectSchool0">School *</label>
+                    <input type="text" class="form-control" id="academicProjectSchool0" name="academicProjects[2].school" value="Kantipur city College" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectYear0">Project Year *</label>
+                    <input type="text" class="form-control" id="academicProjectYear0" name="academicProjects[2].year" value="2019" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTech0">Technologies Used *</label>
+                    <input type="text" class="form-control" id="academicProjectTech0" name="academicProjects[2].tech" value="Python,Postgres,html,css" readonly="readonly" disabled="disabled">
+                    
+                </div>
+            </div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="academicProjectDescription0">Project Description *</label>
+                    <textarea class="form-control" id="academicProjectDescription0" name="academicProjects[2].description" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 86px;">The Job Portal is a college project developed using the Django framework, offering a dynamic platform where candidates can search for jobs, receive personalized recommendations, and apply directly. Recruiters can post job openings, making it a comprehensive solution for both job seekers and employers. My responsibility was to lead the team, develop all the backend code, and collaborate closely with the frontend.</textarea>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="academicProject border p-3 mb-4">
+            <div class="border-bottom my-3" style="text-align: right;"><button type="button" class="btn btn-danger btn-sm" onclick="removeItem(this);">Remove Academic Project</button></div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTitle0">Project Title *</label>
+                    <input type="text" class="form-control" id="academicProjectTitle0" name="academicProjects[3].title" value="Face Recognization system" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectSchool0">School *</label>
+                    <input type="text" class="form-control" id="academicProjectSchool0" name="academicProjects[3].school" value="kantipur city college" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectYear0">Project Year *</label>
+                    <input type="text" class="form-control" id="academicProjectYear0" name="academicProjects[3].year" value="2020" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="academicProjectTech0">Technologies Used *</label>
+                    <input type="text" class="form-control" id="academicProjectTech0" name="academicProjects[3].tech" value="Python ,Django,React" readonly="readonly" disabled="disabled">
+                    
+                </div>
+            </div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-12">
+                    <label class="form-label" for="academicProjectDescription0">Project Description *</label>
+                    <textarea class="form-control" id="academicProjectDescription0" name="academicProjects[3].description" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;">I developed the backend for a face recognition system built in Python using scikit-learn, OpenCV, and NumPy. This system was implemented in an attendance system where it automatically takes attendance by recognizing faces from photos.</textarea>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+        <!-- Personal Projects -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Personal Projects<button class="btn btn-primary mt-3 mb-2" id="addPersonalProject" title="Add Project">+ Add Experience</button></legend>
+  <div id="personalProjects">
+    <div class="personalProject border p-3 mb-4">
+      
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-4">
+          <label class="form-label" for="personalProjectTitle0">Project Title</label>
+          <input type="text" class="form-control" id="personalProjectTitle0" name="personalProjects[0].title" value="Tuteeline" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="personalProjectYear0">Project Year</label>
+          <input type="text" class="form-control" id="personalProjectYear0" name="personalProjects[0].year" value="2024" readonly="readonly" disabled="disabled">
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label" for="personalProjectTech0">Technologies Used</label>
+          <input type="text" class="form-control" id="personalProjectTech0" name="personalProjects[0].tech" value="golang,Nextjs,python,Django,Redis,celery,DigitalOcen" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-12">
+          <label class="form-label" for="personalProjectDescription0">Project Description</label>
+          <textarea class="form-control" id="personalProjectDescription0" name="personalProjects[0].description" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 134px;">Tuteeline is a startup project I initiated in 2020 and launched in 2024. It serves as a central application platform where Nepali students can apply to various colleges and universities across Nepal. I architected the project, bringing it to life by hiring interns from different colleges in Nepal and collaborating with Aeon Soft Solution Technology. Developed in a monolithic architecture using Go (Golang) and Next.js, we use PostgreSQL and SQLite databases, Redis for caching, AWS S3 and MinIO for file storage, DigitalOcean for deployment, and AWS Simple Email Service (SES) for email delivery. The platform is designed to streamline the application process, helping students find the best educational institutions in the country.</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+        <!-- Education (Graduate) -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+    <legend class="w-auto">Graduate Education<button class="btn btn-primary mt-3 mb-2" id="addGraduateEducation" title="Add Education">+ Add Education</button></legend>
+    <div id="graduateEducations">
+        <div class="graduateEducation border p-3 mb-4">
+            
+            <input type="hidden" id="graduateEducations0.persistedEducation" name="graduateEducations[0].persistedEducation" value="false" readonly="readonly" disabled="disabled">
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateSchool">School Name</label>
+                    <input type="text" class="form-control" id="educationGraduateSchool" name="graduateEducations[0].schoolName" value="" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateCity">City</label>
+                    <input type="text" class="form-control" id="educationGraduateCity" name="graduateEducations[0].city" value="" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateState">State</label>
+                    <input type="text" class="form-control" id="educationGraduateState" name="graduateEducations[0].state" value="" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateDegree">Degree</label>
+                    <input type="text" class="form-control" id="educationGraduateDegree" name="graduateEducations[0].degree" value="" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateMajor">Major</label>
+                    <input type="text" class="form-control" id="educationGraduateMajor" name="graduateEducations[0].major" value="" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateFromDate" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Enter MM/YYYY. Note: Entering the space bar will count as a character. Please be sure no spaces are entered.">Start Date</label>
+                    <input type="text" class="form-control" id="educationGraduateFromDate" placeholder="MM/yyyy format. eg. 04/2023" name="graduateEducations[0].fromDate" value="" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateEndDate" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="Enter MM/YYYY. Note: Entering the space bar will count as a character. Please be sure no spaces are entered.">End Date</label>
+                    <input type="text" class="form-control" id="educationGraduateEndDate" placeholder="MM/yyyy format. eg. 04/2023" name="graduateEducations[0].toDate" value="" readonly="readonly" disabled="disabled">
+                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="form-label" for="educationGraduateKeyCourses">Key Courses</label>
+                    <input type="text" class="form-control" id="educationGraduateKeyCourses" name="graduateEducations[0].keyCourses" value="" readonly="readonly" disabled="disabled">
+                </div>
+            </div>
+
+            <div class="row bg-light p-2">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="educationGraduateGpa">GPA</label>
+                    <input type="text" class="form-control" id="educationGraduateGpa" placeholder="" name="graduateEducations[0].gpa" value="" readonly="readonly" disabled="disabled">
+                </div>
+                <div class="form-group col-md-6">
+                    
+                    <label class="form-label" for="educationGraduateGradingList">Grading Scale</label>
+                    <select id="educationGraduateGradingList" class="form-select dynamic-bold-select" required="" name="graduateEducations[0].gradingScale" readonly="readonly" disabled="disabled">
+                        <option class="custom-dropdown-hover" value="" selected="selected">Select one option</option>
+                        <option class="custom-dropdown-hover" value="F to A" title="A is best">F to A</option>
+                        <option class="custom-dropdown-hover" value="0 to 4" title="4 is best">0 to 4</option>
+                        <option class="custom-dropdown-hover" value="0 to 5" title="5 is best">0 to 5</option>
+                        <option class="custom-dropdown-hover" value="1 to 3" title="1 is best">1 to 3</option>
+                        <option class="custom-dropdown-hover" value="4 to 1" title="1 is best">4 to 1</option>
+                        <option class="custom-dropdown-hover" value="5 to 1" title="1 is best">5 to 1</option>
+                        <option class="custom-dropdown-hover" value="6 to 1" title="1 is best">6 to 1</option>
+                        <option class="custom-dropdown-hover" value="5 to 10" title="10 is best">5 to 10</option>
+                        <option class="custom-dropdown-hover" value="0 to 7" title="7 is best">0 to 7</option>
+                        <option class="custom-dropdown-hover" value="0 to 10" title="10 is best">0 to 10</option>
+                        <option class="custom-dropdown-hover" value="0 to 20" title="20 is best">0 to 20</option>
+                        <option class="custom-dropdown-hover" value="0 to 30" title="30 is best">0 to 30</option>
+                        <option class="custom-dropdown-hover" value="0 to 100" title="percentage">0 to 100</option>
+                        <option class="custom-dropdown-hover" value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+        <!-- Education (College) -->
+        <fieldset class="border p-3 m-5 border-success rounded">
+  <legend class="w-auto">Undergraduate Education<button class="btn btn-primary mt-3 mb-2" id="addCollegeEducation" title="Add Education">+ Add Education</button></legend>
+  <div id="collegeEducations">
+    <div class="collegeEducation">
+      
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeSchool">School Name *</label>
+          <input type="text" class="form-control" id="educationCollegeSchool" name="collegeEducations[0].schoolName" value="Kantipur city college" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeCity">City *</label>
+          <input type="text" class="form-control" id="educationCollegeCity" name="collegeEducations[0].city" value="Kathmandu" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeState">State *</label>
+          <input type="text" class="form-control" id="educationCollegeState" name="collegeEducations[0].state" value="Bagmati" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeDegree">Degree *</label>
+          <input type="text" class="form-control" id="educationCollegeDegree" name="collegeEducations[0].degree" value="Bachelor" readonly="readonly" disabled="disabled">
+          
+        </div>
+      </div>
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeMajor">Major *</label>
+          <input type="text" class="form-control" id="educationCollegeMajor" name="collegeEducations[0].major" value="Computer Engineering" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeFromDate">Start Date *</label>
+          <input type="text" class="form-control" id="educationCollegeFromDate" placeholder="MM/yyyy format. eg. 04/2023" name="collegeEducations[0].fromDate" value="12/2016" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeToDate">End Date *</label>
+          <input type="text" class="form-control" id="educationCollegeToDate" placeholder="MM/yyyy format. eg. 04/2023" name="collegeEducations[0].toDate" value="12/2020" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-3">
+          <label class="form-label" for="educationCollegeKeyCourses">Key Courses (only if 0-1 years of experience)</label>
+          <input type="text" class="form-control" id="educationCollegeKeyCourses" name="collegeEducations[0].keyCourses" value="" readonly="readonly" disabled="disabled">
+        </div>
+      </div>
+
+      <div class="row bg-light p-2">
+        <div class="form-group col-md-6">
+          <label class="form-label" for="educationCollegeGpa">GPA *</label>
+          <input type="text" class="form-control" id="educationCollegeGpa" placeholder="" name="collegeEducations[0].gpa" value="3.07" readonly="readonly" disabled="disabled">
+          
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-label" for="educationCollegeGradingList">Grading Scale *</label>
+          
+          <select id="educationCollegeGradingList" class="form-select dynamic-bold-select" required="" name="collegeEducations[0].gradingScale" readonly="readonly" disabled="disabled">
+            <option class="custom-dropdown-hover" value="">Select one option</option>
+            <option class="custom-dropdown-hover" value="F to A" title="A is best">F to A</option>
+            <option class="custom-dropdown-hover" value="0 to 4" title="4 is best" selected="selected">0 to 4</option>
+            <option class="custom-dropdown-hover" value="0 to 5" title="5 is best">0 to 5</option>
+            <option class="custom-dropdown-hover" value="1 to 3" title="1 is best">1 to 3</option>
+            <option class="custom-dropdown-hover" value="4 to 1" title="1 is best">4 to 1</option>
+            <option class="custom-dropdown-hover" value="5 to 1" title="1 is best">5 to 1</option>
+            <option class="custom-dropdown-hover" value="6 to 1" title="1 is best">6 to 1</option>
+            <option class="custom-dropdown-hover" value="5 to 10" title="10 is best">5 to 10</option>
+            <option class="custom-dropdown-hover" value="0 to 7" title="7 is best">0 to 7</option>
+            <option class="custom-dropdown-hover" value="0 to 10" title="10 is best">0 to 10</option>
+            <option class="custom-dropdown-hover" value="0 to 20" title="20 is best">0 to 20</option>
+            <option class="custom-dropdown-hover" value="0 to 30" title="30 is best">0 to 30</option>
+            <option class="custom-dropdown-hover" value="0 to 100" title="percentage">0 to 100</option>
+            <option class="custom-dropdown-hover" value="Other">Other</option>
+          </select>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+        <!-- Professional Development & Certifications / Volunteer Work -->
+        <div>
+    <fieldset class="border p-3 m-5 border-success rounded">
+        <legend class="w-auto">Professional Development &amp; Certifications</legend>
+        <div class="form-row" style="background: whitesmoke">
+            <div class="form-group col-md-12">
+                <textarea class="form-control" id="certifications" name="certifications" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="border p-3 m-5 border-success rounded">
+        <legend class="w-auto">Volunteer Work</legend>
+        <blockquote class="blockquote">
+            <strong style="color: red">NOTE:</strong> Only include if related to tech.
+        </blockquote>
+        <div class="form-row" style="background: whitesmoke">
+            <div class="form-group col-md-12">
+                <textarea class="form-control" id="volunteerWork" name="volunteerWork" readonly="readonly" disabled="disabled" style="overflow: hidden; overflow-wrap: break-word; resize: none; text-align: start; height: 62px;"></textarea>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+    </form>
+    
+    <div class="d-flex justify-content-center align-items-center mb-5" data-is-admissions-admin="false">
+                <button type="button" class="btn btn-primary" id="cancelBtn">Cancel</button>
+            </div>
+</div>
+    </div>
+
+        </main>
+
+        
+        
+
+        
+        <footer>
+    <nav class="navbar navbar-expand-md bg-gradient navbar-light footer-nav" style="background-color: rgba(237,237,237,1)">
+        <div class="container-fluid">
+            <div class="row w-100">
+
+                <div class="col d-flex align-items-center">
+                    <div class="navbar-text">
+                        <span class="nav flex-column">Computer Science Department / Admissions &amp; Career Center</span>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-end align-items-center">
+
+                    
+
+                    
+                    
+
+
+                    <div>
+                        <img class="navbar-brand" src="./Student_Applicant View Page_files/footertree.png" style="width:40px;">
+                    </div>
+                    <div class="navbar-text">
+                        <span class="nav flex-column p-0">Maharishi</span>
+                        <span class="nav flex-column p-0">International</span>
+                        <span class="nav flex-column p-0">University</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</footer>
+
+        
+        <script id="viewScript" type="application/javascript">
+                $(document).ready(function () {
+                    $('#resumeForm input, #resumeForm textarea, #resumeForm select').each(function() {
+                        $(this).attr('readonly', true);
+                        $(this).attr('disabled', true);
+                    });
+
+                    $("#cancelBtn").on("click", (e) => {
+                        e.preventDefault();
+                        let isAdmissionsAdmin = $("#cancelBtn").closest('div').data('is-admissions-admin');
+                        let url = "/resume-builder/app";
+                        if (isAdmissionsAdmin) {
+                            url += "?areStudentResumes=false";
+                        } else {
+                            url += "?areStudentResumes=true";
+                        }
+                        window.location = url;
+                    });
+
+                    // Autosize textareas
+                    autosize($('#resumeForm textarea'));
+
+                    // Show the dropdown menu on hover
+                    $('.nav-item.dropdown').hover(function() {
+                        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(200);
+                    }, function() {
+                        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(200);
+                    });
+                });
+            </script>
+
+    
+</body></html>

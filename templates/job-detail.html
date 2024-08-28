@@ -77,8 +77,9 @@
                         <button class="brows__btn" type="button">Browse</button>
                         <input type="file" name="resume" id="fileInput" style="display: none;"  onchange="handleFileSelect(event)" required>
                     </div>
-                </div>
 
+                </div>
+                <span id="file-name"></span>
                 <button type="submit" style="cursor: pointer; text-decoration: none" class="  btn__primary__home   applynow__btn__right">Apply Now</button>
 
 
@@ -93,6 +94,7 @@
 
         function handleFileSelect(event) {
             const file = event.target.files[0];
+            document.getElementById('file-name').innerText=file.name
         }
         function copyURL(elementId) {
           // Get the text from the specified element
