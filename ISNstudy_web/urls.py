@@ -33,4 +33,7 @@ urlpatterns = [
     path('static/<path:path>/', serve, {'document_root': settings.STATIC_ROOT}),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+admin.site.site_header = "ISNStudy Admin"
+admin.site.index_title = "Welcome to ISNStudy Admin Portal"
+admin.site.site_title = "ISNStudy Admin Portal"
 handler404 = 'django.views.defaults.page_not_found'
