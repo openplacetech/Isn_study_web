@@ -22,7 +22,7 @@
     <div class="user__information__grid">
         <input placeholder="Profile Link" id="profile_link" name="profile_link" class="input__form" required/>
         <select  name="profile_link_type" id="profile_link_type" class="input__form selectinputappearance" required>
-            <option value="" disabled selected>Profile Link Type *</option>
+            <option value="" disabled selected>Profile Link Type </option>
             {% for p ,pl in profile_link %}
             <option value="{{ p }}">{{ pl }}</option>
             {% endfor %}
