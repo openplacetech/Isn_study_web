@@ -47,7 +47,13 @@ JOB_TYPE=(
     ("FULL_TIME","Full time"),
     ("PART_TIME","Part time"),
 )
+PAY_PERIOD_TYPE = (
+    ('Project','Project'),
+    ('Hourly','Hourly'),
+    ('Biweekly','Biweekly'),
+    ('Monthly','Monthly'),
 
+)
 JOB_MODE = (
     ("REMOTE","Remote"),
     ("ON_SITE","On Site"),

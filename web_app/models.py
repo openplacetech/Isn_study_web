@@ -3,7 +3,7 @@ from ckeditor.fields import RichTextField
 from tinymce.models import HTMLField
 from base.models import BaseModel
 from django.utils.text import slugify
-from web_app.constrants import COUNTRY_CHOICES,REGION_TYPE,SOCIALMEDIA_TYPE,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE
+from web_app.constrants import COUNTRY_CHOICES,REGION_TYPE,SOCIALMEDIA_TYPE,JOB_CATEGORY,JOB_TYPE,JOB_MODE,INSIGHTS_CATEGORY,INTERESTED_SERVICE,CONTACT_PHONE_TYPE,GENDER_TYPE,STATUS_TYPE,PAY_PERIOD_TYPE
 from django.contrib.auth.models import User
 
 class PartnershipRequest(BaseModel):
@@ -190,6 +190,7 @@ class ApplyForCareer(BaseModel):
     profile_link_type = models.CharField(max_length=100,blank=True,null=True)
     expected_salary = models.CharField(max_length=200,blank=True,null=True)
     currency_type = models.CharField(max_length=200, default="USD")
+    pay_period = models.CharField(max_length=100,choices=PAY_PERIOD_TYPE,blank=True,null=True)
     resume = models.FileField(upload_to="resume")
     availability_or_notice_period= models.CharField(max_length=300,blank=True,null=True)
     gender = models.CharField(max_length=100,choices=GENDER_TYPE,blank=True,null=True)

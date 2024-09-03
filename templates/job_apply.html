@@ -18,8 +18,9 @@
             var profile_link_type = document.getElementById("profile_link_type").value;
             var fileInput = document.getElementById('fileInput').value;
             var currency_type = document.getElementById('currency_type').value;
+            var pay_period = document.getElementById('pay_period').value;
             // Enable/disable submit button based on form completeness
-            if (firstName !== '' && lastName !=='' && email_id !=='' && phoneNumber !=='' && expected_salary !==''
+            if (firstName !== '' && lastName !=='' && email_id !=='' && phoneNumber !=='' && expected_salary !=='' && pay_period !==''
                 && contact_phone_type !=='' && country !=='' && profile_link !=='' && currency_type !=='' && fileInput !=='') {
                 submitButton.disabled = false;
             } else {

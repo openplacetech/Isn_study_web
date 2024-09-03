@@ -24,7 +24,7 @@
         <select  name="profile_link_type" id="profile_link_type" class="input__form selectinputappearance" required>
             <option value="" disabled selected>Profile Link Type *</option>
             {% for p ,pl in profile_link %}
-            <option value="p">{{ pl }}</option>
+            <option value="{{ p }}">{{ pl }}</option>
             {% endfor %}
         </select>
     </div>
@@ -34,6 +34,13 @@
             <option value="" disabled selected>Currency Type *</option>
             {% for curr in currencies %}
             <option value="{{ curr.currency_code }}">{{ curr.currency_code }}</option>
+            {% endfor %}
+        </select>
+
+        <select  name="pay_period" id="pay_period" class="input__form selectinputappearance" required>
+            <option value="" disabled selected>Pay Period *</option>
+            {% for p,pay in pay_period %}
+            <option value="{{ p }}">{{ pay }}</option>
             {% endfor %}
         </select>
     </div>

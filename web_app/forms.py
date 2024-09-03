@@ -64,5 +64,5 @@ class ApplyForCareerForm(forms.ModelForm):
         model = ApplyForCareer
         fields = ['first_name','last_name','email','phone_number','contact_phone_type','other_job_consider',
                   'country','profile_link','expected_salary','resume','gender','veteran_status',
-                  'race_ethnicity','disability','disability','legal_name','required_immigration_sponsorship','currency_type',
+                  'race_ethnicity','disability','disability','legal_name','required_immigration_sponsorship','currency_type','pay_period',
                   'is_previously_employed','is_former_current_intern_or_contractor','receive_text_message','availability_or_notice_period']
