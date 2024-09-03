@@ -3,6 +3,7 @@ from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsF
 from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CareerOpportunities,ISNTeam,Testimonials,InsightComments
 from django.conf import settings
 from django.core.mail import send_mail
+from django.http import Http404
 from django.core import serializers
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -12,6 +13,7 @@ import json
 from django.contrib import messages
 
 def home(request):
+
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
     latest_items = insight_list[:3]
     testimonials = Testimonials.objects.all()
@@ -56,17 +58,20 @@ def isn_insights(request):
     return render(request,'insights.html',{"latest_items":latest_items,'total_pages':total_pages,'insights':page_obj})
 
 def isn_insight(request,slug):
-    comment_page_no = request.GET.get("comment_page")
-    if comment_page_no==None:
-            comment_page_no = 1
-    insight = Insights.objects.get(slug=slug)
-    latest = Insights.objects.exclude(id=insight.pk).order_by('-created_at')[:3]
-    comment = InsightComments.objects.filter(insight=insight).order_by('-created_at')
-    comment_paginator = Paginator(comment,5)
-    comment_pages = comment_paginator.num_pages
-    page_obj = comment_paginator.get_page(comment_page_no)
-    recommendation = Insights.objects.filter(category=insight.category).exclude(id=insight.pk).order_by('-created_at')[:3]
-    return render(request,'insight-detail.html',{"insight":insight,"comment_pages":comment_pages,"latest":latest,"comment":page_obj,"recommendation":recommendation})
+    try:
+        comment_page_no = request.GET.get("comment_page")
+        if comment_page_no==None:
+                comment_page_no = 1
+        insight = Insights.objects.get(slug=slug)
+        latest = Insights.objects.exclude(id=insight.pk).order_by('-created_at')[:3]
+        comment = InsightComments.objects.filter(insight=insight).order_by('-created_at')
+        comment_paginator = Paginator(comment,5)
+        comment_pages = comment_paginator.num_pages
+        page_obj = comment_paginator.get_page(comment_page_no)
+        recommendation = Insights.objects.filter(category=insight.category).exclude(id=insight.pk).order_by('-created_at')[:3]
+        return render(request,'insight-detail.html',{"insight":insight,"comment_pages":comment_pages,"latest":latest,"comment":page_obj,"recommendation":recommendation})
+    except Insights.DoesNotExist:
+        return render(request, '404.html', status=404)
 
 
 def isn_platform(request):

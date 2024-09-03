@@ -1,48 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        /* Add your email styling here */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-        }
-        .header, .footer {
-            text-align: center;
-            padding: 10px;
-        }
-        .content {
-            margin: 20px 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Newsletter</h1>
-        </div>
-        <div class="content">
-            <p>Hello {{ username }},</p>
-            <p>Welcome to our monthly newsletter. Here are the latest updates:</p>
-            <!-- Add your newsletter content here -->
-            <ul>
-                <li>Update 1: Lorem ipsum dolor sit amet.</li>
-                <li>Update 2: Consectetur adipiscing elit.</li>
-                <li>Update 3: Sed do eiusmod tempor incididunt.</li>
-            </ul>
-        </div>
-        <div class="footer">
-            <p>Thank you for subscribing!</p>
-            <p><a href="{{ unsubscribe_link }}">Unsubscribe</a></p>
-        </div>
-    </div>
-</body>
-</html>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color:#f4f4f4; padding:20px;">
+    <tr>
+        <td align="center">
+            <!-- Main Card Container -->
+            <table width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color:#ffffff; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); overflow:hidden;">
+                <!-- Header Image -->
+                <tr>
+                    <td align="center" style="background-color:#c6ccd0;">
+                        <img src="https://isnstudy.com/static/assets/images/isnlogo.svg/" alt="Newsletter Image" width="600" height="200" style="display:block; width:100%; max-width:600px; height:auto;">
+                    </td>
+                </tr>
+                <!-- Title -->
+                <tr>
+                    <td align="center" style="padding:20px; font-family:Arial, sans-serif; font-size:24px; font-weight:bold; color:#333333;">
+                        Your Monthly Newsletter
+                    </td>
+                </tr>
+                <!-- Content -->
+                <tr>
+                    <td align="left" style="padding:0 20px 20px 20px; font-family:Arial, sans-serif; font-size:16px; line-height:1.5; color:#666666;">
+                        <p>Hello</p>
+                        <p>Welcome to the September edition of our monthly newsletter. In this issue, we bring you the latest updates, insights, and offers from our company.</p>
+                        <p>We hope you find this information helpful and look forward to staying connected with you.</p>
+                        <p>Best regards,<br>Your Company Team</p>
+                    </td>
+                </tr>
+                <!-- Horizontal News Card -->
+                <tr>
+                    <td align="center" style="padding:20px;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border-radius:10px; overflow:hidden;">
+                            <tr>
+                                <!-- News Image -->
+                                <td width="30%" align="center">
+                                    <img src="{{ newsletter.image }}" alt="News Image" width="180" height="120" style="display:block; width:100%; max-width:180px; height:auto; border-radius:10px;">
+                                </td>
+                                <!-- News Content -->
+                                <td width="70%" align="left" style="padding-left:20px; font-family:Arial, sans-serif; font-size:16px; line-height:1.5; color:#666666;">
+                                    <p style="font-size:18px; font-weight:bold; color:#d24347;">{{ newsletter.title }}</p>
+                                    <p>{{ newsletter.description }}</p>
+                                    <p><a href="{{ newsletter.link }}" style="color:#d24347; text-decoration:none; font-weight:bold;">Read More</a></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Button -->
+                <tr>
+                    <td align="center" style="padding:20px;">
+                        <a href="#" style="background-color:#d24347; color:#ffffff; padding:10px 20px; text-decoration:none; font-family:Arial, sans-serif; font-size:16px; border-radius:5px;">Explore More</a>
+                    </td>
+                </tr>
+                <!-- Footer -->
+                <tr>
+                    <td align="center" style="padding:20px; font-family:Arial, sans-serif; font-size:12px; color:#999999;">
+                        <p>You are receiving this email because you subscribed to our newsletter.</p>
+                        <p>If you wish to unsubscribe, please <a href="#" style="color:#2a9df4; text-decoration:none;">click here</a>.</p>
+                    </td>
+                </tr>
+            </table>
+            <!-- End of Main Card Container -->
+        </td>
+    </tr>
+</table>
