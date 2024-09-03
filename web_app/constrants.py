@@ -17,7 +17,7 @@ REGION_TYPE = (
 GENDER_TYPE = (
     ("MALE","Male"),
     ("FEMALE","Female"),
-    ("PREFER_NOT_TO_SAY","Prefer Not To Say")
+    ("PREFER_NOT_TO_SAY","Prefer not to say")
 )
 
 
@@ -95,10 +95,12 @@ PROFILE_LINK_TYPE = (
 
 
 VETERAN_STATUS_CHOICES = [
+    ('none','none'),
     ('military_branches', 'Veterans by military branches'),
     ('combat_war_veterans', 'Combat or war veterans'),
     ('disabled_veterans', 'Disabled veterans'),
     ('other_services', 'Veterans of services other than the armed forces'),
+    ('others','others'),
 ]
 
 NOTICE_PERIOD = (

@@ -119,7 +119,7 @@
         function show_previous_step(){
             if (current_step >1){
                 current_step = current_step - 1
-                step_count.innerHTML = "Step " +current_step+"of 3"
+                step_count.innerHTML = "Step " +current_step+" of 3"
                 var step_id = "step_"+current_step.toString()
                 let  hidden_id  = hide_steps_id(step_id)
                 title.innerHTML = hidden_id[1]

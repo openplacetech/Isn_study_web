@@ -25,31 +25,31 @@
     </div>
     <div class="user__information__grid">
         <select  name="gender" id="gender" class="input__form selectinputappearance">
-            <option value="" disabled selected>Gender</option>
+            <option value="" disabled selected>Gender*</option>
             {% for g,gt in gender %}
             <option value="{{ g }}">{{ gt }}</option>
             {% endfor %}
         </select>
         <select name="veteran_status" id="veteran_status" class="input__form selectinputappearance">
-            <option value="" disabled selected>Veteran Status</option>
+            <option value="" disabled selected>Veteran Status*</option>
             {% for v,vs in veteran_status %}
                 <option value="{{ vs }}">{{ vs }}</option>
             {% endfor %}
         </select>
         <select name="race_ethnicity" id="race_ethnicity" class="input__form selectinputappearance">
-            <option value="" disabled selected>Race/Ethnicity</option>
+            <option value="" disabled selected>Race/Ethnicity*</option>
             {% for r,ret in race_eth %}
                 <option value="{{ ret }}">{{ ret }}</option>
             {% endfor %}
         </select>
         <select name="disability" id="disability" class="input__form selectinputappearance">
-            <option value="" disabled selected>Disability</option>
+            <option value="" disabled selected>Disability*</option>
             {% for d,dt in disability %}
             <option value="{{ dt }}">{{ dt }}</option>
             {% endfor %}
         </select>
     </div>
     <div>
-        <input  placeholder="Legal Name" class="input__form" style="margin-top: 20px"  id="confirmation_name_2" name="confirmation_name_2"/>
+        <input  placeholder="Legal First Name*" class="input__form" style="margin-top: 20px"  id="confirmation_name_2" name="confirmation_name_2"/>
     </div>
 </div>
