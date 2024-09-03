@@ -32,20 +32,18 @@
             } else {
                 secoundNext.disabled = true;
             }
-             var submit = document.getElementById('submit');
+             var submit_btn = document.getElementById('submit-btn');
             var gender = document.getElementById('gender').value
             var veteran_status = document.getElementById('veteran_status').value
             var race_ethnicity = document.getElementById('race_ethnicity').value
             var disability = document.getElementById('disability').value
             var policy_check = document.getElementById('policy-checkbox').value
             var confirmation_name_2 = document.getElementById('confirmation_name_2').value;
+
             if(gender !== '' && veteran_status !== '' && race_ethnicity !== '' && disability !== '' && policy_check !== '' && confirmation_name_2 !==''){
-                if (validateEmail(email_id)){
-                    document.getElementById('email_error').textContent = 'Email is required';
-                }
-                submit.disable = false
+                submit_btn.disabled = false;
             }else {
-                submit.disable= true
+                submit_btn.disabled= true
             }
         }
     </script>
@@ -53,7 +51,7 @@
         <main class="job__application__container">
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger" id="alert" role="alert">
                       {{ message }}
                     </div>
                 {% endfor %}
@@ -64,7 +62,7 @@
                 <div id="step_count" class="steps margin"></div>
                 <h4 class="content__title margin " id="apply__title">Personal Informations</h4>
 
-            <form class="form" action="/apply/{{ job.id }}" method="post" enctype="multipart/form-data">
+            <form class="form" action="/apply/{{ job.id }}" method="post" id="application_form" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div id = "step_1">
                     {% include 'apply_step_1.html' %}
@@ -85,7 +83,7 @@
                     {% include 'apply_step_3.html'  %}
                     <div class="next__prev__btn__container">
                         <button type="button" class="btn__primary__home next__btn previousbtn" onclick="show_previous_step()">Previous</button>
-                        <button type="submit" id="submit" class="btn__primary__home next__btn">Submit</button>
+                        <button type="button" id="submit-btn" class="btn__primary__home next__btn" onclick="submit_application()">Submit</button>
                     </div>
                 </div>
             </form>
@@ -103,6 +101,9 @@
             document.getElementById(element).style.display = "none";
         }
         function show_next_step(){
+            if (current_step !== 1){
+                document.getElementById("alert").style.display = "none";
+            }
             if (current_step <3){
                 current_step = current_step + 1
                 step_count.innerHTML = "Step " +current_step+" of 3"
@@ -138,6 +139,8 @@
                 return [["step_1","step_2"],"Equal Employee Opportunities Disclosure"]
             }
         }
+
+
         document.addEventListener('DOMContentLoaded', checkRequiredFields);
         document.addEventListener('input', checkRequiredFields);
         function browseFile() {
@@ -153,6 +156,10 @@
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
+        }
+        function submit_application(){
+            var form = document.getElementById("application_form");
+            form.submit();
         }
 
     </script>
