@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',
-    # 'ckeditor',
     'web_app',
 ]
 
@@ -67,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ISNstudy_web.wsgi.application'
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -173,3 +172,11 @@ SOCIAL_MEDIA_INSTAGRAM_URL = ""
 SOCIAL_MEDIA_LINKEDIN_URL = ""
 SOCIAL_MEDIA_TWITTER_URL = ""
 CALENDARY_URL = os.getenv('CALENDARY_URL')
+
+if not DEBUG:
+    WSGI_APPLICATION = 'ISNstudy_web.wsgi.application'
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_TRUSTED_ORIGINS = ['https://isnstudy.com']
+    CSRF_COOKIE_SAMESITE = 'Lax'  # or 'Strict', depending on your needs
+    SESSION_COOKIE_SAMESITE = 'Lax'

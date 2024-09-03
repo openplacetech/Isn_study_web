@@ -16,8 +16,8 @@ def send_html_email():
 
 def send_newsletter_to_all_subscribers(sub,url):
     subject = 'Monthly Newsletter'
-    to_email = 'karkipramish07@gmail.com'
-    username = "pramish"
+    to_email = sub['email']
+    username = sub['name']
     unsubscribe_link = url
     email_list = []
     for i in sub:
