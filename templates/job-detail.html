@@ -60,31 +60,31 @@
 
                 </aside>
             </div>
-            <form method="post" action="/apply/{{ job.id }}" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="job__content__right">
-                <div class="header__fast__reply">
-                    <h4>Fast Apply ⚡️</h4>
-                </div>
-
-                <input name="first_name" placeholder="Your first name *" class="input__form" required/>
-                <input name="last_name" placeholder="Your last name *" class="input__form" required/>
-                <input name="email" placeholder="Enter your email *" class="input__form" required/>
-                <input name="phone_number" placeholder="Enter your phone number *" class="input__form" required/>
-                <div onclick="browseFile()"  class="uploader__image uploder__right">
-                    <div  class="uploader__center">
-                        <p>Upload your resume *</p>
-                        <button class="brows__btn" type="button">Browse</button>
-                        <input type="file" name="resume" id="fileInput" style="display: none;"  onchange="handleFileSelect(event)" required>
-                    </div>
-
-                </div>
-                <span id="file-name"></span>
-                <button type="submit" style="cursor: pointer; text-decoration: none" class="  btn__primary__home   applynow__btn__right">Apply Now</button>
-
-
-            </div>
-            </form>
+{#            <form method="post" action="/apply/{{ job.id }}" enctype="multipart/form-data">#}
+{#                {% csrf_token %}#}
+{#                <div class="job__content__right">#}
+{#                <div class="header__fast__reply">#}
+{#                    <h4>Fast Apply ⚡️</h4>#}
+{#                </div>#}
+{##}
+{#                <input name="first_name" placeholder="Your first name *" class="input__form" required/>#}
+{#                <input name="last_name" placeholder="Your last name *" class="input__form" required/>#}
+{#                <input name="email" placeholder="Enter your email *" class="input__form" required/>#}
+{#                <input name="phone_number" placeholder="Enter your phone number *" class="input__form" required/>#}
+{#                <div onclick="browseFile()"  class="uploader__image uploder__right">#}
+{#                    <div  class="uploader__center">#}
+{#                        <p>Upload your resume *</p>#}
+{#                        <button class="brows__btn" type="button">Browse</button>#}
+{#                        <input type="file" name="resume" id="fileInput" style="display: none;"  onchange="handleFileSelect(event)" required>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#                <span id="file-name"></span>#}
+{#                <button type="submit" style="cursor: pointer; text-decoration: none" class="  btn__primary__home   applynow__btn__right">Apply Now</button>#}
+{##}
+{##}
+{#            </div>#}
+{#            </form>#}
         </main>
     </section>
     <script>
