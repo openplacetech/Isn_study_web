@@ -1,5 +1,5 @@
 <select id="availability_or_notice_period" name="availability_or_notice_period" class="input__form selectinputappearance">
-    <option value="" disabled selected>What is your availability or notice period?</option>
+    <option value="" disabled selected>What is your availability or notice period?*</option>
     {% for n,np in notice_period %}
         <option value="{{ n }}">{{ np }}</option>
     {% endfor %}
@@ -101,5 +101,5 @@
     </div>
 </div>
 <div>
-    <input placeholder="Legal First Name" class="input__form" id="confirmation_name_1" name="confirmation_name_1" />
+    <input placeholder="Legal First Name*" class="input__form" id="confirmation_name_1" name="confirmation_name_1" />
 </div>
