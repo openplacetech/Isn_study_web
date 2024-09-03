@@ -14,14 +14,12 @@
             var expected_salary = document.getElementById("expected_salary").value;
             var contact_phone_type = document.getElementById("contact_phone_type").value;
             var country = document.getElementById("country").value;
-            var profile_link = document.getElementById("profile_link").value;
-            var profile_link_type = document.getElementById("profile_link_type").value;
             var fileInput = document.getElementById('fileInput').value;
             var currency_type = document.getElementById('currency_type').value;
             var pay_period = document.getElementById('pay_period').value;
             // Enable/disable submit button based on form completeness
             if (firstName !== '' && lastName !=='' && email_id !=='' && phoneNumber !=='' && expected_salary !=='' && pay_period !==''
-                && contact_phone_type !=='' && country !=='' && profile_link !=='' && currency_type !=='' && fileInput !=='') {
+                && contact_phone_type !=='' && country !==''  && currency_type !=='' && fileInput !=='') {
                 submitButton.disabled = false;
             } else {
                 submitButton.disabled = true;
