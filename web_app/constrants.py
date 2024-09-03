@@ -17,6 +17,7 @@ REGION_TYPE = (
 GENDER_TYPE = (
     ("MALE","Male"),
     ("FEMALE","Female"),
+    ("PREFER_NOT_TO_SAY","Prefer Not To Say")
 )
 
 
