@@ -7,7 +7,7 @@ from django.core import serializers
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.db.models import Count
-from web_app.constrants import DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
+from web_app.constrants import currencies,DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
 import json
 
 
@@ -160,7 +160,8 @@ def apply_job(request,job_id):
                 'gender':GENDER_TYPE,
                 'race_eth':RACE_ETHNICITY_CHOICES,
                 'disability':DISABILITY_TYPE_CHOICES,
-                "job":job
+                "job":job,
+                "currencies":currencies,
             }
             return render(request,'job_apply.html',context)
     except CareerOpportunities.DoesNotExist:

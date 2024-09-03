@@ -183,6 +183,7 @@ class ApplyForCareer(BaseModel):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email = models.EmailField()
+    currency_type = models.CharField(max_length=200,default="USD")
     phone_number = models.CharField(max_length=40)
     contact_phone_type = models.CharField(max_length=200,choices=CONTACT_PHONE_TYPE,blank=True,null=True)
     country = models.CharField(max_length=100,choices=COUNTRY_CHOICES,blank=True,null=True)

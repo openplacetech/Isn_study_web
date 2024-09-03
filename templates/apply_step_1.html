@@ -28,7 +28,16 @@
             {% endfor %}
         </select>
     </div>
-    <input style="margin-top: 2rem;"  id="expected_salary" name="expected_salary" placeholder="expected salary *" class="input__form" required/>
+    <div class="user__information__grid" style="margin-top: 2rem;"  >
+        <input type="number" id="expected_salary" name="expected_salary" placeholder="expected salary *" class="input__form" required/>
+        <select  name="currency_type" id="currency_type" class="input__form selectinputappearance" required>
+            <option value="" disabled selected>Currency Type *</option>
+            {% for curr in currencies %}
+            <option value="{{ curr.currency_code }}">{{ curr.currency_code }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
 </div>
 <div>
     <h6 style="margin: 0.4rem !important;" class="title__form ">Resume</h6>
