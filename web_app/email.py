@@ -14,23 +14,19 @@ def send_html_email():
     email.send(fail_silently=False)
 
 
-def send_newsletter_to_all_subscribers(sub,url):
+def send_newsletter_to_all_subscribers(email,url,newsletter):
     subject = 'Monthly Newsletter'
-    to_email = sub['email']
-    username = sub['name']
     unsubscribe_link = url
-    email_list = []
-    for i in sub:
-        email_list.append(i.email)
+
         # Load and render the templates
     html_content = render_to_string('newsletter_email.html',
-                                    {'username': username, 'unsubscribe_link': unsubscribe_link})
-    text_content = render_to_string('newsletter_email.txt',
-                                        {'username': username, 'unsubscribe_link': unsubscribe_link})
-    text_content = strip_tags(text_content)  # Strip HTML tags from text content
+                                    {'newsletter':newsletter, 'unsubscribe_link': unsubscribe_link})
+    # text_content = render_to_string('newsletter_email.txt',
+    #                                     { 'unsubscribe_link': unsubscribe_link})
+    # text_content = strip_tags(text_content)  # Strip HTML tags from text content
 
         # Create the email
-    email = EmailMultiAlternatives(subject, text_content, None, [to_email])
+    email = EmailMultiAlternatives(subject, None, None, email)
     email.attach_alternative(html_content, "text/html")
     email.send(fail_silently=False)
 

@@ -22,7 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY',"psdfbsdkjfhsdbfsdvfnbdsvfbnsdvf")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+SITE_DOMAIN = "https://isnstudy.com"
 ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["isnstudy.com","127.0.0.1"]
 # ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', "*")
 # ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS.split(',') if host.strip()]
 # Application definition
@@ -158,12 +160,13 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 #email setup
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
 EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_PORT = os.getenv('EMAIL_USE_TLS')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
 
 # Contact email address
 CONTACT_EMAIL = 'info@isnstudy.com'
