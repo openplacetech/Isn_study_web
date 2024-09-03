@@ -7,9 +7,9 @@ from django.core import serializers
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.db.models import Count
-from web_app.constrants import currencies,DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
+from web_app.constrants import currencies,PAY_PERIOD_TYPE,DISABILITY_TYPE_CHOICES,JOB_TYPE,RACE_ETHNICITY_CHOICES,VETERAN_STATUS_CHOICES,NOTICE_PERIOD,JOB_MODE,STATUS_TYPE,COUNTRY_CHOICES,CONTACT_PHONE_TYPE,GENDER_TYPE,PROFILE_LINK_TYPE
 import json
-
+from django.contrib import messages
 
 def home(request):
     insight_list = Insights.objects.order_by('-created_at')  # Fetch all items
@@ -145,10 +145,25 @@ def apply_job(request,job_id):
                 application = form.save(commit=False)
                 application.job = job
                 application.save()
+                return redirect("success")
             else:
-                print("********",form.errors)
-            path = '/job/{}'.format(job.slug)
-            return redirect("success")
+                context = {
+                    'country': COUNTRY_CHOICES,
+                    'phone_type': CONTACT_PHONE_TYPE,
+                    'gender_type': GENDER_TYPE,
+                    "profile_link": PROFILE_LINK_TYPE,
+                    'notice_period': NOTICE_PERIOD,
+                    'veteran_status': VETERAN_STATUS_CHOICES,
+                    'gender': GENDER_TYPE,
+                    'race_eth': RACE_ETHNICITY_CHOICES,
+                    'disability': DISABILITY_TYPE_CHOICES,
+                    "job": job,
+                    "currencies": currencies,
+                    "pay_period": PAY_PERIOD_TYPE,
+                }
+                messages.error(request, "An error occurred. Please try again.")
+                return render(request, 'job_apply.html', context)
+
         else:
             context = {
                 'country': COUNTRY_CHOICES,
@@ -162,6 +177,7 @@ def apply_job(request,job_id):
                 'disability':DISABILITY_TYPE_CHOICES,
                 "job":job,
                 "currencies":currencies,
+                "pay_period": PAY_PERIOD_TYPE,
             }
             return render(request,'job_apply.html',context)
     except CareerOpportunities.DoesNotExist:

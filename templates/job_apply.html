@@ -18,8 +18,9 @@
             var profile_link_type = document.getElementById("profile_link_type").value;
             var fileInput = document.getElementById('fileInput').value;
             var currency_type = document.getElementById('currency_type').value;
+            var pay_period = document.getElementById('pay_period').value;
             // Enable/disable submit button based on form completeness
-            if (firstName !== '' && lastName !=='' && email_id !=='' && phoneNumber !=='' && expected_salary !==''
+            if (firstName !== '' && lastName !=='' && email_id !=='' && phoneNumber !=='' && expected_salary !=='' && pay_period !==''
                 && contact_phone_type !=='' && country !=='' && profile_link !=='' && currency_type !=='' && fileInput !=='') {
                 submitButton.disabled = false;
             } else {
@@ -27,7 +28,8 @@
             }
             var secoundNext = document.getElementById('second-next');
             var availability_or_notice_period = document.getElementById('availability_or_notice_period').value;
-            if (availability_or_notice_period !== '') {
+            var confirmation_name_1 = document.getElementById('confirmation_name_1').value;
+            if (availability_or_notice_period !== '' && confirmation_name_1 !=='') {
                 secoundNext.disabled = false;
             } else {
                 secoundNext.disabled = true;
@@ -38,7 +40,8 @@
             var race_ethnicity = document.getElementById('race_ethnicity').value
             var disability = document.getElementById('disability').value
             var policy_check = document.getElementById('policy-checkbox').value
-            if(gender !== '' && veteran_status !== '' && race_ethnicity !== '' && disability !== '' && policy_check !== ''){
+            var confirmation_name_2 = document.getElementById('confirmation_name_2').value;
+            if(gender !== '' && veteran_status !== '' && race_ethnicity !== '' && disability !== '' && policy_check !== '' && confirmation_name_2 !==''){
                 if (validateEmail(email_id)){
                     document.getElementById('email_error').textContent = 'Email is required';
                 }
@@ -50,6 +53,13 @@
     </script>
     <section class="section__container">
         <main class="job__application__container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                      {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
             <div class="content__title">Job <span>Application </span></div>
             <h6 class="job__title">{{ job.job_title }}</h6>
             <div class="job__form__container">
