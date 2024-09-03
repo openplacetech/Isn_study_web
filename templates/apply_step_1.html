@@ -20,8 +20,8 @@
 <div>
     <h6 class="title__form" style="margin-top: 51px; font-size: 18px; font-weight: 400px">Please provide at least one item below to proceed.*</h6>
     <div class="user__information__grid">
-        <input placeholder="Profile Link" id="profile_link" name="profile_link" class="input__form" required/>
-        <select  name="profile_link_type" id="profile_link_type" class="input__form selectinputappearance" required>
+        <input placeholder="Profile Link" id="profile_link" name="profile_link" class="input__form"/>
+        <select  name="profile_link_type" id="profile_link_type" class="input__form selectinputappearance">
             <option value="" disabled selected>Profile Link Type </option>
             {% for p ,pl in profile_link %}
             <option value="{{ p }}">{{ pl }}</option>
