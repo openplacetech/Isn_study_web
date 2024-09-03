@@ -117,8 +117,11 @@ def job_detail(request,slug):
     return render(request,'job-detail.html',{'job':job,"recommendation":recommendation})
 
 def privacy_policy(request):
-    privacy = PrivacyPolicy.objects.get(status="PUBLISHED")
-    return render(request,'privacy-policy.html',{"privacy":privacy})
+    try:
+        privacy = PrivacyPolicy.objects.get(status="PUBLISHED")
+        return render(request,'privacy-policy.html',{"privacy":privacy})
+    except PrivacyPolicy.DoesNotExist:
+        return render(request,'error.html')
 
 def our_journey(request):
     return render(request,'journey.html')
