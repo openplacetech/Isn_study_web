@@ -98,8 +98,8 @@
         }
         function copyURL(elementId) {
           // Get the text from the specified element
-          var textToCopy = document.getElementById(elementId).innerText;
 
+          var textToCopy = document.getElementById(elementId).value;
           // Create a temporary textarea element
           var tempTextArea = document.createElement("textarea");
           tempTextArea.value = textToCopy;

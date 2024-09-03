@@ -22,7 +22,7 @@
                 && contact_phone_type !=='' && country !==''  && currency_type !=='' && fileInput !=='') {
                 submitButton.disabled = false;
             } else {
-                submitButton.disabled = true;
+                submitButton.disabled = false;
             }
             var secoundNext = document.getElementById('second-next');
             var availability_or_notice_period = document.getElementById('availability_or_notice_period').value;
@@ -49,13 +49,16 @@
     </script>
     <section class="section__container">
         <main class="job__application__container">
-            {% if messages %}
+            <div id="error_alert">
+                {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-danger" id="alert" role="alert">
+                    <div class="alert alert-danger"  role="alert">
                       {{ message }}
                     </div>
                 {% endfor %}
             {% endif %}
+            </div>
+
             <div class="content__title">Job <span>Application </span></div>
             <h6 class="job__title">{{ job.job_title }}</h6>
             <div class="job__form__container">
@@ -101,8 +104,8 @@
             document.getElementById(element).style.display = "none";
         }
         function show_next_step(){
-            if (current_step !== 1){
-                document.getElementById("alert").style.display = "none";
+            if (current_step != 1){
+                document.getElementById("error_alert").style.display = "none";
             }
             if (current_step <3){
                 current_step = current_step + 1
@@ -161,6 +164,5 @@
             var form = document.getElementById("application_form");
             form.submit();
         }
-
     </script>
 {% endblock %}
