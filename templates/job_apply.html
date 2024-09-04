@@ -4,9 +4,77 @@
 
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'assets/css/job-application.css' %}" />
+    <section class="section__container">
+        <main class="job__application__container">
+            <div class="content__title">Job <span>Application </span></div>
+            <h6 class="job__title">{{ job.job_title }}</h6>
+            <div class="job__form__container">
+                <div id="step_count" class="steps margin"></div>
+                <h4 class="content__title margin " id="apply__title">Personal Informations</h4>
+                <form class="form" action="/apply/{{ job.id }}" method="post" id="application_form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div id = "step_1">
+                        {% include 'apply_step_1.html' %}
+                        <button type="button" id="first-next"  class="btn__primary__home next__btn" onclick="show_next_step()">Next</button>
+                    </div>
+                    <div id = "step_2">
+                        <div class="user__information__grid direction-column">
+                            {% include 'apply_step_2.html' %}
+
+                            <div class="next__prev__btn__container">
+                                <button type="button" onclick="show_previous_step()" id="" class="btn__primary__home next__btn previousbtn" >Previous</button>
+                                <button type="button"  id="second-next" class="btn__primary__home next__btn" onclick="show_next_step()">Next</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id = "step_3">
+                        {% include 'apply_step_3.html'  %}
+                        <div class="next__prev__btn__container">
+                            <button type="button" class="btn__primary__home next__btn previousbtn" onclick="show_previous_step()">Previous</button>
+                            <button type="button" id="submit-btn" class="btn__primary__home next__btn" onclick="submit_application()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </section>
     <script>
-    function checkRequiredFields() {
-            var submitButton = document.getElementById('first-next');
+        function isValidURL(url) {
+            try {
+                new URL(url);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+        function ValidationSecoundStep(){
+            var isValid=true
+            var availability_or_notice_period = document.getElementById('availability_or_notice_period').value;
+            var confirmation_name_1 = document.getElementById('confirmation_name_1').value;
+            var check = document.getElementById('policy-checkbox').checked;
+            if(availability_or_notice_period == ''){
+                document.getElementById('noticePeriodError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('noticePeriodError').style.display = "none"
+            }
+            if(confirmation_name_1 == ''){
+                document.getElementById('legalFirstName1Error').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('legalFirstName1Error').style.display = "none"
+            }
+            if(!check){
+                document.getElementById('policyCheckError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('policyCheckError').style.display = "none"
+            }
+            return isValid
+        }
+        function ValidationFirstStep(){
+            var isValid=true
             var firstName = document.getElementById('first_name').value;
             var lastName = document.getElementById('last_name').value;
             var email_id = document.getElementById('email_id').value;
@@ -17,83 +85,82 @@
             var fileInput = document.getElementById('fileInput').value;
             var currency_type = document.getElementById('currency_type').value;
             var pay_period = document.getElementById('pay_period').value;
-            // Enable/disable submit button based on form completeness
-            if (firstName !== '' && lastName !=='' && email_id !=='' && phoneNumber !=='' && expected_salary !=='' && pay_period !==''
-                && contact_phone_type !=='' && country !==''  && currency_type !=='' && fileInput !=='') {
-                submitButton.disabled = false;
-            } else {
-                submitButton.disabled = false;
+            var url = document.getElementById('profile_link').value;
+            if(url !== ''){
+                if(!isValidURL(url)){
+                    document.getElementById('urlError').style.display = "block"
+                    isValid=false
+                }
+            }else{
+                document.getElementById('urlError').style.display = "none"
             }
-            var secoundNext = document.getElementById('second-next');
-            var availability_or_notice_period = document.getElementById('availability_or_notice_period').value;
-            var confirmation_name_1 = document.getElementById('confirmation_name_1').value;
-            if (availability_or_notice_period !== '' && confirmation_name_1 !=='') {
-                secoundNext.disabled = false;
-            } else {
-                secoundNext.disabled = true;
+            if(firstName == ''){
+                document.getElementById('firstNameError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('firstNameError').style.display = "none"
             }
-             var submit_btn = document.getElementById('submit-btn');
-            var gender = document.getElementById('gender').value
-            var veteran_status = document.getElementById('veteran_status').value
-            var race_ethnicity = document.getElementById('race_ethnicity').value
-            var disability = document.getElementById('disability').value
-            var policy_check = document.getElementById('policy-checkbox').value
-            var confirmation_name_2 = document.getElementById('confirmation_name_2').value;
-
-            if(gender !== '' && veteran_status !== '' && race_ethnicity !== '' && disability !== '' && policy_check !== '' && confirmation_name_2 !==''){
-                submit_btn.disabled = false;
-            }else {
-                submit_btn.disabled= true
+            if(lastName == ''){
+                document.getElementById('lastNameError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('lastNameError').style.display = "none"
             }
+            if(email_id== ''){
+                document.getElementById('emailError').style.display = "block"
+                isValid=false
+            }else{
+                if (validateEmail(email_id)){
+                    document.getElementById('emailError').style.display = "none"
+                }else{
+                    document.getElementById('emailError').style.display = "block"
+                    isValid=false
+                }
+            }
+            if(phoneNumber== ''){
+                document.getElementById('contactError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('contactError').style.display = "none"
+            }
+            if(contact_phone_type== ''){
+                document.getElementById('contactTypeError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('contactTypeError').style.display = "none"
+            }
+            if(country== ''){
+                document.getElementById('countryError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('countryError').style.display = "none"
+            }
+            if(expected_salary== ''){
+                document.getElementById('salaryError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('salaryError').style.display = "none"
+            }
+            if(currency_type== ''){
+                document.getElementById('currencyError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('currencyError').style.display = "none"
+            }
+            if(pay_period== ''){
+                document.getElementById('periodError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('periodError').style.display = "none"
+            }
+            if(fileInput== ''){
+                document.getElementById('fileError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('fileError').style.display = "none"
+            }
+            return isValid
         }
-    </script>
-    <section class="section__container">
-        <main class="job__application__container">
-            <div id="error_alert">
-                {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-danger"  role="alert">
-                      {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-            </div>
-
-            <div class="content__title">Job <span>Application </span></div>
-            <h6 class="job__title">{{ job.job_title }}</h6>
-            <div class="job__form__container">
-                <div id="step_count" class="steps margin"></div>
-                <h4 class="content__title margin " id="apply__title">Personal Informations</h4>
-
-            <form class="form" action="/apply/{{ job.id }}" method="post" id="application_form" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div id = "step_1">
-                    {% include 'apply_step_1.html' %}
-                    <button type="button" id="first-next"  class="btn__primary__home next__btn" onclick="show_next_step()">Next</button>
-                </div>
-                <div id = "step_2">
-                    <div class="user__information__grid direction-column">
-                        {% include 'apply_step_2.html' %}
-
-                        <div class="next__prev__btn__container">
-                            <button type="button" onclick="show_previous_step()" id="" class="btn__primary__home next__btn previousbtn" >Previous</button>
-                            <button type="button"  id="second-next" class="btn__primary__home next__btn" onclick="show_next_step()">Next</button>
-                        </div>
-
-                    </div>
-                </div>
-                <div id = "step_3">
-                    {% include 'apply_step_3.html'  %}
-                    <div class="next__prev__btn__container">
-                        <button type="button" class="btn__primary__home next__btn previousbtn" onclick="show_previous_step()">Previous</button>
-                        <button type="button" id="submit-btn" class="btn__primary__home next__btn" onclick="submit_application()">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        </main>
-    </section>
-    <script>
         var current_step = 1
         var step_count=document.getElementById("step_count")
         var title = document.getElementById("apply__title")
@@ -104,8 +171,14 @@
             document.getElementById(element).style.display = "none";
         }
         function show_next_step(){
-            if (current_step != 1){
-                document.getElementById("error_alert").style.display = "none";
+            if (current_step == 1){
+                if(!ValidationFirstStep()){
+                    return
+                }
+            }else if(current_step == 2){
+                if(!ValidationSecoundStep()){
+                    return
+                }
             }
             if (current_step <3){
                 current_step = current_step + 1
@@ -142,10 +215,6 @@
                 return [["step_1","step_2"],"Equal Employee Opportunities Disclosure"]
             }
         }
-
-
-        document.addEventListener('DOMContentLoaded', checkRequiredFields);
-        document.addEventListener('input', checkRequiredFields);
         function browseFile() {
             document.getElementById('fileInput').click();
         }
@@ -153,16 +222,59 @@
         function handleFileSelect(event) {
             const file = event.target.files[0];
             document.getElementById('file-name').innerText=file.name
-            {#file.name#}
-
         }
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
         function submit_application(){
-            var form = document.getElementById("application_form");
-            form.submit();
+            var isValid = true
+            var gender = document.getElementById('gender').value
+            var veteran_status = document.getElementById('veteran_status').value
+            var race_ethnicity = document.getElementById('race_ethnicity').value
+            var disability = document.getElementById('disability').value
+            var policy_check = document.getElementById('policy-checkbox1').checked
+            var confirmation_name_2 = document.getElementById('confirmation_name_2').value;
+            if(gender == ''){
+                document.getElementById('genderError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('genderError').style.display = "none"
+            }
+            if(veteran_status == ''){
+                document.getElementById('veterenError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('veterenError').style.display = "none"
+            }
+            if(race_ethnicity == ''){
+                document.getElementById('raceError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('raceError').style.display = "none"
+            }
+            if(disability == ''){
+                document.getElementById('disabilityError').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('disabilityError').style.display = "none"
+            }
+            if(confirmation_name_2 == ''){
+                document.getElementById('legalName2Error').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('legalName2Error').style.display = "none"
+            }
+            if(policy_check == ''){
+                document.getElementById('policyCheck1Error').style.display = "block"
+                isValid=false
+            }else{
+                document.getElementById('policyCheck1Error').style.display = "none"
+            }
+            if(isValid){
+                var form = document.getElementById("application_form");
+                form.submit();
+            }
         }
     </script>
 {% endblock %}

@@ -1,9 +1,12 @@
-<select id="availability_or_notice_period" name="availability_or_notice_period" class="input__form selectinputappearance">
-    <option value="" disabled selected>What is your availability or notice period?*</option>
-    {% for n,np in notice_period %}
-        <option value="{{ n }}">{{ np }}</option>
-    {% endfor %}
-</select>
+<div class="input-field">
+    <select id="availability_or_notice_period" name="availability_or_notice_period" class="input__form selectinputappearance">
+        <option value="" disabled selected>What is your availability or notice period?*</option>
+        {% for n,np in notice_period %}
+            <option value="{{ n }}">{{ np }}</option>
+        {% endfor %}
+    </select>
+    <span id="noticePeriodError" class="error">Select your availability or notice period</span>
+</div>
 <div class="radio-group">
     <p>Will you now or in the future require immigration sponsorship for employment with ISN?
     </p>
@@ -94,12 +97,16 @@
         <li>Employee handbook</li>
     </ol>
     <div class="check__box__for__policy">
-        <input type="radio" id="policy-checkbox" class="input__form" name="policy">
+        <input type="radio" value="accept" id="policy-checkbox" class="input__form" name="policy">
         <span>I have read and understand the statements above and accept them as conditions of
             employment.
         </span>
     </div>
+    <span id="policyCheckError" class="error">Read and Accept this statement</span>
 </div>
 <div>
-    <input placeholder="Legal First Name*" class="input__form" id="confirmation_name_1" name="confirmation_name_1" />
+    <div class="input-field">
+        <input placeholder="Legal First Name*" class="input__form" id="confirmation_name_1" name="confirmation_name_1" />
+        <span id="legalFirstName1Error" class="error">Enter your legal first name</span>
+    </div>
 </div>
