@@ -32,6 +32,7 @@ RACE_ETHNICITY_CHOICES = [
     ('other', 'Other'),
 ]
 DISABILITY_TYPE_CHOICES = [
+    ('none', 'None'),
     ('visual_impairment', 'Visual Impairment'),
     ('hearing_impairment', 'Hearing Impairment'),
     ('mobility_impairment', 'Mobility Impairment'),
@@ -95,12 +96,12 @@ PROFILE_LINK_TYPE = (
 
 
 VETERAN_STATUS_CHOICES = [
-    ('none','none'),
+    ('none','None'),
     ('military_branches', 'Veterans by military branches'),
     ('combat_war_veterans', 'Combat or war veterans'),
     ('disabled_veterans', 'Disabled veterans'),
     ('other_services', 'Veterans of services other than the armed forces'),
-    ('others','others'),
+    ('others','Others'),
 ]
 
 NOTICE_PERIOD = (
