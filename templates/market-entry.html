@@ -242,14 +242,13 @@
               </div>
             </div>
           </div>
-<!--          <div class="sub-container">-->
-<!--            <i class="description">-->
-<!--              <span>*</span>-->
-<!--              <span class="source-httpswwwsitenamec">-->
-<!--                Source: https://www.sitename.com/data for year-->
-<!--              </span>-->
-<!--            </i>-->
-<!--          </div>-->
+          <div class="sub-container">
+            <i class="description">
+              <span class="source-httpswwwsitenamec">
+                {{ datasource.source | safe}}
+              </span>
+            </i>
+          </div>
         </div>
       </section>
       <section class="our__engagement__container">

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from web_app.models import PartnershipRequest,PrivacyPolicy,Insights,ISNTeam,\
-    CareerOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCareer,StudyDestinationOfNepali
+    CareerOpportunities,SocialMedia,Testimonials,Subscriber,InsightComments,ApplyForCareer,StudyDestinationOfNepali,DataSource
 # Register your models here.
 @admin.register(PartnershipRequest)
 class PartnershipRequestAdmin(admin.ModelAdmin):
@@ -64,3 +64,4 @@ class StudyDestinationOfNepali(admin.ModelAdmin):
 
 
 admin.site.register(PrivacyPolicy)
+admin.site.register(DataSource)

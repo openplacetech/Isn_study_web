@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from web_app.forms import PartnershipRequestForm,SubscriberForm,InsightCommentsForm,ApplyForCareerForm
-from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CareerOpportunities,ISNTeam,Testimonials,InsightComments
+from web_app.models import Insights,Subscriber,StudyDestinationOfNepali,PrivacyPolicy,CareerOpportunities,ISNTeam,Testimonials,InsightComments,DataSource
 from django.conf import settings
 from django.core.mail import send_mail
 from django.http import Http404
@@ -88,11 +88,14 @@ def isn_market_entry(request):
     south_asia = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTHEAST_ASIA"))
     mexico = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="MEXICO_AND_CENTRAL_AMERICA"))
     south_america = serializers.serialize('json',StudyDestinationOfNepali.objects.filter(region="SOUTH_AMERICA"))
+    datasource = DataSource.objects.get(status="PUBLISHED")
     return render(request,'market-entry.html',{"wast_africa":wast_africa,
                                                "south_and_center_asia":south_and_center_asia,
                                                "south_asia":south_asia,
                                                "mexico":mexico,
-                                               "south_america":south_america,"map_country_list":json.dumps(map_country_list)})
+                                               "south_america":south_america,
+                                               "map_country_list":json.dumps(map_country_list),
+                                               "datasource":datasource})
 
 def career_opportunity(request):
     # page_number = request.GET.get('page')
@@ -150,6 +153,7 @@ def apply_job(request,job_id):
                 application = form.save(commit=False)
                 application.job = job
                 application.save()
+                request.session['source_url'] = "job_application"
                 return redirect("success")
             else:
                 context = {
@@ -219,7 +223,12 @@ def something_went_wrong(request):
 
 def success(request):
     source_url = request.session.get('source_url', None)
-    if source_url=="partnership":
+    print(source_url)
+    print(request.session)
+    if source_url == "partnership":
         del request.session['source_url']
         return render(request,'partnership_success.html')
+    if source_url == "job_application":
+        del request.session['source_url']
+        return render(request,'job_application_success.html')
     return render(request,'success.html')
