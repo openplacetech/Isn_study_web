@@ -19,37 +19,53 @@
         Black or African American (Not Hispanic or Latino): A person having origins in any of the black
         racial groups of Africa</div>
     <div class="check__box__for__policy">
-        <input type="radio" id="policy-checkbox" class="input__form" name="policy">
+        <input type="radio" id="policy-checkbox1" class="input__form" name="policy">
         <span>I have read and understand the statements above and accept them as conditions of employment
         </span>
     </div>
+    <span id="policyCheck1Error" class="error" style="margin-bottom: 35px">Read and Check Policy</span>
     <div class="user__information__grid">
-        <select  name="gender" id="gender" class="input__form selectinputappearance">
-            <option value="" disabled selected>Gender*</option>
-            {% for g,gt in gender %}
-            <option value="{{ g }}">{{ gt }}</option>
-            {% endfor %}
-        </select>
-        <select name="veteran_status" id="veteran_status" class="input__form selectinputappearance">
-            <option value="" disabled selected>Veteran Status*</option>
-            {% for v,vs in veteran_status %}
-                <option value="{{ vs }}">{{ vs }}</option>
-            {% endfor %}
-        </select>
-        <select name="race_ethnicity" id="race_ethnicity" class="input__form selectinputappearance">
-            <option value="" disabled selected>Race/Ethnicity*</option>
-            {% for r,ret in race_eth %}
-                <option value="{{ ret }}">{{ ret }}</option>
-            {% endfor %}
-        </select>
-        <select name="disability" id="disability" class="input__form selectinputappearance">
-            <option value="" disabled selected>Disability*</option>
-            {% for d,dt in disability %}
-            <option value="{{ dt }}">{{ dt }}</option>
-            {% endfor %}
-        </select>
+        <div class="input-field">
+            <select  name="gender" id="gender" class="input__form selectinputappearance">
+                <option value="" disabled selected>Gender*</option>
+                {% for g,gt in gender %}
+                <option value="{{ g }}">{{ gt }}</option>
+                {% endfor %}
+            </select>
+            <span id="genderError" class="error">Select gender</span>
+        </div>
+        <div class="input-field">
+            <select name="veteran_status" id="veteran_status" class="input__form selectinputappearance">
+                <option value="" disabled selected>Veteran Status*</option>
+                {% for v,vs in veteran_status %}
+                    <option value="{{ vs }}">{{ vs }}</option>
+                {% endfor %}
+            </select>
+            <span id="veterenError" class="error">Select veteren status</span>
+        </div>
+        <div class="input-field">
+            <select name="race_ethnicity" id="race_ethnicity" class="input__form selectinputappearance">
+                <option value="" disabled selected>Race/Ethnicity*</option>
+                {% for r,ret in race_eth %}
+                    <option value="{{ ret }}">{{ ret }}</option>
+                {% endfor %}
+            </select>
+            <span id="raceError" class="error">Select veteren status</span>
+        </div>
+        <div class="input-field">
+            <select name="disability" id="disability" class="input__form selectinputappearance">
+                <option value="" disabled selected>Disability*</option>
+                {% for d,dt in disability %}
+                <option value="{{ dt }}">{{ dt }}</option>
+                {% endfor %}
+            </select>
+            <span id="disabilityError" class="error">Select disability status</span>
+        </div>
     </div>
     <div>
-        <input  placeholder="Legal full name*" class="input__form" style="margin-top: 20px"  id="confirmation_name_2" name="confirmation_name_2"/>
+        <div class="input-field">
+            <input  placeholder="Legal First Name*" class="input__form" style="margin-top: 20px"  id="confirmation_name_2" name="confirmation_name_2"/>
+            <span id="legalName2Error" class="error">Select disability status</span>
+        </div>
     </div>
 </div>
