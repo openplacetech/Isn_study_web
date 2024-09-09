@@ -41,22 +41,53 @@
           75240 </span></span>United States.</span>
         <!-- <span>View on map</span> -->
       </div>
-      <form class="form" method="POST" action="/contact/us">
+      <form class="form" method="POST" id="contact-form" action="/contact/us">
           {% csrf_token %}
         <div style="text-align: center;" class="content__title ">
           Start <span>Your Partnership <br /> With ISN</span>.
 <!--          <p class="parntership__title"> Lorem ipsum dolor sit amet consectetur.</p>-->
         </div>
-        <input placeholder="Name of institution" name="institute_name" class="input__form" required/>
-        <input placeholder="Address" name="address" class="input__form" required/>
-        <div class="user__information__grid">
-          <input placeholder="Contact person" name="contact_person" class="input__form" required/>
-          <input placeholder="Title" name="title" class="input__form" required/>
-        </div>
-        <input type="email" placeholder="Email address" name="email" class="input__form" required/>
-        <input placeholder="Phone number" name="phone_no" class="input__form" required/>
+        <div style="width: 100%" class="input-field">
+            <input
+              class="partnership__input"
+              placeholder="Name of institution"
+              name="institute_name"
+              id="institute_name_id"
+              required
+            />
+              <span id="instituteNameError" class="error">Enter Valid Institute Name</span>
+          </div>
+        <div style="width: 100%" class="input-field">
+            <input class="partnership__input" id="address" placeholder="Address" name="address" required/>
+              <span id="addressError" class="error">Enter Valid Address</span>
+          </div>
+        <div style="width: 100%" class="flex-row-aligned grid-flex">
+                <div style="width: 100% ; margin-right: 5px" class="input-field" >
+                    <input class="partnership__input" name="contact_person" id="contact_person" placeholder="Contact person" required/>
+                    <span id="contactPersonError" class="error">Enter Valid Firstname</span>
+                </div>
+                <div style="width: 100%" class="input-field">
+                    <input class="partnership__input" placeholder="Title" id="title" name="title" required/>
+                    <span id="titleError" class="error">Enter Valid Title</span>
+                </div>
+            </div>
+        <div style="width: 100%" class="input-field">
+              <input type="email" name="email" class="partnership__input" id="email" placeholder="Email address" required/>
+              <span id="emailError" class="error">Enter Valid email</span>
+          </div>
+        <div style="width: 100%" class="input-field">
+              <input
+                class="partnership__input"
+                placeholder="Phone number"
+                name="phone_no"
+                id="contact"
+                required
+              />
+              <span id="contactError" class="error">Enter Valid Phone Number</span>
+          </div>
         <div class="services-container flex-row-aligned">
           <p>Which services are you interested in?</p>
+            <span id="serviceError" class="error">Check at least one</span>
           <div class="check-option">
             <input type="checkbox" id="service1" name="agent" class="checbox" value="Hiring as Agent" />
             <label for="service1">Hiring as Agent</label>
@@ -70,13 +101,16 @@
             <label for="service3">Other, Specify</label>
           </div>
         </div>
-        <textarea placeholder="Questions/Comments" name="message" class="partnership__input hide-scrollbar text-area" required></textarea>
-        <div class="check__box__for__policy">
-          <input type="radio" id="policy-checkbox" class="input__form" name="policy">
-          <span>I agree to the <a href="/privacy-policy">Terms and Privacy Policy</a>.</span>
-          </span>
-        </div>
-        <button class="btn__primary__home btn-submit__contactus">Submit</button>
+        <div style="width: 100%" class="input-field">
+            <textarea  name="message" id="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area" required></textarea>
+            <span id="messageError" class="error">Message is required</span>
+          </div>
+        <div  style="flex-direction:row; align-items: center !important;" class="services-container flex-row-aligned">
+              <input type="checkbox" class="checbox" id="privacy" name="is_accept_privacy_policy" required/>
+              <span>I agree to the <a href="/privacy-policy">Terms and Privacy Policy</a>.</span>
+                  <span id="termError" class="error">Check Terms and Privacy Policy</span>
+            </div>
+        <button type="button" class="btn__primary__home btn-submit__contactus" onclick="submit_contact_form()">Submit</button>
       </form>
       <div class="contact__info__mbl">
         <h6>Visit Us</h6>
@@ -124,4 +158,89 @@
         </div>
     </main>
   </section>
+    <script>
+    function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    function submit_contact_form(){
+        var isValid=true
+        var institute_name = document.getElementById('institute_name_id').value;
+        var address = document.getElementById('address').value;
+        var email = document.getElementById('email').value;
+        var title = document.getElementById('title').value
+        var contact = document.getElementById('contact').value
+        var contact_person = document.getElementById('contact_person').value
+        var service1 = document.getElementById('service1').checked
+        var service2 = document.getElementById('service2').checked
+        var service3 = document.getElementById('service3').checked
+        var message = document.getElementById('message').value
+        var privacy = document.getElementById('privacy').checked
+        if(institute_name == ''){
+            document.getElementById('instituteNameError').style.display = "block"
+            isValid=false
+        }else{
+            document.getElementById('instituteNameError').style.display = "none"
+        }
+        if(address ==''){
+            document.getElementById('addressError').style.display = "block"
+            isValid=false
+        }else{
+            document.getElementById('addressError').style.display = "none"
+        }
+        if(email ==''){
+            document.getElementById('emailError').style.display = "block"
+            isValid=false
+        }else{
+            if (validateEmail(email)){
+                document.getElementById('emailError').style.display = "none"
+            }else{
+                document.getElementById('emailError').style.display = "block"
+                isValid=false
+            }
+        }
+        if(contact ==''){
+            document.getElementById('contactError').style.display = "block"
+            isValid=false
+        }else{
+            document.getElementById('contactError').style.display = "none"
+        }
+        if(title ==''){
+            document.getElementById('titleError').style.display = "block"
+            isValid=false
+        }else{
+            document.getElementById('titleError').style.display = "none"
+        }
+        if(contact_person ==''){
+            document.getElementById('contactPersonError').style.display = "block"
+            isValid=false
+        }else{
+            document.getElementById('contactPersonError').style.display = "none"
+        }
+        if(service1 || service2 || service3){
+            document.getElementById('serviceError').style.display = "none"
+        }else {
+            document.getElementById('serviceError').style.display = "block"
+            isValid=false
+        }
+        if(message == ''){
+            document.getElementById('messageError').style.display = "block"
+            isValid=false
+        }else{
+            document.getElementById('messageError').style.display = "none"
+        }
+        if(privacy){
+            document.getElementById('termError').style.display = "none"
+        }else {
+            document.getElementById('termError').style.display = "block"
+            isValid=false
+        }
+
+        if(isValid){
+            var form = document.getElementById("contact-form");
+            form.submit();
+        }
+
+    }
+    </script>
 {% endblock %}

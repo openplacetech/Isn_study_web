@@ -57,7 +57,7 @@
           With ISN</span>
       </div>
       <p style="text-align: center;" class="secondary_title partnership__title"></p>
-      <form class="partnership__form flex-row-aligned" method="post" id="contact-us" action="/contact/partnership">
+      <form class="partnership__form flex-row-aligned" method="post" id="partnership-form" action="/contact/partnership">
               {% csrf_token %}
           <div style="width: 100%" class="input-field">
             <input
@@ -144,7 +144,7 @@
                   <span id="termError" class="error">Check Terms and Privacy Policy</span>
             </div>
 
-            <button  class="suscribe__button btn-submit" type="button" onclick="submit_application_form()">Submit</button>
+            <button  class="suscribe__button btn-submit" type="button" onclick="submit_partnership_form()">Submit</button>
           </form>
     </aside>
 
@@ -157,7 +157,7 @@
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
-    function submit_application_form(){
+    function submit_partnership_form(){
         var isValid=true
         var institute_name = document.getElementById('institute_name_id').value;
         var address = document.getElementById('address').value;
@@ -231,7 +231,7 @@
         }
 
         if(isValid){
-            var form = document.getElementById("contact-us");
+            var form = document.getElementById("partnership-form");
             form.submit();
         }
 
