@@ -208,3 +208,14 @@ class ApplyForCareer(BaseModel):
     class Meta:
         db_table = 'isn_job_application'
         verbose_name_plural = "Job Applications"
+
+
+class DataSource(BaseModel):
+    source = HTMLField()
+    status = models.CharField(choices=STATUS_TYPE, max_length=200, blank=True)
+    def __str__(self):
+        return self.source
+
+    class Meta:
+        db_table = 'DataSource'
+        verbose_name_plural = "DataSource"

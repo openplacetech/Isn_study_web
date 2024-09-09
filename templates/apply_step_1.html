@@ -1,33 +1,33 @@
 <div style="margin-bottom: 20px">
     <div class="user__information__grid" id="step_1_form">
     <div class="input-field">
-        <input placeholder="Legal First Name *" id="first_name" name="first_name" class="input__form" required/>
-        <span id="firstNameError" class="error">Enter Valid Firstname</span>
+        <input placeholder="Legal first name *" id="first_name" name="first_name" class="input__form" required/>
+        <span id="firstNameError" class="error">Enter valid first name</span>
     </div>
     <div class="input-field">
         <input placeholder="Legal last name *" id="last_name" name="last_name" class="input__form" required/>
-        <span id="lastNameError" class="error">Enter Valid LastName</span>
+        <span id="lastNameError" class="error">Enter valid last name</span>
     </div>
     <div class="input-field">
-        <input placeholder="Phone Number *" id="phone_number" name="phone_number" class="input__form" required/>
-        <span id="contactError" class="error">Enter Valid Contact Number</span>
+        <input placeholder="Phone number *" id="phone_number" name="phone_number" class="input__form" required/>
+        <span id="contactError" class="error">Enter valid contact number</span>
     </div>
     <div class="input-field">
         <select name="contact_phone_type *" id="contact_phone_type" class="input__form selectinputappearance" required>
-            <option value="" disabled selected>Contact Phone Type</option>
+            <option value="" disabled selected>Contact phone type</option>
             {% for p,pt in phone_type %}
             <option value="{{ p }}">{{ pt }}</option>
             {% endfor %}
         </select>
-        <span id="contactTypeError" class="error">Select Contact Type</span>
+        <span id="contactTypeError" class="error">Select contact type</span>
     </div>
     <div class="input-field">
         <input  name="email" id="email_id" placeholder="Email address *" class="input__form " required/>
-        <span id="emailError" class="error">Enter Valid Email</span>
+        <span id="emailError" class="error">Enter valid email</span>
     </div>
     <div class="input-field">
         <select name="country" id="country" class="input__form selectinputappearance" required>
-        <option value="" disabled selected>Country/Region of Residence *</option>
+        <option value="" disabled selected>Country *</option>
         {% for c, cou in country %}
         <option value={{ c }}>{{ cou }}</option>
         {% endfor %}
@@ -46,7 +46,7 @@
         </div>
         <div class="input-field">
             <select  name="profile_link_type" id="profile_link_type" class="input__form selectinputappearance">
-                <option value="" disabled selected>Profile Link Type </option>
+                <option value="" disabled selected>Profile link type </option>
                 {% for p ,pl in profile_link %}
                 <option value="{{ p }}">{{ pl }}</option>
                 {% endfor %}
@@ -56,26 +56,26 @@
     </div>
     <div class="user__information__grid" style="margin-top: 2rem;"  >
         <div class="input-field">
-            <input type="number" id="expected_salary" name="expected_salary" placeholder="expected salary *" class="input__form" required/>
-            <span id="salaryError" class="error">Expected Salary cannot be empty</span>
+            <input type="number" id="expected_salary" name="expected_salary" placeholder="Expected salary *" class="input__form" required/>
+            <span id="salaryError" class="error">Expected salary cannot be empty</span>
         </div>
         <div class="input-field">
             <select  name="currency_type" id="currency_type" class="input__form selectinputappearance" required>
-                <option value="" disabled selected>Currency Type *</option>
+                <option value="" disabled selected>Currency type *</option>
                 {% for curr in currencies %}
                 <option value="{{ curr.currency_code }}">{{ curr.currency_code }}</option>
                 {% endfor %}
             </select>
-            <span id="currencyError" class="error">Currency Type cannot be empty</span>
+            <span id="currencyError" class="error">Currency type cannot be empty</span>
         </div>
         <div class="input-field">
             <select  name="pay_period" id="pay_period" class="input__form selectinputappearance" required>
-                <option value="" disabled selected>Pay Period *</option>
+                <option value="" disabled selected>Pay period *</option>
                 {% for p,pay in pay_period %}
                 <option value="{{ p }}">{{ pay }}</option>
                 {% endfor %}
             </select>
-            <span id="periodError" class="error">Pay Period cannot be empty</span>
+            <span id="periodError" class="error">Pay period cannot be empty</span>
         </div>
     </div>
 
