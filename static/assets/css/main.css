@@ -2372,3 +2372,9 @@ hr {
 .secondary_atag_button:hover{
   background-color:#FBFBFF ;
 }
+.error {
+    color: red;
+    font-size: 14px;
+    display: none; /* Hidden by default */
+    margin-top: 5px;
+}
