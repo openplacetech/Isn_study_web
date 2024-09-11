@@ -135,19 +135,10 @@
                 />
                 <label for="service3">Other, Specify</label>
               </div>
-                <div style="width: 100%" class="input-field">
-                  <input
-                    class="partnership__input hidden"
-                    placeholder="Others"
-                    name="other_field"
-                    id="other_field"
-                    required
-                  />
-                  <span id="othersFieldsError" class="error">Enter Valid input</span>
-              </div>
+
             </div>
           <div style="width: 100%" class="input-field">
-            <textarea  name="message" id="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area" required></textarea>
+            <textarea  name="message" id="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area hidden" required></textarea>
             <span id="messageError" class="error">Message is required</span>
           </div>
               <div  style="flex-direction:row; align-items: center !important;" class="services-container flex-row-aligned">
@@ -172,19 +163,10 @@
     function showInput(){
         var service3 = document.getElementById('service3').checked
             if(service3){
-                document.getElementById('other_field').style.display = "block"
-                document.getElementById('service1').checked=false
-                document.getElementById('service2').checked=false
+                document.getElementById('message').style.display = "block"
+
             }else {
-                document.getElementById('other_field').style.display = "none"
-            }
-        }
-        function hideOthers(){
-            var service1 = document.getElementById('service1').checked
-            var service2 = document.getElementById('service2').checked
-            if(service1 || service2){
-                document.getElementById('other_field').style.display = "none"
-                document.getElementById('service3').checked = false
+                document.getElementById('message').style.display = "none"
             }
         }
     function submit_partnership_form(){
@@ -200,7 +182,6 @@
         var service3 = document.getElementById('service3').checked
         var message = document.getElementById('message').value
         var privacy = document.getElementById('privacy').checked
-        var other_field=document.getElementById('other_field').value
         if(institute_name == ''){
             document.getElementById('instituteNameError').style.display = "block"
             isValid=false
@@ -245,23 +226,18 @@
         if(service1 || service2 || service3){
             document.getElementById('serviceError').style.display = "none"
             if(service3){
-                if(other_field== ''){
-                    document.getElementById('othersFieldsError').style.display = "block"
+                if(message == ''){
+                    document.getElementById('messageError').style.display = "block"
                     isValid=false
-                }else {
-                    document.getElementById('othersFieldsError').style.display = "none"
+                }else{
+                    document.getElementById('messageError').style.display = "none"
                 }
             }
         }else {
             document.getElementById('serviceError').style.display = "block"
             isValid=false
         }
-        if(message == ''){
-            document.getElementById('messageError').style.display = "block"
-            isValid=false
-        }else{
-            document.getElementById('messageError').style.display = "none"
-        }
+
         if(privacy){
             document.getElementById('termError').style.display = "none"
         }else {

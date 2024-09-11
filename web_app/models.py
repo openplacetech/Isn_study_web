@@ -14,7 +14,7 @@ class PartnershipRequest(BaseModel):
     email = models.EmailField()
     phone_no = models.CharField(max_length=200)
     interested_service = models.CharField(max_length=100)
-    message = models.TextField()
+    message = models.TextField(null=True,default="",blank=True)
     is_accept_privacy_policy = models.BooleanField(default=False)
     def __str__(self):
         return self.institute_name
