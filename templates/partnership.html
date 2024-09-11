@@ -106,6 +106,7 @@
                   id="service1"
                   name="agent"
                   value="Hiring as Agent"
+                  onclick="hideOthers()"
                   required
                 />
                 <label for="service1">Hiring as Agent</label>
@@ -118,6 +119,7 @@
                   name="market_entry"
                   value="Market Entry"
                   class="checbox"
+                  onclick="hideOthers()"
                 />
                 <label for="service2">Market Entry</label>
               </div>
@@ -129,10 +131,20 @@
                   name="others"
                   value="Other Specify"
                   class="checbox"
+                  onclick="showInput()"
                 />
                 <label for="service3">Other, Specify</label>
               </div>
-
+                <div style="width: 100%" class="input-field">
+                  <input
+                    class="partnership__input hidden"
+                    placeholder="Others"
+                    name="other_field"
+                    id="other_field"
+                    required
+                  />
+                  <span id="othersFieldsError" class="error">Enter Valid input</span>
+              </div>
             </div>
           <div style="width: 100%" class="input-field">
             <textarea  name="message" id="message" placeholder="Questions/Comments" class="partnership__input hide-scrollbar text-area" required></textarea>
@@ -157,6 +169,24 @@
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
+    function showInput(){
+        var service3 = document.getElementById('service3').checked
+            if(service3){
+                document.getElementById('other_field').style.display = "block"
+                document.getElementById('service1').checked=false
+                document.getElementById('service2').checked=false
+            }else {
+                document.getElementById('other_field').style.display = "none"
+            }
+        }
+        function hideOthers(){
+            var service1 = document.getElementById('service1').checked
+            var service2 = document.getElementById('service2').checked
+            if(service1 || service2){
+                document.getElementById('other_field').style.display = "none"
+                document.getElementById('service3').checked = false
+            }
+        }
     function submit_partnership_form(){
         var isValid=true
         var institute_name = document.getElementById('institute_name_id').value;
@@ -170,6 +200,7 @@
         var service3 = document.getElementById('service3').checked
         var message = document.getElementById('message').value
         var privacy = document.getElementById('privacy').checked
+        var other_field=document.getElementById('other_field').value
         if(institute_name == ''){
             document.getElementById('instituteNameError').style.display = "block"
             isValid=false
@@ -213,6 +244,14 @@
         }
         if(service1 || service2 || service3){
             document.getElementById('serviceError').style.display = "none"
+            if(service3){
+                if(other_field== ''){
+                    document.getElementById('othersFieldsError').style.display = "block"
+                    isValid=false
+                }else {
+                    document.getElementById('othersFieldsError').style.display = "none"
+                }
+            }
         }else {
             document.getElementById('serviceError').style.display = "block"
             isValid=false

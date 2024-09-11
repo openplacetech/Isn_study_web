@@ -223,8 +223,6 @@ def something_went_wrong(request):
 
 def success(request):
     source_url = request.session.get('source_url', None)
-    print(source_url)
-    print(request.session)
     if source_url == "partnership":
         del request.session['source_url']
         return render(request,'partnership_success.html')
