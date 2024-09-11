@@ -3,6 +3,11 @@
 {% block title %}ISN Study Contact{% endblock %}
 {% block base %}
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/contact.css' %}" />
+    <style>
+        .hidden {
+        display: none;
+      }
+    </style>
     <section class="contact__us__landingpage">
     <div class="get__in__touch" style="background-image: url('{% static 'assets/images/get-in-touch.svg' %}');">
     </div>
@@ -89,16 +94,26 @@
           <p>Which services are you interested in?</p>
             <span id="serviceError" class="error">Check at least one</span>
           <div class="check-option">
-            <input type="checkbox" id="service1" name="agent" class="checbox" value="Hiring as Agent" />
+            <input type="checkbox" id="service1" name="agent" class="checbox" value="Hiring as Agent" onclick="hideOthers()"/>
             <label for="service1">Hiring as Agent</label>
           </div>
           <div class="check-option">
-            <input type="checkbox" id="service2" class="checbox" name="market_entry" value="Market Entry" />
+            <input type="checkbox" id="service2" class="checbox" name="market_entry" value="Market Entry" onclick="hideOthers()"/>
             <label for="service2">Market Entry</label>
           </div>
           <div class="check-option" >
-            <input type="checkbox" id="service3" name="others" class="checkbox" value="Other Specify" />
+            <input type="checkbox" id="service3" name="others" class="checkbox" value="Other Specify" onclick="showInput()" />
             <label for="service3">Other, Specify</label>
+          </div>
+            <div style="width: 100%" class="input-field">
+              <input
+                class="partnership__input hidden"
+                placeholder="Others"
+                name="other_field"
+                id="other_field"
+                required
+              />
+              <span id="othersFieldsError" class="error">Enter Valid input</span>
           </div>
         </div>
         <div style="width: 100%" class="input-field">
@@ -163,6 +178,24 @@
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
         }
+        function showInput(){
+        var service3 = document.getElementById('service3').checked
+            if(service3){
+                document.getElementById('other_field').style.display = "block"
+                document.getElementById('service1').checked=false
+                document.getElementById('service2').checked=false
+            }else {
+                document.getElementById('other_field').style.display = "none"
+            }
+        }
+        function hideOthers(){
+            var service1 = document.getElementById('service1').checked
+            var service2 = document.getElementById('service2').checked
+            if(service1 || service2){
+                document.getElementById('other_field').style.display = "none"
+                document.getElementById('service3').checked = false
+            }
+        }
     function submit_contact_form(){
         var isValid=true
         var institute_name = document.getElementById('institute_name_id').value;
@@ -176,6 +209,8 @@
         var service3 = document.getElementById('service3').checked
         var message = document.getElementById('message').value
         var privacy = document.getElementById('privacy').checked
+        var other_field=document.getElementById('other_field').value
+
         if(institute_name == ''){
             document.getElementById('instituteNameError').style.display = "block"
             isValid=false
@@ -219,6 +254,15 @@
         }
         if(service1 || service2 || service3){
             document.getElementById('serviceError').style.display = "none"
+            if(service3){
+                if(other_field== ''){
+                    document.getElementById('othersFieldsError').style.display = "block"
+                    isValid=false
+                }else {
+                    document.getElementById('othersFieldsError').style.display = "none"
+                }
+            }
+
         }else {
             document.getElementById('serviceError').style.display = "block"
             isValid=false
@@ -229,6 +273,7 @@
         }else{
             document.getElementById('messageError').style.display = "none"
         }
+
         if(privacy){
             document.getElementById('termError').style.display = "none"
         }else {

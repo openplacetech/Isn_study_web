@@ -4,6 +4,7 @@ class PartnershipRequestForm(forms.ModelForm):
     agent = forms.CharField(max_length=255,required=False)
     market_entry = forms.CharField(max_length=255,required=False)
     others = forms.CharField(max_length=255,required=False)
+    other_field=forms.CharField(max_length=255,required=False)
 
     class Meta:
         model = PartnershipRequest
@@ -14,9 +15,14 @@ class PartnershipRequestForm(forms.ModelForm):
         agent = cleaned_data.get('agent')
         market_entry = cleaned_data.get('market_entry')
         others = cleaned_data.get('others')
-        parts = [item for item in [agent, market_entry, others] if item]
-        combined_value = ", ".join(parts)
-        cleaned_data['interested_service'] = combined_value
+        if others:
+            other_field = cleaned_data.get('other_field')
+            others_field = other_field+" (Others)"
+            cleaned_data['interested_service'] = others_field
+        else:
+            parts = [item for item in [agent, market_entry] if item]
+            combined_value = ", ".join(parts)
+            cleaned_data['interested_service'] = combined_value
 
         return cleaned_data
 
