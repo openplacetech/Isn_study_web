@@ -21,16 +21,16 @@
     <main class="section__container">
       <div class="isn__platform__home">
 {#        <p class="secondary_title">ISN PLATFORMS</p>#}
-        <div><img class="selfappie__icon" src="{% static 'assets/images/selfappie.svg' %}" loading="lazy"></div>
+        <div><img class="selfappie__icon" src="{% static 'assets/images/f1apply-logo.png' %}" loading="lazy"></div>
         <div style="white-space-collapse: discard; word-break: normal !important" class="content__title">
           Simplifying Your
           <span>Application <br />
             Process.</span>
         </div>
         <p class="short__description">
-          SelfAppie is an intuitive platform that guides students through
+          F1Apply is an intuitive platform that guides students through
           every step of their application journey. From finding the right
-          universities to submitting applications, SelfAppie provides
+          universities to submitting applications, F1Apply provides
           comprehensive support to make the process smooth and stress-free.
         </p>
       </div>
@@ -43,7 +43,7 @@
   <section style="background-color: white" class="our__diversity__container">
     <main class="section__container">
       <div class="SelfAppie__content">
-        With <span>SelfAppie</span>, we streamline applications to US universities for international students,<span>
+        With <span>F1Apply</span>, we streamline applications to US universities for international students,<span>
           making the process simple, logical, and joyful,</span> forging a direct path to higher education for students
         worldwide.
       </div>
@@ -93,13 +93,13 @@
           <hr class="horizontal__line" />
           <div class="partner__us__content">
             <p class="secondary_title">
-              Discover how SelfAppie can simplify your application process and support your educational journey. Learn more about SelfAppie <a href="https://www.selfappie.com" target="_blank">here</a>.
+              Discover how F1Apply can simplify your application process and support your educational journey. Learn more about F1Apply <a href="https://www.f1apply.com" target="_blank">here</a>.
             </p>
           </div>
         </div>
     </main>
   </section>
-  <section class="collaboration__container">
+  {% comment %} <section class="collaboration__container">
     <main class="section__container">
       <div class="our__collaboration__container" id="study-usa-partners">
         <div class="our__engagement__content">
@@ -120,11 +120,11 @@
         </div>
 
     </main>
-  </section>
-  <div class="isn__banner">
+  </section> {% endcomment %}
+  {% comment %} <div class="isn__banner">
     <img src="{% static 'assets/images/partner_banner.svg' %}" />
-  </div>
-  <section style="background-color: white" class="our__partner__container">
+  </div> {% endcomment %}
+  {% comment %} <section style="background-color: white" class="our__partner__container">
     <main class="section__container">
       <div class="SelfAppie__content">
         <span>StudyUSA</span> Partners' goal is to simplify and expedite the US application process while <span>
@@ -134,7 +134,7 @@
 
 
     </main>
-  </section>
+  </section> {% endcomment %}
   <section  style="background-color: white ; padding: 1rem 0;" class="our__diversity__container">
     <main class="section__container">
 
@@ -179,10 +179,10 @@
 
       </div>
 
-      <hr class="horizontal__line" />
+      {% comment %} <hr class="horizontal__line" />
       <p style="text-align: center; margin-top: 0.8rem" class="secondary_title">
           Explore how StudyUSA Partner can enhance your institution's international recruitment efforts. Learn more about StudyUSA Partner <a href="https://www.studyusp.com" target="_blank">here</a>.
-      </p>
+      </p> {% endcomment %}
 
     </main>
   </section>
